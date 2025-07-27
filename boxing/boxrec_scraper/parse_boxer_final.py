@@ -201,7 +201,7 @@ def main():
         print(json.dumps(data, indent=2))
         
         # Save to file
-        output_file = html_file.replace('.html', '.json').replace('boxrec_html', 'boxrec_data')
+        output_file = html_file.replace('.html', '.json').replace('boxrec_html', 'boxrec_json')
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
         
         with open(output_file, 'w', encoding='utf-8') as f:

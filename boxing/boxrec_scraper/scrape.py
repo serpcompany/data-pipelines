@@ -37,7 +37,7 @@ if not ZYTE_API_KEY:
 # Directories
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 HTML_DIR = os.path.join(BASE_DIR, 'boxrec_html')
-DATA_DIR = os.path.join(BASE_DIR, 'boxrec_data')
+DATA_DIR = os.path.join(BASE_DIR, 'boxrec_json')
 
 # Thread safety
 lock = Lock()

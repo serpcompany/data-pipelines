@@ -27,7 +27,7 @@ def process_file(html_file):
         data = parse_boxer_html(html_file)
         
         # Create output path
-        output_file = str(html_file).replace('boxrec_html', 'boxrec_data').replace('.html', '.json')
+        output_file = str(html_file).replace('boxrec_html', 'boxrec_json').replace('.html', '.json')
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
         
         # Save JSON
@@ -91,13 +91,13 @@ def main():
         'results': results
     }
     
-    with open('boxrec_data/parse_summary.json', 'w') as f:
+    with open('boxrec_json/parse_summary.json', 'w') as f:
         json.dump(summary, f, indent=2)
     
     print(f"\nProcessing complete!")
     print(f"Successful: {successful}")
     print(f"Failed: {failed}")
-    print(f"Summary saved to: boxrec_data/parse_summary.json")
+    print(f"Summary saved to: boxrec_json/parse_summary.json")
 
 if __name__ == "__main__":
     main()
