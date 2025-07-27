@@ -1,0 +1,16 @@
+{
+  "migrations": [
+    {
+      "version": "1.0.0",
+      "date": "2025-07-27",
+      "description": "Initial schema version",
+      "breaking_changes": false,
+      "changes": [
+        "Initial schema definition with all base fields",
+        "Includes boxer profile data and bout history",
+        "Supports opponent interlinking via opponent_id and opponent_url"
+      ]
+    }
+  ],
+  "current_version": "1.0.0"
+}
