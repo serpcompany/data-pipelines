@@ -1,0 +1,187 @@
+{
+  "boxrec_id": "811429",
+  "name": "Joe Joyce",
+  "birth_name": "Joseph Obey Joyce",
+  "alias": "'Juggernaut'",
+  "birth_date": null,
+  "birth_place": "London, United Kingdom",
+  "nationality": "United Kingdom",
+  "stance": "orthodox",
+  "height": "6\u2032 6\u2033 / 198cm",
+  "reach": "80\u2033 / 203cm",
+  "record": {
+    "wins": 16,
+    "losses": 4,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 20
+  },
+  "division": "heavy",
+  "residence": "Putney, London, United Kingdom",
+  "status": null,
+  "career": "2017-2025",
+  "debut": "2017-10-20",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Apr 25",
+      "opponent": "Filip Hrgovic*",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Co-op Live Arena, Manchester"
+    },
+    {
+      "date": "Jul 24",
+      "opponent": "Derek Chisora",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Mar 24",
+      "opponent": "Kash Ali",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "bp pulse LIVE Arena, Birmingham"
+    },
+    {
+      "date": "Sep 23",
+      "opponent": "Zhilei Zhang",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Arena, Wembley"
+    },
+    {
+      "date": "Apr 23",
+      "opponent": "Zhilei Zhang",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Copper Box Arena, Queen Elizabeth Olympic Park, Hackney Wick"
+    },
+    {
+      "date": "Sep 22",
+      "opponent": "Joseph Parker",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Manchester Arena, Manchester"
+    },
+    {
+      "date": "Jul 22",
+      "opponent": "Christian Hammer",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Arena, Wembley"
+    },
+    {
+      "date": "Jul 21",
+      "opponent": "Carlos Takam",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Arena, Wembley"
+    },
+    {
+      "date": "Nov 20",
+      "opponent": "Daniel Dubois",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Church House, Westminster"
+    },
+    {
+      "date": "Jul 20",
+      "opponent": "Michael Wallisch",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "BT Sport Studio, Stratford"
+    },
+    {
+      "date": "Jul 19",
+      "opponent": "Bryant Jennings",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "May 19",
+      "opponent": "Aleksandr Ustinov",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Lamex Stadium, Stevenage"
+    },
+    {
+      "date": "Feb 19",
+      "opponent": "Bermane Stiverne",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Dec 18",
+      "opponent": "Joe Hanks",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Staples Center, Los Angeles"
+    },
+    {
+      "date": "Sep 18",
+      "opponent": "Iago Kiladze",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Citizens Business Bank Arena, Ontario"
+    },
+    {
+      "date": "Jun 18",
+      "opponent": "Ivica Bacurin",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "York Hall, Bethnal Green"
+    },
+    {
+      "date": "May 18",
+      "opponent": "Lenroy Thomas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Mar 18",
+      "opponent": "Donnie Palmer",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "York Hall, Bethnal Green"
+    },
+    {
+      "date": "Feb 18",
+      "opponent": "Rudolf Jozic",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "York Hall, Bethnal Green"
+    },
+    {
+      "date": "Oct 17",
+      "opponent": "Ian Lewison",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Indigo at The O2, Greenwich"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "boxrec_id": "912383",
+  "name": "Jake Paul",
+  "birth_name": "Jake Joseph Paul",
+  "alias": "The Problem Child, El Gallo",
+  "birth_date": null,
+  "birth_place": "Cleveland, Ohio, USA",
+  "nationality": "USA",
+  "stance": "orthodox",
+  "height": "6\u2032 1\u2033 / 185cm",
+  "reach": "76\u2033 / 193cm",
+  "record": {
+    "wins": 12,
+    "losses": 1,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 13
+  },
+  "division": "cruiser",
+  "residence": "Dorado, Puerto Rico",
+  "status": null,
+  "career": "2020-2025",
+  "debut": "2020-01-30",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "2025-06-28",
+      "opponent": "Julio Cesar Chavez Jr",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Honda Center, Anaheim"
+    },
+    {
+      "date": "Nov 24",
+      "opponent": "Mike Tyson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "AT&T Stadium, Arlington"
+    },
+    {
+      "date": "Jul 24",
+      "opponent": "Michael Perry",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Amalie Arena, Tampa"
+    },
+    {
+      "date": "Mar 24",
+      "opponent": "Ryan Bourland",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Coliseo Jose Miguel Agrelot, San Juan"
+    },
+    {
+      "date": "Dec 23",
+      "opponent": "Andre August",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Caribe Royale Orlando, Orlando"
+    },
+    {
+      "date": "Aug 23",
+      "opponent": "Nate Diaz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "American Airlines Center, Dallas"
+    },
+    {
+      "date": "Feb 23",
+      "opponent": "Tommy Fury",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Diriyah Arena, Diriyah"
+    },
+    {
+      "date": "Oct 22",
+      "opponent": "Anderson Silva",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Gila River Arena, Glendale"
+    },
+    {
+      "date": "Dec 21",
+      "opponent": "Tyron Woodley",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Amalie Arena, Tampa"
+    },
+    {
+      "date": "Aug 21",
+      "opponent": "Tyron Woodley",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Rocket Mortgage FieldHouse, Cleveland"
+    },
+    {
+      "date": "Apr 21",
+      "opponent": "Ben Askren",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mercedes-Benz Stadium, Atlanta"
+    },
+    {
+      "date": "Nov 20",
+      "opponent": "Nate Robinson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Staples Center, Los Angeles"
+    },
+    {
+      "date": "Jan 20",
+      "opponent": "Ali Eson Gib",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Meridian at Island Gardens, Miami"
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "boxrec_id": "659771",
+  "name": "Vasyl Lomachenko",
+  "birth_name": "Vasyl Anatoliyovich Lomachenko",
+  "alias": "Loma, Hi-Tech, The Matrix",
+  "birth_date": null,
+  "birth_place": "Bilhorod-Dnistrovskyi, Ukraine",
+  "nationality": "Ukraine",
+  "stance": "southpaw",
+  "height": "5\u2032 7\u2033 / 170cm",
+  "reach": "65\u00bd\u2033 / 166cm",
+  "record": {
+    "wins": 18,
+    "losses": 3,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 21
+  },
+  "division": "light",
+  "residence": "Oxnard, California, USA",
+  "status": "inactive",
+  "career": "2013-2024",
+  "debut": "2013-10-12",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "May 24",
+      "opponent": "George Kambosos Jr",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "RAC Arena, Perth"
+    },
+    {
+      "date": "May 23",
+      "opponent": "Devin Haney*",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Oct 22",
+      "opponent": "Jamaine Ortiz*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Dec 21",
+      "opponent": "Richard Commey",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Jun 21",
+      "opponent": "Masayoshi Nakatani",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Virgin Hotels Las Vegas, Las Vegas"
+    },
+    {
+      "date": "Oct 20",
+      "opponent": "Teofimo Lopez",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "The Bubble, MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Aug 19",
+      "opponent": "Luke Campbell",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Apr 19",
+      "opponent": "Anthony Crolla",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Staples Center, Los Angeles"
+    },
+    {
+      "date": "Dec 18",
+      "opponent": "Jose Pedraza",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "May 18",
+      "opponent": "Jorge Linares",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Dec 17",
+      "opponent": "Guillermo Rigondeaux",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Aug 17",
+      "opponent": "Miguel Marriaga",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Microsoft Theater, Los Angeles"
+    },
+    {
+      "date": "Apr 17",
+      "opponent": "Jason Sosa",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM National Harbor, Oxon Hill"
+    },
+    {
+      "date": "Nov 16",
+      "opponent": "Nicholas Walters",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Cosmopolitan of Las Vegas, Las Vegas"
+    },
+    {
+      "date": "Jun 16",
+      "opponent": "Roman Martinez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Nov 15",
+      "opponent": "Romulo Koasicha",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Thomas & Mack Center, Las Vegas"
+    },
+    {
+      "date": "May 15",
+      "opponent": "Gamalier Rodriguez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "Nov 14",
+      "opponent": "Suriya Tatakhun",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Cotai Arena, Venetian Resort, Macao"
+    },
+    {
+      "date": "Jun 14",
+      "opponent": "Gary Allen Russell Jr",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "StubHub Center, Carson"
+    },
+    {
+      "date": "Mar 14",
+      "opponent": "Orlando Salido",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Alamodome, San Antonio"
+    },
+    {
+      "date": "Oct 13",
+      "opponent": "Jose Luis Ramirez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Thomas & Mack Center, Las Vegas"
+    }
+  ]
+}

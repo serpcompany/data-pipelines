@@ -1,0 +1,235 @@
+{
+  "boxrec_id": "646781",
+  "name": "George Kambosos Jr",
+  "birth_name": "George Kambosos Jr",
+  "alias": "Ferocious",
+  "birth_date": null,
+  "birth_place": "Sydney, New South Wales, Australia",
+  "nationality": "Australia",
+  "stance": "orthodox",
+  "height": "5\u2032 9\u2033 / 175cm",
+  "reach": "68\u2033 / 173cm",
+  "record": {
+    "wins": 22,
+    "losses": 4,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 26
+  },
+  "division": "super light",
+  "residence": "Sydney, New South Wales, Australia",
+  "status": null,
+  "career": "2013-2025",
+  "debut": "2013-05-18",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Jun 25",
+      "opponent": "Richardson Hitchins",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Mar 25",
+      "opponent": "Jake Wyllie*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Qudos Bank Arena, Sydney Olympic Park"
+    },
+    {
+      "date": "May 24",
+      "opponent": "Vasyl Lomachenko",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "RAC Arena, Perth"
+    },
+    {
+      "date": "Jul 23",
+      "opponent": "Maxi Hughes",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Firelake Arena, Shawnee"
+    },
+    {
+      "date": "Oct 22",
+      "opponent": "Devin Haney*",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Rod Laver Arena, Melbourne"
+    },
+    {
+      "date": "Jun 22",
+      "opponent": "Devin Haney*",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Marvel Stadium, Docklands, Melbourne"
+    },
+    {
+      "date": "Nov 21",
+      "opponent": "Teofimo Lopez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Oct 20",
+      "opponent": "Lee Selby",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Arena, Wembley"
+    },
+    {
+      "date": "Dec 19",
+      "opponent": "Mickey Bey",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Jun 19",
+      "opponent": "Richard Pena",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Olympic Hall Galatsi, Athens"
+    },
+    {
+      "date": "Jan 19",
+      "opponent": "Rey Perez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Jul 18",
+      "opponent": "JR Magboo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Axiata Arena, Kuala Lumpur"
+    },
+    {
+      "date": "May 18",
+      "opponent": "Jose Forero",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Foxwoods Resort, Mashantucket"
+    },
+    {
+      "date": "Oct 17",
+      "opponent": "Krai Setthaphon",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Melbourne Pavilion, Flemington"
+    },
+    {
+      "date": "May 17",
+      "opponent": "Qamil Balla*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Vodafone Events Centre, Manukau City"
+    },
+    {
+      "date": "Dec 16",
+      "opponent": "Brandon Ogilvie",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Luna Park, Sydney"
+    },
+    {
+      "date": "Jun 16",
+      "opponent": "Issa Nampepeche",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Entertainment Centre, Sutherland"
+    },
+    {
+      "date": "Dec 15",
+      "opponent": "Joebert Delos Reyes",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Alexandria Basketball Stadium, Perry Park"
+    },
+    {
+      "date": "Jul 15",
+      "opponent": "Leonardo Esteban Gonzalez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Club Punchbowl, Punchbowl"
+    },
+    {
+      "date": "Jan 15",
+      "opponent": "Rodynie Rafol",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Allphones Arena, Olympic Park, Sydney"
+    },
+    {
+      "date": "Aug 14",
+      "opponent": "Robert Toomey",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Club Punchbowl, Punchbowl"
+    },
+    {
+      "date": "Apr 14",
+      "opponent": "Akrapong Nakthaem",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Entertainment Centre, Newcastle"
+    },
+    {
+      "date": "Jan 14",
+      "opponent": "Paitoon Jaikom",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Brisbane Entertainment Centre, Boondall"
+    },
+    {
+      "date": "Nov 13",
+      "opponent": "Michael Correa",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Croatian Club, Punchbowl"
+    },
+    {
+      "date": "Aug 13",
+      "opponent": "Roberto Oyan",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Croatian Club, Punchbowl"
+    },
+    {
+      "date": "May 13",
+      "opponent": "Jayson Mac Gura",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Croatian Club, Punchbowl"
+    }
+  ]
+}

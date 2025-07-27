@@ -1,0 +1,203 @@
+{
+  "boxrec_id": "872417",
+  "name": "Xander Zayas",
+  "birth_name": "Xander Yarob Zayas Castro",
+  "alias": null,
+  "birth_date": null,
+  "birth_place": "San Juan, Porto Rico",
+  "nationality": "Porto Rico",
+  "stance": "orthodox",
+  "height": "5\u2032 10\u2033 / 178cm",
+  "reach": "74\u2033 / 188cm",
+  "record": {
+    "wins": 22,
+    "losses": 0,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 22
+  },
+  "division": "Super Mi-Moyens",
+  "residence": "Sunrise, Florida, \u00c9tats-Unis",
+  "status": null,
+  "career": "2019-2025",
+  "debut": "2019-10-26",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "2025-07-26",
+      "opponent": "Jorge Garcia Perez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Feb 25",
+      "opponent": "Slawa Spomer",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Sep 24",
+      "opponent": "Damian Sosa",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Jun 24",
+      "opponent": "Patrick Teixeira",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Dec 23",
+      "opponent": "Jorge Fortea",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Charles F. Dodge City Center, Pembroke Pines"
+    },
+    {
+      "date": "Sep 23",
+      "opponent": "Roberto Valenzuela Jr",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "American Bank Center, Corpus Christi"
+    },
+    {
+      "date": "Jun 23",
+      "opponent": "Ronald Cruz*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Dec 22",
+      "opponent": "Alexis Salazar Flores",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Aug 22",
+      "opponent": "Elias Espadas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Resorts World Las Vegas, Las Vegas"
+    },
+    {
+      "date": "Mar 22",
+      "opponent": "Quincy LaVallais",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Dec 21",
+      "opponent": "Alessio Mastronunzio",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Oct 21",
+      "opponent": "Dan Karpency",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "State Farm Arena, Atlanta"
+    },
+    {
+      "date": "Sep 21",
+      "opponent": "Jose Luis Sanchez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Casino Del Sol, Tucson"
+    },
+    {
+      "date": "Jun 21",
+      "opponent": "Larry Fryers",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Virgin Hotels Las Vegas, Las Vegas"
+    },
+    {
+      "date": "Apr 21",
+      "opponent": "Demarcus Layton",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Silver Spurs Arena, Kissimmee"
+    },
+    {
+      "date": "Feb 21",
+      "opponent": "James Martin",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Bubble, MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Oct 20",
+      "opponent": "Anthony Curtiss",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Osceola Heritage Park, Kissimmee"
+    },
+    {
+      "date": "Sep 20",
+      "opponent": "Orlando Salgado",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Osceola Heritage Park, Kissimmee"
+    },
+    {
+      "date": "Feb 20",
+      "opponent": "Marklin Bailey",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Cancha Ruben Zayas Montanez, Trujillo Alto"
+    },
+    {
+      "date": "Jan 20",
+      "opponent": "Corey Champion",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mark G. Etess Arena, Hard Rock Hotel & Casino, Atlantic City"
+    },
+    {
+      "date": "Nov 19",
+      "opponent": "Virgel Windfield",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Cosmopolitan of Las Vegas, Las Vegas"
+    },
+    {
+      "date": "Oct 19",
+      "opponent": "Genesis Wynn*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Reno-Sparks Convention Center, Reno"
+    }
+  ]
+}

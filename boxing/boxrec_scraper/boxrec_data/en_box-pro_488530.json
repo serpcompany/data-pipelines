@@ -1,0 +1,443 @@
+{
+  "boxrec_id": "488530",
+  "name": "Amanda Serrano",
+  "birth_name": null,
+  "alias": "The Real Deal",
+  "birth_date": null,
+  "birth_place": "Puerto Rico",
+  "nationality": "Puerto Rico",
+  "stance": "southpaw",
+  "height": "5\u2032 5\u00bd\u2033 / 166cm",
+  "reach": "65\u00bd\u2033 / 166cm",
+  "record": {
+    "wins": 47,
+    "losses": 4,
+    "draws": 1,
+    "kos": 0,
+    "total_fights": 52
+  },
+  "division": "super light",
+  "residence": "Carolina, Puerto Rico",
+  "status": null,
+  "career": "2009-2025",
+  "debut": "2009-03-20",
+  "sex": "female",
+  "bouts": [
+    {
+      "date": "2025-07-11",
+      "opponent": "Katie Taylor",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Nov 24",
+      "opponent": "Katie Taylor",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "AT&T Stadium, Arlington"
+    },
+    {
+      "date": "Jul 24",
+      "opponent": "Stevie Morgan",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Amalie Arena, Tampa"
+    },
+    {
+      "date": "Oct 23",
+      "opponent": "Danila Ramos",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Caribe Royale Orlando, Orlando"
+    },
+    {
+      "date": "Aug 23",
+      "opponent": "Heather Hardy",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "American Airlines Center, Dallas"
+    },
+    {
+      "date": "Feb 23",
+      "opponent": "Erika Cruz Hernandez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Sep 22",
+      "opponent": "Sarah Mahfoud",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Manchester Arena, Manchester"
+    },
+    {
+      "date": "Apr 22",
+      "opponent": "Katie Taylor",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Dec 21",
+      "opponent": "Miriam Gutierrez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Amalie Arena, Tampa"
+    },
+    {
+      "date": "Aug 21",
+      "opponent": "Yamileth Mercado",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Rocket Mortgage FieldHouse, Cleveland"
+    },
+    {
+      "date": "Mar 21",
+      "opponent": "Daniela Romina Bermudez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Plaza del Quinto Centenario, San Juan"
+    },
+    {
+      "date": "Dec 20",
+      "opponent": "Dahianna Santana",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hotel Catalonia Malecon Center, Santo Domingo"
+    },
+    {
+      "date": "Jan 20",
+      "opponent": "Simone Aparecida da Silva",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Meridian at Island Gardens, Miami"
+    },
+    {
+      "date": "Sep 19",
+      "opponent": "Heather Hardy",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Jan 19",
+      "opponent": "Eva Voraberger",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Sep 18",
+      "opponent": "Yamila Reynoso",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Nov 17",
+      "opponent": "Marilyn Hernandez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Jul 17",
+      "opponent": "Edina Kiss",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sheraton Puerto Rico Hotel & Casino, San Juan"
+    },
+    {
+      "date": "Apr 17",
+      "opponent": "Dahianna Santana",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Jan 17",
+      "opponent": "Yazmin Rivas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Oct 16",
+      "opponent": "Alexandra Lazar",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Caribe Hilton Hotel, San Juan"
+    },
+    {
+      "date": "Jul 16",
+      "opponent": "Calista Silgado",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Apr 16",
+      "opponent": "Edina Kiss",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Cancha Ruben Zayas Montanez, Trujillo Alto"
+    },
+    {
+      "date": "Feb 16",
+      "opponent": "Olivia Gerula",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "BB King Blues Club & Grill, New York"
+    },
+    {
+      "date": "Nov 15",
+      "opponent": "Djemilla Gontaruk",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Aviator Sports Complex, Brooklyn"
+    },
+    {
+      "date": "Sep 15",
+      "opponent": "Fatuma Zarika*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Space at Westbury, Westbury"
+    },
+    {
+      "date": "May 15",
+      "opponent": "Fatuma Zarika*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "W.C. Handy Pavilion, Memphis"
+    },
+    {
+      "date": "Feb 15",
+      "opponent": "Marisol Reyes",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sosua Convention Center, Puerto Plata"
+    },
+    {
+      "date": "Nov 14",
+      "opponent": "Carla Torres",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Space at Westbury, Westbury"
+    },
+    {
+      "date": "Aug 14",
+      "opponent": "Maria Elena Maderna",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Estadio F.A.B., Buenos Aires"
+    },
+    {
+      "date": "Sep 13",
+      "opponent": "Diana Collado",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Gimnasio Boxing Factory, Santiago de los Caballeros"
+    },
+    {
+      "date": "Sep 13",
+      "opponent": "Kerri Hill",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Resorts World Casino, Queens"
+    },
+    {
+      "date": "Jun 13",
+      "opponent": "Dominga Olivo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Resorts World Casino, Queens"
+    },
+    {
+      "date": "Feb 13",
+      "opponent": "Wanda Pena Ozuna",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Gran Arena del Cibao, Santiago de los Caballeros"
+    },
+    {
+      "date": "Dec 12",
+      "opponent": "Lina Tejada",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sosua Bay Grand Casino, Puerto Plata"
+    },
+    {
+      "date": "Sep 12",
+      "opponent": "Grecia Novas Mateo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Club Pueblo Nuevo, Villa Duarte"
+    },
+    {
+      "date": "Apr 12",
+      "opponent": "Frida Wallberg",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Cloetta Center, Linkoping"
+    },
+    {
+      "date": "Feb 12",
+      "opponent": "Ela Nunez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Cicero Stadium, Cicero"
+    },
+    {
+      "date": "Nov 11",
+      "opponent": "Grecia Novas Mateo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hotel Jaragua, Santo Domingo"
+    },
+    {
+      "date": "Sep 11",
+      "opponent": "Kimberly Connor-Hamby",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Aviator Sports Complex, Brooklyn"
+    },
+    {
+      "date": "Aug 11",
+      "opponent": "Diana Collado",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Parque del Este, Santo Domingo"
+    },
+    {
+      "date": "Jun 11",
+      "opponent": "Jennifer Scott",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Roseland Ballroom, New York"
+    },
+    {
+      "date": "Apr 11",
+      "opponent": "Ela Nunez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Fairgrounds Event Center, Hamburg"
+    },
+    {
+      "date": "Jan 11",
+      "opponent": "Ela Nunez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Turning Stone Resort & Casino, Verona"
+    },
+    {
+      "date": "Sep 10",
+      "opponent": "Jennifer Encarnacion",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Coliseo Carlos 'Teo' Cruz, Santo Domingo"
+    },
+    {
+      "date": "Jun 10",
+      "opponent": "Nydia Feliciano",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Tropicana Hotel & Casino, Atlantic City"
+    },
+    {
+      "date": "Feb 10",
+      "opponent": "Lucia Larcinese",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Turning Stone Resort & Casino, Verona"
+    },
+    {
+      "date": "Nov 09",
+      "opponent": "Ela Nunez",
+      "result": "D",
+      "method": null,
+      "rounds": null,
+      "venue": "Trump Taj Mahal, Atlantic City"
+    },
+    {
+      "date": "Jul 09",
+      "opponent": "Christina Ruiz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Resorts Hotel & Casino, Atlantic City"
+    },
+    {
+      "date": "Jun 09",
+      "opponent": "Carolina Martinez de Moreta",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Coliseo Carlos 'Teo' Cruz, Santo Domingo"
+    },
+    {
+      "date": "May 09",
+      "opponent": "Brittany Cruz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "DoubleTree Hotel, Orlando"
+    },
+    {
+      "date": "Mar 09",
+      "opponent": "Jackie Trivilino",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Washington Avenue Armory, Albany"
+    }
+  ]
+}

@@ -1,0 +1,515 @@
+{
+  "boxrec_id": "180",
+  "name": "Muhammad Ali",
+  "birth_name": "Cassius Marcellus Clay",
+  "alias": "The Greatest",
+  "birth_date": null,
+  "birth_place": "Louisville, Kentucky, USA",
+  "nationality": "USA",
+  "stance": "orthodox",
+  "height": "6\u2032 3\u2033 / 191cm",
+  "reach": "78\u2033 / 198cm",
+  "record": {
+    "wins": 56,
+    "losses": 5,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 61
+  },
+  "division": "heavy",
+  "residence": "Louisville, Kentucky, USA",
+  "status": "inactive",
+  "career": "1960-1981",
+  "debut": "1960-10-29",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Dec 81",
+      "opponent": "Trevor Berbick",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Queen Elizabeth Sports Centre, Nassau"
+    },
+    {
+      "date": "Oct 80",
+      "opponent": "Larry Holmes",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Caesars Palace, Las Vegas"
+    },
+    {
+      "date": "Sep 78",
+      "opponent": "Leon Spinks",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Superdome, New Orleans"
+    },
+    {
+      "date": "Feb 78",
+      "opponent": "Leon Spinks",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Hilton Hotel, Las Vegas"
+    },
+    {
+      "date": "Sep 77",
+      "opponent": "Earnie Shavers",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "May 77",
+      "opponent": "Alfredo Evangelista",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Capitol Center, Landover"
+    },
+    {
+      "date": "Sep 76",
+      "opponent": "Ken Norton",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Yankee Stadium, The Bronx"
+    },
+    {
+      "date": "May 76",
+      "opponent": "Richard Dunn",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Olympiahalle, Munich"
+    },
+    {
+      "date": "Apr 76",
+      "opponent": "Jimmy Young",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Capitol Center, Landover"
+    },
+    {
+      "date": "Feb 76",
+      "opponent": "Jean Pierre Coopman",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Coliseo Roberto Clemente, San Juan"
+    },
+    {
+      "date": "Oct 75",
+      "opponent": "Joe Frazier",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Araneta Coliseum, Barangay Cubao, Quezon City"
+    },
+    {
+      "date": "Jun 75",
+      "opponent": "Joe Bugner",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Merdeka Stadium, Kuala Lumpur"
+    },
+    {
+      "date": "May 75",
+      "opponent": "Ron Lyle",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Convention Center, Las Vegas"
+    },
+    {
+      "date": "Mar 75",
+      "opponent": "Chuck Wepner",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Richfield Coliseum, Richfield"
+    },
+    {
+      "date": "Oct 74",
+      "opponent": "George Foreman",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Stade du 20 Mai, Kinshasa"
+    },
+    {
+      "date": "Jan 74",
+      "opponent": "Joe Frazier",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Oct 73",
+      "opponent": "Rudi Lubbers",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Bung Karno Stadium, Jakarta"
+    },
+    {
+      "date": "Sep 73",
+      "opponent": "Ken Norton",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Forum, Inglewood"
+    },
+    {
+      "date": "Mar 73",
+      "opponent": "Ken Norton",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Sports Arena, San Diego"
+    },
+    {
+      "date": "Feb 73",
+      "opponent": "Joe Bugner",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Convention Center, Las Vegas"
+    },
+    {
+      "date": "Nov 72",
+      "opponent": "Bob Foster",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sahara Tahoe Hotel, Stateline"
+    },
+    {
+      "date": "Sep 72",
+      "opponent": "Floyd Patterson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Jul 72",
+      "opponent": "Alvin Lewis",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Croke Park, Dublin"
+    },
+    {
+      "date": "Jun 72",
+      "opponent": "Jerry Quarry",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Convention Center, Las Vegas"
+    },
+    {
+      "date": "May 72",
+      "opponent": "George Chuvalo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Pacific Coliseum, Vancouver"
+    },
+    {
+      "date": "Apr 72",
+      "opponent": "Mac Foster",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Nippon Budokan"
+    },
+    {
+      "date": "Dec 71",
+      "opponent": "Juergen Blin",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hallenstadion, Zurich"
+    },
+    {
+      "date": "Nov 71",
+      "opponent": "Buster Mathis",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Astrodome, Houston"
+    },
+    {
+      "date": "Jul 71",
+      "opponent": "Jimmy Ellis",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Astrodome, Houston"
+    },
+    {
+      "date": "Mar 71",
+      "opponent": "Joe Frazier",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Dec 70",
+      "opponent": "Oscar Bonavena",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Oct 70",
+      "opponent": "Jerry Quarry",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Municipal Auditorium, Atlanta"
+    },
+    {
+      "date": "Mar 67",
+      "opponent": "Zora Folley",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Feb 67",
+      "opponent": "Ernie Terrell",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Astrodome, Houston"
+    },
+    {
+      "date": "Nov 66",
+      "opponent": "Cleveland Williams",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Astrodome, Houston"
+    },
+    {
+      "date": "Sep 66",
+      "opponent": "Karl Mildenberger",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Waldstadion/Radrennbahn, Frankfurt"
+    },
+    {
+      "date": "Aug 66",
+      "opponent": "Brian London",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Earls Court Arena, Kensington"
+    },
+    {
+      "date": "May 66",
+      "opponent": "Henry Cooper",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Arsenal Football Stadium, Highbury"
+    },
+    {
+      "date": "Mar 66",
+      "opponent": "George Chuvalo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Maple Leaf Gardens, Toronto"
+    },
+    {
+      "date": "Nov 65",
+      "opponent": "Floyd Patterson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Convention Center, Las Vegas"
+    },
+    {
+      "date": "May 65",
+      "opponent": "Sonny Liston",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Central Maine Civic Center, Lewiston"
+    },
+    {
+      "date": "Feb 64",
+      "opponent": "Sonny Liston",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Convention Center, Miami Beach"
+    },
+    {
+      "date": "Jun 63",
+      "opponent": "Henry Cooper",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Stadium, Wembley"
+    },
+    {
+      "date": "Mar 63",
+      "opponent": "Doug Jones",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Jan 63",
+      "opponent": "Charlie Powell",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Civic Arena, Pittsburgh"
+    },
+    {
+      "date": "Nov 62",
+      "opponent": "Archie Moore",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sports Arena, Los Angeles"
+    },
+    {
+      "date": "Jul 62",
+      "opponent": "Alejandro Lavorante",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sports Arena, Los Angeles"
+    },
+    {
+      "date": "May 62",
+      "opponent": "Billy Daniels",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "St. Nicholas Arena, New York"
+    },
+    {
+      "date": "Apr 62",
+      "opponent": "George Logan",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sports Arena, Los Angeles"
+    },
+    {
+      "date": "Feb 62",
+      "opponent": "Don Warner",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Convention Center, Miami Beach"
+    },
+    {
+      "date": "Feb 62",
+      "opponent": "Sonny Banks",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Nov 61",
+      "opponent": "Willi Besmanoff",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Freedom Hall, Louisville"
+    },
+    {
+      "date": "Oct 61",
+      "opponent": "Alex Miteff",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Freedom Hall, Louisville"
+    },
+    {
+      "date": "Jul 61",
+      "opponent": "Alonzo Johnson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Freedom Hall, Louisville"
+    },
+    {
+      "date": "Jun 61",
+      "opponent": "Duke Sabedong",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Convention Center, Las Vegas"
+    },
+    {
+      "date": "Apr 61",
+      "opponent": "LaMar Clark",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Freedom Hall, Louisville"
+    },
+    {
+      "date": "Feb 61",
+      "opponent": "Donnie Fleeman",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Auditorium, Miami Beach"
+    },
+    {
+      "date": "Feb 61",
+      "opponent": "Jimmy Robinson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Convention Center, Miami Beach"
+    },
+    {
+      "date": "Jan 61",
+      "opponent": "Tony Esperti",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Auditorium, Miami Beach"
+    },
+    {
+      "date": "Dec 60",
+      "opponent": "Herb Siler",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Auditorium, Miami Beach"
+    },
+    {
+      "date": "Oct 60",
+      "opponent": "Tunney Hunsaker",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Freedom Hall, Louisville"
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demetrius Andrade - BoxRec Data</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .header {
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        .boxer-id {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .record {
+            display: flex;
+            gap: 30px;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .record-item {
+            text-align: center;
+        }
+        .record-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #007bff;
+            line-height: 1;
+        }
+        .record-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .detail-item {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        .detail-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .detail-value {
+            font-weight: 600;
+            color: #333;
+        }
+        .bouts {
+            margin-top: 40px;
+        }
+        .bouts h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .bout {
+            display: grid;
+            grid-template-columns: 100px 1fr 2fr 60px;
+            gap: 15px;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+        .bout:hover {
+            background: #f8f9fa;
+        }
+        .bout-date {
+            font-weight: 600;
+            color: #555;
+        }
+        .bout-opponent {
+            font-weight: 500;
+        }
+        .bout-venue {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .bout-result {
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .result-W {
+            background: #d4edda;
+            color: #155724;
+        }
+        .result-L {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .result-D {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .nav {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+        .nav a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Demetrius Andrade</h1>
+            <div class="boxer-id">BoxRec ID: #468433</div>
+        </div>
+        
+        <div class="record">
+            <div class="record-item">
+                <div class="record-value">32</div>
+                <div class="record-label">Wins</div>
+            </div>
+            <div class="record-item">
+                <div class="record-value">1</div>
+                <div class="record-label">Losses</div>
+            </div>
+            <div class="record-item">
+                <div class="record-value">0</div>
+                <div class="record-label">Draws</div>
+            </div>
+            <div class="record-item">
+                <div class="record-value">0</div>
+                <div class="record-label">KOs</div>
+            </div>
+        </div>
+        
+        <div class="details">
+            <div class="detail-item">
+                <div class="detail-label">Nationality</div>
+                <div class="detail-value">USA</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Division</div>
+                <div class="detail-value">super middle</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Stance</div>
+                <div class="detail-value">southpaw</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Height</div>
+                <div class="detail-value">6′ 0″ / 183cm</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Reach</div>
+                <div class="detail-value">73½″ / 187cm</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Status</div>
+                <div class="detail-value">inactive</div>
+            </div>
+        </div>
+        
+        <div class="bouts">
+            <h2>Recent Fights</h2>
+            
+        <div class="bout">
+            <div class="bout-date">Nov 23</div>
+            <div class="bout-opponent">David Benavidez*</div>
+            <div class="bout-venue">Michelob Ultra Arena, Las Vegas</div>
+            <div class="bout-result result-L">L</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Jan 23</div>
+            <div class="bout-opponent">Demond Nicholson</div>
+            <div class="bout-venue">Capital One Arena, Washington</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Nov 21</div>
+            <div class="bout-opponent">Jason Quigley</div>
+            <div class="bout-venue">SNHU Arena, Manchester</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Apr 21</div>
+            <div class="bout-opponent">Liam Williams</div>
+            <div class="bout-venue">Seminole Hard Rock Hotel and Casino, Hollywood</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Jan 20</div>
+            <div class="bout-opponent">Luke Keeler</div>
+            <div class="bout-venue">Meridian at Island Gardens, Miami</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Jun 19</div>
+            <div class="bout-opponent">Maciej Sulecki</div>
+            <div class="bout-venue">Dunkin Donuts Center, Providence</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Jan 19</div>
+            <div class="bout-opponent">Artur Akavov</div>
+            <div class="bout-venue">Madison Square Garden Theater, New York</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Oct 18</div>
+            <div class="bout-opponent">Walter Kautondokwa</div>
+            <div class="bout-venue">TD Garden, Boston</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Oct 17</div>
+            <div class="bout-opponent">Alantez Fox</div>
+            <div class="bout-venue">Turning Stone Resort & Casino, Verona</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Mar 17</div>
+            <div class="bout-opponent">Jack Culcay</div>
+            <div class="bout-venue">Friedrich-Ebert-Halle, Ludwigshafen</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Jun 16</div>
+            <div class="bout-opponent">Willie Nelson</div>
+            <div class="bout-venue">Turning Stone Resort & Casino, Verona</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Oct 15</div>
+            <div class="bout-opponent">Dario Fabian Pucheta</div>
+            <div class="bout-venue">Mohegan Sun Casino, Uncasville</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Jun 14</div>
+            <div class="bout-opponent">Brian Rose</div>
+            <div class="bout-venue">Barclays Center, Brooklyn</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Nov 13</div>
+            <div class="bout-opponent">Vanes Martirosyan</div>
+            <div class="bout-venue">American Bank Center, Corpus Christi</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Jan 13</div>
+            <div class="bout-opponent">Freddy Hernandez</div>
+            <div class="bout-venue">Paramount Theatre, Huntington</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Sep 12</div>
+            <div class="bout-opponent">Alexis Hloros</div>
+            <div class="bout-venue">Verizon Wireless Arena, Manchester</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">May 12</div>
+            <div class="bout-opponent">Rudy Cisneros</div>
+            <div class="bout-venue">Mohegan Sun Casino, Uncasville</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Feb 12</div>
+            <div class="bout-opponent">Angel Hernandez</div>
+            <div class="bout-venue">Mohegan Sun Casino, Uncasville</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Sep 11</div>
+            <div class="bout-opponent">Saul Duran</div>
+            <div class="bout-venue">Verizon Wireless Arena, Manchester</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Aug 11</div>
+            <div class="bout-opponent">Grady Brewer</div>
+            <div class="bout-venue">Horseshoe Casino, Hammond</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        </div>
+        
+        <div class="nav">
+            <a href="index.html">← Back to Index</a>
+        </div>
+    </div>
+</body>
+</html>

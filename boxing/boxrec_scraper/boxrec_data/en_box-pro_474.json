@@ -1,0 +1,499 @@
+{
+  "boxrec_id": "474",
+  "name": "Mike Tyson",
+  "birth_name": "Michael Gerard Tyson",
+  "alias": "Iron",
+  "birth_date": null,
+  "birth_place": "Brooklyn, New York, USA",
+  "nationality": "USA",
+  "stance": "orthodox",
+  "height": "5\u2032 10\u2033 / 178cm",
+  "reach": "71\u2033 / 180cm",
+  "record": {
+    "wins": 50,
+    "losses": 7,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 57
+  },
+  "division": "heavy",
+  "residence": "Henderson, Nevada, USA",
+  "status": null,
+  "career": "1985-2024",
+  "debut": "1985-03-06",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Nov 24",
+      "opponent": "Jake Paul",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "AT&T Stadium, Arlington"
+    },
+    {
+      "date": "Jun 05",
+      "opponent": "Kevin McBride",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "MCI Center, Washington"
+    },
+    {
+      "date": "Jul 04",
+      "opponent": "Danny Williams",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Freedom Hall State Fairground, Louisville"
+    },
+    {
+      "date": "Feb 03",
+      "opponent": "Clifford Etienne",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Pyramid, Memphis"
+    },
+    {
+      "date": "Jun 02",
+      "opponent": "Lennox Lewis",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "The Pyramid, Memphis"
+    },
+    {
+      "date": "Oct 01",
+      "opponent": "Brian Nielsen",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Parken, Copenhagen"
+    },
+    {
+      "date": "Oct 00",
+      "opponent": "Andrew Golota",
+      "result": "N",
+      "method": null,
+      "rounds": null,
+      "venue": "The Palace, Auburn Hills"
+    },
+    {
+      "date": "Jun 00",
+      "opponent": "Lou Savarese",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hampden Park, Glasgow"
+    },
+    {
+      "date": "Jan 00",
+      "opponent": "Julius Francis",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "M.E.N. Arena, Manchester"
+    },
+    {
+      "date": "Oct 99",
+      "opponent": "Orlin Norris",
+      "result": "N",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Jan 99",
+      "opponent": "Frans Botha",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Jun 97",
+      "opponent": "Evander Holyfield",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Nov 96",
+      "opponent": "Evander Holyfield",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Sep 96",
+      "opponent": "Bruce Seldon",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Mar 96",
+      "opponent": "Frank Bruno",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Dec 95",
+      "opponent": "Buster Mathis Jr",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Core States Spectrum, Philadelphia"
+    },
+    {
+      "date": "Aug 95",
+      "opponent": "Peter McNeeley",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Jun 91",
+      "opponent": "Donovan Ruddock",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mirage Hotel & Casino, Las Vegas"
+    },
+    {
+      "date": "Mar 91",
+      "opponent": "Donovan Ruddock",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mirage Hotel & Casino, Las Vegas"
+    },
+    {
+      "date": "Dec 90",
+      "opponent": "Alex Stewart",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Convention Center, Atlantic City"
+    },
+    {
+      "date": "Jun 90",
+      "opponent": "Henry Tillman",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Caesars Palace, Las Vegas"
+    },
+    {
+      "date": "Feb 90",
+      "opponent": "James Douglas",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Tokyo Dome"
+    },
+    {
+      "date": "Jul 89",
+      "opponent": "Carl Williams",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Convention Center, Atlantic City"
+    },
+    {
+      "date": "Feb 89",
+      "opponent": "Frank Bruno",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Las Vegas Hilton, Hilton Center, Las Vegas"
+    },
+    {
+      "date": "Jun 88",
+      "opponent": "Michael Spinks",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Convention Hall, Atlantic City"
+    },
+    {
+      "date": "Mar 88",
+      "opponent": "Tony Tubbs",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Tokyo Dome"
+    },
+    {
+      "date": "Jan 88",
+      "opponent": "Larry Holmes",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Convention Center, Atlantic City"
+    },
+    {
+      "date": "Oct 87",
+      "opponent": "Tyrell Biggs",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Convention Hall, Atlantic City"
+    },
+    {
+      "date": "Aug 87",
+      "opponent": "Tony Tucker",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Las Vegas Hilton, Hilton Center, Las Vegas"
+    },
+    {
+      "date": "May 87",
+      "opponent": "Pinklon Thomas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Las Vegas Hilton, Outdoor Arena, Las Vegas"
+    },
+    {
+      "date": "Mar 87",
+      "opponent": "James Smith",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Las Vegas Hilton, Outdoor Arena, Las Vegas"
+    },
+    {
+      "date": "Nov 86",
+      "opponent": "Trevor Berbick",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hilton Hotel, Las Vegas"
+    },
+    {
+      "date": "Sep 86",
+      "opponent": "Alfonzo Ratliff",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Las Vegas Hilton, Hilton Center, Las Vegas"
+    },
+    {
+      "date": "Aug 86",
+      "opponent": "Jose Ribalta",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Trump Plaza Hotel, Atlantic City"
+    },
+    {
+      "date": "Jul 86",
+      "opponent": "Marvis Frazier",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Civic Center, Glens Falls"
+    },
+    {
+      "date": "Jul 86",
+      "opponent": "Lorenzo Boyd",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Stevensville Hotel, Swan Lake"
+    },
+    {
+      "date": "Jun 86",
+      "opponent": "William Hosea",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Houston Field House, Troy"
+    },
+    {
+      "date": "Jun 86",
+      "opponent": "Reggie Gross",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "May 86",
+      "opponent": "Mitch Green",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "May 86",
+      "opponent": "James Tillis",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Civic Center, Glens Falls"
+    },
+    {
+      "date": "Mar 86",
+      "opponent": "Steve Zouski",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Nassau Coliseum, Uniondale"
+    },
+    {
+      "date": "Feb 86",
+      "opponent": "Jesse Ferguson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Rensselaer Polytechnic Institute, Troy"
+    },
+    {
+      "date": "Jan 86",
+      "opponent": "Mike Jameson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Trump Plaza Hotel, Atlantic City"
+    },
+    {
+      "date": "Jan 86",
+      "opponent": "David Jaco",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Empire State Plaza Convention Center, Albany"
+    },
+    {
+      "date": "Dec 85",
+      "opponent": "Mark Young",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Latham Coliseum, Latham"
+    },
+    {
+      "date": "Dec 85",
+      "opponent": "Sammy Scaff",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Felt Forum, New York"
+    },
+    {
+      "date": "Nov 85",
+      "opponent": "Conroy Nelson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Latham Coliseum, Latham"
+    },
+    {
+      "date": "Nov 85",
+      "opponent": "Eddie Richardson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Ramada-Houston Hotel, Houston"
+    },
+    {
+      "date": "Nov 85",
+      "opponent": "Sterling Benjamin",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Latham Coliseum, Latham"
+    },
+    {
+      "date": "Oct 85",
+      "opponent": "Robert Colay",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Atlantis Hotel & Casino, Atlantic City"
+    },
+    {
+      "date": "Oct 85",
+      "opponent": "Donnie Long",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Trump Casino Hotel, Atlantic City"
+    },
+    {
+      "date": "Sep 85",
+      "opponent": "Michael Johnson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Atlantis Hotel & Casino, Atlantic City"
+    },
+    {
+      "date": "Aug 85",
+      "opponent": "Lorenzo Canady",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Resorts International, Atlantic City"
+    },
+    {
+      "date": "Jul 85",
+      "opponent": "Larry Sims",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mid-Hudson Civic Center, Poughkeepsie"
+    },
+    {
+      "date": "Jul 85",
+      "opponent": "John Alderson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Trump Casino Hotel, Atlantic City"
+    },
+    {
+      "date": "Jun 85",
+      "opponent": "Ricardo Spain",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Resorts International, Atlantic City"
+    },
+    {
+      "date": "May 85",
+      "opponent": "Don Halpin",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Empire State Plaza Convention Center, Albany"
+    },
+    {
+      "date": "Apr 85",
+      "opponent": "Trent Singleton",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Empire State Plaza Convention Center, Albany"
+    },
+    {
+      "date": "Mar 85",
+      "opponent": "Hector Merced",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Empire State Plaza Convention Center, Albany"
+    }
+  ]
+}

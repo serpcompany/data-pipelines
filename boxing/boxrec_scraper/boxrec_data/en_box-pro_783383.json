@@ -1,0 +1,195 @@
+{
+  "boxrec_id": "783383",
+  "name": "Hector Luis Garcia",
+  "birth_name": "Hector Luis Garc\u00eda Mora",
+  "alias": "El Androide",
+  "birth_date": null,
+  "birth_place": "San Juan de la Maguana, Dominican Republic",
+  "nationality": "Dominican Republic",
+  "stance": "southpaw",
+  "height": "5\u2032 9\u2033 / 175cm",
+  "reach": "67\u2033 / 170cm",
+  "record": {
+    "wins": 16,
+    "losses": 2,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 18
+  },
+  "division": "super feather",
+  "residence": "Las Vegas, Nevada, USA",
+  "status": "inactive",
+  "career": "2016-2023",
+  "debut": "2016-12-16",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Nov 23",
+      "opponent": "Lamont Roach",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Michelob Ultra Arena, Las Vegas"
+    },
+    {
+      "date": "Jan 23",
+      "opponent": "Gervonta Davis",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Capital One Arena, Washington"
+    },
+    {
+      "date": "Aug 22",
+      "opponent": "Roger Gutierrez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Seminole Hard Rock Hotel and Casino, Hollywood"
+    },
+    {
+      "date": "Feb 22",
+      "opponent": "Chris Colbert",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Cosmopolitan of Las Vegas, Las Vegas"
+    },
+    {
+      "date": "Dec 21",
+      "opponent": "Isaac Avelar",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Armory, Minneapolis"
+    },
+    {
+      "date": "Jul 21",
+      "opponent": "Miguel Moreno Gonzalez*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Pabellon de Boleibol, Santo Domingo"
+    },
+    {
+      "date": "Dec 20",
+      "opponent": "Marco Acevedo",
+      "result": "N",
+      "method": null,
+      "rounds": null,
+      "venue": "Hotel Catalonia Malecon Center, Santo Domingo"
+    },
+    {
+      "date": "Jul 19",
+      "opponent": "Anvar Yunusov",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Coliseo Carlos 'Teo' Cruz, Santo Domingo"
+    },
+    {
+      "date": "Apr 19",
+      "opponent": "Ronal Ron*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Club el Millon, Santo Domingo"
+    },
+    {
+      "date": "Mar 19",
+      "opponent": "Charlie Serrano",
+      "result": "N",
+      "method": null,
+      "rounds": null,
+      "venue": "USF Sundome, Tampa"
+    },
+    {
+      "date": "Nov 18",
+      "opponent": "Robin Zamora",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hotel Jaragua, Santo Domingo"
+    },
+    {
+      "date": "Aug 18",
+      "opponent": "Leonel Lugo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Polideportivo Maria Auxiliadora, Santo Domingo"
+    },
+    {
+      "date": "Jul 18",
+      "opponent": "Antoni Armas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hotel Jaragua, Santo Domingo"
+    },
+    {
+      "date": "Jun 18",
+      "opponent": "Rafael Hernandez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Club el Millon, Santo Domingo"
+    },
+    {
+      "date": "Feb 18",
+      "opponent": "Jose Luis Graterol",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Club Mauricio Baez, Santo Domingo"
+    },
+    {
+      "date": "Dec 17",
+      "opponent": "Manuel Gonzalez Garcia",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Los Prados Social Club, Santo Domingo"
+    },
+    {
+      "date": "Sep 17",
+      "opponent": "Alfonso Perez",
+      "result": "N",
+      "method": null,
+      "rounds": null,
+      "venue": "Hotel Jaragua, Santo Domingo"
+    },
+    {
+      "date": "Jul 17",
+      "opponent": "Maikol Beaumont",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hotel Jaragua, Santo Domingo"
+    },
+    {
+      "date": "Jun 17",
+      "opponent": "Miguel Encarnacion",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hotel Jaragua, Santo Domingo"
+    },
+    {
+      "date": "Feb 17",
+      "opponent": "Robinson Garcia",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Maunoloa Night Club y Casino, Santo Domingo"
+    },
+    {
+      "date": "Dec 16",
+      "opponent": "Marlembron Acuna",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Maunoloa Night Club y Casino, Santo Domingo"
+    }
+  ]
+}

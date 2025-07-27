@@ -1,0 +1,35 @@
+{
+  "boxrec_id": "896698",
+  "name": "Logan Paul",
+  "birth_name": "Logan Alexander Paul",
+  "alias": null,
+  "birth_date": null,
+  "birth_place": "Westlake, Ohio, USA",
+  "nationality": "USA",
+  "stance": "orthodox",
+  "height": "6\u2032 2\u2033 / 188cm",
+  "reach": "76\u2033 / 193cm",
+  "record": {
+    "wins": 0,
+    "losses": 1,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 1
+  },
+  "division": "cruiser",
+  "residence": "Dorado, Puerto Rico",
+  "status": "inactive",
+  "career": "2019-2019",
+  "debut": "2019-11-09",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Nov 19",
+      "opponent": "Olajide William Olatunji",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Staples Center, Los Angeles"
+    }
+  ]
+}

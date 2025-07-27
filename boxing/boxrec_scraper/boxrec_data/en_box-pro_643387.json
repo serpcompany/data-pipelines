@@ -1,0 +1,275 @@
+{
+  "boxrec_id": "643387",
+  "name": "Gervonta Davis",
+  "birth_name": null,
+  "alias": "Tank",
+  "birth_date": null,
+  "birth_place": "Baltimore, Maryland, USA",
+  "nationality": "USA",
+  "stance": "southpaw",
+  "height": "5\u2032 5\u00bd\u2033 / 166cm",
+  "reach": "67\u00bd\u2033 / 171cm",
+  "record": {
+    "wins": 30,
+    "losses": 0,
+    "draws": 1,
+    "kos": 0,
+    "total_fights": 31
+  },
+  "division": "light",
+  "residence": "Baltimore, Maryland, USA",
+  "status": null,
+  "career": "2013-2025",
+  "debut": "2013-02-22",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Mar 25",
+      "opponent": "Lamont Roach",
+      "result": "D",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Jun 24",
+      "opponent": "Frank Martin",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "Apr 23",
+      "opponent": "Ryan Garcia",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "Jan 23",
+      "opponent": "Hector Luis Garcia",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Capital One Arena, Washington"
+    },
+    {
+      "date": "May 22",
+      "opponent": "Rolando Romero",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Dec 21",
+      "opponent": "Isaac Cruz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Staples Center, Los Angeles"
+    },
+    {
+      "date": "Jun 21",
+      "opponent": "Mario Barrios",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "State Farm Arena, Atlanta"
+    },
+    {
+      "date": "Oct 20",
+      "opponent": "Leo Santa Cruz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Alamodome, San Antonio"
+    },
+    {
+      "date": "Dec 19",
+      "opponent": "Yuriorkis Gamboa",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "State Farm Arena, Atlanta"
+    },
+    {
+      "date": "Jul 19",
+      "opponent": "Ricardo Nunez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Royal Farms Arena, Baltimore"
+    },
+    {
+      "date": "Feb 19",
+      "opponent": "Hugo Ruiz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Dignity Health Sports Park, Carson"
+    },
+    {
+      "date": "Apr 18",
+      "opponent": "Jesus Marcelo Andres Cuellar",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Aug 17",
+      "opponent": "Francisco Fonseca*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "May 17",
+      "opponent": "Liam Walsh",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Copper Box Arena, Queen Elizabeth Olympic Park, Hackney Wick"
+    },
+    {
+      "date": "Jan 17",
+      "opponent": "Jose Pedraza",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Jun 16",
+      "opponent": "Mario Antonio Macias",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Seminole Hard Rock Hotel and Casino, Hollywood"
+    },
+    {
+      "date": "Apr 16",
+      "opponent": "Guillermo Avila Godinez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "DC Armory, Washington"
+    },
+    {
+      "date": "Dec 15",
+      "opponent": "Luis Sanchez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Palms Casino Resort, Las Vegas"
+    },
+    {
+      "date": "Oct 15",
+      "opponent": "Cristobal Cruz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Venue at UCF, Orlando"
+    },
+    {
+      "date": "Sep 15",
+      "opponent": "Recky Dulay",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "May 15",
+      "opponent": "Alberto Mora",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Claridge Hotel & Casino, Atlantic City"
+    },
+    {
+      "date": "Feb 15",
+      "opponent": "Israel Suarez Olmeda",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "CONSOL Energy Center, Pittsburgh"
+    },
+    {
+      "date": "Oct 14",
+      "opponent": "German Ivan Meraz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Beau Rivage Resort & Casino, Biloxi"
+    },
+    {
+      "date": "Aug 14",
+      "opponent": "Hector Lopez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Little Creek Casino Resort, Shelton"
+    },
+    {
+      "date": "May 14",
+      "opponent": "Joshua Arocho",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Foxwoods Resort, Mashantucket"
+    },
+    {
+      "date": "Dec 13",
+      "opponent": "James Franks",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Walter E. Washington Convention Center, Washington"
+    },
+    {
+      "date": "Oct 13",
+      "opponent": "Eric Jamar Goodall",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Steel Stacks Arts Quest Center, Bethlehem"
+    },
+    {
+      "date": "Jul 13",
+      "opponent": "Rafael Casias",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Coppin State University, Baltimore"
+    },
+    {
+      "date": "Jun 13",
+      "opponent": "Jonathan Gears",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "EchoStage Lounge, Washington"
+    },
+    {
+      "date": "Apr 13",
+      "opponent": "Jacob Ninow",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Show Place Arena, Upper Marlboro"
+    },
+    {
+      "date": "Feb 13",
+      "opponent": "Desi Williams",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "DC Armory, Washington"
+    }
+  ]
+}

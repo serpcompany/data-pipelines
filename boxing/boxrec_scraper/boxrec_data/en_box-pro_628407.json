@@ -1,0 +1,275 @@
+{
+  "boxrec_id": "628407",
+  "name": "Naoya Inoue",
+  "birth_name": "\u4e95\u4e0a\u5c1a\u5f25",
+  "alias": "Monster",
+  "birth_date": null,
+  "birth_place": "Zama, Kanagawa, Japan",
+  "nationality": "Japan",
+  "stance": "orthodox",
+  "height": "5\u2032 5\u2033 / 165cm",
+  "reach": "67\u00bd\u2033 / 171cm",
+  "record": {
+    "wins": 30,
+    "losses": 0,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 30
+  },
+  "division": "super bantam",
+  "residence": "Yokohama, Kanagawa, Japan",
+  "status": null,
+  "career": "2012-2025",
+  "debut": "2012-10-02",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Sep 25",
+      "opponent": "Murodjon Akhmadaliev",
+      "result": "V",
+      "method": null,
+      "rounds": null,
+      "venue": "IG Arena, Nagoya"
+    },
+    {
+      "date": "May 25",
+      "opponent": "Ramon Cardenas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "Jan 25",
+      "opponent": "Ye Joon Kim",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Ariake Arena, Koto-Ku"
+    },
+    {
+      "date": "Sep 24",
+      "opponent": "TJ Doheny",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Ariake Arena, Koto-Ku"
+    },
+    {
+      "date": "May 24",
+      "opponent": "Luis Nery",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Tokyo Dome"
+    },
+    {
+      "date": "Dec 23",
+      "opponent": "Marlon Tapales",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Ariake Arena, Koto-Ku"
+    },
+    {
+      "date": "Jul 23",
+      "opponent": "Stephen Fulton",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Ariake Arena, Koto-Ku"
+    },
+    {
+      "date": "Dec 22",
+      "opponent": "Paul Butler",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Ariake Arena, Koto-Ku"
+    },
+    {
+      "date": "Jun 22",
+      "opponent": "Nonito Donaire",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Super Arena, Saitama"
+    },
+    {
+      "date": "Dec 21",
+      "opponent": "Aran Dipaen",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Kokugikan"
+    },
+    {
+      "date": "Jun 21",
+      "opponent": "Michael Dasmarinas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Virgin Hotels Las Vegas, Las Vegas"
+    },
+    {
+      "date": "Oct 20",
+      "opponent": "Jason Moloney",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Bubble, MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Nov 19",
+      "opponent": "Nonito Donaire",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Super Arena, Saitama"
+    },
+    {
+      "date": "May 19",
+      "opponent": "Emmanuel Rodriguez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The SSE Hydro, Glasgow"
+    },
+    {
+      "date": "Oct 18",
+      "opponent": "Juan Carlos Payano",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Arena, Yokohama"
+    },
+    {
+      "date": "May 18",
+      "opponent": "Jamie McDonnell",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Ota-City General Gymnasium"
+    },
+    {
+      "date": "Dec 17",
+      "opponent": "Yoan Boyeaux",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Bunka Gym, Yokohama"
+    },
+    {
+      "date": "Sep 17",
+      "opponent": "Antonio Nieves",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "StubHub Center, Carson"
+    },
+    {
+      "date": "May 17",
+      "opponent": "Ricardo Rodriguez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Ariake Colosseum"
+    },
+    {
+      "date": "Dec 16",
+      "opponent": "Kohei Kono",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Ariake Colosseum"
+    },
+    {
+      "date": "Sep 16",
+      "opponent": "Karoon Jarupianlerd",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sky Arena, Zama"
+    },
+    {
+      "date": "May 16",
+      "opponent": "David Carmona",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Ariake Colosseum"
+    },
+    {
+      "date": "Dec 15",
+      "opponent": "Warlito Parrenas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Ariake Colosseum"
+    },
+    {
+      "date": "Dec 14",
+      "opponent": "Omar Andres Narvaez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Metropolitan Gym"
+    },
+    {
+      "date": "Sep 14",
+      "opponent": "Wittawas Basapean",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Yoyogi #2 Gymnasium"
+    },
+    {
+      "date": "Apr 14",
+      "opponent": "Adrian Hernandez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Ota-City General Gymnasium"
+    },
+    {
+      "date": "Dec 13",
+      "opponent": "Jerson Mancio",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Kokugikan"
+    },
+    {
+      "date": "Aug 13",
+      "opponent": "Ryoichi Taguchi",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sky Arena, Zama"
+    },
+    {
+      "date": "Apr 13",
+      "opponent": "Yuki Sano",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Korakuen Hall"
+    },
+    {
+      "date": "Jan 13",
+      "opponent": "Bunnam Thammakhun",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Korakuen Hall"
+    },
+    {
+      "date": "Oct 12",
+      "opponent": "Crison Omayao",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Korakuen Hall"
+    }
+  ]
+}

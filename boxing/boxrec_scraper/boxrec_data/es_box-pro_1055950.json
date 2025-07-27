@@ -1,0 +1,147 @@
+{
+  "boxrec_id": "1055950",
+  "name": "Emiliano Vargas",
+  "birth_name": "Emiliano Fernando Vargas",
+  "alias": "El General",
+  "birth_date": null,
+  "birth_place": "Oxnard, California, Estados Unidos",
+  "nationality": "Estados Unidos",
+  "stance": "orthodox",
+  "height": "5\u2032 9\u2033 / 175cm",
+  "reach": "72\u2033 / 183cm",
+  "record": {
+    "wins": 15,
+    "losses": 0,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 15
+  },
+  "division": "superligero",
+  "residence": "Las Vegas, Nevada, Estados Unidos",
+  "status": null,
+  "career": "2022-2025",
+  "debut": "2022-05-14",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "2025-07-26",
+      "opponent": "Alexander Espinoza",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "May 25",
+      "opponent": "Juan Leon",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "Mar 25",
+      "opponent": "Giovannie Gonzalez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Fontainebleau Las Vegas, Las Vegas"
+    },
+    {
+      "date": "Sep 24",
+      "opponent": "Larry Fryers",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Desert Diamond Arena, Glendale"
+    },
+    {
+      "date": "Jun 24",
+      "opponent": "Jose Zaragoza",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "James L. Knight Center, Miami Beach"
+    },
+    {
+      "date": "May 24",
+      "opponent": "Angel Varela Urena",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Pechanga Arena, San Diego"
+    },
+    {
+      "date": "Mar 24",
+      "opponent": "Nelson Hampton",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Desert Diamond Arena, Glendale"
+    },
+    {
+      "date": "Nov 23",
+      "opponent": "Brandon Mendoza",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "Sep 23",
+      "opponent": "Alejandro Guardado",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "American Bank Center, Corpus Christi"
+    },
+    {
+      "date": "Aug 23",
+      "opponent": "Jorge Luis Marquez Alvarado",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Desert Diamond Arena, Glendale"
+    },
+    {
+      "date": "May 23",
+      "opponent": "Rafael Jasso",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Apr 23",
+      "opponent": "Edgar Uvalle",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hard Rock Hotel & Casino, Tulsa"
+    },
+    {
+      "date": "Feb 23",
+      "opponent": "Francisco Duque",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Desert Diamond Arena, Glendale"
+    },
+    {
+      "date": "Nov 22",
+      "opponent": "Julio Martinez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Palms Casino Resort, Las Vegas"
+    },
+    {
+      "date": "May 22",
+      "opponent": "Mark Salgado",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Forum, Inglewood"
+    }
+  ]
+}

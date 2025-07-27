@@ -1,0 +1,219 @@
+{
+  "boxrec_id": "790719",
+  "name": "Shakur Stevenson",
+  "birth_name": "Ash-Shakur Nafi-Shahid Stevenson",
+  "alias": null,
+  "birth_date": null,
+  "birth_place": "Newark, New Jersey, USA",
+  "nationality": "USA",
+  "stance": "southpaw",
+  "height": "5\u2032 8\u2033 / 173cm",
+  "reach": "68\u2033 / 173cm",
+  "record": {
+    "wins": 24,
+    "losses": 0,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 24
+  },
+  "division": "light",
+  "residence": "Houston, Texas, USA",
+  "status": null,
+  "career": "2017-2025",
+  "debut": "2017-04-22",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "2025-07-12",
+      "opponent": "William Zepeda Segura",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Louis Armstrong Stadium, Queens"
+    },
+    {
+      "date": "Feb 25",
+      "opponent": "Josh Padley",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Venue Riyadh Season, Riyadh"
+    },
+    {
+      "date": "Jul 24",
+      "opponent": "Artem Harutyunyan",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Prudential Center, Newark"
+    },
+    {
+      "date": "Nov 23",
+      "opponent": "Edwin De Los Santos",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "Apr 23",
+      "opponent": "Shuichiro Yoshino",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Prudential Center, Newark"
+    },
+    {
+      "date": "Sep 22",
+      "opponent": "Robson Conceicao",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Prudential Center, Newark"
+    },
+    {
+      "date": "Apr 22",
+      "opponent": "Oscar Valdez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "Oct 21",
+      "opponent": "Jamel Herring",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "State Farm Arena, Atlanta"
+    },
+    {
+      "date": "Jun 21",
+      "opponent": "Jeremia Nakathila",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Virgin Hotels Las Vegas, Las Vegas"
+    },
+    {
+      "date": "Dec 20",
+      "opponent": "Toka Kahn Clary",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Bubble, MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Jun 20",
+      "opponent": "Felix Caraballo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Bubble, MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Oct 19",
+      "opponent": "Joet Gonzalez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Reno-Sparks Convention Center, Reno"
+    },
+    {
+      "date": "Jul 19",
+      "opponent": "Alberto Guevara",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Prudential Center, Newark"
+    },
+    {
+      "date": "Apr 19",
+      "opponent": "Christopher Diaz-Velez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Jan 19",
+      "opponent": "Jessie Cris Rosales",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Turning Stone Resort & Casino, Verona"
+    },
+    {
+      "date": "Oct 18",
+      "opponent": "Viorel Simion",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "CHI Health Center, Omaha"
+    },
+    {
+      "date": "Aug 18",
+      "opponent": "Carlos Ruiz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Ocean Resort Casino, Atlantic City"
+    },
+    {
+      "date": "Jun 18",
+      "opponent": "Aelio Mesquita",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Apr 18",
+      "opponent": "Roxberg Patrick Riley",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Liacouras Center, Philadelphia"
+    },
+    {
+      "date": "Feb 18",
+      "opponent": "Juan Tapia",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Grand Sierra Resort and Casino, Grand Theatre, Reno"
+    },
+    {
+      "date": "Dec 17",
+      "opponent": "Oscar Mendoza",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Aug 17",
+      "opponent": "David Michel Paz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Pinnacle Bank Arena, Lincoln"
+    },
+    {
+      "date": "May 17",
+      "opponent": "Carlos Gaston Suarez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Apr 17",
+      "opponent": "Edgar Brito",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "StubHub Center, Carson"
+    }
+  ]
+}

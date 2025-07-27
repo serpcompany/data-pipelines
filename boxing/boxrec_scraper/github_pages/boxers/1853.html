@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lennox Lewis - BoxRec Data</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .header {
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        .boxer-id {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .record {
+            display: flex;
+            gap: 30px;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .record-item {
+            text-align: center;
+        }
+        .record-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #007bff;
+            line-height: 1;
+        }
+        .record-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .detail-item {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        .detail-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .detail-value {
+            font-weight: 600;
+            color: #333;
+        }
+        .bouts {
+            margin-top: 40px;
+        }
+        .bouts h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .bout {
+            display: grid;
+            grid-template-columns: 100px 1fr 2fr 60px;
+            gap: 15px;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+        .bout:hover {
+            background: #f8f9fa;
+        }
+        .bout-date {
+            font-weight: 600;
+            color: #555;
+        }
+        .bout-opponent {
+            font-weight: 500;
+        }
+        .bout-venue {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .bout-result {
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .result-W {
+            background: #d4edda;
+            color: #155724;
+        }
+        .result-L {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .result-D {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .nav {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+        .nav a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Lennox Lewis</h1>
+            <div class="boxer-id">BoxRec ID: #1853</div>
+        </div>
+        
+        <div class="record">
+            <div class="record-item">
+                <div class="record-value">41</div>
+                <div class="record-label">Wins</div>
+            </div>
+            <div class="record-item">
+                <div class="record-value">2</div>
+                <div class="record-label">Losses</div>
+            </div>
+            <div class="record-item">
+                <div class="record-value">1</div>
+                <div class="record-label">Draws</div>
+            </div>
+            <div class="record-item">
+                <div class="record-value">0</div>
+                <div class="record-label">KOs</div>
+            </div>
+        </div>
+        
+        <div class="details">
+            <div class="detail-item">
+                <div class="detail-label">Nationality</div>
+                <div class="detail-value">United Kingdom</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Division</div>
+                <div class="detail-value">heavy</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Stance</div>
+                <div class="detail-value">orthodox</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Height</div>
+                <div class="detail-value">6′ 5″ / 196cm</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Reach</div>
+                <div class="detail-value">84″ / 213cm</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Status</div>
+                <div class="detail-value">inactive</div>
+            </div>
+        </div>
+        
+        <div class="bouts">
+            <h2>Recent Fights</h2>
+            
+        <div class="bout">
+            <div class="bout-date">Jun 03</div>
+            <div class="bout-opponent">Vitali Klitschko</div>
+            <div class="bout-venue">Staples Center, Los Angeles</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Jun 02</div>
+            <div class="bout-opponent">Mike Tyson</div>
+            <div class="bout-venue">The Pyramid, Memphis</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Nov 01</div>
+            <div class="bout-opponent">Hasim Rahman</div>
+            <div class="bout-venue">Mandalay Bay Resort & Casino, Las Vegas</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Apr 01</div>
+            <div class="bout-opponent">Hasim Rahman</div>
+            <div class="bout-venue">Carnival City, Brakpan</div>
+            <div class="bout-result result-L">L</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Nov 00</div>
+            <div class="bout-opponent">David Tua</div>
+            <div class="bout-venue">Mandalay Bay Resort & Casino, Las Vegas</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Jul 00</div>
+            <div class="bout-opponent">Frans Botha</div>
+            <div class="bout-venue">London Arena, Millwall</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Apr 00</div>
+            <div class="bout-opponent">Michael Grant</div>
+            <div class="bout-venue">Madison Square Garden, New York</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Nov 99</div>
+            <div class="bout-opponent">Evander Holyfield</div>
+            <div class="bout-venue">Thomas & Mack Center, Las Vegas</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Mar 99</div>
+            <div class="bout-opponent">Evander Holyfield</div>
+            <div class="bout-venue">Madison Square Garden, New York</div>
+            <div class="bout-result result-D">D</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Sep 98</div>
+            <div class="bout-opponent">Zeljko Mavrovic</div>
+            <div class="bout-venue">Mohegan Sun Casino, Uncasville</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Mar 98</div>
+            <div class="bout-opponent">Shannon Briggs</div>
+            <div class="bout-venue">Boardwalk Convention Center, Atlantic City</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Oct 97</div>
+            <div class="bout-opponent">Andrew Golota</div>
+            <div class="bout-venue">Caesars Hotel & Casino, Atlantic City</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Jul 97</div>
+            <div class="bout-opponent">Henry Akinwande</div>
+            <div class="bout-venue">Caesars Tahoe, Stateline</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Feb 97</div>
+            <div class="bout-opponent">Oliver McCall</div>
+            <div class="bout-venue">Hilton Hotel, Las Vegas</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">May 96</div>
+            <div class="bout-opponent">Ray Mercer</div>
+            <div class="bout-venue">Madison Square Garden, New York</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Oct 95</div>
+            <div class="bout-opponent">Tommy Morrison</div>
+            <div class="bout-venue">Convention Center, Atlantic City</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Jul 95</div>
+            <div class="bout-opponent">Justin Fortune</div>
+            <div class="bout-venue">The Point, Dublin</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">May 95</div>
+            <div class="bout-opponent">Lionel Butler</div>
+            <div class="bout-venue">Arco Arena, Sacramento</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">Sep 94</div>
+            <div class="bout-opponent">Oliver McCall</div>
+            <div class="bout-venue">Wembley Arena, Wembley</div>
+            <div class="bout-result result-L">L</div>
+        </div>
+        
+        <div class="bout">
+            <div class="bout-date">May 94</div>
+            <div class="bout-opponent">Phil Jackson</div>
+            <div class="bout-venue">Boardwalk Convention Center, Atlantic City</div>
+            <div class="bout-result result-W">W</div>
+        </div>
+        
+        </div>
+        
+        <div class="nav">
+            <a href="index.html">← Back to Index</a>
+        </div>
+    </div>
+</body>
+</html>

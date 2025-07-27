@@ -1,0 +1,307 @@
+{
+  "boxrec_id": "569964",
+  "name": "Dillian Whyte",
+  "birth_name": null,
+  "alias": "'The Body Snatcher'",
+  "birth_date": null,
+  "birth_place": "Port Antonio, Jamaica",
+  "nationality": "United Kingdom",
+  "stance": "orthodox",
+  "height": "6\u2032 4\u2033 / 193cm",
+  "reach": "78\u2033 / 198cm",
+  "record": {
+    "wins": 31,
+    "losses": 3,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 34
+  },
+  "division": "heavy",
+  "residence": "Brixton, London, United Kingdom",
+  "status": null,
+  "career": "2011-2024",
+  "debut": "2011-05-13",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "2025-08-16",
+      "opponent": "Moses Itauma",
+      "result": "V",
+      "method": null,
+      "rounds": null,
+      "venue": "Riyadh"
+    },
+    {
+      "date": "Dec 24",
+      "opponent": "Ebenezer Tetteh",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Europa Point Sports Complex, Gibraltar"
+    },
+    {
+      "date": "Mar 24",
+      "opponent": "Christian Hammer",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Royal Theatre, Castlebar"
+    },
+    {
+      "date": "Nov 22",
+      "opponent": "Jermaine Franklin Jr",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Arena, Wembley"
+    },
+    {
+      "date": "Apr 22",
+      "opponent": "Tyson Fury",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Stadium, Wembley"
+    },
+    {
+      "date": "Mar 21",
+      "opponent": "Alexander Povetkin",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Europa Point Sports Complex, Gibraltar"
+    },
+    {
+      "date": "Aug 20",
+      "opponent": "Alexander Povetkin",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Matchroom HQ Garden, Brentwood"
+    },
+    {
+      "date": "Dec 19",
+      "opponent": "Mariusz Wach",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Diriyah Arena, Diriyah"
+    },
+    {
+      "date": "Jul 19",
+      "opponent": "Oscar Rivas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Dec 18",
+      "opponent": "Derek Chisora",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Jul 18",
+      "opponent": "Joseph Parker",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Mar 18",
+      "opponent": "Lucas Browne",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Oct 17",
+      "opponent": "Robert Helenius",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Principality Stadium, Cardiff"
+    },
+    {
+      "date": "Aug 17",
+      "opponent": "Malcolm Tann",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Pinnacle Bank Arena, Lincoln"
+    },
+    {
+      "date": "Dec 16",
+      "opponent": "Derek Chisora",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Manchester Arena, Manchester"
+    },
+    {
+      "date": "Oct 16",
+      "opponent": "Ian Lewison",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The SSE Hydro, Glasgow"
+    },
+    {
+      "date": "Jul 16",
+      "opponent": "David Allen",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "First Direct Arena, Leeds"
+    },
+    {
+      "date": "Jun 16",
+      "opponent": "Ivica Bacurin",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Dec 15",
+      "opponent": "Anthony Joshua",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Sep 15",
+      "opponent": "Brian Minto",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Aug 15",
+      "opponent": "Irineu Beato Costa Junior",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Craven Park Stadium, Hull"
+    },
+    {
+      "date": "Feb 15",
+      "opponent": "Beka Lobjanidze",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The SSE Arena (Odyssey Arena), Belfast"
+    },
+    {
+      "date": "Feb 15",
+      "opponent": "Marcelo Nascimento",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Camden Centre, Kings Cross"
+    },
+    {
+      "date": "Dec 14",
+      "opponent": "Kamil Sokolowski*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "City Hall, Hull"
+    },
+    {
+      "date": "Nov 14",
+      "opponent": "Tomas Mrazek",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Camden Centre, Kings Cross"
+    },
+    {
+      "date": "Nov 14",
+      "opponent": "Ante Verunica",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Camden Centre, Kings Cross"
+    },
+    {
+      "date": "Oct 12",
+      "opponent": "Sandor Balogh",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Glow, Bluewater, Greenhithe"
+    },
+    {
+      "date": "Sep 12",
+      "opponent": "Mike Holden",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "York Hall, Bethnal Green"
+    },
+    {
+      "date": "Jul 12",
+      "opponent": "Gabor Farkas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "York Hall, Bethnal Green"
+    },
+    {
+      "date": "May 12",
+      "opponent": "Zurab Noniashvili",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Aintree Equestrian Centre, Liverpool"
+    },
+    {
+      "date": "Mar 12",
+      "opponent": "Kristian Kirilov",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Troxy, Limehouse"
+    },
+    {
+      "date": "Jan 12",
+      "opponent": "Hastings Rasani",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Olympia, Liverpool"
+    },
+    {
+      "date": "Dec 11",
+      "opponent": "Toni Visic",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "York Hall, Bethnal Green"
+    },
+    {
+      "date": "Sep 11",
+      "opponent": "Remigijus Ziausys",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Coronet Theatre, Elephant & Castle, Southwark"
+    },
+    {
+      "date": "May 11",
+      "opponent": "Tayar Mehmed",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Medway Park Leisure Centre, Gillingham"
+    }
+  ]
+}

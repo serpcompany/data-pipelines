@@ -1,0 +1,275 @@
+{
+  "boxrec_id": "672259",
+  "name": "David Benavidez",
+  "birth_name": "Anthony David Benavidez",
+  "alias": "The Monster Bandera Roja",
+  "birth_date": null,
+  "birth_place": "Phoenix, Arizona, USA",
+  "nationality": "USA",
+  "stance": "orthodox",
+  "height": "6\u2032 2\u2033 / 188cm",
+  "reach": "74\u00bd\u2033 / 189cm",
+  "record": {
+    "wins": 30,
+    "losses": 0,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 30
+  },
+  "division": "light heavy",
+  "residence": "Las Vegas, Nevada, USA",
+  "status": null,
+  "career": "2013-2025",
+  "debut": "2013-08-17",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Nov 25",
+      "opponent": "Anthony Yarde",
+      "result": "V",
+      "method": null,
+      "rounds": null,
+      "venue": "ANB Arena, Riyadh"
+    },
+    {
+      "date": "Feb 25",
+      "opponent": "David Morrell",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "Jun 24",
+      "opponent": "Oleksandr Gvozdyk",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "Nov 23",
+      "opponent": "Demetrius Andrade",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Michelob Ultra Arena, Las Vegas"
+    },
+    {
+      "date": "Mar 23",
+      "opponent": "Caleb Plant",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "May 22",
+      "opponent": "David Lemieux",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Gila River Arena, Glendale"
+    },
+    {
+      "date": "Nov 21",
+      "opponent": "Kyrone Davis",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Footprint Center, Phoenix"
+    },
+    {
+      "date": "Mar 21",
+      "opponent": "Ronald Ellis",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mohegan Sun Casino, Uncasville"
+    },
+    {
+      "date": "Aug 20",
+      "opponent": "Roamer Alexis Angulo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mohegan Sun Casino, Uncasville"
+    },
+    {
+      "date": "Sep 19",
+      "opponent": "Anthony Dirrell",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Staples Center, Los Angeles"
+    },
+    {
+      "date": "Mar 19",
+      "opponent": "J'Leon Love",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "AT&T Stadium, Arlington"
+    },
+    {
+      "date": "Feb 18",
+      "opponent": "Ronald Gavril",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mandalay Bay Hotel & Casino, Events Center, Las Vegas"
+    },
+    {
+      "date": "Sep 17",
+      "opponent": "Ronald Gavril",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hard Rock Hotel and Casino, Las Vegas"
+    },
+    {
+      "date": "May 17",
+      "opponent": "Rogelio Medina Luna",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Laredo Energy Arena, Laredo"
+    },
+    {
+      "date": "Jan 17",
+      "opponent": "Sherali Mamadjanov",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Aug 16",
+      "opponent": "Denis Douglin",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "2300 Arena, Philadelphia"
+    },
+    {
+      "date": "Jun 16",
+      "opponent": "Francy Ntetu",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Apr 16",
+      "opponent": "Phillip Jackson Benson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "StubHub Center, Carson"
+    },
+    {
+      "date": "Jan 16",
+      "opponent": "Kevin Cobbs",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Club Nokia, Los Angeles"
+    },
+    {
+      "date": "Nov 15",
+      "opponent": "Felipe Romero",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hard Rock Hotel and Casino, Las Vegas"
+    },
+    {
+      "date": "Sep 15",
+      "opponent": "Alberto Gutierrez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "CUM Aguaprieta, Agua Prieta"
+    },
+    {
+      "date": "May 15",
+      "opponent": "Ricardo Campillo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "US Airway Centre, Phoenix"
+    },
+    {
+      "date": "Apr 15",
+      "opponent": "Rollin Williams",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Celebrity Theater, Phoenix"
+    },
+    {
+      "date": "Dec 14",
+      "opponent": "Azamat Umarzoda",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Celebrity Theater, Phoenix"
+    },
+    {
+      "date": "Oct 14",
+      "opponent": "Luis Juan Hernandez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Gimnacio Municipal de Box, Nogales"
+    },
+    {
+      "date": "Aug 14",
+      "opponent": "Jairo Dolores",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Campos Deportivos de la Casa Social Cerveceria Tecate, Tecate"
+    },
+    {
+      "date": "May 14",
+      "opponent": "Erick Revuelta",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Auditorio Municipal, Tijuana"
+    },
+    {
+      "date": "Apr 14",
+      "opponent": "Arturo Martinez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hip\u00f3dromo Caliente, Arena Tecate, Tijuana"
+    },
+    {
+      "date": "Jan 14",
+      "opponent": "Omar Aispuro",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Caliente Racetrack, Tijuana"
+    },
+    {
+      "date": "Dec 13",
+      "opponent": "Edgar Galvan",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Salon Las Pulgas, Tijuana"
+    },
+    {
+      "date": "Aug 13",
+      "opponent": "Erasmo Mendoza",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "El Chamizal, Puerto Penasco"
+    }
+  ]
+}

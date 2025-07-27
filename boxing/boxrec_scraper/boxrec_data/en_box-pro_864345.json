@@ -1,0 +1,115 @@
+{
+  "boxrec_id": "864345",
+  "name": "Ebanie Bridges",
+  "birth_name": null,
+  "alias": null,
+  "birth_date": null,
+  "birth_place": "New South Wales, Australia",
+  "nationality": "Australia",
+  "stance": "orthodox",
+  "height": "5\u2032 1\u2033 / 155cm",
+  "reach": "62\u2033 / 157cm",
+  "record": {
+    "wins": 9,
+    "losses": 2,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 11
+  },
+  "division": "bantam",
+  "residence": "Leeds, Yorkshire, United Kingdom",
+  "status": "inactive",
+  "career": "2019-2023",
+  "debut": "2019-02-08",
+  "sex": "female",
+  "bouts": [
+    {
+      "date": "Dec 23",
+      "opponent": "Miyo Yoshida",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Chase Center, San Francisco"
+    },
+    {
+      "date": "Dec 22",
+      "opponent": "Shannon O'Connell*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "First Direct Arena, Leeds"
+    },
+    {
+      "date": "Mar 22",
+      "opponent": "Maria Cecilia Roman",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "First Direct Arena, Leeds"
+    },
+    {
+      "date": "Sep 21",
+      "opponent": "Mailys Gangloff",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Headingley Rugby League Stadium, Leeds"
+    },
+    {
+      "date": "Aug 21",
+      "opponent": "Bec Connolly",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Matchroom HQ Garden, Brentwood"
+    },
+    {
+      "date": "Apr 21",
+      "opponent": "Shannon Courtenay",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Copper Box Arena, Queen Elizabeth Olympic Park, Hackney Wick"
+    },
+    {
+      "date": "Mar 21",
+      "opponent": "Carol Earl",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Bankstown City Paceway, Condell Park"
+    },
+    {
+      "date": "Feb 20",
+      "opponent": "Crystal Hoy",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Civic Center, Hammond"
+    },
+    {
+      "date": "Nov 19",
+      "opponent": "Kanittha Ninthim",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Brisbane Convention and Exhibition Centre, South Brisbane"
+    },
+    {
+      "date": "Oct 19",
+      "opponent": "Laura Woods",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Club Punchbowl, Punchbowl"
+    },
+    {
+      "date": "Feb 19",
+      "opponent": "Mahiecka Pareno",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hordern Pavilion, Sydney"
+    }
+  ]
+}

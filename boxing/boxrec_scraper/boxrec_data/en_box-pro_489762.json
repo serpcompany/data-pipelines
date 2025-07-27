@@ -1,0 +1,331 @@
+{
+  "boxrec_id": "489762",
+  "name": "Andy Ruiz",
+  "birth_name": "Andres Ponce Ruiz Jr",
+  "alias": "Destroyer",
+  "birth_date": null,
+  "birth_place": "Imperial, California, USA",
+  "nationality": "USA",
+  "stance": "orthodox",
+  "height": "6\u2032 2\u2033 / 188cm",
+  "reach": "74\u2033 / 188cm",
+  "record": {
+    "wins": 35,
+    "losses": 2,
+    "draws": 1,
+    "kos": 0,
+    "total_fights": 38
+  },
+  "division": "heavy",
+  "residence": "Imperial, California, USA",
+  "status": null,
+  "career": "2009-2024",
+  "debut": "2009-03-28",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Aug 24",
+      "opponent": "Jarrell Miller",
+      "result": "D",
+      "method": null,
+      "rounds": null,
+      "venue": "BMO Stadium, Los Angeles"
+    },
+    {
+      "date": "Sep 22",
+      "opponent": "Luis Ortiz*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Crypto.com Arena, Los Angeles"
+    },
+    {
+      "date": "May 21",
+      "opponent": "Chris Arreola",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Dignity Health Sports Park, Carson"
+    },
+    {
+      "date": "Dec 19",
+      "opponent": "Anthony Joshua",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Diriyah Arena, Diriyah"
+    },
+    {
+      "date": "Jun 19",
+      "opponent": "Anthony Joshua",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Apr 19",
+      "opponent": "Alexander Dimitrenko",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Dignity Health Sports Park, Carson"
+    },
+    {
+      "date": "Jul 18",
+      "opponent": "Kevin Johnson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Save Mart Arena, Fresno"
+    },
+    {
+      "date": "Mar 18",
+      "opponent": "Devin Vargas*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "StubHub Center, Carson"
+    },
+    {
+      "date": "Dec 16",
+      "opponent": "Joseph Parker",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Spark Arena, Auckland"
+    },
+    {
+      "date": "Sep 16",
+      "opponent": "Franklin Lawrence",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Tachi Palace Hotel & Casino, Lemoore"
+    },
+    {
+      "date": "Jul 16",
+      "opponent": "Josh Gormley",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Masonic Temple, Detroit"
+    },
+    {
+      "date": "May 16",
+      "opponent": "Ray Austin",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sportsmans Lodge, Studio City, Los Angeles"
+    },
+    {
+      "date": "Oct 15",
+      "opponent": "Raphael Zumbano",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "CenturyLink Center, Omaha"
+    },
+    {
+      "date": "Sep 15",
+      "opponent": "Joell Godfrey",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Tachi Palace Hotel & Casino, Lemoore"
+    },
+    {
+      "date": "Dec 14",
+      "opponent": "Siarhei Liakhovich",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Celebrity Theater, Phoenix"
+    },
+    {
+      "date": "Oct 14",
+      "opponent": "Kenny Lemos",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Selland Arena, Fresno"
+    },
+    {
+      "date": "May 14",
+      "opponent": "Manuel Quezada",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Selland Arena, Fresno"
+    },
+    {
+      "date": "Nov 13",
+      "opponent": "Tor Hamer",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Cotai Arena, Venetian Resort, Macao"
+    },
+    {
+      "date": "Jul 13",
+      "opponent": "Joe Hanks",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Cotai Arena, Venetian Resort, Macao"
+    },
+    {
+      "date": "Jun 13",
+      "opponent": "Carl Davis",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hard Rock Hotel and Casino, The Joint, Las Vegas"
+    },
+    {
+      "date": "Mar 13",
+      "opponent": "Matthew Greer",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Home Depot Center, Carson"
+    },
+    {
+      "date": "Dec 12",
+      "opponent": "Elijah McCall",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Texas Station Casino, Las Vegas"
+    },
+    {
+      "date": "Sep 12",
+      "opponent": "Maurenzo Smith",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hard Rock Hotel and Casino, Las Vegas"
+    },
+    {
+      "date": "Jul 12",
+      "opponent": "Jonte Willis",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Home Depot Center, Carson"
+    },
+    {
+      "date": "Mar 12",
+      "opponent": "Homero Fonseca*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Casino Del Sol, Tucson"
+    },
+    {
+      "date": "Dec 11",
+      "opponent": "Theron Johnson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "WinStar Casino, Thackerville"
+    },
+    {
+      "date": "Sep 11",
+      "opponent": "Ken Frank",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "BlueWater Resort & Casino, Parker"
+    },
+    {
+      "date": "Jul 11",
+      "opponent": "Villi Bloomfield",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Texas Station Casino, Las Vegas"
+    },
+    {
+      "date": "Apr 11",
+      "opponent": "Angel Herrera",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "WinStar Casino, Thackerville"
+    },
+    {
+      "date": "Feb 11",
+      "opponent": "Alvaro Morales",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Palms Casino Resort, Las Vegas"
+    },
+    {
+      "date": "Feb 11",
+      "opponent": "Kelsey Arnold",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Maywood Activity Center, Maywood"
+    },
+    {
+      "date": "Dec 10",
+      "opponent": "Francisco Diaz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Honda Center, Anaheim"
+    },
+    {
+      "date": "Nov 10",
+      "opponent": "Raymond Lopez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "WinStar Casino, Thackerville"
+    },
+    {
+      "date": "Oct 10",
+      "opponent": "Miles Kelly",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Silverton Casino & Lodge, Las Vegas"
+    },
+    {
+      "date": "Mar 10",
+      "opponent": "Luke Vaughn",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Gaylord Hotel, Grapevine"
+    },
+    {
+      "date": "Feb 10",
+      "opponent": "Juan Lopez Alcaraz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Gimnasio de Mexicali, Mexicali"
+    },
+    {
+      "date": "Jun 09",
+      "opponent": "Ross Brantley",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Plaza de Toros Calafia, Mexicali"
+    },
+    {
+      "date": "Mar 09",
+      "opponent": "Miguel Salvador Ramirez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Plaza de Toros, Tijuana"
+    }
+  ]
+}

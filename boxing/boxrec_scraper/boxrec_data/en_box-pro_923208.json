@@ -1,0 +1,139 @@
+{
+  "boxrec_id": "923208",
+  "name": "Nico Ali Walsh",
+  "birth_name": "Nico Ali Walsh",
+  "alias": null,
+  "birth_date": null,
+  "birth_place": "Chicago, Illinois, USA",
+  "nationality": "USA",
+  "stance": "orthodox",
+  "height": "6\u2032 0\u2033 / 183cm",
+  "reach": "74\u2033 / 188cm",
+  "record": {
+    "wins": 11,
+    "losses": 2,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 13
+  },
+  "division": "middle",
+  "residence": "Las Vegas, Nevada, USA",
+  "status": null,
+  "career": "2021-2025",
+  "debut": "2021-08-14",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "May 25",
+      "opponent": "Ebenezer Sowah",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Centre de Conference de Sipopo, Malabo"
+    },
+    {
+      "date": "Feb 25",
+      "opponent": "Juan Carlos Guerra Jr",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Jun 24",
+      "opponent": "Sona Akale",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "James L. Knight Center, Miami Beach"
+    },
+    {
+      "date": "Mar 24",
+      "opponent": "Charles Stanford",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Turning Stone Resort & Casino, Verona"
+    },
+    {
+      "date": "Aug 23",
+      "opponent": "Sona Akale",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Hard Rock Hotel & Casino, Tulsa"
+    },
+    {
+      "date": "May 23",
+      "opponent": "Danny Rosenberger",
+      "result": "N",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Feb 23",
+      "opponent": "Eduardo Ayala",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Desert Diamond Arena, Glendale"
+    },
+    {
+      "date": "Oct 22",
+      "opponent": "Billy Wagner",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Aug 22",
+      "opponent": "Reyes Sanchez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Pechanga Arena, San Diego"
+    },
+    {
+      "date": "Apr 22",
+      "opponent": "Alejandro Ibarra",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "Jan 22",
+      "opponent": "Jeremiah Yeager",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hard Rock Hotel & Casino, Tulsa"
+    },
+    {
+      "date": "Dec 21",
+      "opponent": "Reyes Sanchez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Oct 21",
+      "opponent": "James Westley II",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "State Farm Arena, Atlanta"
+    },
+    {
+      "date": "Aug 21",
+      "opponent": "Jordan Weeks",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hard Rock Hotel & Casino, Tulsa"
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "boxrec_id": "642596",
+  "name": "Prichard Colon",
+  "birth_name": "Prichard Colon Melendez",
+  "alias": "Digget",
+  "birth_date": null,
+  "birth_place": "Maitland, Florida, USA",
+  "nationality": "Puerto Rico",
+  "stance": "orthodox",
+  "height": "6\u2032 0\u2033 / 183cm",
+  "reach": "74\u2033 / 188cm",
+  "record": {
+    "wins": 16,
+    "losses": 1,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 17
+  },
+  "division": "super welter",
+  "residence": "Orocovis, Puerto Rico",
+  "status": "inactive",
+  "career": "2013-2015",
+  "debut": "2013-02-23",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Oct 15",
+      "opponent": "Terrel Williams",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "EagleBank Arena, Fairfax"
+    },
+    {
+      "date": "Sep 15",
+      "opponent": "Vivian Harris",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Ricoh Coliseum, Toronto"
+    },
+    {
+      "date": "Aug 15",
+      "opponent": "Michael Finney",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Apr 15",
+      "opponent": "Daniel Calzada",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Jan 15",
+      "opponent": "Hector Munoz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "2300 Arena, Philadelphia"
+    },
+    {
+      "date": "Sep 14",
+      "opponent": "Christopher Degollado",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hard Rock Hotel and Casino, The Joint, Las Vegas"
+    },
+    {
+      "date": "Aug 14",
+      "opponent": "Lenwood Dozier*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Jun 14",
+      "opponent": "Carlos Garcia Hernandez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Coliseo Ruben Rodriguez, Bayamon"
+    },
+    {
+      "date": "Apr 14",
+      "opponent": "Javier Garcia",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Coliseo Ruben Rodriguez, Bayamon"
+    },
+    {
+      "date": "Mar 14",
+      "opponent": "Shad Howard",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Coliseo Ruben Rodriguez, Bayamon"
+    },
+    {
+      "date": "Jan 14",
+      "opponent": "Jose Vidal Soto",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Gimnasio Manuel Toribio, Jacagua"
+    },
+    {
+      "date": "Jan 14",
+      "opponent": "Victor Moya",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Arena del Masacre, Loma de Cabrera"
+    },
+    {
+      "date": "Dec 13",
+      "opponent": "Jonathan Garcia",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Coliseo Cosme Beitia Salamo, Catano"
+    },
+    {
+      "date": "Dec 13",
+      "opponent": "Juan Santos Rodriguez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Coliseo Pedro Julio Nolasco, La Romana"
+    },
+    {
+      "date": "Nov 13",
+      "opponent": "Jorge Burgos",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Coliseo Pedro Julio Nolasco, La Romana"
+    },
+    {
+      "date": "Mar 13",
+      "opponent": "Patrick Thomas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Bahia Shrine Temple, Orlando"
+    },
+    {
+      "date": "Feb 13",
+      "opponent": "Xavier Lasalle",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Coliseo Cosme Beitia Salamo, Catano"
+    }
+  ]
+}

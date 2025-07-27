@@ -1,0 +1,187 @@
+{
+  "boxrec_id": "745360",
+  "name": "Cherneka Johnson",
+  "birth_name": "Cherneka Johnson",
+  "alias": "Sugar Neekz Johnson",
+  "birth_date": null,
+  "birth_place": "Tauranga, New Zealand",
+  "nationality": "Australia",
+  "stance": "orthodox",
+  "height": null,
+  "reach": null,
+  "record": {
+    "wins": 18,
+    "losses": 2,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 20
+  },
+  "division": "bantam",
+  "residence": "Melbourne, Victoria, Australia",
+  "status": null,
+  "career": "2016-2025",
+  "debut": "2016-04-09",
+  "sex": "female",
+  "bouts": [
+    {
+      "date": "2025-07-11",
+      "opponent": "Shurretta Metcalf",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Mar 25",
+      "opponent": "Nina Hughes",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Qudos Bank Arena, Sydney Olympic Park"
+    },
+    {
+      "date": "May 24",
+      "opponent": "Nina Hughes",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "RAC Arena, Perth"
+    },
+    {
+      "date": "Jun 23",
+      "opponent": "Ellie Scotney",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Arena, Wembley"
+    },
+    {
+      "date": "Oct 22",
+      "opponent": "Susie Ramadan",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Rod Laver Arena, Melbourne"
+    },
+    {
+      "date": "Apr 22",
+      "opponent": "Melissa Esquivel",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Melbourne Convention Centre, Melbourne"
+    },
+    {
+      "date": "Mar 21",
+      "opponent": "Shannon O'Connell*",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Bendigo Stadium, Bendigo"
+    },
+    {
+      "date": "Dec 19",
+      "opponent": "Nurshahidah Roslie",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Brisbane Convention and Exhibition Centre, South Brisbane"
+    },
+    {
+      "date": "Aug 19",
+      "opponent": "Arasa Nimnoi",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Melbourne Pavilion, Flemington"
+    },
+    {
+      "date": "May 19",
+      "opponent": "Kirti",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Star, Sydney, Pyrmont"
+    },
+    {
+      "date": "Jul 18",
+      "opponent": "Siriphon Chanbuala",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Melbourne Pavilion, Flemington"
+    },
+    {
+      "date": "Mar 18",
+      "opponent": "Rungnapha Kaewkrachang",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Melbourne Pavilion, Flemington"
+    },
+    {
+      "date": "Dec 17",
+      "opponent": "Gretel de Paz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Warnambool Stadium, Warrnambool"
+    },
+    {
+      "date": "Oct 17",
+      "opponent": "Febriyanti Lubis",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Function Centre, Melbourne Park"
+    },
+    {
+      "date": "Jun 17",
+      "opponent": "Saowaluk Nareepangsri",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Eatons Hill Hotel, Eatons Hill"
+    },
+    {
+      "date": "Mar 17",
+      "opponent": "Carol Earl",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Function Centre, Melbourne Park"
+    },
+    {
+      "date": "Oct 16",
+      "opponent": "Ratsadaporn Khiaosopa",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Function Centre, Melbourne Park"
+    },
+    {
+      "date": "Aug 16",
+      "opponent": "Daorueng Pakkhetanang",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Function Centre, Melbourne Park"
+    },
+    {
+      "date": "Jun 16",
+      "opponent": "Atitaya Saisin",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Bendigo Stadium, Bendigo"
+    },
+    {
+      "date": "Apr 16",
+      "opponent": "Napaporn Ruengsuwan",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Warnambool Stadium, Warrnambool"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "boxrec_id": "854141",
+  "name": "Tommy Fury",
+  "birth_name": "Thomas John Fury",
+  "alias": "'TNT'",
+  "birth_date": null,
+  "birth_place": "Salford, Lancashire, United Kingdom",
+  "nationality": "United Kingdom",
+  "stance": "orthodox",
+  "height": "6\u2032 0\u2033 / 183cm",
+  "reach": null,
+  "record": {
+    "wins": 11,
+    "losses": 0,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 11
+  },
+  "division": "cruiser",
+  "residence": "Salford, Lancashire, United Kingdom",
+  "status": null,
+  "career": "2018-2025",
+  "debut": "2018-12-22",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "May 25",
+      "opponent": "Kenan Hanjalic",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MTK Arena, Budapest"
+    },
+    {
+      "date": "Oct 23",
+      "opponent": "Olajide William Olatunji",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Manchester Arena, Manchester"
+    },
+    {
+      "date": "Feb 23",
+      "opponent": "Jake Paul",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Diriyah Arena, Diriyah"
+    },
+    {
+      "date": "Apr 22",
+      "opponent": "Daniel Bocianski",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Stadium, Wembley"
+    },
+    {
+      "date": "Aug 21",
+      "opponent": "Anthony Taylor",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Rocket Mortgage FieldHouse, Cleveland"
+    },
+    {
+      "date": "Jun 21",
+      "opponent": "Jordan Grant",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Telford International Centre, Telford"
+    },
+    {
+      "date": "Feb 21",
+      "opponent": "Scott Williams",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Copper Box Arena, Queen Elizabeth Olympic Park, Hackney Wick"
+    },
+    {
+      "date": "Nov 20",
+      "opponent": "Genadij Krajevskij",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "BT Sport Studio, Stratford"
+    },
+    {
+      "date": "Dec 19",
+      "opponent": "Przemyslaw Binienda",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Copper Box Arena, Queen Elizabeth Olympic Park, Hackney Wick"
+    },
+    {
+      "date": "Mar 19",
+      "opponent": "Callum Ide",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Leicester Arena, Leicester"
+    },
+    {
+      "date": "Dec 18",
+      "opponent": "Jevgenijs Andrejevs",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Manchester Arena, Manchester"
+    }
+  ]
+}

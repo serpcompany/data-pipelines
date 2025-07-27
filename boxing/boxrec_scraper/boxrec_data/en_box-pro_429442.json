@@ -1,0 +1,355 @@
+{
+  "boxrec_id": "429442",
+  "name": "Danny Garcia",
+  "birth_name": "Danny \u00d3scar Garc\u00eda",
+  "alias": "Swift",
+  "birth_date": null,
+  "birth_place": "Philadelphia, Pennsylvania, USA",
+  "nationality": "USA",
+  "stance": null,
+  "height": null,
+  "reach": null,
+  "record": {
+    "wins": 37,
+    "losses": 4,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 41
+  },
+  "division": "super welter",
+  "residence": "Philadelphia, Pennsylvania, USA",
+  "status": null,
+  "career": "2007-2024",
+  "debut": "2007-11-17",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Sep 24",
+      "opponent": "Erislandy Lara",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "Jul 22",
+      "opponent": "Jose Benavidez Jr",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Dec 20",
+      "opponent": "Errol Spence Jr",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "AT&T Stadium, Arlington"
+    },
+    {
+      "date": "Jan 20",
+      "opponent": "Ivan Redkach",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Apr 19",
+      "opponent": "Adrian Granados",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Dignity Health Sports Park, Carson"
+    },
+    {
+      "date": "Sep 18",
+      "opponent": "Shawn Porter",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Feb 18",
+      "opponent": "Brandon Rios",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mandalay Bay Hotel & Casino, Events Center, Las Vegas"
+    },
+    {
+      "date": "Mar 17",
+      "opponent": "Keith Thurman",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Nov 16",
+      "opponent": "Samuel Vargas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Liacouras Center, Philadelphia"
+    },
+    {
+      "date": "Jan 16",
+      "opponent": "Robert Guerrero",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Staples Center, Los Angeles"
+    },
+    {
+      "date": "Aug 15",
+      "opponent": "Paul Malignaggi*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Apr 15",
+      "opponent": "Lamont Peterson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Aug 14",
+      "opponent": "Rod Salka",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Mar 14",
+      "opponent": "Mauricio Herrera",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Coliseo Ruben Rodriguez, Bayamon"
+    },
+    {
+      "date": "Sep 13",
+      "opponent": "Lucas Martin Matthysse",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "Apr 13",
+      "opponent": "Zab Judah",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Oct 12",
+      "opponent": "Erik Morales",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Jul 12",
+      "opponent": "Amir Khan",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mandalay Bay Hotel & Casino, Events Center, Las Vegas"
+    },
+    {
+      "date": "Mar 12",
+      "opponent": "Erik Morales",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Reliant Arena, Houston"
+    },
+    {
+      "date": "Oct 11",
+      "opponent": "Kendall Holt",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Staples Center, Los Angeles"
+    },
+    {
+      "date": "Apr 11",
+      "opponent": "Nate Campbell",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Feb 11",
+      "opponent": "John Figueroa",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Four Points Sheraton Hotel, San Diego"
+    },
+    {
+      "date": "Oct 10",
+      "opponent": "Mike Arnaoutis",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "South Philly Arena, Philadelphia"
+    },
+    {
+      "date": "Jul 10",
+      "opponent": "Jorge Romero",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Moon Palace Resort, Cancun"
+    },
+    {
+      "date": "May 10",
+      "opponent": "Christopher Fernandez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "South Philly Arena, Philadelphia"
+    },
+    {
+      "date": "Feb 10",
+      "opponent": "Ashley Theophane",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Don Haskins Center, El Paso"
+    },
+    {
+      "date": "Dec 09",
+      "opponent": "Enrique Colin",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Liacouras Center, Philadelphia"
+    },
+    {
+      "date": "Aug 09",
+      "opponent": "Oscar Leon",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Toyota Center, Houston"
+    },
+    {
+      "date": "Jun 09",
+      "opponent": "Pavel Miranda",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "HP Pavilion, San Jose"
+    },
+    {
+      "date": "Apr 09",
+      "opponent": "Humberto Tapia",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mandalay Bay Hotel & Casino, Events Center, Las Vegas"
+    },
+    {
+      "date": "Feb 09",
+      "opponent": "Cristian Favela",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Toyota Center, Houston"
+    },
+    {
+      "date": "Dec 08",
+      "opponent": "Luis Alfredo Lugo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "Nov 08",
+      "opponent": "Adan Hernandez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Oct 08",
+      "opponent": "Deon Nash",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Boardwalk Hall, Atlantic City"
+    },
+    {
+      "date": "Sep 08",
+      "opponent": "Tyrone Wiggins",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "May 08",
+      "opponent": "Julio Gamboa",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Home Depot Center, Carson"
+    },
+    {
+      "date": "Apr 08",
+      "opponent": "Guadalupe Diaz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Thomas & Mack Center, Las Vegas"
+    },
+    {
+      "date": "Mar 08",
+      "opponent": "Charles Wade",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mandalay Bay Resort & Casino, Las Vegas"
+    },
+    {
+      "date": "Jan 08",
+      "opponent": "Marlo Cortez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Morongo Casino Resort & Spa, Cabazon"
+    },
+    {
+      "date": "Dec 07",
+      "opponent": "Jesus Villareal",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "Nov 07",
+      "opponent": "Mike Denby",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Borgata Hotel Casino, Atlantic City"
+    }
+  ]
+}

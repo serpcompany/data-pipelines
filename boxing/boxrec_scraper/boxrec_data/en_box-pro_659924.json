@@ -1,0 +1,403 @@
+{
+  "boxrec_id": "659924",
+  "name": "Jaime Munguia",
+  "birth_name": "Jaime Aaron Munguia Escobedo",
+  "alias": null,
+  "birth_date": null,
+  "birth_place": "Tijuana, Baja California, Mexico",
+  "nationality": "Mexico",
+  "stance": "orthodox",
+  "height": "6\u2032 0\u2033 / 183cm",
+  "reach": "72\u2033 / 183cm",
+  "record": {
+    "wins": 45,
+    "losses": 2,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 47
+  },
+  "division": "super middle",
+  "residence": "Tijuana, Baja California, Mexico",
+  "status": null,
+  "career": "2013-2025",
+  "debut": "2013-07-13",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "May 25",
+      "opponent": "Bruno Surace",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Venue Riyadh Season, Riyadh"
+    },
+    {
+      "date": "Dec 24",
+      "opponent": "Bruno Surace",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Caliente Racetrack, Tijuana"
+    },
+    {
+      "date": "Sep 24",
+      "opponent": "Erik Bazinyan",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Desert Diamond Arena, Glendale"
+    },
+    {
+      "date": "May 24",
+      "opponent": "Saul Alvarez*",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "Jan 24",
+      "opponent": "John Ryder",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Footprint Center, Phoenix"
+    },
+    {
+      "date": "Jun 23",
+      "opponent": "Sergiy Derevyanchenko",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Toyota Arena, Ontario"
+    },
+    {
+      "date": "Nov 22",
+      "opponent": "Gonzalo Gaston Coria",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Arena Astros, Guadalajara"
+    },
+    {
+      "date": "Jun 22",
+      "opponent": "Jimmy 'Kilrain' Kelly",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Honda Center, Anaheim"
+    },
+    {
+      "date": "Feb 22",
+      "opponent": "D'Mitrius Ballard",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Plaza Monumental, Tijuana"
+    },
+    {
+      "date": "Nov 21",
+      "opponent": "Gabriel Rosado",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Honda Center, Anaheim"
+    },
+    {
+      "date": "Jun 21",
+      "opponent": "Kamil Szeremeta",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Don Haskins Center, El Paso"
+    },
+    {
+      "date": "Oct 20",
+      "opponent": "Tureano Johnson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Fantasy Springs Casino, Indio"
+    },
+    {
+      "date": "Jan 20",
+      "opponent": "Gary O'Sullivan",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Alamodome, San Antonio"
+    },
+    {
+      "date": "Sep 19",
+      "opponent": "Patrick Allotey*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Dignity Health Sports Park, Carson"
+    },
+    {
+      "date": "Apr 19",
+      "opponent": "Dennis Hogan",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Arena Monterrey, Monterrey"
+    },
+    {
+      "date": "Jan 19",
+      "opponent": "Takeshi Inoue",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Toyota Center, Houston"
+    },
+    {
+      "date": "Sep 18",
+      "opponent": "Brandon Cook*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "Jul 18",
+      "opponent": "Liam Smith",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hard Rock Hotel and Casino, Las Vegas"
+    },
+    {
+      "date": "May 18",
+      "opponent": "Sadam Ali",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Turning Stone Resort & Casino, Verona"
+    },
+    {
+      "date": "Mar 18",
+      "opponent": "Jhony Navarrete",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Arena Jos\u00e9 Sulaim\u00e1n, Monterrey"
+    },
+    {
+      "date": "Feb 18",
+      "opponent": "Jose Carlos Paz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Grand Oasis Arena, Cancun"
+    },
+    {
+      "date": "Dec 17",
+      "opponent": "Paul Valenzuela Cuesta",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mandalay Bay Hotel & Casino, Events Center, Las Vegas"
+    },
+    {
+      "date": "Sep 17",
+      "opponent": "Uriel Gonzalez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Gimnasio Manuel Bernardo Aguirre, Chihuahua"
+    },
+    {
+      "date": "Jul 17",
+      "opponent": "Jose Lopez Medina",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Grand Hotel, Tijuana"
+    },
+    {
+      "date": "Apr 17",
+      "opponent": "Jhony Navarrete",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Gimnasio Manuel Bernardo Aguirre, Chihuahua"
+    },
+    {
+      "date": "Apr 17",
+      "opponent": "Gabriel Agramon",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Auditorio Municipal, Tijuana"
+    },
+    {
+      "date": "Mar 17",
+      "opponent": "Jorge Juarez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Auditorio Municipal, Villa Las Rosas"
+    },
+    {
+      "date": "Feb 17",
+      "opponent": "Juan Macias Montiel",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Auditorio Pablo Colin, Cuautitlan Izcalli"
+    },
+    {
+      "date": "Dec 16",
+      "opponent": "Alvaro Robles",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Arena Monterrey, Monterrey"
+    },
+    {
+      "date": "Oct 16",
+      "opponent": "Alfredo Chavez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Auditorio Municipal Fausto Guti\u00e9rrez Moreno, Tijuana"
+    },
+    {
+      "date": "Aug 16",
+      "opponent": "Ramiro Alcaraz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Baja California Center, Tijuana"
+    },
+    {
+      "date": "Jul 16",
+      "opponent": "Oscar Mora*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Auditorio Municipal, Tijuana"
+    },
+    {
+      "date": "Jun 16",
+      "opponent": "Seth Carrillo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Auditorio Municipal Fausto Guti\u00e9rrez Moreno, Tijuana"
+    },
+    {
+      "date": "Apr 16",
+      "opponent": "Elliot Cano",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Malecon Turistico, Guaymas"
+    },
+    {
+      "date": "Jan 16",
+      "opponent": "Francisco Verduzco",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Palenque Fex, Mexicali"
+    },
+    {
+      "date": "Dec 15",
+      "opponent": "Gabriel Agramon",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Gimnasio Municipal Gustavo D\u00edaz Ordaz, Tecate"
+    },
+    {
+      "date": "Jul 15",
+      "opponent": "Jose Valdez Salgado",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Campo Nuevo Ensenada, Ensenada"
+    },
+    {
+      "date": "Mar 15",
+      "opponent": "Julio Nario",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Auditorio Municipal Fausto Guti\u00e9rrez Moreno, Tijuana"
+    },
+    {
+      "date": "Jan 15",
+      "opponent": "Alan Osvaldo Zavala Nava",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Auditorio Municipal Fausto Guti\u00e9rrez Moreno, Tijuana"
+    },
+    {
+      "date": "Sep 14",
+      "opponent": "Jose Valdez Salgado",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Auditorio Municipal Fausto Guti\u00e9rrez Moreno, Tijuana"
+    },
+    {
+      "date": "Jun 14",
+      "opponent": "Jose Arteaga",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hip\u00f3dromo Caliente, Arena Tecate, Tijuana"
+    },
+    {
+      "date": "Feb 14",
+      "opponent": "Gerardo Mendoza",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Forum Tecate, Tijuana"
+    },
+    {
+      "date": "Jan 14",
+      "opponent": "Juan Velasquez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Casino Hipodromo Agua Caliente, Tijuana"
+    },
+    {
+      "date": "Nov 13",
+      "opponent": "Abraham Marquez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Forum Tecate, Tijuana"
+    },
+    {
+      "date": "Oct 13",
+      "opponent": "Benjamin Romanillo Urias",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Caliente Racetrack, Tijuana"
+    },
+    {
+      "date": "Aug 13",
+      "opponent": "Luis Contreras",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Forum Tecate, Tijuana"
+    },
+    {
+      "date": "Jul 13",
+      "opponent": "Manuel Mora",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Forum Tecate, Tijuana"
+    }
+  ]
+}

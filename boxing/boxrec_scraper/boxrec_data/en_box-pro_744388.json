@@ -1,0 +1,299 @@
+{
+  "boxrec_id": "744388",
+  "name": "William Zepeda Segura",
+  "birth_name": null,
+  "alias": "Camaron",
+  "birth_date": null,
+  "birth_place": "San Mateo Atenco, M\u00e9xico, Mexico",
+  "nationality": "Mexico",
+  "stance": "southpaw",
+  "height": "5\u2032 9\u2033 / 175cm",
+  "reach": "69\u00bd\u2033 / 177cm",
+  "record": {
+    "wins": 33,
+    "losses": 1,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 34
+  },
+  "division": "light",
+  "residence": "San Mateo Atenco, M\u00e9xico, Mexico",
+  "status": null,
+  "career": "2015-2025",
+  "debut": "2015-11-14",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "2025-07-12",
+      "opponent": "Shakur Stevenson",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Louis Armstrong Stadium, Queens"
+    },
+    {
+      "date": "Mar 25",
+      "opponent": "Tevin Farmer",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Poliforum Benito Juarez, Cancun"
+    },
+    {
+      "date": "Nov 24",
+      "opponent": "Tevin Farmer",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Venue Riyadh Season, Riyadh"
+    },
+    {
+      "date": "Jul 24",
+      "opponent": "Giovanni Cabrera",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Toyota Arena, Ontario"
+    },
+    {
+      "date": "Mar 24",
+      "opponent": "Maxi Hughes",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Cosmopolitan of Las Vegas, Chelsea Ballroom, Las Vegas"
+    },
+    {
+      "date": "Sep 23",
+      "opponent": "Mercito Gesta",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Commerce Casino, Commerce"
+    },
+    {
+      "date": "Apr 23",
+      "opponent": "Jaime Arboleda",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "College Park Center, Arlington"
+    },
+    {
+      "date": "Oct 22",
+      "opponent": "Joseph Pedroza Diaz Jr*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Pechanga Arena, San Diego"
+    },
+    {
+      "date": "May 22",
+      "opponent": "Rene Alvarado",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Toyota Arena, Ontario"
+    },
+    {
+      "date": "Feb 22",
+      "opponent": "Luis Angel Viedas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Plaza Monumental, Tijuana"
+    },
+    {
+      "date": "Nov 21",
+      "opponent": "John Vincent Moralde",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Honda Center, Anaheim"
+    },
+    {
+      "date": "Jul 21",
+      "opponent": "Hector Tanajara",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "BMO Stadium, Los Angeles"
+    },
+    {
+      "date": "Nov 20",
+      "opponent": "Roberto Ramirez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wild Card Boxing, Los Angeles"
+    },
+    {
+      "date": "Mar 20",
+      "opponent": "Brayam Rico",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Gimnasio Nuevo, Hidalgo Del Parral"
+    },
+    {
+      "date": "Dec 19",
+      "opponent": "Jampier Oses",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Auditorio del Estado, Mexicali"
+    },
+    {
+      "date": "Oct 19",
+      "opponent": "Oscar Flores Altamirano",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Plaza de Toros, Cancun"
+    },
+    {
+      "date": "Jun 19",
+      "opponent": "Jose Guadalupe Rosales",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Unidad Deportivo Municipal San Mateo Atenco, Toluca"
+    },
+    {
+      "date": "Mar 19",
+      "opponent": "Eliot Chavez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Chaparral Disco Rodeo, Ciudad Acuna"
+    },
+    {
+      "date": "Nov 18",
+      "opponent": "Maximiliano Galindo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Cheer's Bar, Tijuana"
+    },
+    {
+      "date": "Sep 18",
+      "opponent": "Ulises Perez Torres",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Canchas MVP, Tlaquepaque"
+    },
+    {
+      "date": "Apr 18",
+      "opponent": "Pedro Solis Rodriguez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Polideportivo Juan S. Millan, Culiacan"
+    },
+    {
+      "date": "Feb 18",
+      "opponent": "Jesus Acosta Zazueta",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Polideportivo Juan S. Millan, Culiacan"
+    },
+    {
+      "date": "Oct 17",
+      "opponent": "Juan Pablo Borbon",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Metepec"
+    },
+    {
+      "date": "Jun 17",
+      "opponent": "Jose Castro Fierros",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Polideportivo Centenario, Los Mochis"
+    },
+    {
+      "date": "Mar 17",
+      "opponent": "Gabriel Gollaz Valenzuela",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Gimnasio Usos M\u00faltiples UdeG, Guadalajara"
+    },
+    {
+      "date": "Feb 17",
+      "opponent": "Luis Medrano Adame",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Arena Pavill\u00f3n del Norte, Saltillo"
+    },
+    {
+      "date": "Dec 16",
+      "opponent": "Luis Manriquez Gonzalez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Gimnasio Nuevo Le\u00f3n Unido, Monterrey"
+    },
+    {
+      "date": "Oct 16",
+      "opponent": "Xavier Vazquez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Auditorio Municipal, Cabo San Lucas"
+    },
+    {
+      "date": "Jul 16",
+      "opponent": "Juan Daniel Yllescas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Gym Uribe Team, Tlalnepantla"
+    },
+    {
+      "date": "Jul 16",
+      "opponent": "Alejandro Ramirez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Auditorio Municipal, Cabo San Lucas"
+    },
+    {
+      "date": "May 16",
+      "opponent": "Eduardo Arizmendi",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Gym Uribe Team, Tlalnepantla"
+    },
+    {
+      "date": "Mar 16",
+      "opponent": "Aldair Apolinar",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Arena Adolfo L\u00f3pez Mateos, Tlalnepantla"
+    },
+    {
+      "date": "Feb 16",
+      "opponent": "Eduardo Ledezma",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Piedras Negras"
+    },
+    {
+      "date": "Nov 15",
+      "opponent": "Alonso Salvatierra",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Cabo San Lucas"
+    }
+  ]
+}

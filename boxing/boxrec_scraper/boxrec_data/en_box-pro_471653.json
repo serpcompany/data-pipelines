@@ -1,0 +1,179 @@
+{
+  "boxrec_id": "471653",
+  "name": "Terrel Williams",
+  "birth_name": "Terrel Shawn Williams",
+  "alias": null,
+  "birth_date": null,
+  "birth_place": "Inglewood, California, USA",
+  "nationality": "USA",
+  "stance": "orthodox",
+  "height": "6\u2032 0\u2033 / 183cm",
+  "reach": "73\u2033 / 185cm",
+  "record": {
+    "wins": 18,
+    "losses": 1,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 19
+  },
+  "division": "welter",
+  "residence": "Los Angeles, California, USA",
+  "status": "inactive",
+  "career": "2008-2019",
+  "debut": "2008-11-13",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Sep 19",
+      "opponent": "Thomas Dulorme",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Rabobank Theater, Bakersfield"
+    },
+    {
+      "date": "Apr 19",
+      "opponent": "Justin DeLoach",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Cosmopolitan of Las Vegas, Las Vegas"
+    },
+    {
+      "date": "Sep 18",
+      "opponent": "David Grayton",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "2300 Arena, Philadelphia"
+    },
+    {
+      "date": "Nov 17",
+      "opponent": "Rosemberg Gomez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Dort Financial Center, Flint"
+    },
+    {
+      "date": "Oct 15",
+      "opponent": "Prichard Colon",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "EagleBank Arena, Fairfax"
+    },
+    {
+      "date": "Aug 15",
+      "opponent": "John Williams",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Hangar, Costa Mesa"
+    },
+    {
+      "date": "May 15",
+      "opponent": "Tavorus Teague",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hotel Irvine, Irvine"
+    },
+    {
+      "date": "Jun 13",
+      "opponent": "Bernardo Guereca",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Quiet Cannon, Montebello"
+    },
+    {
+      "date": "May 13",
+      "opponent": "Devarise Crayton",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Santa Monica Pier, Santa Monica"
+    },
+    {
+      "date": "Mar 13",
+      "opponent": "Luis Alfredo Lugo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Florentine Gardens, Hollywood"
+    },
+    {
+      "date": "Feb 13",
+      "opponent": "Omar Avelar",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Jonathan Club, Los Angeles"
+    },
+    {
+      "date": "Nov 12",
+      "opponent": "Marqus Jackson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Westin Bonaventure Hotel, Los Angeles"
+    },
+    {
+      "date": "Sep 12",
+      "opponent": "Lawrence Hughes",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Florentine Gardens, Hollywood"
+    },
+    {
+      "date": "Aug 12",
+      "opponent": "Jeremiah Torres",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Westin Bonaventure Hotel, Los Angeles"
+    },
+    {
+      "date": "Jul 12",
+      "opponent": "Clifford McPherson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Florentine Gardens, Hollywood"
+    },
+    {
+      "date": "Sep 11",
+      "opponent": "Andre Ewell",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hollywood Park Casino, Inglewood"
+    },
+    {
+      "date": "Oct 09",
+      "opponent": "Juan Zamarripa",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Celebrity Theater, Phoenix"
+    },
+    {
+      "date": "Sep 09",
+      "opponent": "Joshua Zurfluh",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Pechanga Resort & Casino, Temecula"
+    },
+    {
+      "date": "Nov 08",
+      "opponent": "Raymundo Ortega",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Expo Center, El Monte"
+    }
+  ]
+}

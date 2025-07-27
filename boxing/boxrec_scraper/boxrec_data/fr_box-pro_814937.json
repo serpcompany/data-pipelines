@@ -1,0 +1,179 @@
+{
+  "boxrec_id": "814937",
+  "name": "Frank Martin",
+  "birth_name": "Frank Lamar Martin",
+  "alias": "The Ghost",
+  "birth_date": null,
+  "birth_place": "Detroit, Michigan, \u00c9tats-Unis",
+  "nationality": "\u00c9tats-Unis",
+  "stance": "southpaw",
+  "height": "5\u2032 8\u2033 / 173cm",
+  "reach": "68\u2033 / 173cm",
+  "record": {
+    "wins": 18,
+    "losses": 1,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 19
+  },
+  "division": "L\u00e9gers",
+  "residence": "Indianapolis, Indiana, \u00c9tats-Unis",
+  "status": "inactive",
+  "career": "2017-2024",
+  "debut": "2017-10-07",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Jun 24",
+      "opponent": "Gervonta Davis",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "Jul 23",
+      "opponent": "Artem Harutyunyan",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Cosmopolitan of Las Vegas, Chelsea Ballroom, Las Vegas"
+    },
+    {
+      "date": "Dec 22",
+      "opponent": "Michel Rivera",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Cosmopolitan of Las Vegas, Chelsea Ballroom, Las Vegas"
+    },
+    {
+      "date": "Jul 22",
+      "opponent": "Jackson Marinez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Alamodome, San Antonio"
+    },
+    {
+      "date": "Jan 22",
+      "opponent": "Romero Duno",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Seminole Hard Rock Hotel and Casino, Hollywood"
+    },
+    {
+      "date": "Aug 21",
+      "opponent": "Ryan Kielczweski",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "Apr 21",
+      "opponent": "Jerry Perez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Shrine Exposition Center, Los Angeles"
+    },
+    {
+      "date": "Dec 20",
+      "opponent": "Tyrone Luckey",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "AT&T Stadium, Arlington"
+    },
+    {
+      "date": "Feb 20",
+      "opponent": "Reymond Yanong",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sam's Town Hotel & Gambling Hall, Las Vegas"
+    },
+    {
+      "date": "Aug 19",
+      "opponent": "Pablo Cupul",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sportszone Indy, Indianapolis"
+    },
+    {
+      "date": "Jun 19",
+      "opponent": "Larry Ventus",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Motor City Casino, Detroit"
+    },
+    {
+      "date": "Mar 19",
+      "opponent": "Deshawn Debose",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Armory, Indianapolis"
+    },
+    {
+      "date": "Feb 19",
+      "opponent": "Efrain Cruz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Motor City Casino, Detroit"
+    },
+    {
+      "date": "Jul 18",
+      "opponent": "Jermon Houck",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Motor City Casino, Detroit"
+    },
+    {
+      "date": "Jun 18",
+      "opponent": "Kendrick Latchman",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Pierre's Entertainment Center, Fort Wayne"
+    },
+    {
+      "date": "Apr 18",
+      "opponent": "Terren Arrington",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Motor City Casino, Detroit"
+    },
+    {
+      "date": "Mar 18",
+      "opponent": "Mundo Martinez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "D1 Factory, Indianapolis"
+    },
+    {
+      "date": "Dec 17",
+      "opponent": "Darnell Pettis",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "National Guard Armory, Indianapolis"
+    },
+    {
+      "date": "Oct 17",
+      "opponent": "John Edward Lockett",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Divison Armory, Indianapolis"
+    }
+  ]
+}

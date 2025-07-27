@@ -1,0 +1,235 @@
+{
+  "boxrec_id": "778185",
+  "name": "Katie Taylor",
+  "birth_name": null,
+  "alias": null,
+  "birth_date": null,
+  "birth_place": "Bray, Ireland",
+  "nationality": "Ireland",
+  "stance": "orthodox",
+  "height": "5\u2032 5\u2033 / 165cm",
+  "reach": "66\u2033 / 168cm",
+  "record": {
+    "wins": 25,
+    "losses": 1,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 26
+  },
+  "division": "super light",
+  "residence": "Vernon, Connecticut, USA",
+  "status": null,
+  "career": "2016-2025",
+  "debut": "2016-11-26",
+  "sex": "female",
+  "bouts": [
+    {
+      "date": "2025-07-11",
+      "opponent": "Amanda Serrano",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Nov 24",
+      "opponent": "Amanda Serrano",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "AT&T Stadium, Arlington"
+    },
+    {
+      "date": "Nov 23",
+      "opponent": "Chantelle Cameron",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "3Arena, Dublin"
+    },
+    {
+      "date": "May 23",
+      "opponent": "Chantelle Cameron",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "3Arena, Dublin"
+    },
+    {
+      "date": "Oct 22",
+      "opponent": "Karen Elizabeth Carabajal",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Arena, Wembley"
+    },
+    {
+      "date": "Apr 22",
+      "opponent": "Amanda Serrano",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Dec 21",
+      "opponent": "Firuza Sharipova",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Echo Arena, Liverpool"
+    },
+    {
+      "date": "Sep 21",
+      "opponent": "Jennifer Han",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Headingley Rugby League Stadium, Leeds"
+    },
+    {
+      "date": "May 21",
+      "opponent": "Natasha Jonas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Manchester Arena, Manchester"
+    },
+    {
+      "date": "Nov 20",
+      "opponent": "Miriam Gutierrez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Arena, Wembley"
+    },
+    {
+      "date": "Aug 20",
+      "opponent": "Delfine Persoon",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Matchroom HQ Garden, Brentwood"
+    },
+    {
+      "date": "Nov 19",
+      "opponent": "Christina Linardatou",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Manchester Arena, Manchester"
+    },
+    {
+      "date": "Jun 19",
+      "opponent": "Delfine Persoon",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Mar 19",
+      "opponent": "Rose Volante",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Liacouras Center, Philadelphia"
+    },
+    {
+      "date": "Dec 18",
+      "opponent": "Eva Wahlstrom",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Oct 18",
+      "opponent": "Cindy Serrano",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "TD Garden, Boston"
+    },
+    {
+      "date": "Jul 18",
+      "opponent": "Kimberly Connor-Hamby",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Apr 18",
+      "opponent": "Victoria Noelia Bustos",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Dec 17",
+      "opponent": "Jessica McCaskill",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "York Hall, Bethnal Green"
+    },
+    {
+      "date": "Oct 17",
+      "opponent": "Anahi Ester Sanchez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Principality Stadium, Cardiff"
+    },
+    {
+      "date": "Jul 17",
+      "opponent": "Jasmine Clarkson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Apr 17",
+      "opponent": "Nina Meinke",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Stadium, Wembley"
+    },
+    {
+      "date": "Mar 17",
+      "opponent": "Milena Koleva",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Manchester Arena, Manchester"
+    },
+    {
+      "date": "Mar 17",
+      "opponent": "Monica Gentili",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Dec 16",
+      "opponent": "Viviane Obenauf",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Manchester Arena, Manchester"
+    },
+    {
+      "date": "Nov 16",
+      "opponent": "Karina Szmalenberg",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Arena, Wembley"
+    }
+  ]
+}

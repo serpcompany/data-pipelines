@@ -1,0 +1,563 @@
+{
+  "boxrec_id": "1414",
+  "name": "Bernard Hopkins",
+  "birth_name": "Bernard Humphrey Hopkins Jr",
+  "alias": "The Executioner/The Alien",
+  "birth_date": null,
+  "birth_place": "Philadelphia, Pennsylvania, USA",
+  "nationality": "USA",
+  "stance": "orthodox",
+  "height": "6\u2032 1\u2033 / 185cm",
+  "reach": "75\u2033 / 191cm",
+  "record": {
+    "wins": 55,
+    "losses": 8,
+    "draws": 2,
+    "kos": 0,
+    "total_fights": 65
+  },
+  "division": "middle",
+  "residence": "Hockessin, Delaware, USA",
+  "status": "inactive",
+  "career": "1988-2016",
+  "debut": "1988-10-11",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Dec 16",
+      "opponent": "Joe Smith Jr",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Forum, Inglewood"
+    },
+    {
+      "date": "Nov 14",
+      "opponent": "Sergey Kovalev",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Boardwalk Hall, Atlantic City"
+    },
+    {
+      "date": "Apr 14",
+      "opponent": "Beibut Shumenov",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "DC Armory, Washington"
+    },
+    {
+      "date": "Oct 13",
+      "opponent": "Karo Murad",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Boardwalk Hall, Atlantic City"
+    },
+    {
+      "date": "Mar 13",
+      "opponent": "Tavoris Cloud",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Apr 12",
+      "opponent": "Chad Dawson",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Boardwalk Hall, Atlantic City"
+    },
+    {
+      "date": "Oct 11",
+      "opponent": "Chad Dawson",
+      "result": "N",
+      "method": null,
+      "rounds": null,
+      "venue": "Staples Center, Los Angeles"
+    },
+    {
+      "date": "May 11",
+      "opponent": "Jean Pascal",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Bell Centre, Montreal"
+    },
+    {
+      "date": "Dec 10",
+      "opponent": "Jean Pascal",
+      "result": "D",
+      "method": null,
+      "rounds": null,
+      "venue": "Pepsi Coliseum, Quebec City"
+    },
+    {
+      "date": "Apr 10",
+      "opponent": "Roy Jones Jr",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mandalay Bay Resort & Casino, Las Vegas"
+    },
+    {
+      "date": "Dec 09",
+      "opponent": "Enrique Ornelas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Liacouras Center, Philadelphia"
+    },
+    {
+      "date": "Oct 08",
+      "opponent": "Kelly Pavlik",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Boardwalk Hall, Atlantic City"
+    },
+    {
+      "date": "Apr 08",
+      "opponent": "Joe Calzaghe",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Thomas & Mack Center, Las Vegas"
+    },
+    {
+      "date": "Jul 07",
+      "opponent": "Ronald Wright",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mandalay Bay Resort & Casino, Las Vegas"
+    },
+    {
+      "date": "Jun 06",
+      "opponent": "Antonio Tarver",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Boardwalk Hall, Atlantic City"
+    },
+    {
+      "date": "Dec 05",
+      "opponent": "Jermain Taylor",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Mandalay Bay Resort & Casino, Las Vegas"
+    },
+    {
+      "date": "Jul 05",
+      "opponent": "Jermain Taylor",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Feb 05",
+      "opponent": "Howard Eastman",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Staples Center, Los Angeles"
+    },
+    {
+      "date": "Sep 04",
+      "opponent": "Oscar De La Hoya",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Jun 04",
+      "opponent": "Robert Allen",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Dec 03",
+      "opponent": "William Joppy",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Boardwalk Hall, Atlantic City"
+    },
+    {
+      "date": "Mar 03",
+      "opponent": "Morrade Hakkar",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Spectrum, Philadelphia"
+    },
+    {
+      "date": "Feb 02",
+      "opponent": "Carl Daniels",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sovereign Center, Reading"
+    },
+    {
+      "date": "Sep 01",
+      "opponent": "Felix Trinidad",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Apr 01",
+      "opponent": "Keith Holmes",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Dec 00",
+      "opponent": "Antwun Echols",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Venetian Hotel & Casino, Las Vegas"
+    },
+    {
+      "date": "May 00",
+      "opponent": "Syd Vanderpool",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Conseco Fieldhouse, Indianapolis"
+    },
+    {
+      "date": "Dec 99",
+      "opponent": "Antwun Echols",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Miccosukee Indian Gaming Resort, Miami"
+    },
+    {
+      "date": "Feb 99",
+      "opponent": "Robert Allen",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Convention Center, Washington"
+    },
+    {
+      "date": "Aug 98",
+      "opponent": "Robert Allen",
+      "result": "N",
+      "method": null,
+      "rounds": null,
+      "venue": "Las Vegas Hilton, Las Vegas"
+    },
+    {
+      "date": "Jan 98",
+      "opponent": "Simon Brown",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Trump Taj Mahal, Atlantic City"
+    },
+    {
+      "date": "Nov 97",
+      "opponent": "Andrew Council",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Show Place Arena, Upper Marlboro"
+    },
+    {
+      "date": "Jul 97",
+      "opponent": "Glen Johnson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Fantasy Springs Casino, Indio"
+    },
+    {
+      "date": "Apr 97",
+      "opponent": "John David Jackson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Memorial Auditorium, Shreveport"
+    },
+    {
+      "date": "Jul 96",
+      "opponent": "William Bo James",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Resorts Hotel & Casino, Atlantic City"
+    },
+    {
+      "date": "Mar 96",
+      "opponent": "Joe Lipsey",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Jan 96",
+      "opponent": "Steve Frank",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Veteran's Memorial Coliseum, Phoenix"
+    },
+    {
+      "date": "Apr 95",
+      "opponent": "Segundo Mercado",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "US Air Arena, Landover"
+    },
+    {
+      "date": "Dec 94",
+      "opponent": "Segundo Mercado",
+      "result": "D",
+      "method": null,
+      "rounds": null,
+      "venue": "Coliseo General Rumi\u00f1ahui, Quito"
+    },
+    {
+      "date": "May 94",
+      "opponent": "Lupe Aquino",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Merv Griffin's Resorts, Atlantic City"
+    },
+    {
+      "date": "Feb 94",
+      "opponent": "Melvin Wynn",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sands Casino Hotel, Atlantic City"
+    },
+    {
+      "date": "Nov 93",
+      "opponent": "Wendell Hall",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Blue Horizon, Philadelphia"
+    },
+    {
+      "date": "Aug 93",
+      "opponent": "Roy Ritchie",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Riviera Hotel & Casino, Las Vegas"
+    },
+    {
+      "date": "May 93",
+      "opponent": "Roy Jones Jr",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "RFK Stadium, Washington"
+    },
+    {
+      "date": "Feb 93",
+      "opponent": "Gilbert Baptist",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "McNichols Sports Arena, Denver"
+    },
+    {
+      "date": "Dec 92",
+      "opponent": "Wayne Powell",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Merv Griffin's Resorts, Atlantic City"
+    },
+    {
+      "date": "Sep 92",
+      "opponent": "Eric Rhinehart",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Elis Pier 34, Philadelphia"
+    },
+    {
+      "date": "Aug 92",
+      "opponent": "James Stokes",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Trump Plaza Hotel, Atlantic City"
+    },
+    {
+      "date": "May 92",
+      "opponent": "Anibal Miranda",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Cirque d'Hiver, Paris"
+    },
+    {
+      "date": "Apr 92",
+      "opponent": "Randy Smith",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Trump Plaza Hotel, Atlantic City"
+    },
+    {
+      "date": "Jan 92",
+      "opponent": "Dennis Milton",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Blue Horizon, Philadelphia"
+    },
+    {
+      "date": "Dec 91",
+      "opponent": "Willie Kemp",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Convention Hall, Atlantic City"
+    },
+    {
+      "date": "Nov 91",
+      "opponent": "David McCluskey",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Blue Horizon, Philadelphia"
+    },
+    {
+      "date": "Sep 91",
+      "opponent": "Ralph Moncrief",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Blue Horizon, Philadelphia"
+    },
+    {
+      "date": "Jul 91",
+      "opponent": "Danny Mitchell",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Blue Horizon, Philadelphia"
+    },
+    {
+      "date": "Jun 91",
+      "opponent": "Pedro Marquez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Aspen Hotel, Parsippany"
+    },
+    {
+      "date": "Mar 91",
+      "opponent": "Steve Langley",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mirage Hotel & Casino, Las Vegas"
+    },
+    {
+      "date": "Feb 91",
+      "opponent": "Richard Quiles",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "National Guard Armory, Philadelphia"
+    },
+    {
+      "date": "Nov 90",
+      "opponent": "Mike Sapp",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Lee County Civic Center, Fort Myers"
+    },
+    {
+      "date": "Oct 90",
+      "opponent": "Darrin Oliver",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Trump Plaza Hotel, Atlantic City"
+    },
+    {
+      "date": "Aug 90",
+      "opponent": "Percy Harris",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Convention Hall, Atlantic City"
+    },
+    {
+      "date": "Jun 90",
+      "opponent": "Khalif Shabazz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Trump Castle, Atlantic City"
+    },
+    {
+      "date": "May 90",
+      "opponent": "Jouvin Mercado",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "War Memorial Auditorium, Rochester"
+    },
+    {
+      "date": "May 90",
+      "opponent": "Eddie Tyler",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sands Casino Hotel, Atlantic City"
+    },
+    {
+      "date": "Apr 90",
+      "opponent": "Keith Gray",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Blue Horizon, Philadelphia"
+    },
+    {
+      "date": "Feb 90",
+      "opponent": "Greg Paige",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Blue Horizon, Philadelphia"
+    },
+    {
+      "date": "Oct 88",
+      "opponent": "Clinton Mitchell",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Resorts International, Atlantic City"
+    }
+  ]
+}
