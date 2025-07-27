@@ -20,12 +20,15 @@ echo "ZYTE_API_KEY=your_key_here" > ../.env
 - [x] 2. Run them through the HTML downloader (`scrape.py`)
 - [x] 3. Convert the 'boxer single' HTML files -> JSON objects (`parse_boxer_final.py`)
 - [ ] 4. From the JSON, get the data (urls) needed to run scrapes for other entities (fights, etc.)
+- [ ] * Get more data for each `boxer` (person) using the "wiki method": This URL pattern will bring you to a wiki style page for the fighter if you replace the BOXREC_ID placeholder with the actual ID. And these wiki pages have alot of content that the normal boxrec pages do not: - `https://boxrec.com/wiki/index.php?title=Human:{BOXREC_ID}&redirect=no`
+  
 - [ ] 5. data normalization for fields like:
 ```
 "date": "Sep 25",
 "height": "5\u2032 8\u2033 / 173cm",
 "birth_place": "Decatur, Georgia, USA",
 ```
+
 - [ ] 6. db schema & setup
 - [ ] 7. populate db & launch to site
 
