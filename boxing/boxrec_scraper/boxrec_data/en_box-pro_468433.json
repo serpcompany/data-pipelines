@@ -1,0 +1,291 @@
+{
+  "boxrec_id": "468433",
+  "name": "Demetrius Andrade",
+  "birth_name": null,
+  "alias": "Boo Boo",
+  "birth_date": null,
+  "birth_place": "Providence, Rhode Island, USA",
+  "nationality": "USA",
+  "stance": "southpaw",
+  "height": "6\u2032 0\u2033 / 183cm",
+  "reach": "73\u00bd\u2033 / 187cm",
+  "record": {
+    "wins": 32,
+    "losses": 1,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 33
+  },
+  "division": "super middle",
+  "residence": "Providence, Rhode Island, USA",
+  "status": "inactive",
+  "career": "2008-2023",
+  "debut": "2008-10-23",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Nov 23",
+      "opponent": "David Benavidez*",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Michelob Ultra Arena, Las Vegas"
+    },
+    {
+      "date": "Jan 23",
+      "opponent": "Demond Nicholson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Capital One Arena, Washington"
+    },
+    {
+      "date": "Nov 21",
+      "opponent": "Jason Quigley",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "SNHU Arena, Manchester"
+    },
+    {
+      "date": "Apr 21",
+      "opponent": "Liam Williams",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Seminole Hard Rock Hotel and Casino, Hollywood"
+    },
+    {
+      "date": "Jan 20",
+      "opponent": "Luke Keeler",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Meridian at Island Gardens, Miami"
+    },
+    {
+      "date": "Jun 19",
+      "opponent": "Maciej Sulecki",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Dunkin Donuts Center, Providence"
+    },
+    {
+      "date": "Jan 19",
+      "opponent": "Artur Akavov",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Oct 18",
+      "opponent": "Walter Kautondokwa",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "TD Garden, Boston"
+    },
+    {
+      "date": "Oct 17",
+      "opponent": "Alantez Fox",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Turning Stone Resort & Casino, Verona"
+    },
+    {
+      "date": "Mar 17",
+      "opponent": "Jack Culcay",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Friedrich-Ebert-Halle, Ludwigshafen"
+    },
+    {
+      "date": "Jun 16",
+      "opponent": "Willie Nelson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Turning Stone Resort & Casino, Verona"
+    },
+    {
+      "date": "Oct 15",
+      "opponent": "Dario Fabian Pucheta",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mohegan Sun Casino, Uncasville"
+    },
+    {
+      "date": "Jun 14",
+      "opponent": "Brian Rose",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Nov 13",
+      "opponent": "Vanes Martirosyan",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "American Bank Center, Corpus Christi"
+    },
+    {
+      "date": "Jan 13",
+      "opponent": "Freddy Hernandez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Paramount Theatre, Huntington"
+    },
+    {
+      "date": "Sep 12",
+      "opponent": "Alexis Hloros",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Verizon Wireless Arena, Manchester"
+    },
+    {
+      "date": "May 12",
+      "opponent": "Rudy Cisneros",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mohegan Sun Casino, Uncasville"
+    },
+    {
+      "date": "Feb 12",
+      "opponent": "Angel Hernandez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mohegan Sun Casino, Uncasville"
+    },
+    {
+      "date": "Sep 11",
+      "opponent": "Saul Duran",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Verizon Wireless Arena, Manchester"
+    },
+    {
+      "date": "Aug 11",
+      "opponent": "Grady Brewer",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Horseshoe Casino, Hammond"
+    },
+    {
+      "date": "Apr 11",
+      "opponent": "Omar Bell",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mohegan Sun Casino, Uncasville"
+    },
+    {
+      "date": "Jan 11",
+      "opponent": "Alberto Herrera",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Cox Pavilion, Las Vegas"
+    },
+    {
+      "date": "Sep 10",
+      "opponent": "Dave Saunders",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Verizon Wireless Arena, Manchester"
+    },
+    {
+      "date": "Apr 10",
+      "opponent": "Geoffrey Spruiell",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mohegan Sun Casino, Uncasville"
+    },
+    {
+      "date": "Jan 10",
+      "opponent": "Bernardo Guereca",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Laredo Civic Center, Laredo"
+    },
+    {
+      "date": "Oct 09",
+      "opponent": "Chris Chatman",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Twin River Event Center, Lincoln"
+    },
+    {
+      "date": "Sep 09",
+      "opponent": "John Williams",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Twin River Event Center, Lincoln"
+    },
+    {
+      "date": "Aug 09",
+      "opponent": "Chad Greenleaf",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mohegan Sun Casino, Uncasville"
+    },
+    {
+      "date": "Jun 09",
+      "opponent": "Tony Hirsch",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Laredo Entertainment Center, Laredo"
+    },
+    {
+      "date": "Mar 09",
+      "opponent": "Arnulfo Javier Romero",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Laredo Entertainment Center, Laredo"
+    },
+    {
+      "date": "Mar 09",
+      "opponent": "Tom Joseph",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mohegan Sun Casino, Uncasville"
+    },
+    {
+      "date": "Nov 08",
+      "opponent": "Eric Marriott",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Twin River Event Center, Lincoln"
+    },
+    {
+      "date": "Oct 08",
+      "opponent": "Patrick Cape",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Northern Quest Casino, Airway Heights"
+    }
+  ]
+}

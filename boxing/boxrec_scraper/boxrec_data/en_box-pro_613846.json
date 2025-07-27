@@ -1,0 +1,339 @@
+{
+  "boxrec_id": "613846",
+  "name": "Joseph Parker",
+  "birth_name": "Joseph Dennis Parker",
+  "alias": "Lupesoliai La'auliolemalietoa",
+  "birth_date": null,
+  "birth_place": "South Auckland, New Zealand",
+  "nationality": "New Zealand",
+  "stance": "orthodox",
+  "height": "6\u2032 4\u2033 / 193cm",
+  "reach": "76\u2033 / 193cm",
+  "record": {
+    "wins": 36,
+    "losses": 3,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 39
+  },
+  "division": "heavy",
+  "residence": "Auckland, New Zealand",
+  "status": null,
+  "career": "2012-2025",
+  "debut": "2012-07-05",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Feb 25",
+      "opponent": "Martin Bakole",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Venue Riyadh Season, Riyadh"
+    },
+    {
+      "date": "Mar 24",
+      "opponent": "Zhilei Zhang",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Kingdom Arena, Riyadh"
+    },
+    {
+      "date": "Dec 23",
+      "opponent": "Deontay Wilder",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Kingdom Arena, Riyadh"
+    },
+    {
+      "date": "Oct 23",
+      "opponent": "Simon Kean",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Boulevard Hall, Riyadh"
+    },
+    {
+      "date": "May 23",
+      "opponent": "Faiga Opelu",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Margaret Court Arena, Melbourne"
+    },
+    {
+      "date": "Jan 23",
+      "opponent": "Jack Massey",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Manchester Arena, Manchester"
+    },
+    {
+      "date": "Sep 22",
+      "opponent": "Joe Joyce",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Manchester Arena, Manchester"
+    },
+    {
+      "date": "Dec 21",
+      "opponent": "Derek Chisora",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Manchester Arena, Manchester"
+    },
+    {
+      "date": "May 21",
+      "opponent": "Derek Chisora",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Manchester Arena, Manchester"
+    },
+    {
+      "date": "Feb 21",
+      "opponent": "Junior Fa",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Spark Arena, Auckland"
+    },
+    {
+      "date": "Feb 20",
+      "opponent": "Shawndell Terell Winters",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Ford Center at The Star, Frisco"
+    },
+    {
+      "date": "Jun 19",
+      "opponent": "Alex Leapai",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Dunkin Donuts Center, Providence"
+    },
+    {
+      "date": "Dec 18",
+      "opponent": "Alexander Flores",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Horncastle Arena, Christchurch"
+    },
+    {
+      "date": "Jul 18",
+      "opponent": "Dillian Whyte*",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Mar 18",
+      "opponent": "Anthony Joshua",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Principality Stadium, Cardiff"
+    },
+    {
+      "date": "Sep 17",
+      "opponent": "Hughie Fury",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Manchester Arena, Manchester"
+    },
+    {
+      "date": "May 17",
+      "opponent": "Razvan Cojanu",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Vodafone Events Centre, Manukau City"
+    },
+    {
+      "date": "Dec 16",
+      "opponent": "Andy Ruiz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Spark Arena, Auckland"
+    },
+    {
+      "date": "Oct 16",
+      "opponent": "Alexander Dimitrenko",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Vodafone Events Centre, Manukau City"
+    },
+    {
+      "date": "Jul 16",
+      "opponent": "Solomon Haumono",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Horncastle Arena, Christchurch"
+    },
+    {
+      "date": "May 16",
+      "opponent": "Carlos Takam",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Vodafone Events Centre, Manukau City"
+    },
+    {
+      "date": "Jan 16",
+      "opponent": "Jason Bergman",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Faleata Sports Complex, Apia"
+    },
+    {
+      "date": "Dec 15",
+      "opponent": "Daniel Martz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Claudelands Arena, Hamilton"
+    },
+    {
+      "date": "Oct 15",
+      "opponent": "Kali Meehan",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Trusts Arena, Auckland"
+    },
+    {
+      "date": "Aug 15",
+      "opponent": "Bowie Tupou",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Stadium Southland, Invercargill"
+    },
+    {
+      "date": "Jun 15",
+      "opponent": "Yakup Saglam",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Arena Manawatu, Palmerston North"
+    },
+    {
+      "date": "Mar 15",
+      "opponent": "Jason Pettaway",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Vodafone Events Centre, Manukau City"
+    },
+    {
+      "date": "Dec 14",
+      "opponent": "Irineu Beato Costa Junior",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Claudelands Arena, Hamilton"
+    },
+    {
+      "date": "Oct 14",
+      "opponent": "Sherman Williams",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Trusts Arena, Auckland"
+    },
+    {
+      "date": "Aug 14",
+      "opponent": "Keith Thompson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sands Bethlehem Event Center, Bethlehem"
+    },
+    {
+      "date": "Jul 14",
+      "opponent": "Brian Minto",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Vodafone Events Centre, Manukau City"
+    },
+    {
+      "date": "Apr 14",
+      "opponent": "Marcelo Nascimento",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Koenig Pilsener Arena, Oberhausen"
+    },
+    {
+      "date": "Oct 13",
+      "opponent": "Afa Tatupu",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Trusts Arena, Auckland"
+    },
+    {
+      "date": "Jun 13",
+      "opponent": "Frans Botha",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Trusts Arena, Auckland"
+    },
+    {
+      "date": "May 13",
+      "opponent": "Brice Ritani Coe",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hyatt Regency Hotel, Irvine"
+    },
+    {
+      "date": "Feb 13",
+      "opponent": "Dontay Pati",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hornby Working Men's Club, Christchurch"
+    },
+    {
+      "date": "Dec 12",
+      "opponent": "Richard Tutaki",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Trusts Arena, Auckland"
+    },
+    {
+      "date": "Nov 12",
+      "opponent": "Terry Tuteru",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Trusts Arena, Auckland"
+    },
+    {
+      "date": "Jul 12",
+      "opponent": "Dean Garmonsway",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sky City Convention Centre, Auckland"
+    }
+  ]
+}

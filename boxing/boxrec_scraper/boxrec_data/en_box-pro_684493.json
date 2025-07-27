@@ -1,0 +1,235 @@
+{
+  "boxrec_id": "684493",
+  "name": "Caleb Plant",
+  "birth_name": "Caleb Hunter Plant",
+  "alias": "Sweethands",
+  "birth_date": null,
+  "birth_place": "Nashville, Tennessee, USA",
+  "nationality": "USA",
+  "stance": "orthodox",
+  "height": "6\u2032 1\u2033 / 185cm",
+  "reach": "74\u2033 / 188cm",
+  "record": {
+    "wins": 23,
+    "losses": 3,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 26
+  },
+  "division": "super middle",
+  "residence": "Las Vegas, Nevada, USA",
+  "status": null,
+  "career": "2014-2025",
+  "debut": "2014-05-10",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "May 25",
+      "opponent": "Jose Armando Resendiz",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Michelob Ultra Arena, Las Vegas"
+    },
+    {
+      "date": "Sep 24",
+      "opponent": "Trevor McCumby",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "Mar 23",
+      "opponent": "David Benavidez*",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Oct 22",
+      "opponent": "Anthony Dirrell",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Nov 21",
+      "opponent": "Saul Alvarez*",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "Jan 21",
+      "opponent": "Caleb Truax",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Shrine Exposition Center, Los Angeles"
+    },
+    {
+      "date": "Feb 20",
+      "opponent": "Vincent Feigenbutz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Bridgestone Arena, Nashville"
+    },
+    {
+      "date": "Jul 19",
+      "opponent": "Mike Lee",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "Jan 19",
+      "opponent": "Jose Uzcategui",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Microsoft Theater, Los Angeles"
+    },
+    {
+      "date": "Feb 18",
+      "opponent": "Rogelio Medina Luna",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Don Haskins Center, El Paso"
+    },
+    {
+      "date": "Sep 17",
+      "opponent": "Andrew Hernandez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hard Rock Hotel and Casino, Las Vegas"
+    },
+    {
+      "date": "Feb 17",
+      "opponent": "Thomas Awimbono",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Legacy Arena, Birmingham"
+    },
+    {
+      "date": "Aug 16",
+      "opponent": "Juan De Angel",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sands Bethlehem Event Center, Bethlehem"
+    },
+    {
+      "date": "Jun 16",
+      "opponent": "Carlos Galvan",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Seminole Hard Rock Hotel and Casino, Hollywood"
+    },
+    {
+      "date": "Jan 16",
+      "opponent": "Adasat Rodriguez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Club Nokia, Los Angeles"
+    },
+    {
+      "date": "Oct 15",
+      "opponent": "Tyrone Brunson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "NRG Arena, Houston"
+    },
+    {
+      "date": "Sep 15",
+      "opponent": "Jamar Freeman",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sands Bethlehem Event Center, Bethlehem"
+    },
+    {
+      "date": "Aug 15",
+      "opponent": "Zoltan Sera",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Bell Centre, Montreal"
+    },
+    {
+      "date": "Jun 15",
+      "opponent": "Juan Carlos Rojas Sanchez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sands Bethlehem Event Center, Bethlehem"
+    },
+    {
+      "date": "May 15",
+      "opponent": "Jason Zabokrtsky",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Stadium Holiday Inn, Philadelphia"
+    },
+    {
+      "date": "Mar 15",
+      "opponent": "Daniel Henry",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Marquee Ballroom, Las Vegas"
+    },
+    {
+      "date": "Dec 14",
+      "opponent": "Daryl Gardner",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Harrah's Philadelphia, Chester"
+    },
+    {
+      "date": "Nov 14",
+      "opponent": "Jovan Ramirez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "UIC Pavilion, Chicago"
+    },
+    {
+      "date": "Jul 14",
+      "opponent": "Brian True",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Fantasy Springs Casino, Indio"
+    },
+    {
+      "date": "Jun 14",
+      "opponent": "Mike Noriega",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hard Rock Hotel and Casino, Las Vegas"
+    },
+    {
+      "date": "May 14",
+      "opponent": "Travis Davidson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "USC Galen Center, Los Angeles"
+    }
+  ]
+}

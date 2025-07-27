@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxRec Data Viewer</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .boxer-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .name {
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+        }
+        .record {
+            display: flex;
+            gap: 20px;
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .record-item {
+            text-align: center;
+        }
+        .record-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .record-label {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .info-item {
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        .info-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 4px;
+        }
+        .info-value {
+            font-weight: 600;
+            color: #333;
+        }
+        .bouts-section {
+            margin-top: 30px;
+        }
+        .bout {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+        .bout:hover {
+            background: #f8f9fa;
+        }
+        .bout-date {
+            font-weight: 600;
+            min-width: 80px;
+        }
+        .bout-opponent {
+            flex: 1;
+            margin: 0 20px;
+        }
+        .bout-result {
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            min-width: 40px;
+            text-align: center;
+        }
+        .result-W {
+            background: #d4edda;
+            color: #155724;
+        }
+        .result-L {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .result-D {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .file-input {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        input[type="file"] {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <h1>BoxRec Data Viewer</h1>
+            
+            <div class="file-input">
+                <label>Load JSON file:</label>
+                <input type="file" @change="loadFile" accept=".json">
+            </div>
+
+            <div v-if="boxer" class="boxer-card">
+                <div class="header">
+                    <div>
+                        <div class="name">{{ boxer.name }}</div>
+                        <div v-if="boxer.alias" style="color: #666;">{{ boxer.alias }}</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div v-if="boxer.boxrec_id">ID: #{{ boxer.boxrec_id }}</div>
+                        <div v-if="boxer.status">{{ boxer.status }}</div>
+                    </div>
+                </div>
+
+                <div v-if="boxer.record" class="record">
+                    <div class="record-item">
+                        <div class="record-value">{{ boxer.record.wins }}</div>
+                        <div class="record-label">Wins</div>
+                    </div>
+                    <div class="record-item">
+                        <div class="record-value">{{ boxer.record.losses }}</div>
+                        <div class="record-label">Losses</div>
+                    </div>
+                    <div class="record-item">
+                        <div class="record-value">{{ boxer.record.draws }}</div>
+                        <div class="record-label">Draws</div>
+                    </div>
+                    <div class="record-item">
+                        <div class="record-value">{{ boxer.record.kos }}</div>
+                        <div class="record-label">KOs</div>
+                    </div>
+                </div>
+
+                <div class="info-grid">
+                    <div v-if="boxer.nationality" class="info-item">
+                        <div class="info-label">Nationality</div>
+                        <div class="info-value">{{ boxer.nationality }}</div>
+                    </div>
+                    <div v-if="boxer.division" class="info-item">
+                        <div class="info-label">Division</div>
+                        <div class="info-value">{{ boxer.division }}</div>
+                    </div>
+                    <div v-if="boxer.stance" class="info-item">
+                        <div class="info-label">Stance</div>
+                        <div class="info-value">{{ boxer.stance }}</div>
+                    </div>
+                    <div v-if="boxer.height" class="info-item">
+                        <div class="info-label">Height</div>
+                        <div class="info-value">{{ boxer.height }}</div>
+                    </div>
+                    <div v-if="boxer.reach" class="info-item">
+                        <div class="info-label">Reach</div>
+                        <div class="info-value">{{ boxer.reach }}</div>
+                    </div>
+                    <div v-if="boxer.birth_place" class="info-item">
+                        <div class="info-label">Birth Place</div>
+                        <div class="info-value">{{ boxer.birth_place }}</div>
+                    </div>
+                    <div v-if="boxer.residence" class="info-item">
+                        <div class="info-label">Residence</div>
+                        <div class="info-value">{{ boxer.residence }}</div>
+                    </div>
+                    <div v-if="boxer.career" class="info-item">
+                        <div class="info-label">Career</div>
+                        <div class="info-value">{{ boxer.career }}</div>
+                    </div>
+                </div>
+
+                <div v-if="boxer.bouts && boxer.bouts.length" class="bouts-section">
+                    <h3>Fight History ({{ boxer.bouts.length }} bouts)</h3>
+                    <div v-for="bout in boxer.bouts" :key="bout.date + bout.opponent" class="bout">
+                        <div class="bout-date">{{ bout.date }}</div>
+                        <div class="bout-opponent">{{ bout.opponent }}</div>
+                        <div v-if="bout.venue" style="color: #666; font-size: 0.9em;">{{ bout.venue }}</div>
+                        <div :class="'bout-result result-' + bout.result">{{ bout.result }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div v-else style="text-align: center; padding: 40px; color: #666;">
+                Select a JSON file to view boxer data
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    boxer: null
+                }
+            },
+            methods: {
+                loadFile(event) {
+                    const file = event.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = (e) => {
+                            try {
+                                this.boxer = JSON.parse(e.target.result);
+                            } catch (error) {
+                                alert('Error parsing JSON file: ' + error.message);
+                            }
+                        };
+                        reader.readAsText(file);
+                    }
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

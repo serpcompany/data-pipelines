@@ -1,0 +1,323 @@
+{
+  "boxrec_id": "479205",
+  "name": "Tyson Fury",
+  "birth_name": "Tyson Luke Fury",
+  "alias": "The Gypsy King",
+  "birth_date": null,
+  "birth_place": "Manchester, Lancashire, United Kingdom",
+  "nationality": "United Kingdom",
+  "stance": "orthodox",
+  "height": "6\u2032 9\u2033 / 206cm",
+  "reach": "85\u2033 / 216cm",
+  "record": {
+    "wins": 34,
+    "losses": 2,
+    "draws": 1,
+    "kos": 0,
+    "total_fights": 37
+  },
+  "division": "heavy",
+  "residence": "Morecambe, Lancashire, United Kingdom",
+  "status": null,
+  "career": "2008-2024",
+  "debut": "2008-12-06",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Dec 24",
+      "opponent": "Oleksandr Usyk",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Kingdom Arena, Riyadh"
+    },
+    {
+      "date": "May 24",
+      "opponent": "Oleksandr Usyk",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Kingdom Arena, Riyadh"
+    },
+    {
+      "date": "Oct 23",
+      "opponent": "Francis Ngannou",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Boulevard Hall, Riyadh"
+    },
+    {
+      "date": "Dec 22",
+      "opponent": "Derek Chisora",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Tottenham Hotspur Stadium, Tottenham"
+    },
+    {
+      "date": "Apr 22",
+      "opponent": "Dillian Whyte*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Stadium, Wembley"
+    },
+    {
+      "date": "Oct 21",
+      "opponent": "Deontay Wilder",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "Feb 20",
+      "opponent": "Deontay Wilder",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "Sep 19",
+      "opponent": "Otto Wallin",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "Jun 19",
+      "opponent": "Tom Schwarz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "Dec 18",
+      "opponent": "Deontay Wilder",
+      "result": "D",
+      "method": null,
+      "rounds": null,
+      "venue": "Staples Center, Los Angeles"
+    },
+    {
+      "date": "Aug 18",
+      "opponent": "Francesco Pianeta",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Windsor Park, Belfast"
+    },
+    {
+      "date": "Jun 18",
+      "opponent": "Sefer Seferi",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Manchester Arena, Manchester"
+    },
+    {
+      "date": "Nov 15",
+      "opponent": "Wladimir Klitschko",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "ESPRIT arena, Duesseldorf"
+    },
+    {
+      "date": "Feb 15",
+      "opponent": "Christian Hammer",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Nov 14",
+      "opponent": "Derek Chisora",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "ExCel Arena, Dockland"
+    },
+    {
+      "date": "Feb 14",
+      "opponent": "Joey Abell",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Copper Box Arena, Queen Elizabeth Olympic Park, Hackney Wick"
+    },
+    {
+      "date": "Apr 13",
+      "opponent": "Steve Cunningham",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Dec 12",
+      "opponent": "Kevin Johnson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The SSE Arena (Odyssey Arena), Belfast"
+    },
+    {
+      "date": "Jul 12",
+      "opponent": "Vinny Maddalone",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hand Arena, Clevedon"
+    },
+    {
+      "date": "Apr 12",
+      "opponent": "Martin Rogan",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The SSE Arena (Odyssey Arena), Belfast"
+    },
+    {
+      "date": "Nov 11",
+      "opponent": "Neven Pajkic",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Event City, Trafford Park, Manchester"
+    },
+    {
+      "date": "Sep 11",
+      "opponent": "Nicolai Firtha",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Kings Hall, Belfast"
+    },
+    {
+      "date": "Jul 11",
+      "opponent": "Derek Chisora",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Arena, Wembley"
+    },
+    {
+      "date": "Feb 11",
+      "opponent": "Marcelo Nascimento",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Arena, Wembley"
+    },
+    {
+      "date": "Dec 10",
+      "opponent": "Zack Page",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Pepsi Coliseum, Quebec City"
+    },
+    {
+      "date": "Sep 10",
+      "opponent": "Rich Power",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "York Hall, Bethnal Green"
+    },
+    {
+      "date": "Jun 10",
+      "opponent": "John McDermott",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Brentwood Centre, Brentwood"
+    },
+    {
+      "date": "Mar 10",
+      "opponent": "Hans Joerg Blasko",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Huddersfield Sports Centre, Huddersfield"
+    },
+    {
+      "date": "Sep 09",
+      "opponent": "Tomas Mrazek",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The O2, Dublin"
+    },
+    {
+      "date": "Sep 09",
+      "opponent": "John McDermott",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Brentwood Centre, Brentwood"
+    },
+    {
+      "date": "Jul 09",
+      "opponent": "Aleksandrs Selezens",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "York Hall, Bethnal Green"
+    },
+    {
+      "date": "May 09",
+      "opponent": "Scott Belshaw",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Colosseum, Watford"
+    },
+    {
+      "date": "Apr 09",
+      "opponent": "Mathew Ellis",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "York Hall, Bethnal Green"
+    },
+    {
+      "date": "Mar 09",
+      "opponent": "Lee Swaby",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Aston Events Centre, Birmingham"
+    },
+    {
+      "date": "Feb 09",
+      "opponent": "Daniil Peretyatko",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Norfolk Showground, Norwich"
+    },
+    {
+      "date": "Jan 09",
+      "opponent": "Marcel Zeller",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Robin Park Centre, Wigan"
+    },
+    {
+      "date": "Dec 08",
+      "opponent": "Bela Gyongyosi",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Nottingham Arena, Nottingham"
+    }
+  ]
+}

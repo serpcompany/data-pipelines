@@ -1,0 +1,363 @@
+{
+  "boxrec_id": "447121",
+  "name": "Terence Crawford",
+  "birth_name": "Terence Allan Crawford",
+  "alias": "Bud",
+  "birth_date": null,
+  "birth_place": "Omaha, Nebraska, USA",
+  "nationality": "USA",
+  "stance": "southpaw",
+  "height": "5\u2032 8\u2033 / 173cm",
+  "reach": "74\u2033 / 188cm",
+  "record": {
+    "wins": 41,
+    "losses": 0,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 41
+  },
+  "division": "super welter",
+  "residence": "Omaha, Nebraska, USA",
+  "status": null,
+  "career": "2008-2024",
+  "debut": "2008-03-14",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Sep 25",
+      "opponent": "Saul Alvarez",
+      "result": "V",
+      "method": null,
+      "rounds": null,
+      "venue": "Allegiant Stadium, Las Vegas"
+    },
+    {
+      "date": "Aug 24",
+      "opponent": "Israil Madrimov",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "BMO Stadium, Los Angeles"
+    },
+    {
+      "date": "Jul 23",
+      "opponent": "Errol Spence Jr",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "Dec 22",
+      "opponent": "David Avanesyan",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "CHI Health Center, Omaha"
+    },
+    {
+      "date": "Nov 21",
+      "opponent": "Shawn Porter",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mandalay Bay Resort & Casino, Las Vegas"
+    },
+    {
+      "date": "Nov 20",
+      "opponent": "Kell Brook",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Bubble, MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Dec 19",
+      "opponent": "Egidijus Kavaliauskas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Apr 19",
+      "opponent": "Amir Khan",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Oct 18",
+      "opponent": "Jose Benavidez Jr",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "CHI Health Center, Omaha"
+    },
+    {
+      "date": "Jun 18",
+      "opponent": "Jeff Horn",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Aug 17",
+      "opponent": "Julius Indongo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Pinnacle Bank Arena, Lincoln"
+    },
+    {
+      "date": "May 17",
+      "opponent": "Felix Diaz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Dec 16",
+      "opponent": "John Molina Jr",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "CenturyLink Center, Omaha"
+    },
+    {
+      "date": "Jul 16",
+      "opponent": "Viktor Postol",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Feb 16",
+      "opponent": "Henry Lundy",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Oct 15",
+      "opponent": "Dierry Jean",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "CenturyLink Center, Omaha"
+    },
+    {
+      "date": "Apr 15",
+      "opponent": "Thomas Dulorme",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "University of Texas, Arlington"
+    },
+    {
+      "date": "Nov 14",
+      "opponent": "Raymundo Beltran",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "CenturyLink Center, Omaha"
+    },
+    {
+      "date": "Jun 14",
+      "opponent": "Yuriorkis Gamboa",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "CenturyLink Center, Omaha"
+    },
+    {
+      "date": "Mar 14",
+      "opponent": "Ricky Burns",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Scottish Exhibition Centre, Glasgow"
+    },
+    {
+      "date": "Oct 13",
+      "opponent": "Andrey Klimov",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Amway Center, Orlando"
+    },
+    {
+      "date": "Jun 13",
+      "opponent": "Alejandro Sanabria",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "American Airlines Center, Dallas"
+    },
+    {
+      "date": "Mar 13",
+      "opponent": "Breidis Prescott",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mandalay Bay Resort & Casino, Las Vegas"
+    },
+    {
+      "date": "Nov 12",
+      "opponent": "Sidney Siqueira",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wynn Resort, Las Vegas"
+    },
+    {
+      "date": "Sep 12",
+      "opponent": "Hardy Paredes",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hard Rock Hotel and Casino, Las Vegas"
+    },
+    {
+      "date": "Jun 12",
+      "opponent": "David Rodela",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hard Rock Hotel and Casino, The Joint, Las Vegas"
+    },
+    {
+      "date": "Apr 12",
+      "opponent": "Andre Gorges",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mandalay Bay Hotel & Casino, Events Center, Las Vegas"
+    },
+    {
+      "date": "Sep 11",
+      "opponent": "Angel Rios",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Boardwalk Hall, Atlantic City"
+    },
+    {
+      "date": "Jul 11",
+      "opponent": "Derrick Campos",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Softball Country Arena, Denver"
+    },
+    {
+      "date": "Feb 11",
+      "opponent": "Anthony Mora",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Heartland Events Center, Grand Island"
+    },
+    {
+      "date": "Jul 10",
+      "opponent": "Ron Boyd",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sovereign Bank Baseball Stadium, York"
+    },
+    {
+      "date": "May 10",
+      "opponent": "Marty Robbins",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Johnson County Fairgrounds, Iowa City"
+    },
+    {
+      "date": "Dec 09",
+      "opponent": "Corey Sommerville",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Cotton Eyed Joe, Knoxville"
+    },
+    {
+      "date": "Oct 09",
+      "opponent": "Steve Marquez*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "War Memorial Arena, Johnstown"
+    },
+    {
+      "date": "May 09",
+      "opponent": "Miguel Delgado",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "War Memorial Arena, Johnstown"
+    },
+    {
+      "date": "Mar 09",
+      "opponent": "Lucas Rodas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "U.S. Bank Arena, Cincinnati"
+    },
+    {
+      "date": "Mar 09",
+      "opponent": "Travis Hartman",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Valencia Ballroom, York"
+    },
+    {
+      "date": "Nov 08",
+      "opponent": "Michael Williams",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Valencia Ballroom, York"
+    },
+    {
+      "date": "Aug 08",
+      "opponent": "Aaron Anderson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Johnson County Fairgrounds, Iowa City"
+    },
+    {
+      "date": "Jul 08",
+      "opponent": "Damon Antoine",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Valencia Ballroom, York"
+    },
+    {
+      "date": "Apr 08",
+      "opponent": "Filiberto Nieto",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Michael's Eighth Avenue, Glen Burnie"
+    },
+    {
+      "date": "Mar 08",
+      "opponent": "Brian Cummings",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Athletic Club, Denver"
+    }
+  ]
+}

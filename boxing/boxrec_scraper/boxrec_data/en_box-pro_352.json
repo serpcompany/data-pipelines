@@ -1,0 +1,427 @@
+{
+  "boxrec_id": "352",
+  "name": "Floyd Mayweather Jr",
+  "birth_name": "Floyd Joy Sinclair",
+  "alias": "Money, Pretty Boy",
+  "birth_date": null,
+  "birth_place": "Grand Rapids, Michigan, USA",
+  "nationality": "USA",
+  "stance": "orthodox",
+  "height": "5\u2032 8\u2033 / 173cm",
+  "reach": "72\u2033 / 183cm",
+  "record": {
+    "wins": 50,
+    "losses": 0,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 50
+  },
+  "division": "welter",
+  "residence": "Las Vegas, Nevada, USA",
+  "status": "inactive",
+  "career": "1996-2017",
+  "debut": "1996-10-11",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Aug 17",
+      "opponent": "Conor McGregor",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "Sep 15",
+      "opponent": "Andre Berto",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "May 15",
+      "opponent": "Manny Pacquiao",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "Sep 14",
+      "opponent": "Marcos Maidana",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "May 14",
+      "opponent": "Marcos Maidana",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "Sep 13",
+      "opponent": "Saul Alvarez*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "May 13",
+      "opponent": "Robert Guerrero",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "May 12",
+      "opponent": "Miguel Cotto",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Sep 11",
+      "opponent": "Victor Ortiz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "May 10",
+      "opponent": "Shane Mosley",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Sep 09",
+      "opponent": "Juan Manuel Marquez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "Dec 07",
+      "opponent": "Ricky Hatton",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Grand Garden Arena, Las Vegas"
+    },
+    {
+      "date": "May 07",
+      "opponent": "Oscar De La Hoya",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Nov 06",
+      "opponent": "Carlos Manuel Baldomir",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mandalay Bay Resort & Casino, Las Vegas"
+    },
+    {
+      "date": "Apr 06",
+      "opponent": "Zab Judah",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Thomas & Mack Center, Las Vegas"
+    },
+    {
+      "date": "Nov 05",
+      "opponent": "Sharmba Mitchell",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Rose Garden, Portland"
+    },
+    {
+      "date": "Jun 05",
+      "opponent": "Arturo Gatti",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Boardwalk Hall, Atlantic City"
+    },
+    {
+      "date": "Jan 05",
+      "opponent": "Henry Bruseles",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "American Airlines Arena, Miami"
+    },
+    {
+      "date": "May 04",
+      "opponent": "DeMarcus Corley",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Boardwalk Hall, Atlantic City"
+    },
+    {
+      "date": "Nov 03",
+      "opponent": "Phillip Ndou",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Van Andel Arena, Grand Rapids"
+    },
+    {
+      "date": "Apr 03",
+      "opponent": "Victoriano Sosa",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Selland Arena, Fresno"
+    },
+    {
+      "date": "Dec 02",
+      "opponent": "Jose Luis Castillo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mandalay Bay Resort & Casino, Las Vegas"
+    },
+    {
+      "date": "Apr 02",
+      "opponent": "Jose Luis Castillo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Nov 01",
+      "opponent": "Jesus Chavez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Bill Graham Civic Auditorium, San Francisco"
+    },
+    {
+      "date": "May 01",
+      "opponent": "Carlos Hernandez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Van Andel Arena, Grand Rapids"
+    },
+    {
+      "date": "Jan 01",
+      "opponent": "Diego Corrales",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Oct 00",
+      "opponent": "Emanuel Augustus",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Cobo Hall, Detroit"
+    },
+    {
+      "date": "Mar 00",
+      "opponent": "Gregorio Vargas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Sep 99",
+      "opponent": "Carlos Gerena",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mandalay Bay Resort & Casino, Las Vegas"
+    },
+    {
+      "date": "May 99",
+      "opponent": "Justin Juuko",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mandalay Bay Resort & Casino, Las Vegas"
+    },
+    {
+      "date": "Feb 99",
+      "opponent": "Carlos Rios",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Van Andel Arena, Grand Rapids"
+    },
+    {
+      "date": "Dec 98",
+      "opponent": "Angel Manfredy",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Miccosukee Indian Gaming Resort, Miami"
+    },
+    {
+      "date": "Oct 98",
+      "opponent": "Genaro Hernandez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Las Vegas Hilton, Las Vegas"
+    },
+    {
+      "date": "Jun 98",
+      "opponent": "Tony Pep",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Trump Taj Mahal, Atlantic City"
+    },
+    {
+      "date": "Apr 98",
+      "opponent": "Gustavo Fabian Cuello",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Olympic Auditorium, Los Angeles"
+    },
+    {
+      "date": "Mar 98",
+      "opponent": "Miguel Melo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Foxwoods Resort, Mashantucket"
+    },
+    {
+      "date": "Feb 98",
+      "opponent": "Sam Girard",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Ballys Park Place Hotel Casino, Atlantic City"
+    },
+    {
+      "date": "Jan 98",
+      "opponent": "Hector Arroyo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Grand Casino, Biloxi"
+    },
+    {
+      "date": "Nov 97",
+      "opponent": "Angelo Nunez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Olympic Auditorium, Los Angeles"
+    },
+    {
+      "date": "Oct 97",
+      "opponent": "Felipe Garcia",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Bank of America Center, Boise"
+    },
+    {
+      "date": "Sep 97",
+      "opponent": "Louie Leija",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "County Coliseum, El Paso"
+    },
+    {
+      "date": "Jul 97",
+      "opponent": "Jesus Chavez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Grand Casino, Biloxi"
+    },
+    {
+      "date": "Jun 97",
+      "opponent": "Larry O'Shields",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Alamodome, San Antonio"
+    },
+    {
+      "date": "May 97",
+      "opponent": "Tony Duran",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Orleans Hotel & Casino, Las Vegas"
+    },
+    {
+      "date": "Apr 97",
+      "opponent": "Bobby Giepert",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Thomas & Mack Center, Las Vegas"
+    },
+    {
+      "date": "Mar 97",
+      "opponent": "Kino Rodriguez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Stadium Arena, Grand Rapids"
+    },
+    {
+      "date": "Feb 97",
+      "opponent": "Edgar Ayala",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Swiss Park, Chula Vista"
+    },
+    {
+      "date": "Jan 97",
+      "opponent": "Jerry Cooper",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Thomas & Mack Center, Las Vegas"
+    },
+    {
+      "date": "Nov 96",
+      "opponent": "Reggie Sanders",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Tingley Coliseum, Albuquerque"
+    },
+    {
+      "date": "Oct 96",
+      "opponent": "Roberto Apodaca",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Texas Station Casino, Las Vegas"
+    }
+  ]
+}

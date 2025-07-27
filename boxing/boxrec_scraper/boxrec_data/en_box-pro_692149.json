@@ -1,0 +1,275 @@
+{
+  "boxrec_id": "692149",
+  "name": "Zhilei Zhang",
+  "birth_name": "\u5f20\u5fd7\u78ca",
+  "alias": "Big Bang",
+  "birth_date": null,
+  "birth_place": "Zhoukou, China",
+  "nationality": "China",
+  "stance": "southpaw",
+  "height": "6\u2032 6\u2033 / 198cm",
+  "reach": "80\u2033 / 203cm",
+  "record": {
+    "wins": 27,
+    "losses": 3,
+    "draws": 1,
+    "kos": 0,
+    "total_fights": 31
+  },
+  "division": "heavy",
+  "residence": "Bloomfield, New Jersey, USA",
+  "status": null,
+  "career": "2014-2025",
+  "debut": "2014-08-08",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Feb 25",
+      "opponent": "Agit Kabayel",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "The Venue Riyadh Season, Riyadh"
+    },
+    {
+      "date": "Jun 24",
+      "opponent": "Deontay Wilder",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Kingdom Arena, Riyadh"
+    },
+    {
+      "date": "Mar 24",
+      "opponent": "Joseph Parker",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Kingdom Arena, Riyadh"
+    },
+    {
+      "date": "Sep 23",
+      "opponent": "Joe Joyce",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Arena, Wembley"
+    },
+    {
+      "date": "Apr 23",
+      "opponent": "Joe Joyce",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Copper Box Arena, Queen Elizabeth Olympic Park, Hackney Wick"
+    },
+    {
+      "date": "Aug 22",
+      "opponent": "Filip Hrgovic*",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Jeddah Superdome, Jeddah"
+    },
+    {
+      "date": "May 22",
+      "opponent": "Scott Alexander",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "Nov 21",
+      "opponent": "Craig Lewis",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Feb 21",
+      "opponent": "Jerry Forrest",
+      "result": "D",
+      "method": null,
+      "rounds": null,
+      "venue": "Hard Rock Stadium, Miami Gardens"
+    },
+    {
+      "date": "Nov 20",
+      "opponent": "Devin Vargas*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Seminole Hard Rock Hotel and Casino, Hollywood"
+    },
+    {
+      "date": "Nov 19",
+      "opponent": "Andrii Rudenko",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Casino de Monte Carlo Salle Medecin, Monte Carlo"
+    },
+    {
+      "date": "Sep 18",
+      "opponent": "Donald Haynesworth",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Changsha social work college gymnasium, Changsha"
+    },
+    {
+      "date": "Jul 18",
+      "opponent": "Eugen Buchmueller",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "WinnaVegas Casino & Resort, Sloan"
+    },
+    {
+      "date": "Sep 17",
+      "opponent": "Byron Polley",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hartman Arena, Park City"
+    },
+    {
+      "date": "Aug 17",
+      "opponent": "Nick Guivas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Claridge Hotel & Casino, Atlantic City"
+    },
+    {
+      "date": "May 17",
+      "opponent": "Curtis Harper",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Boca Raton Hotel & Club, Boca Raton"
+    },
+    {
+      "date": "Apr 17",
+      "opponent": "Mark Brown",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "CenterStage@NoDa, Charlotte"
+    },
+    {
+      "date": "Jan 17",
+      "opponent": "Peter Graham",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hebei Sports Venue, Shijiazhuang"
+    },
+    {
+      "date": "Dec 16",
+      "opponent": "Galen Brown",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Marina Bay SportsPlex, Quincy"
+    },
+    {
+      "date": "Sep 16",
+      "opponent": "Gogita Gorgiladze",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wenzhou Gymnasium, Wenzhou"
+    },
+    {
+      "date": "Jul 16",
+      "opponent": "Rodney Hernandez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Claridge Hotel & Casino, Atlantic City"
+    },
+    {
+      "date": "Jun 16",
+      "opponent": "Terrell Jamal Woods",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Marina Bay SportsPlex, Quincy"
+    },
+    {
+      "date": "May 16",
+      "opponent": "John Orr",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "DC Armory, Washington"
+    },
+    {
+      "date": "Mar 16",
+      "opponent": "Tyree Ortiz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Oracle Arena, Oakland"
+    },
+    {
+      "date": "Feb 16",
+      "opponent": "David Koswara",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Lanzhou"
+    },
+    {
+      "date": "Nov 15",
+      "opponent": "Juan Goode",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mandalay Bay Hotel & Casino, Events Center, Las Vegas"
+    },
+    {
+      "date": "Aug 15",
+      "opponent": "Dennis Benson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Playground, Atlantic City"
+    },
+    {
+      "date": "Jun 15",
+      "opponent": "Glenn Thomas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Mar 15",
+      "opponent": "Eric George",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Armory, Jersey City"
+    },
+    {
+      "date": "Jan 15",
+      "opponent": "Perry Filkins",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Mohegan Sun Casino, Uncasville"
+    },
+    {
+      "date": "Aug 14",
+      "opponent": "Curtis Lee Tate",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Churchill County Fairgrounds, Fallon"
+    }
+  ]
+}

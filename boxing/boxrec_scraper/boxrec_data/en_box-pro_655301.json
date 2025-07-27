@@ -1,0 +1,291 @@
+{
+  "boxrec_id": "655301",
+  "name": "Arnold Barboza Jr",
+  "birth_name": null,
+  "alias": null,
+  "birth_date": null,
+  "birth_place": "Long Beach, California, USA",
+  "nationality": "USA",
+  "stance": "orthodox",
+  "height": "5\u2032 9\u2033 / 175cm",
+  "reach": "72\u2033 / 183cm",
+  "record": {
+    "wins": 32,
+    "losses": 1,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 33
+  },
+  "division": "super light",
+  "residence": "Los Angeles, California, USA",
+  "status": null,
+  "career": "2013-2025",
+  "debut": "2013-06-14",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "May 25",
+      "opponent": "Teofimo Lopez",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Times Square, New York"
+    },
+    {
+      "date": "Feb 25",
+      "opponent": "Jack Catterall",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Co-op Live Arena, Manchester"
+    },
+    {
+      "date": "Nov 24",
+      "opponent": "Jose Carlos Ramirez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Venue Riyadh Season, Riyadh"
+    },
+    {
+      "date": "Apr 24",
+      "opponent": "Sean McComb",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Barclays Center, Brooklyn"
+    },
+    {
+      "date": "Jan 24",
+      "opponent": "Xolisani Ndongeni",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Virgin Hotels Las Vegas, Las Vegas"
+    },
+    {
+      "date": "Feb 23",
+      "opponent": "Jose Pedraza",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Desert Diamond Arena, Glendale"
+    },
+    {
+      "date": "Jul 22",
+      "opponent": "Danielito Zorrilla",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Pechanga Resort & Casino, Temecula"
+    },
+    {
+      "date": "Aug 21",
+      "opponent": "Antonio Moran",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hard Rock Hotel & Casino, Tulsa"
+    },
+    {
+      "date": "Oct 20",
+      "opponent": "Alex Saucedo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Bubble, MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Aug 20",
+      "opponent": "Tony Luis",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The Bubble, MGM Grand, Las Vegas"
+    },
+    {
+      "date": "Nov 19",
+      "opponent": "William Silva",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Cosmopolitan of Las Vegas, Las Vegas"
+    },
+    {
+      "date": "Aug 19",
+      "opponent": "Ricky Sismundo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "BMO Stadium, Los Angeles"
+    },
+    {
+      "date": "Apr 19",
+      "opponent": "Mike Alvarado",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Staples Center, Los Angeles"
+    },
+    {
+      "date": "Dec 18",
+      "opponent": "Manuel Lopez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "American Bank Center, Corpus Christi"
+    },
+    {
+      "date": "Aug 18",
+      "opponent": "Luis Solis",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Gila River Arena, Glendale"
+    },
+    {
+      "date": "Mar 18",
+      "opponent": "Mike Reed",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "StubHub Center, Carson"
+    },
+    {
+      "date": "Aug 17",
+      "opponent": "Jonathan Chicas",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Microsoft Theater, Los Angeles"
+    },
+    {
+      "date": "Apr 17",
+      "opponent": "Markus Morris",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Marriott Convention Center, Burbank"
+    },
+    {
+      "date": "Jan 17",
+      "opponent": "Johnny Rodriguez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sportsmans Lodge, Studio City, Los Angeles"
+    },
+    {
+      "date": "Dec 16",
+      "opponent": "Martin Angel Martinez Perez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Exchange LA, Los Angeles"
+    },
+    {
+      "date": "Jul 16",
+      "opponent": "John David Charles",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Pioneer Event Center, Lancaster"
+    },
+    {
+      "date": "May 16",
+      "opponent": "John Nater",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sportsmans Lodge, Studio City, Los Angeles"
+    },
+    {
+      "date": "Mar 16",
+      "opponent": "Maximilliano Becerra",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Marriott Convention Center, Burbank"
+    },
+    {
+      "date": "Jan 16",
+      "opponent": "Robbie Cannon",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Marriott Convention Center, Burbank"
+    },
+    {
+      "date": "Dec 15",
+      "opponent": "Rony Oscar Alvarado",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Civic Auditorium, Glendale"
+    },
+    {
+      "date": "Jul 15",
+      "opponent": "Leonel Jimenez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Florentine Gardens, Hollywood"
+    },
+    {
+      "date": "May 15",
+      "opponent": "Brandon Adams",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Florentine Gardens, Hollywood"
+    },
+    {
+      "date": "Mar 15",
+      "opponent": "James Harrison",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Civic Auditorium, Glendale"
+    },
+    {
+      "date": "Jan 15",
+      "opponent": "Taif Harris",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Oceanview Pavilion, Port Hueneme"
+    },
+    {
+      "date": "Dec 14",
+      "opponent": "Samuel Garcia",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Civic Auditorium, Glendale"
+    },
+    {
+      "date": "Oct 13",
+      "opponent": "Douglas Rosales",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sports Arena, Pico Rivera"
+    },
+    {
+      "date": "Aug 13",
+      "opponent": "Vicente Guzman",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Morongo Casino Resort & Spa, Cabazon"
+    },
+    {
+      "date": "Jun 13",
+      "opponent": "Gustavo Lopez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Chumash Casino, Santa Ynez"
+    }
+  ]
+}

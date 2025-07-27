@@ -1,0 +1,387 @@
+{
+  "boxrec_id": "356831",
+  "name": "Gennadiy Golovkin",
+  "birth_name": "\u0413\u0435\u043d\u043d\u0430\u0434\u0438\u0439 \u0413\u0435\u043d\u043d\u0430\u0434\u044c\u0435\u0432\u0438\u0447 \u0413\u043e\u043b\u043e\u0432\u043a\u0438\u043d",
+  "alias": "GGG",
+  "birth_date": null,
+  "birth_place": "Karaganda, Kazakhstan",
+  "nationality": "Kazakhstan",
+  "stance": "orthodox",
+  "height": "5\u2032 10\u00bd\u2033 / 179cm",
+  "reach": "70\u2033 / 178cm",
+  "record": {
+    "wins": 42,
+    "losses": 2,
+    "draws": 1,
+    "kos": 0,
+    "total_fights": 45
+  },
+  "division": "middle",
+  "residence": "Los Angeles, California, USA",
+  "status": "inactive",
+  "career": "2006-2022",
+  "debut": "2006-05-06",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Sep 22",
+      "opponent": "Saul Alvarez*",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "Apr 22",
+      "opponent": "Ryota Murata",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Super Arena, Saitama"
+    },
+    {
+      "date": "Dec 20",
+      "opponent": "Kamil Szeremeta",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Seminole Hard Rock Hotel and Casino, Hollywood"
+    },
+    {
+      "date": "Oct 19",
+      "opponent": "Sergiy Derevyanchenko",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Jun 19",
+      "opponent": "Steve Rolls",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Sep 18",
+      "opponent": "Saul Alvarez*",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "May 18",
+      "opponent": "Vanes Martirosyan",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "StubHub Center, Carson"
+    },
+    {
+      "date": "Sep 17",
+      "opponent": "Saul Alvarez*",
+      "result": "D",
+      "method": null,
+      "rounds": null,
+      "venue": "T-Mobile Arena, Las Vegas"
+    },
+    {
+      "date": "Mar 17",
+      "opponent": "Daniel Jacobs",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Sep 16",
+      "opponent": "Kell Brook",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Apr 16",
+      "opponent": "Dominic Wade",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Forum, Inglewood"
+    },
+    {
+      "date": "Oct 15",
+      "opponent": "David Lemieux",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "May 15",
+      "opponent": "Willie Monroe Jr",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Forum, Inglewood"
+    },
+    {
+      "date": "Feb 15",
+      "opponent": "Martin Murray",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Salle des \u00c9toiles, Monte Carlo"
+    },
+    {
+      "date": "Oct 14",
+      "opponent": "Marco Antonio Rubio",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "StubHub Center, Carson"
+    },
+    {
+      "date": "Jul 14",
+      "opponent": "Daniel Geale",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Feb 14",
+      "opponent": "Adama Osumanu",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Salle des \u00c9toiles, Monte Carlo"
+    },
+    {
+      "date": "Nov 13",
+      "opponent": "Curtis Stevens",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Jun 13",
+      "opponent": "Matthew Macklin",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "MGM Grand at Foxwoods Resort, Mashantucket"
+    },
+    {
+      "date": "Mar 13",
+      "opponent": "Nobuhiro Ishida",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Salle des \u00c9toiles, Monte Carlo"
+    },
+    {
+      "date": "Jan 13",
+      "opponent": "Gabriel Rosado",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden Theater, New York"
+    },
+    {
+      "date": "Sep 12",
+      "opponent": "Grzegorz Proksa",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Turning Stone Resort & Casino, Verona"
+    },
+    {
+      "date": "May 12",
+      "opponent": "Makoto Fuchigami",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Ice Palace \"Terminal\", Brovari"
+    },
+    {
+      "date": "Dec 11",
+      "opponent": "Lajuan Simon",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Ballsaal Interconti-Hotel, Duesseldorf"
+    },
+    {
+      "date": "Jun 11",
+      "opponent": "Kassim Ouma",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Arena Roberto Duran, Panama City"
+    },
+    {
+      "date": "Dec 10",
+      "opponent": "Nilson Julio Tapia",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sport Complex \u201cDaulet\u201d, Astana"
+    },
+    {
+      "date": "Aug 10",
+      "opponent": "Milton Nunez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Arena Roberto Duran, Panama City"
+    },
+    {
+      "date": "Nov 09",
+      "opponent": "Mikhail Makarov",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sparkassen-Arena, Kiel"
+    },
+    {
+      "date": "Jul 09",
+      "opponent": "John Anderson Carvalho de Souza",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Nuerburgring race track, Nuerburg"
+    },
+    {
+      "date": "Apr 09",
+      "opponent": "Anthony Greenidge",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "K\u00f6nig Palast, Krefeld"
+    },
+    {
+      "date": "Jan 09",
+      "opponent": "Javier Alberto Mamani",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Burg-Waechter Castello, Duesseldorf"
+    },
+    {
+      "date": "Nov 08",
+      "opponent": "Malik Dziarra",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Stadthalle, Rostock"
+    },
+    {
+      "date": "Jun 08",
+      "opponent": "Amar Amari",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Brondby Hallen, Brondby"
+    },
+    {
+      "date": "May 08",
+      "opponent": "Ibrahim Sid",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Brandberge Arena, Halle an der Saale"
+    },
+    {
+      "date": "Apr 08",
+      "opponent": "Ian Gardner",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Burg-Waechter Castello, Duesseldorf"
+    },
+    {
+      "date": "Feb 08",
+      "opponent": "Tshepo Mashego",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sporthalle, Alsterdorf"
+    },
+    {
+      "date": "Sep 07",
+      "opponent": "Mehdi Bouadla",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Burg-Waechter Castello, Duesseldorf"
+    },
+    {
+      "date": "May 07",
+      "opponent": "Siarhei Khamitski",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Fight Night Arena, Cologne"
+    },
+    {
+      "date": "Feb 07",
+      "opponent": "Simon Mokoena",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Kugelbake-Halle, Cuxhaven"
+    },
+    {
+      "date": "Dec 06",
+      "opponent": "Sylvain Gomis",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Estrel Convention Center, Neukoelln"
+    },
+    {
+      "date": "Oct 06",
+      "opponent": "Jorge Ariel Garcia",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Brandberge Arena, Halle an der Saale"
+    },
+    {
+      "date": "Sep 06",
+      "opponent": "Martins Kukulis",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Kugelbake-Halle, Cuxhaven"
+    },
+    {
+      "date": "Aug 06",
+      "opponent": "Daniel Urbanski",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Universum Gym, Wandsbek"
+    },
+    {
+      "date": "Jul 06",
+      "opponent": "Siarhei Navarka",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Koenig Pilsener Arena, Oberhausen"
+    },
+    {
+      "date": "May 06",
+      "opponent": "Gabor Balogh",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Burg-Waechter Castello, Duesseldorf"
+    }
+  ]
+}

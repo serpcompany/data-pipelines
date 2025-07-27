@@ -1,0 +1,283 @@
+{
+  "boxrec_id": "659461",
+  "name": "Anthony Joshua",
+  "birth_name": "Anthony Oluwafemi Olaseni Joshua",
+  "alias": "'AJ'",
+  "birth_date": null,
+  "birth_place": "Watford, Hertfordshire, United Kingdom",
+  "nationality": "United Kingdom",
+  "stance": "orthodox",
+  "height": "6\u2032 6\u2033 / 198cm",
+  "reach": "82\u2033 / 208cm",
+  "record": {
+    "wins": 28,
+    "losses": 4,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 32
+  },
+  "division": "heavy",
+  "residence": "Golders Green, London, United Kingdom",
+  "status": null,
+  "career": "2013-2024",
+  "debut": "2013-10-05",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Sep 24",
+      "opponent": "Daniel Dubois",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Stadium, Wembley"
+    },
+    {
+      "date": "Mar 24",
+      "opponent": "Francis Ngannou",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Kingdom Arena, Riyadh"
+    },
+    {
+      "date": "Dec 23",
+      "opponent": "Otto Wallin",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Kingdom Arena, Riyadh"
+    },
+    {
+      "date": "Aug 23",
+      "opponent": "Robert Helenius",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Apr 23",
+      "opponent": "Jermaine Franklin Jr",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Aug 22",
+      "opponent": "Oleksandr Usyk",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Jeddah Superdome, Jeddah"
+    },
+    {
+      "date": "Sep 21",
+      "opponent": "Oleksandr Usyk",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Tottenham Hotspur Stadium, Tottenham"
+    },
+    {
+      "date": "Dec 20",
+      "opponent": "Kubrat Pulev",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Arena, Wembley"
+    },
+    {
+      "date": "Dec 19",
+      "opponent": "Andy Ruiz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Diriyah Arena, Diriyah"
+    },
+    {
+      "date": "Jun 19",
+      "opponent": "Andy Ruiz",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Madison Square Garden, New York"
+    },
+    {
+      "date": "Sep 18",
+      "opponent": "Alexander Povetkin",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Stadium, Wembley"
+    },
+    {
+      "date": "Mar 18",
+      "opponent": "Joseph Parker",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Principality Stadium, Cardiff"
+    },
+    {
+      "date": "Oct 17",
+      "opponent": "Carlos Takam",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Principality Stadium, Cardiff"
+    },
+    {
+      "date": "Apr 17",
+      "opponent": "Wladimir Klitschko",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Stadium, Wembley"
+    },
+    {
+      "date": "Dec 16",
+      "opponent": "Eric Molina",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Manchester Arena, Manchester"
+    },
+    {
+      "date": "Jun 16",
+      "opponent": "Dominic Breazeale",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Apr 16",
+      "opponent": "Charles Martin",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Dec 15",
+      "opponent": "Dillian Whyte*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Sep 15",
+      "opponent": "Gary Cornish",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "May 15",
+      "opponent": "Kevin Johnson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "May 15",
+      "opponent": "Raphael Zumbano",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Utilita Arena, Birmingham"
+    },
+    {
+      "date": "Apr 15",
+      "opponent": "Jason Gavern",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Metro Radio Arena, Newcastle"
+    },
+    {
+      "date": "Nov 14",
+      "opponent": "Michael Sprott",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Echo Arena, Liverpool"
+    },
+    {
+      "date": "Oct 14",
+      "opponent": "Denis Bakhtov",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    },
+    {
+      "date": "Sep 14",
+      "opponent": "Konstantin Airich",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Phones 4u Arena (MEN Arena), Manchester"
+    },
+    {
+      "date": "Jul 14",
+      "opponent": "Matt Skelton",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Echo Arena, Liverpool"
+    },
+    {
+      "date": "May 14",
+      "opponent": "Matt Legg",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Stadium, Wembley"
+    },
+    {
+      "date": "Mar 14",
+      "opponent": "Hector Alfredo Avila",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Scottish Exhibition Centre, Glasgow"
+    },
+    {
+      "date": "Feb 14",
+      "opponent": "Dorian Darch",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Cardiff International Arena, Cardiff"
+    },
+    {
+      "date": "Nov 13",
+      "opponent": "Hrvoje Kisicek",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "York Hall, Bethnal Green"
+    },
+    {
+      "date": "Oct 13",
+      "opponent": "Paul Butlin",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sheffield Arena, Sheffield"
+    },
+    {
+      "date": "Oct 13",
+      "opponent": "Emanuele Leo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "O2 Arena, Greenwich"
+    }
+  ]
+}

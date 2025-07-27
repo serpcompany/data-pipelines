@@ -1,0 +1,219 @@
+{
+  "boxrec_id": "681602",
+  "name": "Martin Bakole",
+  "birth_name": "Martin Bakole Ilunga",
+  "alias": "Martin Makabu Bakole",
+  "birth_date": null,
+  "birth_place": "Kananga, Democratic Republic Of The Congo",
+  "nationality": "Democratic Republic Of The Congo",
+  "stance": "orthodox",
+  "height": "6\u2032 6\u2033 / 198cm",
+  "reach": null,
+  "record": {
+    "wins": 21,
+    "losses": 2,
+    "draws": 1,
+    "kos": 0,
+    "total_fights": 24
+  },
+  "division": "heavy",
+  "residence": "Airdrie, Scotland, United Kingdom",
+  "status": null,
+  "career": "2014-2025",
+  "debut": "2014-03-25",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "May 25",
+      "opponent": "Efe Ajagba",
+      "result": "D",
+      "method": null,
+      "rounds": null,
+      "venue": "The Venue Riyadh Season, Riyadh"
+    },
+    {
+      "date": "Feb 25",
+      "opponent": "Joseph Parker",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "The Venue Riyadh Season, Riyadh"
+    },
+    {
+      "date": "Aug 24",
+      "opponent": "Jared Anderson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "BMO Stadium, Los Angeles"
+    },
+    {
+      "date": "Oct 23",
+      "opponent": "Carlos Takam",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Boulevard Hall, Riyadh"
+    },
+    {
+      "date": "Apr 23",
+      "opponent": "Ihor Shevadzutskyi",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "G2A Arena, Jasionka 953, Rzeszow"
+    },
+    {
+      "date": "May 22",
+      "opponent": "Tony Yoka",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Accord Hotels Arena, Paris XII"
+    },
+    {
+      "date": "Sep 21",
+      "opponent": "Haruna Osumanu",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Sport Society, Dubai"
+    },
+    {
+      "date": "Dec 20",
+      "opponent": "Sergey Kuzmin",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Wembley Arena, Wembley"
+    },
+    {
+      "date": "Nov 19",
+      "opponent": "Rodney Hernandez",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Manchester Arena, Manchester"
+    },
+    {
+      "date": "Oct 19",
+      "opponent": "Kevin Johnson",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Newcastle Arena, Newcastle"
+    },
+    {
+      "date": "Aug 19",
+      "opponent": "Ytalo Perea",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Exhibition Centre, Liverpool"
+    },
+    {
+      "date": "Apr 19",
+      "opponent": "Mariusz Wach",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Spodek, Katowice"
+    },
+    {
+      "date": "Oct 18",
+      "opponent": "Michael Hunter",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "York Hall, Bethnal Green"
+    },
+    {
+      "date": "Jun 18",
+      "opponent": "DL Jones",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "The SSE Hydro, Glasgow"
+    },
+    {
+      "date": "Nov 17",
+      "opponent": "Ali Baghouz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Royal Highland Centre, Edinburgh"
+    },
+    {
+      "date": "Oct 17",
+      "opponent": "Kamil Sokolowski*",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "York Hall, Bethnal Green"
+    },
+    {
+      "date": "Jul 17",
+      "opponent": "Dominic Akinlade",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Bowlers Exhibition Centre, Manchester"
+    },
+    {
+      "date": "Oct 16",
+      "opponent": "Tomas Mrazek",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Bellahouston Leisure Centre, Glasgow"
+    },
+    {
+      "date": "Aug 16",
+      "opponent": "Lukasz Rusiewicz",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Village Hotel, Ashton under Lyne"
+    },
+    {
+      "date": "Dec 15",
+      "opponent": "Patrick Madzinga",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Olive Convention Centre, Durban"
+    },
+    {
+      "date": "Dec 14",
+      "opponent": "Ferenc Zsalek",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Centre Sportif Obercorn, Differdange"
+    },
+    {
+      "date": "Nov 14",
+      "opponent": "Lukas Filka",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Hall Omnisport de La Pr\u00e9alle, Herstal"
+    },
+    {
+      "date": "Apr 14",
+      "opponent": "Chris Mbombo",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Emperors Palace, Kempton Park"
+    },
+    {
+      "date": "Mar 14",
+      "opponent": "Cecil Smith",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Emperors Palace, Kempton Park"
+    }
+  ]
+}

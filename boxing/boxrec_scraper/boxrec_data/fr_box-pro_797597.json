@@ -1,0 +1,99 @@
+{
+  "boxrec_id": "797597",
+  "name": "Luis Alcaraz Pineda",
+  "birth_name": "Luis Jes\u00fas Alcaraz Pineda",
+  "alias": null,
+  "birth_date": null,
+  "birth_place": "Guaymas, Sonora, Mexique",
+  "nationality": "Mexique",
+  "stance": null,
+  "height": null,
+  "reach": null,
+  "record": {
+    "wins": 2,
+    "losses": 7,
+    "draws": 0,
+    "kos": 0,
+    "total_fights": 9
+  },
+  "division": "Super Mi-Moyens",
+  "residence": "Empalme, Sonora, Mexique",
+  "status": "inactive",
+  "career": "2017-2022",
+  "debut": "2017-04-28",
+  "sex": "male",
+  "bouts": [
+    {
+      "date": "Nov 22",
+      "opponent": "Emeka Nwokolo",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "San Luis Rio Colorado"
+    },
+    {
+      "date": "Oct 22",
+      "opponent": "Jonathan Sabori Aguilar",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "San Luis Rio Colorado"
+    },
+    {
+      "date": "Mar 22",
+      "opponent": "Marcos Rios Gonzalez",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Gimnasio Municipal, San Luis Rio Colorado"
+    },
+    {
+      "date": "Oct 20",
+      "opponent": "Adrian Torres Rodriguez",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Parque Los Potrillos, Tecate"
+    },
+    {
+      "date": "Sep 18",
+      "opponent": "Josue Garcia",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Palenque de la Expo, Ciudad Obregon"
+    },
+    {
+      "date": "Feb 18",
+      "opponent": "Roland Jeffery Membreno",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "17 Steakhouse, Mississauga"
+    },
+    {
+      "date": "Oct 17",
+      "opponent": "Jose Adolfo Caro",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Arena Itson, Ciudad Obregon"
+    },
+    {
+      "date": "Sep 17",
+      "opponent": "Pablo Poom Leal",
+      "result": "W",
+      "method": null,
+      "rounds": null,
+      "venue": "Plaza Tinaco, Empalme"
+    },
+    {
+      "date": "Apr 17",
+      "opponent": "Misael Cabrera Urias*",
+      "result": "L",
+      "method": null,
+      "rounds": null,
+      "venue": "Arena Itson, Ciudad Obregon"
+    }
+  ]
+}
