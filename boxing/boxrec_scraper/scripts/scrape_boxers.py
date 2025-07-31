@@ -106,7 +106,7 @@ def create_filename_from_url(url: str) -> str:
     filename = '_'.join(filename_parts) if filename_parts else 'index'
     return f"{filename[:100]}.html"  # Limit length
 
-def fetch_url(url: str, output_dir: Path, rate_limit: float) -> dict:
+def fetch_url(url: str, output_dir: Path, rate_limit: float, max_age_days: int = None) -> dict:
     """Fetch a single URL with rate limiting and error handling."""
     try:
         import requests
@@ -121,16 +121,31 @@ def fetch_url(url: str, output_dir: Path, rate_limit: float) -> dict:
     filename = create_filename_from_url(url)
     output_file = output_dir / filename
     
-    # Skip if already exists
+    # Skip if already exists and is recent enough
     if output_file.exists():
-        with progress_lock:
-            stats['skipped'] += 1
-        return {
-            'url': url,
-            'status': 'skipped',
-            'reason': 'already_exists',
-            'filename': filename
-        }
+        if max_age_days is not None:
+            # Check file age
+            file_age_days = (time.time() - output_file.stat().st_mtime) / (24 * 3600)
+            if file_age_days < max_age_days:
+                with progress_lock:
+                    stats['skipped'] += 1
+                return {
+                    'url': url,
+                    'status': 'skipped',
+                    'reason': f'recent_file ({file_age_days:.1f} days old)',
+                    'filename': filename
+                }
+            # File is too old, re-scrape it
+        else:
+            # No age limit specified, skip all existing files
+            with progress_lock:
+                stats['skipped'] += 1
+            return {
+                'url': url,
+                'status': 'skipped',
+                'reason': 'already_exists',
+                'filename': filename
+            }
     
     # Rate limiting
     rate_limited_request(rate_limit)
@@ -218,13 +233,20 @@ def load_urls_from_csv(csv_file: Path) -> list:
         return []
 
 def scrape_urls(urls: list, output_dir: Path, max_workers: int = DEFAULT_WORKERS, 
-                rate_limit: float = DEFAULT_RATE_LIMIT) -> list:
+                rate_limit: float = DEFAULT_RATE_LIMIT, max_age_days: int = None) -> list:
     """Scrape multiple URLs concurrently."""
     if not ZYTE_API_KEY:
         logging.error("ZYTE_API_KEY not found in environment variables")
         return []
     
     output_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Check how many files already exist
+    existing_count = 0
+    for url in urls:
+        filename = create_filename_from_url(url)
+        if (output_dir / filename).exists():
+            existing_count += 1
     
     # Initialize stats
     stats['total'] = len(urls)
@@ -236,13 +258,14 @@ def scrape_urls(urls: list, output_dir: Path, max_workers: int = DEFAULT_WORKERS
     logging.info(f"Starting scrape: {len(urls)} URLs with {max_workers} workers")
     logging.info(f"Rate limit: {rate_limit} requests/second")
     logging.info(f"Output directory: {output_dir}")
+    logging.info(f"Already downloaded: {existing_count} files will be skipped")
     
     results = []
     
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         # Submit all tasks
         future_to_url = {
-            executor.submit(fetch_url, url, output_dir, rate_limit): url 
+            executor.submit(fetch_url, url, output_dir, rate_limit, max_age_days): url 
             for url in urls
         }
         
@@ -299,16 +322,23 @@ def save_results(results: list, output_dir: Path):
 
 def main():
     """Main entry point."""
+    # Get absolute paths
+    script_dir = Path(__file__).parent
+    default_csv = script_dir.parent / 'data' / 'urls.csv'
+    default_output = script_dir.parent / 'data' / 'raw' / 'boxrec_html'
+    
     parser = argparse.ArgumentParser(description='BoxRec Scraper - High-performance scraper using Zyte API')
-    parser.add_argument('csv_file', nargs='?', default='data/urls.csv', 
+    parser.add_argument('csv_file', nargs='?', default=str(default_csv), 
                        help='CSV file containing URLs to scrape')
     parser.add_argument('--workers', type=int, default=DEFAULT_WORKERS,
                        help=f'Number of concurrent workers (default: {DEFAULT_WORKERS})')
     parser.add_argument('--rate-limit', type=float, default=DEFAULT_RATE_LIMIT,
                        help=f'Requests per second limit (default: {DEFAULT_RATE_LIMIT})')
-    parser.add_argument('--output', type=str, default='data/raw/boxrec_html',
+    parser.add_argument('--output', type=str, default=str(default_output),
                        help='Output directory for HTML files')
     parser.add_argument('--limit', type=int, help='Limit number of URLs to scrape')
+    parser.add_argument('--max-age-days', type=int, 
+                       help='Re-scrape files older than N days (default: skip all existing)')
     
     args = parser.parse_args()
     
@@ -335,7 +365,7 @@ def main():
     output_dir = Path(args.output)
     
     # Run scraper
-    results = scrape_urls(urls, output_dir, args.workers, args.rate_limit)
+    results = scrape_urls(urls, output_dir, args.workers, args.rate_limit, args.max_age_days)
     
     # Save results
     save_results(results, output_dir)

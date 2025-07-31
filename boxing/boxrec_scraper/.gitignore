@@ -6,6 +6,10 @@ data/processed/
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
+.Python
+*.so
+.python-version
 
 # Environment files
 .env
@@ -21,3 +25,8 @@ logs/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Claude files
+.claude/
+
+raw/
