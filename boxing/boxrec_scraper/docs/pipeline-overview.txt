@@ -26,19 +26,28 @@ BOXREC DATA PIPELINE OVERVIEW
 │                 │    Detect errors/rate limits
 └────────┬────────┘
          │ Parse (if valid)
-         ▼
-┌─────────────────┐
-│  HTML Parser    │  ← parse_boxer_v2.py
-│   (v2.0.0)      │    Extract 40+ fields
-│                 │    Opponent linking
-└────────┬────────┘
-         │ Extract
-         ▼
-┌─────────────────┐
-│ Individual JSON │  ← data/raw/boxrec_json_v2/
-│   Per Boxer     │    One JSON per boxer
-│  (Validated)    │    Schema v2.0.0
-└────────┬────────┘
+         ├──────────────────┐
+         │                  │
+         ▼                  ▼
+┌─────────────────┐  ┌─────────────────┐
+│ URL Extractors  │  │  HTML Parser    │  ← parse_boxer_v2.py
+│                 │  │   (v2.0.0)      │    Extract 40+ fields
+├─────────────────┤  │                 │    Opponent linking
+│ extract_opponent│  └────────┬────────┘
+│    _urls.py     │           │
+├─────────────────┤           │
+│ extract_bout    │           │
+│    _urls.py     │           │
+└─────────────────┘           │
+         │                    │
+         ▼                    ▼
+┌─────────────────┐  ┌─────────────────┐
+│  New URL Lists  │  │ Individual JSON │  ← data/raw/boxrec_json_v2/
+│                 │  │   Per Boxer     │    One JSON per boxer
+├─────────────────┤  │  (Validated)    │    Schema v2.0.0
+│ • opponent_urls │  └────────┬────────┘
+│ • bout_urls.csv │           │
+└─────────────────┘           │
          │ Process
          ▼
 ┌─────────────────┐
