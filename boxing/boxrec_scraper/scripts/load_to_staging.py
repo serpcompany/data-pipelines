@@ -12,7 +12,7 @@ import argparse
 from pathlib import Path
 
 # Load environment variables
-load_dotenv('../../.env')
+load_dotenv('/Users/devin/repos/projects/data-pipelines/boxing/.env')
 
 # PostgreSQL connection details
 POSTGRES_CONFIG = {
@@ -25,6 +25,10 @@ POSTGRES_CONFIG = {
 
 def load_scraped_data(csv_file, html_dir):
     """Load scraped data from CSV and HTML files into staging database"""
+    
+    print("Starting load_scraped_data function...")
+    print(f"CSV file: {csv_file}")
+    print(f"HTML dir: {html_dir}")
     
     # Connect to PostgreSQL
     conn = psycopg2.connect(**POSTGRES_CONFIG)
@@ -73,6 +77,13 @@ def load_scraped_data(csv_file, html_dir):
                 ))
         
         print(f"📊 Prepared {len(data_to_insert)} records for insertion")
+        
+        if len(data_to_insert) == 0:
+            print("⚠️  No data to insert!")
+            return
+            
+        # Show sample of what we're inserting
+        print(f"Sample record: {data_to_insert[0][:3]}...")
         
         # Insert data using batch insert for performance
         insert_query = """

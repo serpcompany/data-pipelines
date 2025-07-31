@@ -18,7 +18,14 @@ BOXREC DATA PIPELINE OVERVIEW
 │   Storage       │    99 boxer profile pages
 │  (.html files)  │    Preserved for reprocessing
 └────────┬────────┘
-         │ Parse
+         │ Validate
+         ▼
+┌─────────────────┐
+│ Scrape Validator│  ← validate_scrapes.py
+│  (Quality Check)│    Check for login pages
+│                 │    Detect errors/rate limits
+└────────┬────────┘
+         │ Parse (if valid)
          ▼
 ┌─────────────────┐
 │  HTML Parser    │  ← parse_boxer_v2.py
@@ -112,10 +119,15 @@ boxrec_scraper/
 │   ├── raw/
 │   │   ├── boxrec_html/     # Source HTML
 │   │   └── boxrec_json_v2/  # Parsed JSON
-│   └── processed/
-│       └── v2/              # Clean data
+│   ├── processed/
+│   │   └── v2/              # Clean data
+│   ├── bad_scrapes.csv      # Failed scrapes list
+│   └── urls_to_rescrape.csv # URLs needing retry
 ├── outputs/
 │   └── v2/                  # Final datasets
 ├── scripts/                 # Processing tools
+│   ├── scrape_boxers.py     # Main scraper
+│   ├── validate_scrapes.py  # Quality checker
+│   └── parse_boxer_v2.py    # HTML parser
 ├── schema/                  # JSON schemas
 └── migrations/              # Version upgrades
