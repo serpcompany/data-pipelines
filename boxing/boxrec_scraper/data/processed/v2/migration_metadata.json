@@ -1,8 +1,0 @@
-{
-  "migration": "v1.0.0_to_v2.0.0",
-  "timestamp": "2025-07-31T04:21:21.974568+00:00",
-  "files_processed": 100,
-  "files_failed": 0,
-  "source_dir": "data/processed",
-  "output_dir": "data/processed/v2"
-}
