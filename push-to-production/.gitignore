@@ -1,0 +1,22 @@
+node_modules/
+dist/
+.env
+.env.local
+
+# Generated schema files (regenerate with npm run pull-schema)
+src/schema/
+
+# Drizzle
+drizzle/
+.drizzle/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
