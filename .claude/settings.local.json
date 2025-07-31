@@ -9,7 +9,9 @@
       "Bash(rm:*)",
       "Bash(chmod:*)",
       "Bash(find:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(gh repo view:*)",
+      "Bash(pnpm tsx:*)"
     ],
     "deny": []
   }
