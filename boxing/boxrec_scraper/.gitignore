@@ -28,5 +28,7 @@ Thumbs.db
 
 # Claude files
 .claude/
+../.claude/
+../../.claude/
 
 raw/
