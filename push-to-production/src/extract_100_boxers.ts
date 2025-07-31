@@ -104,21 +104,28 @@ class BoxRecCompleteParser {
   private extractMetaData(data: BoxerData) {
     const $ = this.$;
     
-    // Extract from meta tags
-    $('meta').each((_, elem) => {
-      const $meta = $(elem);
-      const property = $meta.attr('property');
-      const content = $meta.attr('content');
-      
-      if (property === 'og:image' && content) {
-        data.avatarImage = content;
+    // Extract image from profile photo first (prioritize actual profile photo)
+    const profileImg = $('.profileTablePhoto img.photoBorder, img.photoBorder').first().attr('src');
+    if (profileImg) {
+      // Convert relative URLs to absolute URLs
+      if (profileImg.startsWith('/')) {
+        data.avatarImage = `https://boxrec.com${profileImg}`;
+      } else {
+        data.avatarImage = profileImg;
       }
-    });
+    }
     
-    // Extract image from profile photo
-    const profileImg = $('.profileTablePhoto img, .photoBorder').first().attr('src');
-    if (profileImg && !data.avatarImage) {
-      data.avatarImage = profileImg;
+    // Fallback to OpenGraph image if no profile photo found
+    if (!data.avatarImage) {
+      $('meta').each((_, elem) => {
+        const $meta = $(elem);
+        const property = $meta.attr('property');
+        const content = $meta.attr('content');
+        
+        if (property === 'og:image' && content) {
+          data.avatarImage = content;
+        }
+      });
     }
   }
 
