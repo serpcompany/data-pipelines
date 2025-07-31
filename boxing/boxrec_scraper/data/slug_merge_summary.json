@@ -1,0 +1,11 @@
+{
+  "input_file": "data/boxrec-urls-to-scrape.csv",
+  "output_file": "data/boxrec-urls-to-scrape-with-slugs.csv",
+  "statistics": {
+    "total_boxers": 36539,
+    "matched_slugs": 9464,
+    "no_slug_found": 27075,
+    "duplicate_ids": 3607
+  },
+  "match_rate_percent": 25.9
+}

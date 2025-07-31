@@ -8,3 +8,4 @@ numpy==1.26.2
 fake_useragent
 undetected_chromedriver
 distutils
+mysql-connector-python
