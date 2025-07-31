@@ -8,24 +8,17 @@ BOXREC DATA PIPELINE OVERVIEW
          │ HTTP/Scrape
          ▼
 ┌─────────────────┐
-│  Web Scraper    │  ← Python + BeautifulSoup
-│  (robots.txt)   │    Rate limited, respectful
+│  Web Scraper    │  ← scrape_to_db.py
+│  (Zyte API)     │    Rate limited, validates HTML
 └────────┬────────┘
-         │ Save HTML
+         │ Validate & Save
          ▼
 ┌─────────────────┐
-│   Raw HTML      │  ← data/raw/boxrec_html/
-│   Storage       │    99 boxer profile pages
-│  (.html files)  │    Preserved for reprocessing
+│  PostgreSQL DB  │  ← staging.boxrec_html
+│  HTML Storage   │    staging.bout_html
+│  (Validated)    │    Stores raw HTML + metadata
 └────────┬────────┘
-         │ Validate
-         ▼
-┌─────────────────┐
-│ Scrape Validator│  ← validate_scrapes.py
-│  (Quality Check)│    Check for login pages
-│                 │    Detect errors/rate limits
-└────────┬────────┘
-         │ Parse (if valid)
+         │ Read & Parse
          ├──────────────────┐
          │                  │
          ▼                  ▼
