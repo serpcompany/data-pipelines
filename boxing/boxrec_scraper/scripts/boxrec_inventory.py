@@ -10,6 +10,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Set, Optional
 import logging
+import sys
+sys.path.append(str(Path(__file__).parent.parent))
+from config.boxrec_patterns import BOXREC_ENTITIES, get_entity_by_url, get_urls_for_entity
 
 logging.basicConfig(level=logging.INFO)
 
@@ -148,15 +151,11 @@ class BoxRecInventory:
     
     def get_boxrec_url_patterns(self) -> Dict[str, str]:
         """Return all BoxRec URL patterns we care about."""
-        return {
-            'boxer_profile': 'https://boxrec.com/{lang}/box-pro/{id}',
-            'boxer_wiki': 'https://boxrec.com/wiki/index.php?title=Human:{id}',
-            'event': 'https://boxrec.com/{lang}/event/{id}',
-            'venue': 'https://boxrec.com/{lang}/venue/{id}',
-            'bout': 'https://boxrec.com/{lang}/bout/{id}',
-            'ratings': 'https://boxrec.com/{lang}/ratings',
-            'schedule': 'https://boxrec.com/{lang}/schedule'
-        }
+        # Now using centralized configuration
+        patterns = {}
+        for entity_type, pattern in BOXREC_ENTITIES.items():
+            patterns[entity_type] = pattern.url_pattern
+        return patterns
     
     def get_missing_items(self) -> Dict[str, List]:
         """Identify what we're missing."""
