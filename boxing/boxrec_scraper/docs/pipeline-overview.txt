@@ -1,0 +1,121 @@
+BOXREC DATA PIPELINE OVERVIEW
+=============================
+
+┌─────────────────┐
+│   BoxRec.com    │  ← Source Website
+│  (Boxing Data)  │
+└────────┬────────┘
+         │ HTTP/Scrape
+         ▼
+┌─────────────────┐
+│  Web Scraper    │  ← Python + BeautifulSoup
+│  (robots.txt)   │    Rate limited, respectful
+└────────┬────────┘
+         │ Save HTML
+         ▼
+┌─────────────────┐
+│   Raw HTML      │  ← data/raw/boxrec_html/
+│   Storage       │    99 boxer profile pages
+│  (.html files)  │    Preserved for reprocessing
+└────────┬────────┘
+         │ Parse
+         ▼
+┌─────────────────┐
+│  HTML Parser    │  ← parse_boxer_v2.py
+│   (v2.0.0)      │    Extract 40+ fields
+│                 │    Opponent linking
+└────────┬────────┘
+         │ Extract
+         ▼
+┌─────────────────┐
+│ Individual JSON │  ← data/raw/boxrec_json_v2/
+│   Per Boxer     │    One JSON per boxer
+│  (Validated)    │    Schema v2.0.0
+└────────┬────────┘
+         │ Process
+         ▼
+┌─────────────────┐
+│ Data Processor  │  ← Migration scripts
+│  & Migrations   │    v1 → v2 transforms
+│                 │    Field mapping
+└────────┬────────┘
+         │ Transform
+         ▼
+┌─────────────────┐
+│ Processed JSON  │  ← data/processed/v2/
+│   (Clean)       │    Normalized data
+│                 │    Ready to combine
+└────────┬────────┘
+         │ Combine
+         ▼
+┌─────────────────┐
+│ Data Combiner   │  ← combine_boxer_json_v2.py
+│   (Filters)     │    Aggregate all boxers
+│                 │    Apply filters
+└────────┬────────┘
+         │ Output
+         ▼
+┌─────────────────┐
+│ Combined Dataset│  ← outputs/v2/combined_boxers.json
+│  (Single JSON)  │    All boxers in one file
+│   + Summary     │    Ready for frontend
+└────────┬────────┘
+         │
+         ├─────────────────┐ Current Path
+         │                 ▼
+         │        ┌─────────────────┐
+         │        │   Nuxt.js App   │
+         │        │ (Direct Import) │
+         │        └─────────────────┘
+         │
+         └─────────────────┐ Future Path
+                           ▼
+                  ┌─────────────────┐
+                  │  Staging DB     │  ← PostgreSQL/SQLite
+                  │ (Drizzle ORM)   │    Structured tables
+                  └────────┬────────┘
+                           │ API
+                           ▼
+                  ┌─────────────────┐
+                  │   REST API      │  ← Fast queries
+                  │  (Endpoints)     │    Filtering
+                  └────────┬────────┘
+                           │ HTTP/JSON
+                           ▼
+                  ┌─────────────────┐
+                  │   Nuxt.js App   │  ← Boxing website
+                  │  (Frontend)      │    Boxer profiles
+                  └─────────────────┘    Fight history
+
+
+KEY FEATURES
+============
+
+1. PRESERVATION: Raw HTML saved for reprocessing
+2. VALIDATION: JSON Schema ensures data quality  
+3. VERSIONING: Schema versions with migrations
+4. LINKING: Opponent IDs enable fight networks
+5. SCALABLE: Ready for 10,000+ boxers
+
+CURRENT STATS
+=============
+• 99 boxers processed
+• ~3,000 fights tracked
+• 40+ fields per boxer
+• 15+ fields per fight
+• Schema version 2.0.0
+
+FILE STRUCTURE
+==============
+boxrec_scraper/
+├── data/
+│   ├── raw/
+│   │   ├── boxrec_html/     # Source HTML
+│   │   └── boxrec_json_v2/  # Parsed JSON
+│   └── processed/
+│       └── v2/              # Clean data
+├── outputs/
+│   └── v2/                  # Final datasets
+├── scripts/                 # Processing tools
+├── schema/                  # JSON schemas
+└── migrations/              # Version upgrades
