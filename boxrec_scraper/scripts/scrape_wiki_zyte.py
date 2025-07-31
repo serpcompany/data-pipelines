@@ -89,15 +89,34 @@ def print_progress():
             f"Rate: {stats['requests_per_second']:.1f} req/s"
         )
 
+def load_blacklist(output_dir):
+    """Load blacklist of empty wiki IDs to avoid re-scraping."""
+    blacklist_path = output_dir.parent / 'empty_wiki_blacklist.json'
+    if blacklist_path.exists():
+        try:
+            with open(blacklist_path, 'r') as f:
+                data = json.load(f)
+                return set(data.get('empty_wiki_ids', []))
+        except Exception as e:
+            logging.warning(f"Error loading blacklist: {e}")
+    return set()
+
 def get_wiki_url(boxrec_id):
     """Construct wiki URL from BoxRec ID."""
     return f"https://boxrec.com/wiki/index.php?title=Human:{boxrec_id}"
 
-def fetch_wiki_page_zyte(boxrec_id, output_dir, rate_limit=DEFAULT_RATE_LIMIT, force=False, max_age_days=None):
+def fetch_wiki_page_zyte(boxrec_id, output_dir, rate_limit=DEFAULT_RATE_LIMIT, force=False, max_age_days=None, blacklist=None):
     """
     Fetch wiki page using Zyte API.
     Handles redirects automatically.
     """
+    # Skip if in blacklist (known empty pages)
+    if blacklist and boxrec_id in blacklist:
+        with progress_lock:
+            stats['skipped'] += 1
+            logging.info(f"[SKIP] Blacklisted (empty wiki): {boxrec_id}")
+        return True, boxrec_id, "blacklisted_empty"
+    
     wiki_url = get_wiki_url(boxrec_id)
     output_file = output_dir / f"wiki_box-pro_{boxrec_id}.html"
     
@@ -299,6 +318,10 @@ def main():
         logging.error("No BoxRec IDs found!")
         sys.exit(1)
     
+    # Load blacklist of empty wiki IDs
+    blacklist = load_blacklist(output_dir)
+    logging.info(f"Loaded blacklist with {len(blacklist)} empty wiki IDs")
+    
     # Apply limit if specified
     if args.limit:
         boxer_ids = boxer_ids[:args.limit]
@@ -314,7 +337,7 @@ def main():
     with ThreadPoolExecutor(max_workers=args.workers) as executor:
         # Submit all tasks
         futures = {
-            executor.submit(fetch_wiki_page_zyte, boxer_id, output_dir, args.rate_limit, args.force, args.max_age_days): boxer_id 
+            executor.submit(fetch_wiki_page_zyte, boxer_id, output_dir, args.rate_limit, args.force, args.max_age_days, blacklist): boxer_id 
             for boxer_id in boxer_ids
         }
         
