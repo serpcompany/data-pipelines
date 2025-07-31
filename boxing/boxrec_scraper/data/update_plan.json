@@ -1,0 +1,709 @@
+{
+  "generated_at": "2025-07-31T05:48:09.324808+00:00",
+  "priorities": {
+    "high": [
+      "447646",
+      "541777",
+      "569964",
+      "886826",
+      "778185",
+      "797597",
+      "745360",
+      "602423",
+      "631178",
+      "851665",
+      "672259",
+      "718399",
+      "611370",
+      "629933",
+      "6129",
+      "632104",
+      "692149",
+      "659",
+      "1414",
+      "790719"
+    ],
+    "medium": [],
+    "low": [
+      {
+        "id": "797597",
+        "task": "add_english_version",
+        "has_languages": [
+          "fr"
+        ]
+      },
+      {
+        "id": "1055950",
+        "task": "add_english_version",
+        "has_languages": [
+          "es"
+        ]
+      },
+      {
+        "id": "651075",
+        "task": "add_english_version",
+        "has_languages": [
+          "fr"
+        ]
+      },
+      {
+        "id": "658226",
+        "task": "add_english_version",
+        "has_languages": [
+          "de"
+        ]
+      },
+      {
+        "id": "5068",
+        "task": "add_english_version",
+        "has_languages": [
+          "fr"
+        ]
+      },
+      {
+        "id": "814937",
+        "task": "add_english_version",
+        "has_languages": [
+          "fr"
+        ]
+      },
+      {
+        "id": "861063",
+        "task": "add_english_version",
+        "has_languages": [
+          "de"
+        ]
+      },
+      {
+        "id": "861332",
+        "task": "add_english_version",
+        "has_languages": [
+          "fr"
+        ]
+      },
+      {
+        "id": "872417",
+        "task": "add_english_version",
+        "has_languages": [
+          "fr"
+        ]
+      }
+    ]
+  },
+  "tasks": {
+    "wiki_scraping": [
+      {
+        "id": "447646",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:447646",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "541777",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:541777",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "569964",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:569964",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "886826",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:886826",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "778185",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:778185",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "797597",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:797597",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "745360",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:745360",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "602423",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:602423",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "631178",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:631178",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "851665",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:851665",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "672259",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:672259",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "718399",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:718399",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "611370",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:611370",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "629933",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:629933",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "6129",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:6129",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "632104",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:632104",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "692149",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:692149",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "659",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:659",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "1414",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:1414",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "790719",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:790719",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "923208",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:923208",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "760625",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:760625",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "659924",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:659924",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "429442",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:429442",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "488530",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:488530",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "659461",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:659461",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "741718",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:741718",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "1055950",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:1055950",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "33535",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:33535",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "651075",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:651075",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "659772",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:659772",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "655301",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:655301",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "744388",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:744388",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "468841",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:468841",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "936958",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:936958",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "896698",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:896698",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "658226",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:658226",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "774820",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:774820",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "356831",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:356831",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "791293",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:791293",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "642596",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:642596",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "643387",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:643387",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "588468",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:588468",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "1853",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:1853",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "214371",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:214371",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "646981",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:646981",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "824560",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:824560",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "865105",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:865105",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "447121",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:447121",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "912383",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:912383",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "703924",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:703924",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "684493",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:684493",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "479205",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:479205",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "5068",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:5068",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "852450",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:852450",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "714366",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:714366",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "613846",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:613846",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "777865",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:777865",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "471634",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:471634",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "579465",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:579465",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "787430",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:787430",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "854141",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:854141",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "646781",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:646781",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "498837",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:498837",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "783107",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:783107",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "864345",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:864345",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "749669",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:749669",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "773847",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:773847",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "629465",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:629465",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "659771",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:659771",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "814937",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:814937",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "861063",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:861063",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "588733",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:588733",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "756515",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:756515",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "766727",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:766727",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "851173",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:851173",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "861332",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:861332",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "783383",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:783383",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "811429",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:811429",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "779719",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:779719",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "8119",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:8119",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "455859",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:455859",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "489762",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:489762",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "665966",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:665966",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "683920",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:683920",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "433135",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:433135",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "471653",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:471653",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "765995",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:765995",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "468433",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:468433",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "872417",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:872417",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "681602",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:681602",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "665878",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:665878",
+        "reason": "Missing wiki page"
+      },
+      {
+        "id": "781366",
+        "task": "scrape_wiki",
+        "url": "https://boxrec.com/wiki/index.php?title=Human:781366",
+        "reason": "Missing wiki page"
+      }
+    ],
+    "profile_updates": [],
+    "new_boxers": [],
+    "reparse_needed": []
+  },
+  "statistics": {
+    "total_boxers": 98,
+    "boxers_with_wiki": 5,
+    "missing_wiki": 93,
+    "needs_update": 0,
+    "missing_english": 9,
+    "completeness_score": 70.61224489795919
+  },
+  "execution_order": [
+    {
+      "step": 1,
+      "action": "scrape_wiki_pages",
+      "target_count": 20,
+      "boxer_ids": [
+        "447646",
+        "541777",
+        "569964",
+        "886826",
+        "778185",
+        "797597",
+        "745360",
+        "602423",
+        "631178",
+        "851665",
+        "672259",
+        "718399",
+        "611370",
+        "629933",
+        "6129",
+        "632104",
+        "692149",
+        "659",
+        "1414",
+        "790719"
+      ],
+      "estimated_time": "30-60 minutes",
+      "command": "python scripts/scrape_wiki_zyte.py"
+    },
+    {
+      "step": 2,
+      "action": "parse_wiki_pages",
+      "command": "python scripts/parse_wiki.py data/raw/boxrec_wiki/",
+      "estimated_time": "5 minutes"
+    },
+    {
+      "step": 3,
+      "action": "combine_all_data",
+      "command": "python scripts/combine_boxer_json_v2.py",
+      "estimated_time": "2 minutes"
+    }
+  ]
+}

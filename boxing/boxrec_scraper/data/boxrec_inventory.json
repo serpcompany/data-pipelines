@@ -1,0 +1,1548 @@
+{
+  "boxers": {
+    "447646": {
+      "id": "447646",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/447646"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_447646.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_447646.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.164395+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.972205+00:00"
+      },
+      "needs_update": false
+    },
+    "541777": {
+      "id": "541777",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/541777"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_541777.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_541777.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.194157+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.972942+00:00"
+      },
+      "needs_update": false
+    },
+    "569964": {
+      "id": "569964",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/569964"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_569964.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_569964.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.196489+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.974493+00:00"
+      },
+      "needs_update": false
+    },
+    "886826": {
+      "id": "886826",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/886826"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_886826.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_886826.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.331989+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.973489+00:00"
+      },
+      "needs_update": false
+    },
+    "778185": {
+      "id": "778185",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/778185"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_778185.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_778185.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.291677+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.971743+00:00"
+      },
+      "needs_update": false
+    },
+    "797597": {
+      "id": "797597",
+      "urls": {
+        "profile_fr": "https://boxrec.com/fr/box-pro/797597"
+      },
+      "files": {
+        "profile_fr": "data/raw/boxrec_html/fr_box-pro_797597.html",
+        "parsed_v2_fr": "data/processed/v2/fr_box-pro_797597.json"
+      },
+      "last_scraped": {
+        "profile_fr": "2025-07-27T09:54:49.351395+00:00",
+        "parsed_v2_fr": "2025-07-31T04:21:21.971006+00:00"
+      },
+      "needs_update": false
+    },
+    "745360": {
+      "id": "745360",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/745360"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_745360.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_745360.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.274773+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.969965+00:00"
+      },
+      "needs_update": false
+    },
+    "602423": {
+      "id": "602423",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/602423"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_602423.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_602423.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.205486+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.969320+00:00"
+      },
+      "needs_update": false
+    },
+    "631178": {
+      "id": "631178",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/631178"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_631178.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_631178.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.221408+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.968506+00:00"
+      },
+      "needs_update": false
+    },
+    "851665": {
+      "id": "851665",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/851665"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_851665.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_851665.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.320399+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.970477+00:00"
+      },
+      "needs_update": false
+    },
+    "672259": {
+      "id": "672259",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/672259"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_672259.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_672259.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.250187+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.967934+00:00"
+      },
+      "needs_update": false
+    },
+    "718399": {
+      "id": "718399",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/718399"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_718399.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_718399.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.264167+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.966738+00:00"
+      },
+      "needs_update": false
+    },
+    "611370": {
+      "id": "611370",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/611370"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_611370.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_611370.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.207422+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.966039+00:00"
+      },
+      "needs_update": false
+    },
+    "629933": {
+      "id": "629933",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/629933"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_629933.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_629933.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.219249+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.967306+00:00"
+      },
+      "needs_update": false
+    },
+    "6129": {
+      "id": "6129",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/6129"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_6129.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_6129.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.211755+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.963875+00:00"
+      },
+      "needs_update": false
+    },
+    "632104": {
+      "id": "632104",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/632104"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_632104.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_632104.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.223383+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.965413+00:00"
+      },
+      "needs_update": false
+    },
+    "692149": {
+      "id": "692149",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/692149"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_692149.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_692149.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.257828+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.964661+00:00"
+      },
+      "needs_update": false
+    },
+    "659": {
+      "id": "659",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/659"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_659.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_659.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.237700+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.960504+00:00"
+      },
+      "needs_update": false
+    },
+    "1414": {
+      "id": "1414",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/1414"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_1414.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_1414.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.141187+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.962357+00:00"
+      },
+      "needs_update": false
+    },
+    "474": {
+      "id": "474",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/474",
+        "wiki": "https://boxrec.com/wiki/index.php?title=Human:474"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_474.html",
+        "wiki": "data/raw/boxrec_wiki/wiki_box-pro_474.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_474.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.180464+00:00",
+        "wiki": "2025-07-31T05:22:16.369336+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.961422+00:00"
+      },
+      "needs_update": false
+    },
+    "790719": {
+      "id": "790719",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/790719"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_790719.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_790719.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.306613+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.959152+00:00"
+      },
+      "needs_update": false
+    },
+    "923208": {
+      "id": "923208",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/923208"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_923208.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_923208.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.337088+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.958526+00:00"
+      },
+      "needs_update": false
+    },
+    "760625": {
+      "id": "760625",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/760625",
+        "profile_ru": "https://boxrec.com/ru/box-pro/760625"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_760625.html",
+        "profile_ru": "data/raw/boxrec_html/ru_box-pro_760625.html",
+        "parsed_v2_ru": "data/processed/v2/ru_box-pro_760625.json",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_760625.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.279544+00:00",
+        "profile_ru": "2025-07-27T09:54:49.359675+00:00",
+        "parsed_v2_ru": "2025-07-31T04:21:21.927761+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.959720+00:00"
+      },
+      "needs_update": false
+    },
+    "659924": {
+      "id": "659924",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/659924"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_659924.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_659924.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.243367+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.956104+00:00"
+      },
+      "needs_update": false
+    },
+    "429442": {
+      "id": "429442",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/429442"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_429442.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_429442.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.158450+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.955080+00:00"
+      },
+      "needs_update": false
+    },
+    "488530": {
+      "id": "488530",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/488530"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_488530.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_488530.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.185134+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.957265+00:00"
+      },
+      "needs_update": false
+    },
+    "659461": {
+      "id": "659461",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/659461"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_659461.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_659461.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.239125+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.957910+00:00"
+      },
+      "needs_update": false
+    },
+    "741718": {
+      "id": "741718",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/741718"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_741718.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_741718.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.266586+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.949689+00:00"
+      },
+      "needs_update": false
+    },
+    "1055950": {
+      "id": "1055950",
+      "urls": {
+        "profile_es": "https://boxrec.com/es/box-pro/1055950"
+      },
+      "files": {
+        "profile_es": "data/raw/boxrec_html/es_box-pro_1055950.html",
+        "parsed_v2_es": "data/processed/v2/es_box-pro_1055950.json"
+      },
+      "last_scraped": {
+        "profile_es": "2025-07-27T09:54:49.347094+00:00",
+        "parsed_v2_es": "2025-07-31T04:21:21.950194+00:00"
+      },
+      "needs_update": false
+    },
+    "33535": {
+      "id": "33535",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/33535"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_33535.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_33535.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.148426+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.951067+00:00"
+      },
+      "needs_update": false
+    },
+    "651075": {
+      "id": "651075",
+      "urls": {
+        "profile_fr": "https://boxrec.com/fr/box-pro/651075"
+      },
+      "files": {
+        "profile_fr": "data/raw/boxrec_html/fr_box-pro_651075.html",
+        "parsed_v2_fr": "data/processed/v2/fr_box-pro_651075.json"
+      },
+      "last_scraped": {
+        "profile_fr": "2025-07-27T09:54:49.349694+00:00",
+        "parsed_v2_fr": "2025-07-31T04:21:21.951766+00:00"
+      },
+      "needs_update": false
+    },
+    "659772": {
+      "id": "659772",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/659772"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_659772.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_659772.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.242304+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.954288+00:00"
+      },
+      "needs_update": false
+    },
+    "655301": {
+      "id": "655301",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/655301"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_655301.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_655301.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.236358+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.952398+00:00"
+      },
+      "needs_update": false
+    },
+    "744388": {
+      "id": "744388",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/744388"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_744388.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_744388.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.268800+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.953441+00:00"
+      },
+      "needs_update": false
+    },
+    "468841": {
+      "id": "468841",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/468841"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_468841.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_468841.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.171989+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.949007+00:00"
+      },
+      "needs_update": false
+    },
+    "628407": {
+      "id": "628407",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/628407",
+        "wiki": "https://boxrec.com/wiki/index.php?title=Human:628407"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_628407.html",
+        "wiki": "data/raw/boxrec_wiki/wiki_box-pro_628407.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_628407.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.215203+00:00",
+        "wiki": "2025-07-31T05:22:15.988235+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.947194+00:00"
+      },
+      "needs_update": false
+    },
+    "936958": {
+      "id": "936958",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/936958"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_936958.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_936958.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.338699+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.947721+00:00"
+      },
+      "needs_update": false
+    },
+    "896698": {
+      "id": "896698",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/896698"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_896698.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_896698.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.333778+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.948107+00:00"
+      },
+      "needs_update": false
+    },
+    "658226": {
+      "id": "658226",
+      "urls": {
+        "profile_de": "https://boxrec.com/de/box-pro/658226"
+      },
+      "files": {
+        "profile_de": "data/raw/boxrec_html/de_box-pro_658226.html",
+        "parsed_v2_de": "data/processed/v2/de_box-pro_658226.json"
+      },
+      "last_scraped": {
+        "profile_de": "2025-07-27T09:54:49.134837+00:00",
+        "parsed_v2_de": "2025-07-31T04:21:21.945399+00:00"
+      },
+      "needs_update": false
+    },
+    "774820": {
+      "id": "774820",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/774820"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_774820.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_774820.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.287592+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.946549+00:00"
+      },
+      "needs_update": false
+    },
+    "356831": {
+      "id": "356831",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/356831"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_356831.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_356831.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.156351+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.943522+00:00"
+      },
+      "needs_update": false
+    },
+    "791293": {
+      "id": "791293",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/791293"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_791293.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_791293.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.308442+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.942598+00:00"
+      },
+      "needs_update": false
+    },
+    "642596": {
+      "id": "642596",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/642596"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_642596.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_642596.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.225552+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.944818+00:00"
+      },
+      "needs_update": false
+    },
+    "643387": {
+      "id": "643387",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/643387"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_643387.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_643387.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.229046+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.944305+00:00"
+      },
+      "needs_update": false
+    },
+    "588468": {
+      "id": "588468",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/588468"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_588468.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_588468.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.200943+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.942068+00:00"
+      },
+      "needs_update": false
+    },
+    "1853": {
+      "id": "1853",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/1853"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_1853.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_1853.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.143744+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.940292+00:00"
+      },
+      "needs_update": false
+    },
+    "214371": {
+      "id": "214371",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/214371"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_214371.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_214371.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.146019+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.941345+00:00"
+      },
+      "needs_update": false
+    },
+    "646981": {
+      "id": "646981",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/646981"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_646981.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_646981.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.234199+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.939127+00:00"
+      },
+      "needs_update": false
+    },
+    "000180": {
+      "id": "000180",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/000180",
+        "wiki": "https://boxrec.com/wiki/index.php?title=Human:000180"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_000180.html",
+        "wiki": "data/raw/boxrec_wiki/wiki_box-pro_000180.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_000180.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.138466+00:00",
+        "wiki": "2025-07-31T05:22:15.482452+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.938649+00:00"
+      },
+      "needs_update": false
+    },
+    "824560": {
+      "id": "824560",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/824560"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_824560.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_824560.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.317163+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.937426+00:00"
+      },
+      "needs_update": false
+    },
+    "865105": {
+      "id": "865105",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/865105"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_865105.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_865105.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.329477+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.936718+00:00"
+      },
+      "needs_update": false
+    },
+    "447121": {
+      "id": "447121",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/447121"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_447121.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_447121.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.163070+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.936167+00:00"
+      },
+      "needs_update": false
+    },
+    "912383": {
+      "id": "912383",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/912383"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_912383.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_912383.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.334755+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.934038+00:00"
+      },
+      "needs_update": false
+    },
+    "703924": {
+      "id": "703924",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/703924"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_703924.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_703924.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.260202+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.934689+00:00"
+      },
+      "needs_update": false
+    },
+    "684493": {
+      "id": "684493",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/684493"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_684493.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_684493.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.255823+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.935342+00:00"
+      },
+      "needs_update": false
+    },
+    "479205": {
+      "id": "479205",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/479205"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_479205.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_479205.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.182979+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.932652+00:00"
+      },
+      "needs_update": false
+    },
+    "5068": {
+      "id": "5068",
+      "urls": {
+        "profile_fr": "https://boxrec.com/fr/box-pro/5068"
+      },
+      "files": {
+        "profile_fr": "data/raw/boxrec_html/fr_box-pro_5068.html",
+        "parsed_v2_fr": "data/processed/v2/fr_box-pro_5068.json"
+      },
+      "last_scraped": {
+        "profile_fr": "2025-07-27T09:54:49.348797+00:00",
+        "parsed_v2_fr": "2025-07-31T04:21:21.933526+00:00"
+      },
+      "needs_update": false
+    },
+    "852450": {
+      "id": "852450",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/852450"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_852450.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_852450.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.322206+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.931997+00:00"
+      },
+      "needs_update": false
+    },
+    "714366": {
+      "id": "714366",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/714366"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_714366.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_714366.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.262122+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.930856+00:00"
+      },
+      "needs_update": false
+    },
+    "613846": {
+      "id": "613846",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/613846"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_613846.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_613846.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.212965+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.928626+00:00"
+      },
+      "needs_update": false
+    },
+    "777865": {
+      "id": "777865",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/777865"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_777865.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_777865.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.289667+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.927053+00:00"
+      },
+      "needs_update": false
+    },
+    "471634": {
+      "id": "471634",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/471634"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_471634.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_471634.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.175540+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.929262+00:00"
+      },
+      "needs_update": false
+    },
+    "352": {
+      "id": "352",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/352",
+        "wiki": "https://boxrec.com/wiki/index.php?title=Human:352"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_352.html",
+        "wiki": "data/raw/boxrec_wiki/wiki_box-pro_352.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_352.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.152364+00:00",
+        "wiki": "2025-07-31T05:22:16.288979+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.930207+00:00"
+      },
+      "needs_update": false
+    },
+    "579465": {
+      "id": "579465",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/579465"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_579465.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_579465.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.198521+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.931588+00:00"
+      },
+      "needs_update": false
+    },
+    "787430": {
+      "id": "787430",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/787430"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_787430.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_787430.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.304420+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.926484+00:00"
+      },
+      "needs_update": false
+    },
+    "854141": {
+      "id": "854141",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/854141"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_854141.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_854141.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.324233+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.925955+00:00"
+      },
+      "needs_update": false
+    },
+    "646781": {
+      "id": "646781",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/646781"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_646781.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_646781.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.232494+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.924282+00:00"
+      },
+      "needs_update": false
+    },
+    "498837": {
+      "id": "498837",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/498837"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_498837.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_498837.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.189746+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.923515+00:00"
+      },
+      "needs_update": false
+    },
+    "783107": {
+      "id": "783107",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/783107"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_783107.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_783107.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.300178+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.925503+00:00"
+      },
+      "needs_update": false
+    },
+    "864345": {
+      "id": "864345",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/864345"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_864345.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_864345.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.325803+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.924804+00:00"
+      },
+      "needs_update": false
+    },
+    "749669": {
+      "id": "749669",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/749669"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_749669.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_749669.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.275898+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.919548+00:00"
+      },
+      "needs_update": false
+    },
+    "773847": {
+      "id": "773847",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/773847"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_773847.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_773847.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.284872+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.920012+00:00"
+      },
+      "needs_update": false
+    },
+    "629465": {
+      "id": "629465",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/629465"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_629465.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_629465.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.217372+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.920718+00:00"
+      },
+      "needs_update": false
+    },
+    "659771": {
+      "id": "659771",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/659771"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_659771.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_659771.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.240225+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.922701+00:00"
+      },
+      "needs_update": false
+    },
+    "814937": {
+      "id": "814937",
+      "urls": {
+        "profile_fr": "https://boxrec.com/fr/box-pro/814937"
+      },
+      "files": {
+        "profile_fr": "data/raw/boxrec_html/fr_box-pro_814937.html",
+        "parsed_v2_fr": "data/processed/v2/fr_box-pro_814937.json"
+      },
+      "last_scraped": {
+        "profile_fr": "2025-07-27T09:54:49.353792+00:00",
+        "parsed_v2_fr": "2025-07-31T04:21:21.921973+00:00"
+      },
+      "needs_update": false
+    },
+    "861063": {
+      "id": "861063",
+      "urls": {
+        "profile_de": "https://boxrec.com/de/box-pro/861063"
+      },
+      "files": {
+        "profile_de": "data/raw/boxrec_html/de_box-pro_861063.html",
+        "parsed_v2_de": "data/processed/v2/de_box-pro_861063.json"
+      },
+      "last_scraped": {
+        "profile_de": "2025-07-27T09:54:49.136154+00:00",
+        "parsed_v2_de": "2025-07-31T04:21:21.921347+00:00"
+      },
+      "needs_update": false
+    },
+    "588733": {
+      "id": "588733",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/588733"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_588733.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_588733.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.203136+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.918996+00:00"
+      },
+      "needs_update": false
+    },
+    "756515": {
+      "id": "756515",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/756515"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_756515.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_756515.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.277120+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.918421+00:00"
+      },
+      "needs_update": false
+    },
+    "766727": {
+      "id": "766727",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/766727"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_766727.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_766727.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.283068+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.917595+00:00"
+      },
+      "needs_update": false
+    },
+    "851173": {
+      "id": "851173",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/851173"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_851173.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_851173.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.319187+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.917084+00:00"
+      },
+      "needs_update": false
+    },
+    "861332": {
+      "id": "861332",
+      "urls": {
+        "profile_fr": "https://boxrec.com/fr/box-pro/861332"
+      },
+      "files": {
+        "profile_fr": "data/raw/boxrec_html/fr_box-pro_861332.html",
+        "parsed_v2_fr": "data/processed/v2/fr_box-pro_861332.json"
+      },
+      "last_scraped": {
+        "profile_fr": "2025-07-27T09:54:49.355626+00:00",
+        "parsed_v2_fr": "2025-07-31T04:21:21.916500+00:00"
+      },
+      "needs_update": false
+    },
+    "783383": {
+      "id": "783383",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/783383"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_783383.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_783383.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.302693+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.915063+00:00"
+      },
+      "needs_update": false
+    },
+    "811429": {
+      "id": "811429",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/811429"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_811429.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_811429.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.312035+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.915635+00:00"
+      },
+      "needs_update": false
+    },
+    "779719": {
+      "id": "779719",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/779719"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_779719.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_779719.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.295112+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.910996+00:00"
+      },
+      "needs_update": false
+    },
+    "8119": {
+      "id": "8119",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/8119"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_8119.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_8119.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.315048+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.912647+00:00"
+      },
+      "needs_update": false
+    },
+    "455859": {
+      "id": "455859",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/455859"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_455859.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_455859.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.166490+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.913642+00:00"
+      },
+      "needs_update": false
+    },
+    "489762": {
+      "id": "489762",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/489762"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_489762.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_489762.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.187454+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.914539+00:00"
+      },
+      "needs_update": false
+    },
+    "665966": {
+      "id": "665966",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/665966"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_665966.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_665966.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.247160+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.908823+00:00"
+      },
+      "needs_update": false
+    },
+    "683920": {
+      "id": "683920",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/683920"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_683920.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_683920.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.254888+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.909717+00:00"
+      },
+      "needs_update": false
+    },
+    "433135": {
+      "id": "433135",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/433135"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_433135.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_433135.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.160984+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.906345+00:00"
+      },
+      "needs_update": false
+    },
+    "471653": {
+      "id": "471653",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/471653"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_471653.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_471653.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.178119+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.907194+00:00"
+      },
+      "needs_update": false
+    },
+    "765995": {
+      "id": "765995",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/765995"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_765995.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_765995.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.280998+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.907995+00:00"
+      },
+      "needs_update": false
+    },
+    "468433": {
+      "id": "468433",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/468433"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_468433.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_468433.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.168337+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.910434+00:00"
+      },
+      "needs_update": false
+    },
+    "872417": {
+      "id": "872417",
+      "urls": {
+        "profile_fr": "https://boxrec.com/fr/box-pro/872417"
+      },
+      "files": {
+        "profile_fr": "data/raw/boxrec_html/fr_box-pro_872417.html",
+        "parsed_v2_fr": "data/processed/v2/fr_box-pro_872417.json"
+      },
+      "last_scraped": {
+        "profile_fr": "2025-07-27T09:54:49.357318+00:00",
+        "parsed_v2_fr": "2025-07-31T04:21:21.904588+00:00"
+      },
+      "needs_update": false
+    },
+    "681602": {
+      "id": "681602",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/681602"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_681602.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_681602.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.253841+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.905348+00:00"
+      },
+      "needs_update": false
+    },
+    "348759": {
+      "id": "348759",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/348759",
+        "wiki": "https://boxrec.com/wiki/index.php?title=Human:348759"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_348759.html",
+        "wiki": "data/raw/boxrec_wiki/wiki_box-pro_348759.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_348759.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.151103+00:00",
+        "wiki": "2025-07-31T05:22:15.999751+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.901847+00:00"
+      },
+      "needs_update": false
+    },
+    "665878": {
+      "id": "665878",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/665878"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_665878.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_665878.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.245185+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.903033+00:00"
+      },
+      "needs_update": false
+    },
+    "781366": {
+      "id": "781366",
+      "urls": {
+        "profile_en": "https://boxrec.com/en/box-pro/781366"
+      },
+      "files": {
+        "profile_en": "data/raw/boxrec_html/en_box-pro_781366.html",
+        "parsed_v2_en": "data/processed/v2/en_box-pro_781366.json"
+      },
+      "last_scraped": {
+        "profile_en": "2025-07-27T09:54:49.297967+00:00",
+        "parsed_v2_en": "2025-07-31T04:21:21.903754+00:00"
+      },
+      "needs_update": false
+    }
+  },
+  "events": {
+    "761410": {
+      "id": "761410",
+      "urls": {
+        "en": "https://boxrec.com/en/event/761410"
+      },
+      "files": {
+        "en": "data/raw/boxrec_html/en_event_761410.html"
+      },
+      "last_scraped": {
+        "en": "2025-07-27T09:54:49.340244+00:00"
+      }
+    },
+    "761409": {
+      "id": "761409",
+      "urls": {
+        "en": "https://boxrec.com/en/event/761409"
+      },
+      "files": {
+        "en": "data/raw/boxrec_html/en_event_761409.html"
+      },
+      "last_scraped": {
+        "en": "2025-07-27T09:54:49.339839+00:00"
+      }
+    }
+  },
+  "venues": {
+    "246558": {
+      "id": "246558",
+      "urls": {
+        "en": "https://boxrec.com/en/venue/246558"
+      },
+      "files": {
+        "en": "data/raw/boxrec_html/en_venue_246558.html"
+      },
+      "last_scraped": {
+        "en": "2025-07-27T09:54:49.343271+00:00"
+      }
+    },
+    "258161": {
+      "id": "258161",
+      "urls": {
+        "en": "https://boxrec.com/en/venue/258161"
+      },
+      "files": {
+        "en": "data/raw/boxrec_html/en_venue_258161.html"
+      },
+      "last_scraped": {
+        "en": "2025-07-27T09:54:49.343344+00:00"
+      }
+    }
+  },
+  "other": {},
+  "last_updated": "2025-07-31T05:46:35.803502+00:00"
+}
