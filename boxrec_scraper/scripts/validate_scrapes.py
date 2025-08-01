@@ -39,6 +39,48 @@ def check_html_file(html_file):
     
     return issues
 
+def delete_login_files(html_dir):
+    """Find and delete all HTML files containing 'BoxRec: Login'"""
+    
+    print(f"🔍 Scanning for login page files in {html_dir}")
+    
+    html_path = Path(html_dir)
+    deleted_files = []
+    total_files = 0
+    
+    # Process all HTML files
+    for html_file in html_path.glob('*.html'):
+        if html_file.is_file():
+            total_files += 1
+            
+            try:
+                with open(html_file, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                
+                # Check for login page content
+                if 'BoxRec: Login' in content:
+                    print(f"🗑️  Deleting login page: {html_file.name}")
+                    html_file.unlink()  # Delete the file
+                    deleted_files.append(html_file.name)
+                    
+            except Exception as e:
+                print(f"❌ Error processing {html_file.name}: {e}")
+            
+            if total_files % 1000 == 0:
+                print(f"   Scanned {total_files} files...")
+    
+    print(f"\n✅ Scanned {total_files} HTML files")
+    print(f"🗑️  Deleted {len(deleted_files)} login page files")
+    
+    if deleted_files:
+        print(f"\n📄 Deleted files:")
+        for filename in deleted_files[:10]:  # Show first 10
+            print(f"   {filename}")
+        if len(deleted_files) > 10:
+            print(f"   ... and {len(deleted_files) - 10} more")
+    
+    return deleted_files
+
 def validate_all_scrapes(html_dir, output_file='data/bad_scrapes.csv'):
     """Validate all HTML files and identify which need re-scraping"""
     
@@ -149,8 +191,15 @@ def main():
                        help='Main URLs CSV file')
     parser.add_argument('--create-rescrape', action='store_true',
                        help='Create a CSV of URLs that need re-scraping')
+    parser.add_argument('--delete-login-files', action='store_true',
+                       help='Delete all HTML files containing "BoxRec: Login"')
     
     args = parser.parse_args()
+    
+    # Delete login files if requested
+    if args.delete_login_files:
+        delete_login_files(args.html_dir)
+        return
     
     # Validate all scrapes
     bad_scrapes = validate_all_scrapes(args.html_dir, output_file='data/bad_scrapes.csv')

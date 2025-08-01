@@ -130,31 +130,7 @@ def fetch_url(url: str, output_dir: Path, rate_limit: float, max_age_days: int =
     filename = create_filename_from_url(url)
     output_file = output_dir / filename
     
-    # Skip if already exists and is recent enough
-    if output_file.exists():
-        if max_age_days is not None:
-            # Check file age
-            file_age_days = (time.time() - output_file.stat().st_mtime) / (24 * 3600)
-            if file_age_days < max_age_days:
-                with progress_lock:
-                    stats['skipped'] += 1
-                return {
-                    'url': url,
-                    'status': 'skipped',
-                    'reason': f'recent_file ({file_age_days:.1f} days old)',
-                    'filename': filename
-                }
-            # File is too old, re-scrape it
-        else:
-            # No age limit specified, skip all existing files
-            with progress_lock:
-                stats['skipped'] += 1
-            return {
-                'url': url,
-                'status': 'skipped',
-                'reason': 'already_exists',
-                'filename': filename
-            }
+    # Always scrape - file existence checking disabled
     
     # Rate limiting
     rate_limited_request(rate_limit)
@@ -339,7 +315,7 @@ def main():
     """Main entry point."""
     # Get absolute paths
     script_dir = Path(__file__).parent
-    default_csv = script_dir.parent / 'data' / 'urls.csv'
+    default_csv = script_dir.parent / 'data' / '5000boxers.csv'
     default_output = script_dir.parent / 'data' / 'raw' / 'boxrec_html'
     
     parser = argparse.ArgumentParser(description='BoxRec Scraper - High-performance scraper using Zyte API')
