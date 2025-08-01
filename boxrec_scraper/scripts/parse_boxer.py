@@ -8,6 +8,10 @@ from bs4 import BeautifulSoup
 import logging
 from datetime import datetime, timezone
 
+# Add parent directory to path for imports
+sys.path.append(str(Path(__file__).parent))
+from utils.login_detector import is_login_page
+
 # Set up logging
 logging.basicConfig(
     level=logging.INFO,
@@ -150,7 +154,13 @@ def parse_boxer_html(html_path):
     """Parse boxer HTML file and extract structured data matching expected schema."""
     
     with open(html_path, 'r', encoding='utf-8') as f:
-        soup = BeautifulSoup(f.read(), 'html.parser')
+        html_content = f.read()
+    
+    # Check if this is a login page
+    if is_login_page(html_content):
+        raise ValueError(f"Login page detected: {html_path}")
+    
+    soup = BeautifulSoup(html_content, 'html.parser')
     
     # Initialize data with expected field names
     data = {

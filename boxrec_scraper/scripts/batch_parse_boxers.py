@@ -25,14 +25,16 @@ def parse_single_file(html_file):
         )
         
         if result.returncode == 0:
-            return True, html_file, None
+            return True, html_file, None, False
         else:
-            return False, html_file, result.stderr
+            # Check if it's a login page error
+            is_login_error = 'Login page detected' in result.stderr
+            return False, html_file, result.stderr, is_login_error
             
     except subprocess.TimeoutExpired:
-        return False, html_file, "Timeout"
+        return False, html_file, "Timeout", False
     except Exception as e:
-        return False, html_file, str(e)
+        return False, html_file, str(e), False
 
 def main():
     # Find all HTML files
@@ -47,6 +49,8 @@ def main():
     # Track progress
     successful = 0
     failed = 0
+    login_pages = 0
+    login_files = []
     start_time = time.time()
     
     # Process files in parallel
@@ -56,13 +60,18 @@ def main():
         
         # Process completed tasks
         for i, future in enumerate(as_completed(future_to_file), 1):
-            success, file_path, error = future.result()
+            success, file_path, error, is_login = future.result()
             
             if success:
                 successful += 1
             else:
                 failed += 1
-                logging.error(f"Failed to parse {file_path}: {error}")
+                if is_login:
+                    login_pages += 1
+                    login_files.append(file_path)
+                    logging.warning(f"Login page: {file_path}")
+                else:
+                    logging.error(f"Failed to parse {file_path}: {error}")
             
             # Log progress every 100 files
             if i % 100 == 0:
