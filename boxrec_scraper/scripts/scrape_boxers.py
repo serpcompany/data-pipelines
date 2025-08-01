@@ -17,10 +17,19 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock, Semaphore
 from urllib.parse import urlparse
 from base64 import b64decode
-from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
+# Load environment variables from .env file if it exists
+def load_env():
+    env_path = Path(__file__).parent.parent.parent / '.env'
+    if env_path.exists():
+        with open(env_path) as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#') and '=' in line:
+                    key, value = line.split('=', 1)
+                    os.environ[key.strip()] = value.strip()
+
+load_env()
 
 # Configuration
 ZYTE_API_KEY = os.getenv('ZYTE_API_KEY')
@@ -176,7 +185,7 @@ def fetch_url(url: str, output_dir: Path, rate_limit: float, max_age_days: int =
         # Update stats
         with progress_lock:
             stats['completed'] += 1
-            if stats['completed'] % 50 == 0:
+            if stats['completed'] % 10 == 0 or stats['completed'] == 1:
                 elapsed = time.time() - stats['start_time']
                 stats['requests_per_second'] = stats['completed'] / elapsed
                 completion_pct = (stats['completed'] / stats['total']) * 100
@@ -194,6 +203,9 @@ def fetch_url(url: str, output_dir: Path, rate_limit: float, max_age_days: int =
         with progress_lock:
             stats['failed'] += 1
         
+        error_msg = f"HTTP {e.response.status_code}: {e}"
+        logging.error(f"Failed to fetch {url}: {error_msg}")
+        
         return {
             'url': url,
             'status': 'failed',
@@ -204,6 +216,8 @@ def fetch_url(url: str, output_dir: Path, rate_limit: float, max_age_days: int =
     except Exception as e:
         with progress_lock:
             stats['failed'] += 1
+        
+        logging.error(f"Exception fetching {url}: {type(e).__name__}: {e}")
         
         return {
             'url': url,
@@ -237,6 +251,7 @@ def scrape_urls(urls: list, output_dir: Path, max_workers: int = DEFAULT_WORKERS
     """Scrape multiple URLs concurrently."""
     if not ZYTE_API_KEY:
         logging.error("ZYTE_API_KEY not found in environment variables")
+        logging.error("Please set ZYTE_API_KEY in your .env file or environment")
         return []
     
     output_dir.mkdir(parents=True, exist_ok=True)

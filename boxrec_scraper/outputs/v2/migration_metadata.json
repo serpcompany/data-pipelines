@@ -1,8 +1,0 @@
-{
-  "migration": "v1.0.0_to_v2.0.0",
-  "timestamp": "2025-07-31T04:21:16.571985+00:00",
-  "files_processed": 1,
-  "files_failed": 0,
-  "source_dir": "outputs/combined_boxers.json",
-  "output_dir": "outputs/v2"
-}
