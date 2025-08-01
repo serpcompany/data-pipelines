@@ -23,7 +23,7 @@ def process_single_file(html_file):
         data = extract_all_fields(html_file)
         
         # Create output filename
-        output_file = str(html_file).replace('.html', '.json').replace('boxrec_html', 'boxrec_json_v2')
+        output_file = str(html_file).replace('.html', '.json').replace('boxrec_html', 'boxrec_json')
         
         # Ensure output directory exists
         os.makedirs(os.path.dirname(output_file), exist_ok=True)

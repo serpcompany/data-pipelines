@@ -112,10 +112,10 @@ def extract_all_fields(html_path):
     formatted_bouts = []
     for bout in bouts:
         formatted_bout = {
-            'boxerId': data['boxrecId'],
+            'boxrecId': data['boxrecId'],
             'boutDate': bout.get('date', ''),
             'opponentName': bout.get('opponent_name', ''),
-            'opponentId': bout.get('opponent_id', ''),
+            'opponentBoxrecId': bout.get('opponent_id', ''),
             'opponentUrl': bout.get('opponent_url', ''),
             'opponentWeight': '',
             'opponentRecord': bout.get('opponent_record', ''),

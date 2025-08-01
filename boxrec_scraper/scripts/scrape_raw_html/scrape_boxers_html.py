@@ -20,7 +20,7 @@ from base64 import b64decode
 
 # Load environment variables from .env file if it exists
 def load_env():
-    env_path = Path(__file__).parent.parent.parent / '.env'
+    env_path = Path(__file__).parent.parent.parent.parent / '.env'
     if env_path.exists():
         with open(env_path) as f:
             for line in f:

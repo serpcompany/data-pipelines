@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Extract nationality from HTML."""
 
+import re
 from base_extractor import load_html, test_extraction
 
 def extract_nationality(soup):
@@ -32,5 +33,4 @@ def extract_nationality(soup):
     return None
 
 if __name__ == "__main__":
-    import re
     test_extraction(extract_nationality)

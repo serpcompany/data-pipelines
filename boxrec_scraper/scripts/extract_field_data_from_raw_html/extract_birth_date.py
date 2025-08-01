@@ -13,7 +13,7 @@ def extract_birth_date(soup):
         cells = row.find_all(['td', 'th'])
         if len(cells) >= 2:
             label = cells[0].get_text().strip().lower()
-            if 'born' in label or 'birth' in label or 'date of birth' in label:
+            if ('born' in label or 'date of birth' in label) and 'birth name' not in label:
                 value = cells[1].get_text().strip()
                 # Remove age info if present
                 value = re.sub(r'\s*\(.*?\)\s*$', '', value)

@@ -5,3 +5,7 @@ node_modules
 .env
 .DS_Store
 *.json
+
+# Log files and directories
+logs/
+*.log
