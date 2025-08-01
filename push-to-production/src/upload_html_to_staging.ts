@@ -88,50 +88,36 @@ async function uploadHtmlFilesToStaging() {
             .replace(/-+/g, '-')
             .trim();
 
-          // Check if record already exists
-          const existing = await db.execute(sql`
-            SELECT id, updated_at FROM "data-pipelines-staging"."boxers" 
-            WHERE boxrec_id = ${boxrecId}
+          // Upsert - insert or update in one query
+          await db.execute(sql`
+            INSERT INTO "data-pipelines-staging"."boxers" (
+              id,
+              boxrec_id,
+              boxrec_url,
+              slug,
+              full_name,
+              html_file,
+              created_at,
+              updated_at
+            ) VALUES (
+              gen_random_uuid(),
+              ${boxrecId},
+              ${boxrecUrl},
+              ${slug + '-' + boxrecId},
+              ${boxerName},
+              ${htmlContent},
+              CURRENT_TIMESTAMP,
+              CURRENT_TIMESTAMP
+            )
+            ON CONFLICT (boxrec_id) 
+            DO UPDATE SET 
+              html_file = EXCLUDED.html_file,
+              boxrec_url = EXCLUDED.boxrec_url,
+              full_name = EXCLUDED.full_name,
+              slug = EXCLUDED.slug,
+              updated_at = CURRENT_TIMESTAMP
           `);
-
-          if (existing.rows && existing.rows.length > 0) {
-            // Update existing record
-            await db.execute(sql`
-              UPDATE "data-pipelines-staging"."boxers" 
-              SET 
-                html_file = ${htmlContent},
-                boxrec_url = ${boxrecUrl},
-                full_name = ${boxerName},
-                slug = ${slug + '-' + boxrecId},
-                updated_at = CURRENT_TIMESTAMP
-              WHERE boxrec_id = ${boxrecId}
-            `);
-            stats.updated++;
-          } else {
-            // Insert new record
-            await db.execute(sql`
-              INSERT INTO "data-pipelines-staging"."boxers" (
-                id,
-                boxrec_id,
-                boxrec_url,
-                slug,
-                full_name,
-                html_file,
-                created_at,
-                updated_at
-              ) VALUES (
-                gen_random_uuid(),
-                ${boxrecId},
-                ${boxrecUrl},
-                ${slug + '-' + boxrecId},
-                ${boxerName},
-                ${htmlContent},
-                CURRENT_TIMESTAMP,
-                CURRENT_TIMESTAMP
-              )
-            `);
-            stats.uploaded++;
-          }
+          stats.uploaded++;
 
         } catch (error) {
           stats.errors++;

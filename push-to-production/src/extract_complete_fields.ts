@@ -677,8 +677,7 @@ async function extractCompleteFields() {
     
     const files = await fs.readdir(htmlDir);
     const htmlFiles = files
-      .filter(f => f.endsWith('.html') && f.startsWith('en_box-pro'))
-      .slice(0, 100); // Process exactly 100 files
+      .filter(f => f.endsWith('.html') && f.startsWith('en_box-pro')); // Process ALL files
     
     console.log(`📊 Processing ${htmlFiles.length} HTML files...\n`);
     
@@ -716,8 +715,8 @@ async function extractCompleteFields() {
         extractedBoxers.push(data);
         successCount++;
         
-        // Show progress every 10 boxers
-        if (successCount % 10 === 0) {
+        // Show progress every 1000 boxers
+        if (successCount % 1000 === 0) {
           console.log(`✅ Processed ${successCount} boxers...`);
         }
         
