@@ -9,6 +9,11 @@ from pathlib import Path
 import argparse
 from collections import defaultdict
 
+# Get the project root directory (data-pipelines)
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = SCRIPT_DIR.parent.parent.parent  # Go up 3 levels from scripts/validate/
+BOXREC_ROOT = PROJECT_ROOT / 'boxrec_scraper'
+
 def check_html_file(html_file):
     """Check if an HTML file is a valid scrape or a bad scrape"""
     
@@ -18,7 +23,7 @@ def check_html_file(html_file):
     issues = []
     
     # Test 1: Check for login page
-    if 'BoxRec: Login' in content or '<title>BoxRec: Login</title>' in content:
+    if 'Boxrec: Login' in content or '<title>Boxrec: Login</title>' in content or 'BoxRec: Login' in content:
         issues.append('LOGIN_PAGE')
     
     # Test 2: Check if file is too small (likely an error page)
@@ -40,7 +45,7 @@ def check_html_file(html_file):
     return issues
 
 def delete_login_files(html_dir):
-    """Find and delete all HTML files containing 'BoxRec: Login'"""
+    """Find and delete all HTML files containing 'Boxrec: Login'"""
     
     print(f"🔍 Scanning for login page files in {html_dir}")
     
@@ -58,7 +63,7 @@ def delete_login_files(html_dir):
                     content = f.read()
                 
                 # Check for login page content
-                if 'BoxRec: Login' in content:
+                if 'Boxrec: Login' in content or 'BoxRec: Login' in content:
                     print(f"🗑️  Deleting login page: {html_file.name}")
                     html_file.unlink()  # Delete the file
                     deleted_files.append(html_file.name)
@@ -81,8 +86,11 @@ def delete_login_files(html_dir):
     
     return deleted_files
 
-def validate_all_scrapes(html_dir, output_file='data/bad_scrapes.csv'):
+def validate_all_scrapes(html_dir, output_file=None):
     """Validate all HTML files and identify which need re-scraping"""
+    
+    if output_file is None:
+        output_file = BOXREC_ROOT / 'data' / 'bad_scrapes.csv'
     
     print(f"🔍 Validating scraped HTML files in {html_dir}")
     
@@ -150,8 +158,11 @@ def validate_all_scrapes(html_dir, output_file='data/bad_scrapes.csv'):
     
     return bad_scrapes
 
-def create_rescrape_list(bad_scrapes_file, urls_csv, output_file='data/urls_to_rescrape.csv'):
+def create_rescrape_list(bad_scrapes_file, urls_csv, output_file=None):
     """Create a CSV of URLs that need to be re-scraped"""
+    
+    if output_file is None:
+        output_file = BOXREC_ROOT / 'data' / 'urls_to_rescrape.csv'
     
     print(f"\n📝 Creating re-scrape list from {bad_scrapes_file}")
     
@@ -185,9 +196,11 @@ def create_rescrape_list(bad_scrapes_file, urls_csv, output_file='data/urls_to_r
 
 def main():
     parser = argparse.ArgumentParser(description='Validate scraped BoxRec HTML files')
-    parser.add_argument('--html-dir', default='data/raw/boxrec_html',
+    parser.add_argument('--html-dir', 
+                       default=str(BOXREC_ROOT / 'data' / 'raw' / 'boxrec_html'),
                        help='Directory containing HTML files')
-    parser.add_argument('--urls-csv', default='data/urls.csv',
+    parser.add_argument('--urls-csv', 
+                       default=str(BOXREC_ROOT / 'data' / 'urls.csv'),
                        help='Main URLs CSV file')
     parser.add_argument('--create-rescrape', action='store_true',
                        help='Create a CSV of URLs that need re-scraping')
@@ -202,11 +215,11 @@ def main():
         return
     
     # Validate all scrapes
-    bad_scrapes = validate_all_scrapes(args.html_dir, output_file='data/bad_scrapes.csv')
+    bad_scrapes = validate_all_scrapes(args.html_dir)
     
     # Optionally create re-scrape list
     if args.create_rescrape and bad_scrapes:
-        create_rescrape_list('data/bad_scrapes.csv', args.urls_csv, 'data/urls_to_rescrape.csv')
+        create_rescrape_list(str(BOXREC_ROOT / 'data' / 'bad_scrapes.csv'), args.urls_csv)
         print("\n💡 To re-scrape the bad URLs, run:")
         print("   python scripts/scrape_boxers.py data/urls_to_rescrape.csv --workers 25")
 

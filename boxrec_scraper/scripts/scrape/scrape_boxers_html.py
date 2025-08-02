@@ -36,8 +36,8 @@ ZYTE_API_KEY = os.getenv('ZYTE_API_KEY')
 ZYTE_API_URL = "https://api.zyte.com/v1/extract"
 
 # Default settings
-DEFAULT_WORKERS = 10
-DEFAULT_RATE_LIMIT = 10  # No rate limits on Zyte plan
+DEFAULT_WORKERS = 5  # Reduced from 10 to avoid rate limits
+DEFAULT_RATE_LIMIT = 5  # Reduced from 10 to 5 requests per second
 REQUEST_TIMEOUT = 30
 
 # Rate limiting
@@ -127,8 +127,16 @@ def fetch_url(url: str, output_dir: Path, rate_limit: float, max_age_days: int =
             'message': 'Run: pip install requests'
         }
     
+    # Create filename from original URL (without allSports parameter)
     filename = create_filename_from_url(url)
     output_file = output_dir / filename
+    
+    # Add allSports=y parameter to get amateur data for box-pro URLs
+    fetch_url = url
+    if '/box-pro/' in url and '?' not in url:
+        fetch_url = url + '?allSports=y'
+    elif '/box-pro/' in url and '?' in url:
+        fetch_url = url + '&allSports=y'
     
     # Always scrape - file existence checking disabled
     
@@ -136,11 +144,11 @@ def fetch_url(url: str, output_dir: Path, rate_limit: float, max_age_days: int =
     rate_limited_request(rate_limit)
     
     try:
-        # Make API request
+        # Make API request with the modified URL (includes allSports=y)
         response = requests.post(
             ZYTE_API_URL,
             json={
-                "url": url,
+                "url": fetch_url,
                 "httpResponseBody": True,
                 "httpResponseHeaders": True
             },
@@ -161,12 +169,17 @@ def fetch_url(url: str, output_dir: Path, rate_limit: float, max_age_days: int =
         # Update stats
         with progress_lock:
             stats['completed'] += 1
-            if stats['completed'] % 10 == 0 or stats['completed'] == 1:
+            # More frequent updates - every 5 files instead of 10
+            if stats['completed'] % 5 == 0 or stats['completed'] == 1:
                 elapsed = time.time() - stats['start_time']
                 stats['requests_per_second'] = stats['completed'] / elapsed
                 completion_pct = (stats['completed'] / stats['total']) * 100
+                eta_seconds = (stats['total'] - stats['completed']) / stats['requests_per_second'] if stats['requests_per_second'] > 0 else 0
+                eta_minutes = eta_seconds / 60
+                
                 logging.info(f"Progress: {stats['completed']}/{stats['total']} "
-                           f"({completion_pct:.1f}%) - {stats['requests_per_second']:.2f} req/s")
+                           f"({completion_pct:.1f}%) - {stats['requests_per_second']:.2f} req/s - "
+                           f"ETA: {eta_minutes:.1f} minutes")
         
         return {
             'url': url,
@@ -178,6 +191,11 @@ def fetch_url(url: str, output_dir: Path, rate_limit: float, max_age_days: int =
     except requests.exceptions.HTTPError as e:
         with progress_lock:
             stats['failed'] += 1
+            # Check if it's a rate limit error
+            if e.response.status_code == 429:
+                logging.warning(f"⚠️  Rate limited on {url} - too many requests")
+            elif e.response.status_code == 403:
+                logging.warning(f"⚠️  Access denied on {url} - might be login page")
         
         error_msg = f"HTTP {e.response.status_code}: {e}"
         logging.error(f"Failed to fetch {url}: {error_msg}")
@@ -281,12 +299,17 @@ def scrape_urls(urls: list, output_dir: Path, max_workers: int = DEFAULT_WORKERS
     # Final stats
     elapsed = time.time() - stats['start_time']
     
-    logging.info(f"\n🎉 Scraping completed in {elapsed/60:.1f} minutes")
-    logging.info(f"   Total: {stats['total']}")
-    logging.info(f"   Successful: {stats['completed']}")
-    logging.info(f"   Failed: {stats['failed']}")
-    logging.info(f"   Skipped: {stats['skipped']}")
-    logging.info(f"   Average: {stats['completed'] / elapsed:.2f} requests/second")
+    logging.info(f"\n{'='*60}")
+    logging.info(f"🎉 SCRAPING COMPLETED")
+    logging.info(f"{'='*60}")
+    logging.info(f"⏱️  Total time: {elapsed/60:.1f} minutes")
+    logging.info(f"📊 Results:")
+    logging.info(f"   • Total URLs: {stats['total']}")
+    logging.info(f"   • ✅ Successful: {stats['completed']} ({stats['completed']/stats['total']*100:.1f}%)")
+    logging.info(f"   • ❌ Failed: {stats['failed']} ({stats['failed']/stats['total']*100:.1f}%)")
+    logging.info(f"   • ⏭️  Skipped: {stats['skipped']} ({stats['skipped']/stats['total']*100:.1f}%)")
+    logging.info(f"   • 🚀 Average speed: {stats['completed'] / elapsed:.2f} requests/second")
+    logging.info(f"{'='*60}")
     
     return results
 
@@ -313,10 +336,13 @@ def save_results(results: list, output_dir: Path):
 
 def main():
     """Main entry point."""
-    # Get absolute paths
-    script_dir = Path(__file__).parent
-    default_csv = script_dir.parent / 'data' / '10000boxers.csv'
-    default_output = script_dir.parent / 'data' / 'raw' / 'boxrec_html'
+    # Get absolute paths - handle different working directories
+    script_dir = Path(__file__).resolve().parent
+    # Go up from scripts/scrape to boxrec_scraper
+    boxrec_root = script_dir.parent.parent
+    
+    default_csv = boxrec_root / 'data' / '10000boxers.csv'
+    default_output = boxrec_root / 'data' / 'raw' / 'boxrec_html'
     
     parser = argparse.ArgumentParser(description='BoxRec Scraper - High-performance scraper using Zyte API')
     parser.add_argument('csv_file', nargs='?', default=str(default_csv), 
