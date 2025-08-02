@@ -150,7 +150,7 @@ def process_html_file(html_path):
     
     if results:
         # Save individual JSON file
-        output_dir = Path("data/processed/extracted_fields")
+        output_dir = Path("/Users/devin/repos/projects/data-pipelines/boxrec_scraper/data/processed/extracted_fields")
         output_dir.mkdir(parents=True, exist_ok=True)
         
         output_file = output_dir / filename.replace('.html', '_extracted.json')
@@ -163,8 +163,8 @@ def process_html_file(html_path):
 
 def main():
     """Main function to run all extractors on all HTML files."""
-    # Get HTML files
-    html_dir = Path("data/raw/boxrec_html")
+    # Get HTML files - use absolute path
+    html_dir = Path("/Users/devin/repos/projects/data-pipelines/boxrec_scraper/data/raw/boxrec_html")
     if not html_dir.exists():
         logging.error(f"HTML directory not found: {html_dir}")
         return
@@ -173,7 +173,7 @@ def main():
     logging.info(f"Found {len(html_files)} HTML files to process")
     
     # Output directory
-    output_dir = Path("data/processed/extracted_fields")
+    output_dir = Path("/Users/devin/repos/projects/data-pipelines/boxrec_scraper/data/processed/extracted_fields")
     output_dir.mkdir(parents=True, exist_ok=True)
     
     # Track progress
@@ -184,7 +184,7 @@ def main():
     # Process files in parallel
     with ProcessPoolExecutor(max_workers=4) as executor:
         # Submit all tasks
-        futures = {executor.submit(process_html_file, str(f)): f for f in html_files[:100]}  # Limit for testing
+        futures = {executor.submit(process_html_file, str(f)): f for f in html_files}
         
         # Process completed tasks
         for i, future in enumerate(as_completed(futures), 1):
@@ -220,7 +220,7 @@ def main():
             all_results.append(data)
     
     # Save combined results
-    combined_file = Path("data/processed/all_boxers_extracted.json")
+    combined_file = Path("/Users/devin/repos/projects/data-pipelines/boxrec_scraper/data/processed/all_boxers_extracted.json")
     with open(combined_file, 'w', encoding='utf-8') as f:
         json.dump(all_results, f, indent=2)
     

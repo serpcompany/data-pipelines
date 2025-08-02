@@ -34,28 +34,34 @@ def run_command(cmd, description):
     
     start_time = time.time()
     try:
-        result = subprocess.run(cmd, check=True, capture_output=True, text=True)
-        elapsed = time.time() - start_time
+        # Use Popen to stream output in real-time
+        process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, 
+                                 text=True, bufsize=1, universal_newlines=True)
         
-        logging.info(f"✅ Completed: {description}")
-        logging.info(f"Time taken: {elapsed:.1f} seconds")
-        
-        if result.stdout:
-            logging.info(f"Output:\n{result.stdout}")
+        # Stream output line by line
+        for line in process.stdout:
+            print(line, end='')  # Print to console immediately
             
-        return True
+        # Wait for process to complete
+        process.wait()
         
-    except subprocess.CalledProcessError as e:
         elapsed = time.time() - start_time
-        logging.error(f"❌ Failed: {description}")
+        
+        if process.returncode == 0:
+            logging.info(f"✅ Completed: {description}")
+            logging.info(f"Time taken: {elapsed:.1f} seconds")
+            return True
+        else:
+            logging.error(f"❌ Failed: {description}")
+            logging.error(f"Time taken: {elapsed:.1f} seconds")
+            logging.error(f"Error code: {process.returncode}")
+            return False
+            
+    except Exception as e:
+        elapsed = time.time() - start_time
+        logging.error(f"❌ Exception in: {description}")
         logging.error(f"Time taken: {elapsed:.1f} seconds")
-        logging.error(f"Error code: {e.returncode}")
-        
-        if e.stdout:
-            logging.error(f"Output:\n{e.stdout}")
-        if e.stderr:
-            logging.error(f"Error:\n{e.stderr}")
-            
+        logging.error(f"Error: {e}")
         return False
 
 def main():
@@ -73,7 +79,7 @@ def main():
     steps = [
         {
             'description': 'Step 1: Scrape Boxer HTML files',
-            'cmd': ['python', 'scripts/scrape/scrape_boxers_html.py', 'data/5000boxers.csv'],
+            'cmd': ['python', 'scripts/scrape/scrape_boxers_html.py', 'data/15000boxers.csv'],
             'critical': True
         },
         {

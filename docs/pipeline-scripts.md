@@ -22,7 +22,8 @@ python boxrec_scraper/scripts/scrape/scrape_wiki_html.py
 
 #### 3. Validate HTML
 ```bash
-python boxrec_scraper/scripts/validate/validate_scrapes.py
+# python boxrec_scraper/scripts/validate/validate_scrapes.py --html-dir path/to/directory/
+python boxrec_scraper/scripts/validate/validate_scrapes.py --html-dir boxrec_scraper/data/raw/boxrec_html
 ```
 
 #### 4. Detect and cleanup login pages
