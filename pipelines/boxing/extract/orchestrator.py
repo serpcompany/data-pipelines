@@ -10,7 +10,7 @@ from .page.boxer.fields import (
     birth_date, birth_place, residence, height, reach,
     debut_date_pro, status_pro, wins_pro, wins_by_knockout_pro,
     losses_pro, losses_by_knockout_pro, draws_pro,
-    promoters, trainers, managers, gym
+    promoters, trainers, managers, gym, bouts
 )
 
 logger = logging.getLogger(__name__)
@@ -39,7 +39,8 @@ class ExtractionOrchestrator:
             'promoters': promoters,
             'trainers': trainers,
             'managers': managers,
-            'gym': gym
+            'gym': gym,
+            'bouts': bouts
         }
     
     def extract_field(self, field_name: str, soup: BeautifulSoup) -> Any:
@@ -67,8 +68,8 @@ class ExtractionOrchestrator:
                 if value is not None:
                     extracted_data[field_name] = value
             
-            # Extract bouts (simplified for now)
-            extracted_data['bouts'] = self.extract_bouts(soup)
+            # Extract bouts using the dedicated extractor
+            # Note: 'bouts' is already in self.extractors, so it's extracted above
             
             return extracted_data
             
@@ -76,28 +77,3 @@ class ExtractionOrchestrator:
             logger.error(f"Error in extraction orchestration: {e}")
             return None
     
-    def extract_bouts(self, soup: BeautifulSoup) -> list:
-        """Extract bout information from HTML."""
-        bouts = []
-        
-        try:
-            # Find the bouts table (this is simplified - real implementation would be more robust)
-            bout_rows = soup.select('table.dataTable tbody tr')
-            
-            for row in bout_rows:
-                cells = row.find_all('td')
-                if len(cells) >= 8:  # Minimum expected columns
-                    bout = {
-                        'date': cells[0].get_text(strip=True),
-                        'opponent': cells[1].get_text(strip=True),
-                        'opponent_url': cells[1].find('a')['href'] if cells[1].find('a') else None,
-                        'result': cells[2].get_text(strip=True),
-                        'location': cells[4].get_text(strip=True) if len(cells) > 4 else None,
-                        'rounds': cells[5].get_text(strip=True) if len(cells) > 5 else None,
-                    }
-                    bouts.append(bout)
-        
-        except Exception as e:
-            logger.error(f"Error extracting bouts: {e}")
-        
-        return bouts

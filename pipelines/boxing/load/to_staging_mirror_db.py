@@ -6,6 +6,7 @@ This is the main ETL script that processes HTML files and populates the staging 
 
 import json
 import logging
+import re
 import sqlite3
 from datetime import datetime
 from pathlib import Path
@@ -13,7 +14,7 @@ from typing import Dict, List, Optional, Any
 import psycopg2
 
 from ..utils.config import get_postgres_connection, OUTPUT_DIR
-from ..database.staging import get_connection as get_staging_connection
+from ..database.staging_mirror import get_connection as get_staging_connection
 from ..extract.orchestrator import ExtractionOrchestrator
 
 logger = logging.getLogger(__name__)
@@ -113,8 +114,21 @@ class StagingLoader:
             # Insert bouts
             bouts = boxer_data.get('bouts', [])
             for i, bout in enumerate(bouts):
-                bout_id = f"{boxer_id}_bout_{i}"
+                # Use the extracted bout_id if available, otherwise fall back to synthetic ID
+                bout_id = bout.get('bout_id')
+                if not bout_id:
+                    # Try extracting from bout_link as fallback
+                    bout_link = bout.get('bout_link', '')
+                    if bout_link:
+                        match = re.search(r'/event/\d+/(\d+)', bout_link)
+                        if match:
+                            bout_id = match.group(1)
+                        else:
+                            bout_id = f"{boxer_id}_bout_{i}"
+                    else:
+                        bout_id = f"{boxer_id}_bout_{i}"
                 
+                # Map field names from extractor to database schema
                 cursor.execute("""
                     INSERT INTO boxerBouts (
                         id, boxerId, date, opponent, opponentUrl, location,
@@ -126,9 +140,9 @@ class StagingLoader:
                     bout_id,
                     boxer_id,
                     bout.get('date'),
-                    bout.get('opponent'),
+                    bout.get('opponent_name'),  # Extractor returns 'opponent_name'
                     bout.get('opponent_url'),
-                    bout.get('location'),
+                    bout.get('venue'),  # Extractor returns 'venue'
                     bout.get('result'),
                     bout.get('result_type'),
                     bout.get('rounds'),

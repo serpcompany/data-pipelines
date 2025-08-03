@@ -13,12 +13,14 @@
 - Amateur URL pattern: https://boxrec.com/en/box-am/497268
 
 ### Event URL pattern
-- `https://boxrec.com/en/event/10101`
-- `boxrec_event_id` = `10101`
+- syntax: `https://boxrec.com/en/event/{boxrec_event_id}`
+- example (`boxrec_event_id` = `10101`):  `https://boxrec.com/en/event/10101/`
 
 ### Bout URL pattern
-- `https://boxrec.com/en/event/10101/15745`
-- `boxrec_bout_id` = `15745`
+- syntax: `https://boxrec.com/en/event/{boxrec_event_id}/{boxrec_bout_id}`
+- example (`boxrec_bout_id` = `15745`):  `https://boxrec.com/en/event/10101/15745`
+
+> notice how a bout is tied to an event, and an event will have multiple bouts (probably)
 
 ### Scoring URL pattern
 - `https://boxrec.com/en/scoring/15745/`
