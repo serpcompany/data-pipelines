@@ -21,7 +21,7 @@ try:
 except ImportError:
     raise ImportError("Please install requests: pip install requests")
 
-from ..utils.config import (
+from ...utils.config import (
     ZYTE_API_KEY, ZYTE_API_URL, PENDING_HTML_DIR, LOG_DIR,
     DEFAULT_WORKERS, DEFAULT_RATE_LIMIT, REQUEST_TIMEOUT
 )
@@ -290,14 +290,14 @@ def scrape_urls(urls: List[str], max_workers: int = DEFAULT_WORKERS,
 if __name__ == "__main__":
     import argparse
     import sys
-    from ..utils.config import INPUT_DIR
+    from ...utils.config import INPUT_DIR
     
     # Parse command line arguments
     parser = argparse.ArgumentParser(description='Scrape BoxRec URLs from CSV file')
     parser.add_argument('csv_filename', nargs='?', help='CSV filename in data/input/ directory (e.g., test_boxers.csv)')
-    parser.add_argument('--workers', type=int, default=DEFAULT_WORKERS, 
+    parser.add_argument('--workers', type=int, default=None, 
                        help=f'Number of concurrent workers (default: {DEFAULT_WORKERS})')
-    parser.add_argument('--rate-limit', type=float, default=DEFAULT_RATE_LIMIT,
+    parser.add_argument('--rate-limit', type=float, default=None,
                        help=f'Requests per second (default: {DEFAULT_RATE_LIMIT})')
     parser.add_argument('--max-age-days', type=int, 
                        help='Skip files newer than N days')
@@ -349,6 +349,38 @@ if __name__ == "__main__":
         for f in INPUT_DIR.glob('*.csv'):
             print(f"  - {f.name}")
         exit(1)
+    
+    # Prompt for workers if not provided
+    if args.workers is None:
+        while True:
+            workers_input = input(f"\nNumber of concurrent workers (default {DEFAULT_WORKERS}): ").strip()
+            if not workers_input:
+                args.workers = DEFAULT_WORKERS
+                break
+            try:
+                args.workers = int(workers_input)
+                if args.workers > 0:
+                    break
+                else:
+                    print("Workers must be greater than 0")
+            except ValueError:
+                print("Please enter a valid number")
+    
+    # Prompt for rate limit if not provided
+    if args.rate_limit is None:
+        while True:
+            rate_input = input(f"Requests per second (default {DEFAULT_RATE_LIMIT}): ").strip()
+            if not rate_input:
+                args.rate_limit = DEFAULT_RATE_LIMIT
+                break
+            try:
+                args.rate_limit = float(rate_input)
+                if args.rate_limit > 0:
+                    break
+                else:
+                    print("Rate limit must be greater than 0")
+            except ValueError:
+                print("Please enter a valid number")
     
     # Load and scrape URLs
     urls = load_urls_from_csv(csv_file)
