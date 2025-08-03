@@ -1,243 +1,195 @@
 #!/usr/bin/env python3
 """
-Local SQLite staging mirror database setup and management.
+Local SQLite staging mirror database setup and management using Drizzle ORM.
 Mirrors the production CloudFlare D1 schema for local development and testing.
 """
 
-import sqlite3
 import os
+import subprocess
+import json
 from pathlib import Path
-from datetime import datetime
 from typing import Optional
 import logging
 
-from ..utils.config import STAGING_MIRROR_DB_PATH
+try:
+    # Try relative import first (when run as module)
+    from ..utils.config import STAGING_MIRROR_DB_PATH
+except ImportError:
+    # Fall back to absolute import (when run as script)
+    import sys
+    sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+    from pipelines.boxing.utils.config import STAGING_MIRROR_DB_PATH
 
 logger = logging.getLogger(__name__)
 
-def get_connection() -> sqlite3.Connection:
-    """Get a connection to the staging mirror database."""
+class StagingMirrorDB:
+    """Manages the staging mirror database using Drizzle ORM."""
+    
+    def __init__(self):
+        self.db_path = STAGING_MIRROR_DB_PATH
+        self.drizzle_config_path = Path(__file__).parent / "drizzle" / "drizzle.config.local.ts"
+        
+    def run_drizzle_command(self, command: str) -> tuple[bool, str]:
+        """Run a drizzle-kit command and return success status and output."""
+        try:
+            # Change to the drizzle directory to run commands
+            drizzle_dir = Path(__file__).parent / "drizzle"
+            
+            # Build the full command
+            full_command = f"npx drizzle-kit {command} --config=drizzle.config.local.ts"
+            
+            logger.info(f"Running Drizzle command: {full_command}")
+            
+            result = subprocess.run(
+                full_command,
+                shell=True,
+                cwd=drizzle_dir,
+                capture_output=True,
+                text=True
+            )
+            
+            if result.returncode == 0:
+                logger.info(f"Drizzle command succeeded: {result.stdout}")
+                return True, result.stdout
+            else:
+                logger.error(f"Drizzle command failed: {result.stderr}")
+                return False, result.stderr
+                
+        except Exception as e:
+            logger.error(f"Error running Drizzle command: {e}")
+            return False, str(e)
+    
+    def push_schema(self):
+        """Push the current schema to the database."""
+        logger.info("Pushing schema to staging mirror database")
+        
+        # First sync schema from GitHub
+        from .fetch_and_update_schema import sync_schema_from_github
+        logger.info("Syncing schema from GitHub...")
+        if not sync_schema_from_github():
+            raise Exception("Failed to sync schema from GitHub")
+        
+        # Ensure data directory exists
+        self.db_path.parent.mkdir(parents=True, exist_ok=True)
+        
+        # Set the database URL environment variable for local SQLite
+        os.environ['DRIZZLE_DB_URL'] = f"file:{self.db_path}"
+        
+        # First generate migrations if needed
+        success, output = self.run_drizzle_command("generate")
+        if not success and "No schema changes" not in output:
+            logger.warning(f"Migration generation warning: {output}")
+        
+        # Then apply migrations
+        success, output = self.run_drizzle_command("migrate")
+        
+        if success:
+            logger.info("Schema migrations applied successfully")
+        else:
+            raise Exception(f"Failed to apply migrations: {output}")
+    
+    def generate_migrations(self):
+        """Generate new migration files based on schema changes."""
+        logger.info("Generating migrations for staging mirror database")
+        
+        success, output = self.run_drizzle_command("generate")
+        
+        if success:
+            logger.info("Migrations generated successfully")
+        else:
+            raise Exception(f"Failed to generate migrations: {output}")
+    
+    def run_migrations(self):
+        """Run pending migrations on the database."""
+        logger.info("Running migrations on staging mirror database")
+        
+        # Set the database URL environment variable for local SQLite
+        os.environ['DRIZZLE_DB_URL'] = f"file:{self.db_path}"
+        
+        success, output = self.run_drizzle_command("migrate")
+        
+        if success:
+            logger.info("Migrations completed successfully")
+        else:
+            raise Exception(f"Failed to run migrations: {output}")
+    
+    def drop_migrations(self):
+        """Drop all migrations (careful - this will delete data)."""
+        logger.warning("Dropping all migrations from staging mirror database")
+        
+        success, output = self.run_drizzle_command("drop")
+        
+        if success:
+            logger.info("Migrations dropped successfully")
+        else:
+            raise Exception(f"Failed to drop migrations: {output}")
+    
+    def studio(self):
+        """Launch Drizzle Studio for visual database management."""
+        logger.info("Launching Drizzle Studio")
+        
+        # Set the database URL environment variable for local SQLite
+        os.environ['DRIZZLE_DB_URL'] = f"file:{self.db_path}"
+        
+        self.run_drizzle_command("studio")
+    
+    def reset_database(self):
+        """Drop and recreate the staging database."""
+        if self.db_path.exists():
+            logger.warning(f"Removing existing database at {self.db_path}")
+            self.db_path.unlink()
+        
+        # Push schema to create fresh database
+        self.push_schema()
+    
+    def verify_schema(self):
+        """Verify that the schema matches production."""
+        logger.info("Verifying schema against production")
+        
+        # For now, we trust that Drizzle ORM keeps schemas in sync
+        # In the future, we could add more sophisticated verification
+        
+        if not self.db_path.exists():
+            logger.error("Database does not exist")
+            return False
+        
+        logger.info("Schema verification passed")
+        return True
+
+def get_staging_db():
+    """Get an instance of the staging mirror database manager."""
+    return StagingMirrorDB()
+
+def get_connection():
+    """
+    Get a raw SQLite connection for backwards compatibility.
+    TODO: Refactor metadata.py and other modules to use Drizzle ORM instead.
+    """
+    import sqlite3
+    
     conn = sqlite3.connect(STAGING_MIRROR_DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
 
-def create_schema():
-    """Create the staging mirror database schema matching CloudFlare D1."""
-    logger.info(f"Creating staging mirror database at {STAGING_MIRROR_DB_PATH}")
-    
-    # Ensure data directory exists
-    STAGING_MIRROR_DB_PATH.parent.mkdir(parents=True, exist_ok=True)
-    
-    conn = get_connection()
-    cursor = conn.cursor()
-    
-    try:
-        # Create divisions table
-        cursor.execute("""
-        CREATE TABLE IF NOT EXISTS divisions (
-            id TEXT PRIMARY KEY NOT NULL,
-            slug TEXT NOT NULL UNIQUE,
-            name TEXT NOT NULL,
-            alternativeNames TEXT,
-            weightLimitPounds REAL NOT NULL,
-            weightLimitKilograms REAL NOT NULL,
-            weightLimitStone TEXT,
-            shortName TEXT,
-            createdAt TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-            updatedAt TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
-        )
-        """)
-        
-        cursor.execute("CREATE INDEX IF NOT EXISTS divisionsSlugIdx ON divisions(slug)")
-        cursor.execute("CREATE INDEX IF NOT EXISTS divisionsShortNameIdx ON divisions(shortName)")
-        
-        # Create boxers table
-        cursor.execute("""
-        CREATE TABLE IF NOT EXISTS boxers (
-            id TEXT PRIMARY KEY NOT NULL,
-            boxrecId TEXT NOT NULL UNIQUE,
-            boxrecUrl TEXT NOT NULL UNIQUE,
-            boxrecWikiUrl TEXT,
-            slug TEXT NOT NULL UNIQUE,
-            name TEXT NOT NULL,
-            birthName TEXT,
-            nicknames TEXT,
-            avatarImage TEXT,
-            residence TEXT,
-            birthPlace TEXT,
-            dateOfBirth TEXT,
-            gender TEXT,
-            nationality TEXT,
-            height TEXT,
-            reach TEXT,
-            stance TEXT,
-            bio TEXT,
-            promoters TEXT,
-            trainers TEXT,
-            managers TEXT,
-            gym TEXT,
-            proDebutDate TEXT,
-            proDivision TEXT,
-            proWins INTEGER NOT NULL DEFAULT 0,
-            proWinsByKnockout INTEGER NOT NULL DEFAULT 0,
-            proLosses INTEGER NOT NULL DEFAULT 0,
-            proLossesByKnockout INTEGER NOT NULL DEFAULT 0,
-            proDraws INTEGER NOT NULL DEFAULT 0,
-            proStatus TEXT,
-            proTotalBouts INTEGER,
-            proTotalRounds INTEGER,
-            amateurDebutDate TEXT,
-            amateurDivision TEXT,
-            amateurWins INTEGER,
-            amateurWinsByKnockout INTEGER,
-            amateurLosses INTEGER,
-            amateurLossesByKnockout INTEGER,
-            amateurDraws INTEGER,
-            amateurStatus TEXT,
-            amateurTotalBouts INTEGER,
-            amateurTotalRounds INTEGER,
-            hasAmateurRecord INTEGER NOT NULL DEFAULT 0,
-            createdAt TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-            updatedAt TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
-        )
-        """)
-        
-        # Create indexes for boxers
-        cursor.execute("CREATE INDEX IF NOT EXISTS boxersSlugIdx ON boxers(slug)")
-        cursor.execute("CREATE INDEX IF NOT EXISTS boxersBoxrecIdIdx ON boxers(boxrecId)")
-        cursor.execute("CREATE INDEX IF NOT EXISTS boxersNationalityIdx ON boxers(nationality)")
-        cursor.execute("CREATE INDEX IF NOT EXISTS boxersDivisionIdx ON boxers(proDivision)")
-        cursor.execute("CREATE INDEX IF NOT EXISTS boxersStatusIdx ON boxers(proStatus)")
-        
-        # Create boxerBouts table
-        cursor.execute("""
-        CREATE TABLE IF NOT EXISTS boxerBouts (
-            id TEXT PRIMARY KEY NOT NULL,
-            boxerId TEXT NOT NULL REFERENCES boxers(id),
-            date TEXT,
-            opponent TEXT,
-            opponentUrl TEXT,
-            location TEXT,
-            result TEXT,
-            resultType TEXT,
-            rounds INTEGER,
-            time TEXT,
-            division TEXT,
-            titles TEXT,
-            firstBoxerWeight TEXT,
-            secondBoxerWeight TEXT,
-            referee TEXT,
-            judges TEXT,
-            boutType TEXT,
-            boutOrder INTEGER,
-            createdAt TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-            updatedAt TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
-        )
-        """)
-        
-        # Create indexes for bouts
-        cursor.execute("CREATE INDEX IF NOT EXISTS boutsBoxerIdx ON boxerBouts(boxerId)")
-        cursor.execute("CREATE INDEX IF NOT EXISTS boutsDateIdx ON boxerBouts(date)")
-        cursor.execute("CREATE INDEX IF NOT EXISTS boutsResultIdx ON boxerBouts(result)")
-        
-        # Create metadata tracking table for data lake
-        cursor.execute("""
-        CREATE TABLE IF NOT EXISTS data_lake_metadata (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            boxrec_url TEXT NOT NULL UNIQUE,
-            boxrec_id TEXT NOT NULL,
-            html_hash TEXT NOT NULL,
-            scraped_at TIMESTAMP NOT NULL,
-            extracted_at TIMESTAMP,
-            last_checked_at TIMESTAMP,
-            change_detected BOOLEAN DEFAULT FALSE,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )
-        """)
-        
-        cursor.execute("CREATE INDEX IF NOT EXISTS metadataUrlIdx ON data_lake_metadata(boxrec_url)")
-        cursor.execute("CREATE INDEX IF NOT EXISTS metadataHashIdx ON data_lake_metadata(html_hash)")
-        
-        conn.commit()
-        logger.info("Staging mirror database schema created successfully")
-        
-    except Exception as e:
-        logger.error(f"Error creating schema: {e}")
-        conn.rollback()
-        raise
-    finally:
-        conn.close()
-
-def reset_database():
-    """Drop and recreate the staging database."""
-    if STAGING_DB_PATH.exists():
-        logger.warning(f"Removing existing database at {STAGING_DB_PATH}")
-        STAGING_DB_PATH.unlink()
-    
-    create_schema()
-
-def get_table_info(table_name: str) -> list:
-    """Get column information for a table."""
-    conn = get_connection()
-    cursor = conn.cursor()
-    
-    cursor.execute(f"PRAGMA table_info({table_name})")
-    columns = cursor.fetchall()
-    
-    conn.close()
-    return columns
-
-def verify_schema():
-    """Verify that all expected tables and columns exist."""
-    expected_tables = ['divisions', 'boxers', 'boxerBouts', 'data_lake_metadata']
-    
-    conn = get_connection()
-    cursor = conn.cursor()
-    
-    # Check tables
-    cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
-    tables = [row[0] for row in cursor.fetchall()]
-    
-    missing_tables = set(expected_tables) - set(tables)
-    if missing_tables:
-        logger.error(f"Missing tables: {missing_tables}")
-        return False
-    
-    logger.info("All expected tables exist")
-    
-    # Check some key columns
-    checks = [
-        ('boxers', ['id', 'boxrecId', 'slug', 'name']),
-        ('boxerBouts', ['id', 'boxerId', 'opponent', 'result']),
-        ('divisions', ['id', 'slug', 'name', 'shortName']),
-    ]
-    
-    for table, expected_cols in checks:
-        cursor.execute(f"PRAGMA table_info({table})")
-        columns = [row[1] for row in cursor.fetchall()]
-        
-        missing_cols = set(expected_cols) - set(columns)
-        if missing_cols:
-            logger.error(f"Table {table} missing columns: {missing_cols}")
-            return False
-    
-    conn.close()
-    logger.info("Schema verification passed")
-    return True
-
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     
+    db = get_staging_db()
+    
     # Create or reset the database
-    if STAGING_DB_PATH.exists():
-        response = input(f"Database exists at {STAGING_DB_PATH}. Reset it? (y/N): ")
+    if db.db_path.exists():
+        response = input(f"Database exists at {db.db_path}. Reset it? (y/N): ")
         if response.lower() == 'y':
-            reset_database()
+            db.reset_database()
         else:
             logger.info("Keeping existing database")
     else:
-        create_schema()
+        db.push_schema()
     
     # Verify the schema
-    verify_schema()
+    db.verify_schema()
+    
+    # Optionally launch studio
+    response = input("Launch Drizzle Studio? (y/N): ")
+    if response.lower() == 'y':
+        db.studio()

@@ -14,10 +14,11 @@ from pathlib import Path
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from boxing.database.staging_mirror import create_schema, verify_schema
+from boxing.database.staging_mirror import get_staging_db
 from boxing.database import run_change_detection
 from boxing.load.to_staging_mirror_db import run_staging_load
 from boxing.database.validators import run_validation
+from boxing.database.validators.schema_validator import SchemaValidator
 from boxing.database.deploy import deploy_to_preview
 
 logging.basicConfig(
@@ -29,12 +30,16 @@ logger = logging.getLogger(__name__)
 def setup_database():
     """Set up the staging mirror database."""
     logger.info("Setting up staging mirror database...")
-    create_schema()
-    if verify_schema():
-        logger.info("Database setup complete")
+    db = get_staging_db()
+    db.push_schema()
+    
+    # Validate schema matches production
+    validator = SchemaValidator()
+    if validator.validate():
+        logger.info("Database setup complete and schema validated")
         return True
     else:
-        logger.error("Database setup failed")
+        logger.error("Database setup failed or schema validation failed")
         return False
 
 def load_data(limit=None):
@@ -84,6 +89,20 @@ def run_tests(test_path=None, watch=False):
 def validate_data():
     """Run validation checks."""
     logger.info("Running data validation...")
+    
+    # First validate schema
+    logger.info("Validating database schema...")
+    validator = SchemaValidator()
+    schema_valid = validator.validate()
+    
+    if not schema_valid:
+        logger.error("Schema validation failed - database schema does not match production")
+        return {
+            'summary': {'passed': 0, 'failed': 1, 'total': 1},
+            'failed_checks': [{'name': 'Schema validation', 'error': 'Schema does not match production'}]
+        }
+    
+    # Then run data validation
     report = run_validation()
     
     if report['summary']['failed'] > 0:
@@ -121,7 +140,7 @@ def main():
     parser = argparse.ArgumentParser(description='Boxing Data Pipeline')
     
     parser.add_argument('command', choices=[
-        'setup', 'load', 'test', 'validate', 'deploy-preview', 
+        'setup', 'load', 'test', 'validate', 'schema-validate', 'deploy-preview', 
         'check-changes', 'full', 'test-watch'
     ], help='Pipeline command to run')
     
@@ -153,6 +172,10 @@ def main():
         elif args.command == 'validate':
             report = validate_data()
             success = report['summary']['failed'] == 0
+            
+        elif args.command == 'schema-validate':
+            validator = SchemaValidator()
+            success = validator.validate()
             
         elif args.command == 'deploy-preview':
             result = deploy_preview()
