@@ -30,9 +30,9 @@ DB_CONFIG = {
 
 
 def extract_boxer_id_from_filename(filename: str) -> Optional[str]:
-    """Extract boxer ID from filename like 'en_box-pro_123456.html'."""
+    """Extract boxer ID from filename like 'en_box-pro_123456.html' or 'en_box-am_123456.html'."""
     parts = filename.replace('.html', '').split('_')
-    if len(parts) >= 3 and 'box-pro' in parts[1]:
+    if len(parts) >= 3 and ('box-pro' in parts[1] or 'box-am' in parts[1]):
         return parts[-1]
     return None
 
@@ -40,11 +40,20 @@ def extract_boxer_id_from_filename(filename: str) -> Optional[str]:
 def construct_boxrec_url(filename: str) -> Optional[str]:
     """Construct BoxRec URL from filename."""
     parts = filename.replace('.html', '').split('_')
-    if len(parts) >= 3 and 'box-pro' in parts[1]:
+    if len(parts) >= 3:
         lang = parts[0]
+        page_type = parts[1]  # box-pro or box-am
         boxer_id = parts[-1]
-        return f"https://boxrec.com/{lang}/box-pro/{boxer_id}"
+        if page_type in ['box-pro', 'box-am']:
+            return f"https://boxrec.com/{lang}/{page_type}/{boxer_id}"
     return None
+
+
+def get_competition_level(filename: str) -> str:
+    """Determine competition level from filename."""
+    if 'box-am' in filename:
+        return 'amateur'
+    return 'professional'
 
 
 def load_html_to_data_lake(html_file: Path) -> bool:
@@ -58,6 +67,7 @@ def load_html_to_data_lake(html_file: Path) -> bool:
         filename = html_file.name
         boxer_id = extract_boxer_id_from_filename(filename)
         boxrec_url = construct_boxrec_url(filename)
+        competition_level = get_competition_level(filename)
         
         if not boxer_id or not boxrec_url:
             logging.warning(f"Could not extract metadata from {filename}")
@@ -67,12 +77,12 @@ def load_html_to_data_lake(html_file: Path) -> bool:
         conn = psycopg2.connect(**DB_CONFIG)
         cur = conn.cursor()
         
-        # Check if record exists
+        # Check if record exists for this competition level
         cur.execute("""
             SELECT id, html_file 
-            FROM "data-pipelines-raw".boxrec_boxer_raw_html 
-            WHERE boxrec_id = %s
-        """, (boxer_id,))
+            FROM "data-lake".boxrec_boxer_raw_html 
+            WHERE boxrec_id = %s AND competition_level = %s
+        """, (boxer_id, competition_level))
         
         existing = cur.fetchone()
         
@@ -83,25 +93,25 @@ def load_html_to_data_lake(html_file: Path) -> bool:
             # Only update if content changed
             if old_html != html_content:
                 cur.execute("""
-                    UPDATE "data-pipelines-raw".boxrec_boxer_raw_html 
+                    UPDATE "data-lake".boxrec_boxer_raw_html 
                     SET html_file = %s, 
                         scraped_at = %s,
                         updated_at = %s
                     WHERE id = %s
                 """, (html_content, datetime.now(), datetime.now(), record_id))
                 
-                logging.info(f"Updated boxer {boxer_id} - content changed")
+                logging.info(f"Updated {competition_level} boxer {boxer_id} - content changed")
             else:
-                logging.info(f"Skipped boxer {boxer_id} - no changes")
+                logging.info(f"Skipped {competition_level} boxer {boxer_id} - no changes")
         else:
             # Insert new record
             cur.execute("""
-                INSERT INTO "data-pipelines-raw".boxrec_boxer_raw_html 
-                (boxrec_url, boxrec_id, html_file, scraped_at, created_at, updated_at)
-                VALUES (%s, %s, %s, %s, %s, %s)
-            """, (boxrec_url, boxer_id, html_content, datetime.now(), datetime.now(), datetime.now()))
+                INSERT INTO "data-lake".boxrec_boxer_raw_html 
+                (boxrec_url, boxrec_id, html_file, competition_level, scraped_at, created_at, updated_at)
+                VALUES (%s, %s, %s, %s, %s, %s, %s)
+            """, (boxrec_url, boxer_id, html_content, competition_level, datetime.now(), datetime.now(), datetime.now()))
             
-            logging.info(f"Inserted new boxer {boxer_id}")
+            logging.info(f"Inserted new {competition_level} boxer {boxer_id}")
         
         conn.commit()
         cur.close()

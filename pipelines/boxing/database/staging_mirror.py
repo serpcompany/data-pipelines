@@ -96,6 +96,7 @@ def create_schema():
             amateurStatus TEXT,
             amateurTotalBouts INTEGER,
             amateurTotalRounds INTEGER,
+            hasAmateurRecord INTEGER NOT NULL DEFAULT 0,
             createdAt TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
             updatedAt TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
         )

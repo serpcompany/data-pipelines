@@ -7,16 +7,18 @@ Coordinates all ETL steps from scraping to production deployment.
 import argparse
 import logging
 import sys
+import subprocess
 from datetime import datetime
 from pathlib import Path
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from boxing.database import create_schema, verify_schema, run_change_detection
-from boxing.load import run_staging_load
-from boxing.validation import run_validation
-from boxing.deploy import deploy_to_preview, deploy_to_production
+from boxing.database.staging_mirror import create_schema, verify_schema
+from boxing.database import run_change_detection
+from boxing.load.to_staging_mirror_db import run_staging_load
+from boxing.database.validators import run_validation
+from boxing.database.deploy import deploy_to_preview
 
 logging.basicConfig(
     level=logging.INFO,
@@ -45,6 +47,39 @@ def load_data(limit=None):
                 f"{result['staging_stats']['total_bouts']} bouts")
     
     return result
+
+def run_tests(test_path=None, watch=False):
+    """Run pytest tests for the pipeline."""
+    logger.info("Running tests...")
+    
+    cmd = ["python", "-m", "pytest"]
+    
+    if test_path:
+        cmd.append(test_path)
+    else:
+        cmd.append("tests/")
+    
+    cmd.extend(["-v", "--tb=short"])
+    
+    if watch:
+        # Add pytest-watch for continuous testing
+        cmd = ["python", "-m", "pytest-watch"] + cmd[3:]  # Skip 'python -m pytest'
+    
+    try:
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        
+        if result.returncode == 0:
+            logger.info("All tests passed")
+            return True
+        else:
+            logger.error(f"Tests failed:\n{result.stdout}")
+            if result.stderr:
+                logger.error(f"Errors:\n{result.stderr}")
+            return False
+            
+    except subprocess.CalledProcessError as e:
+        logger.error(f"Failed to run tests: {e}")
+        return False
 
 def validate_data():
     """Run validation checks."""
@@ -86,8 +121,8 @@ def main():
     parser = argparse.ArgumentParser(description='Boxing Data Pipeline')
     
     parser.add_argument('command', choices=[
-        'setup', 'load', 'validate', 'deploy-preview', 
-        'deploy-production', 'check-changes', 'full'
+        'setup', 'load', 'test', 'validate', 'deploy-preview', 
+        'check-changes', 'full', 'test-watch'
     ], help='Pipeline command to run')
     
     parser.add_argument('--limit', type=int, help='Limit number of records to process')
@@ -109,6 +144,12 @@ def main():
             result = load_data(limit=args.limit)
             success = result['load_summary']['successful'] > 0
             
+        elif args.command == 'test':
+            success = run_tests()
+            
+        elif args.command == 'test-watch':
+            success = run_tests(watch=True)
+            
         elif args.command == 'validate':
             report = validate_data()
             success = report['summary']['failed'] == 0
@@ -117,9 +158,6 @@ def main():
             result = deploy_preview()
             success = result['success']
             
-        elif args.command == 'deploy-production':
-            result = deploy_to_production(force=args.force)
-            success = result.get('success', False)
             
         elif args.command == 'check-changes':
             summary = check_changes()
@@ -139,6 +177,12 @@ def main():
             if load_result['load_summary']['successful'] == 0:
                 logger.error("No data loaded, aborting")
                 return 1
+            
+            # Run tests after loading
+            if not run_tests():
+                logger.error("Tests failed after loading data")
+                if not args.force:
+                    return 1
             
             # Validate
             validation = validate_data()

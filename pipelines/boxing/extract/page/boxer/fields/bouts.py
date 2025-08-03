@@ -126,10 +126,18 @@ def extract(soup):
         event_anchor = row.find('a', href=re.compile(r'/event/\d+'))
         if event_anchor:
             bout['event_link'] = f"https://boxrec.com{event_anchor['href']}"
+            # Extract event ID from URL
+            event_match = re.search(r'/event/(\d+)', event_anchor['href'])
+            if event_match:
+                bout['event_id'] = event_match.group(1)
         
         bout_anchor = row.find('a', href=re.compile(r'/event/\d+/\d+'))
         if bout_anchor:
             bout['bout_link'] = f"https://boxrec.com{bout_anchor['href']}"
+            # Extract bout ID from URL
+            bout_match = re.search(r'/event/\d+/(\d+)', bout_anchor['href'])
+            if bout_match:
+                bout['bout_id'] = bout_match.group(1)
         
         # Only add if we have meaningful data
         if bout.get('date') and bout.get('opponent_name'):

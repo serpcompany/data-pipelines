@@ -12,7 +12,7 @@ from typing import Optional, Dict, List
 import logging
 
 from ..utils.config import get_postgres_connection
-from .staging import get_connection as get_staging_connection
+from .staging_mirror import get_connection as get_staging_connection
 
 logger = logging.getLogger(__name__)
 
