@@ -40,7 +40,7 @@ class ProductionSchemaFetcher:
     
     def fetch_migration_file(self, file_name: str) -> Optional[str]:
         """Fetch a migration SQL file from GitHub."""
-        file_path = f"server/database/migrations/{file_name}"
+        file_path = f"server/db/migrations/{file_name}"
         return self.fetch_schema_file(file_path)
     
     def parse_sql_schema(self, sql_content: str) -> Dict:

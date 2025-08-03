@@ -53,7 +53,7 @@ class SchemaSync:
         
         success_count = 0
         for file_name in schema_files:
-            remote_path = f"server/database/schema/{file_name}"
+            remote_path = f"server/db/schema/{file_name}"
             content = self.fetch_file(remote_path)
             
             if content:
@@ -87,7 +87,7 @@ class SchemaSync:
         
         success_count = 0
         for file_name in migration_files:
-            remote_path = f"server/database/migrations/{file_name}"
+            remote_path = f"server/db/migrations/{file_name}"
             content = self.fetch_file(remote_path)
             
             if content:
@@ -104,7 +104,7 @@ class SchemaSync:
                 success_count += 1
         
         # Also fetch and update the journal
-        journal_content = self.fetch_file("server/database/migrations/meta/_journal.json")
+        journal_content = self.fetch_file("server/db/migrations/meta/_journal.json")
         if journal_content:
             import json
             journal = json.loads(journal_content)

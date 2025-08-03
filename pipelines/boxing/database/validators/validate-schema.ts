@@ -6,7 +6,7 @@
 
 import { drizzle } from 'drizzle-orm/better-sqlite3';
 import Database from 'better-sqlite3';
-import * as productionSchema from '../../../../boxingundefeated-ref/server/database/schema';
+import * as productionSchema from '../../../../boxingundefeated-ref/server/db/schema';
 import * as stagingSchema from '../drizzle/schema';
 import { sql } from 'drizzle-orm';
 import path from 'path';
