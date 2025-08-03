@@ -25,6 +25,7 @@ from ...utils.config import (
     ZYTE_API_KEY, ZYTE_API_URL, PENDING_HTML_DIR, LOG_DIR,
     DEFAULT_WORKERS, DEFAULT_RATE_LIMIT, REQUEST_TIMEOUT
 )
+from ...utils.filename_utils import create_filename_from_url
 
 # Rate limiting
 request_lock = Lock()
@@ -67,35 +68,6 @@ def rate_limited_request(rate_limit: float):
         
         last_request_time = time.time()
 
-
-def create_filename_from_url(url: str) -> str:
-    """Create a safe filename from a BoxRec URL."""
-    parsed = urlparse(url)
-    path_parts = parsed.path.strip('/').split('/')
-    
-    # Handle different URL formats
-    if 'box-pro' in url:
-        # Extract language and ID: /en/box-pro/123456
-        if len(path_parts) >= 3:
-            lang = path_parts[0] if path_parts[0] in ['en', 'es', 'fr', 'de', 'ru'] else 'en'
-            boxer_id = path_parts[-1]
-            return f"{lang}_box-pro_{boxer_id}.html"
-    elif 'wiki' in url:
-        # Extract ID from wiki URL
-        import re
-        id_match = re.search(r'Human:(\d+)', url)
-        if id_match:
-            return f"wiki_box-pro_{id_match.group(1)}.html"
-    
-    # Fallback: clean up the path
-    filename_parts = []
-    for part in path_parts:
-        clean_part = part.replace('/', '_').replace('\\', '_').replace(':', '_')
-        if clean_part:
-            filename_parts.append(clean_part)
-    
-    filename = '_'.join(filename_parts) if filename_parts else 'index'
-    return f"{filename[:100]}.html"  # Limit length
 
 
 def fetch_url(url: str, rate_limit: float, max_age_days: Optional[int] = None) -> Dict:

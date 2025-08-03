@@ -56,9 +56,9 @@ class StagingLoader:
                     proTotalBouts, proTotalRounds,
                     amateurDebutDate, amateurDivision, amateurWins, amateurWinsByKnockout,
                     amateurLosses, amateurLossesByKnockout, amateurDraws, amateurStatus,
-                    amateurTotalBouts, amateurTotalRounds,
+                    amateurTotalBouts, amateurTotalRounds, hasAmateurRecord,
                     createdAt, updatedAt
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 boxer_id,
                 boxer_data.get('boxrec_id'),
@@ -84,14 +84,14 @@ class StagingLoader:
                 boxer_data.get('gym'),
                 boxer_data.get('pro_debut_date'),
                 boxer_data.get('division'),
-                boxer_data.get('wins_pro', 0),
-                boxer_data.get('ko_wins_pro', 0),
-                boxer_data.get('losses_pro', 0),
-                boxer_data.get('ko_losses_pro', 0),
-                boxer_data.get('draws_pro', 0),
-                boxer_data.get('status_pro'),
-                boxer_data.get('total_pro_bouts'),
-                boxer_data.get('rounds_pro'),
+                boxer_data.get('wins', 0),
+                boxer_data.get('ko_wins', 0),
+                boxer_data.get('losses', 0),
+                boxer_data.get('ko_losses', 0),
+                boxer_data.get('draws', 0),
+                boxer_data.get('status'),
+                boxer_data.get('total_bouts'),
+                boxer_data.get('rounds'),
                 boxer_data.get('amateur_debut_date'),
                 boxer_data.get('division_amateur'),
                 boxer_data.get('wins_amateur'),
@@ -102,6 +102,7 @@ class StagingLoader:
                 boxer_data.get('status_amateur'),
                 boxer_data.get('total_amateur_bouts'),
                 boxer_data.get('rounds_amateur'),
+                boxer_data.get('has_amateur_record', False),
                 datetime.now().isoformat(),
                 datetime.now().isoformat()
             ))
@@ -155,27 +156,63 @@ class StagingLoader:
             logger.error(f"Error loading boxer {boxer_data.get('boxrec_id')}: {e}")
             return False
     
-    def process_html_file(self, boxrec_url: str, html_content: str) -> Optional[Dict]:
-        """Extract data from HTML and load to staging."""
+    def process_boxer_with_both_records(self, boxer_id: str, pro_url: str, 
+                                      pro_html: str, amateur_html: Optional[str] = None) -> Optional[Dict[str, Any]]:
+        """Extract data from both professional and amateur HTML and load to staging."""
         try:
-            # Extract data using orchestrator
-            extracted_data = self.extractor.extract_all(html_content)
+            # Extract professional data (primary record)
+            logger.info(f"Extracting professional data for boxer {boxer_id}")
+            pro_data = self.extractor.extract_all(pro_html)
             
-            if not extracted_data:
-                logger.warning(f"No data extracted from {boxrec_url}")
+            if not pro_data:
+                logger.warning(f"No professional data extracted for boxer {boxer_id}")
                 return None
             
-            # Add URL to extracted data
-            extracted_data['url'] = boxrec_url
-            extracted_data['boxrec_id'] = boxrec_url.split('/')[-1]
+            # Add URL and ID to professional data
+            pro_data['url'] = pro_url
+            pro_data['boxrec_id'] = boxer_id
             
-            # Load to staging
-            success = self.load_boxer(extracted_data)
+            # Extract amateur data if available
+            if amateur_html:
+                logger.info(f"Extracting amateur data for boxer {boxer_id}")
+                try:
+                    amateur_data = self.extractor.extract_all(amateur_html)
+                    
+                    if amateur_data:
+                        # Copy amateur-specific fields to main data structure
+                        # Amateur page shows amateur stats with same field names as pro
+                        pro_data['wins_amateur'] = amateur_data.get('wins', 0)
+                        pro_data['ko_wins_amateur'] = amateur_data.get('ko_wins', 0)
+                        pro_data['losses_amateur'] = amateur_data.get('losses', 0)
+                        pro_data['ko_losses_amateur'] = amateur_data.get('ko_losses', 0)
+                        pro_data['draws_amateur'] = amateur_data.get('draws', 0)
+                        pro_data['total_amateur_bouts'] = amateur_data.get('total_bouts')
+                        pro_data['rounds_amateur'] = amateur_data.get('rounds')
+                        pro_data['status_amateur'] = amateur_data.get('status')
+                        pro_data['division_amateur'] = amateur_data.get('division')
+                        pro_data['amateur_debut_date'] = amateur_data.get('debut_date')
+                        
+                        # Set flag indicating this boxer has amateur record
+                        pro_data['has_amateur_record'] = True
+                        logger.info(f"Successfully extracted amateur data for boxer {boxer_id}")
+                    else:
+                        logger.warning(f"No amateur data extracted for boxer {boxer_id}")
+                        pro_data['has_amateur_record'] = False
+                        
+                except Exception as e:
+                    logger.error(f"Error extracting amateur data for boxer {boxer_id}: {e}")
+                    pro_data['has_amateur_record'] = False
+            else:
+                # No amateur HTML provided
+                pro_data['has_amateur_record'] = False
             
-            return extracted_data if success else None
+            # Load combined data to staging
+            success = self.load_boxer(pro_data)
+            
+            return pro_data if success else None
             
         except Exception as e:
-            logger.error(f"Error processing {boxrec_url}: {e}")
+            logger.error(f"Error processing boxer {boxer_id}: {e}")
             return None
     
     def load_from_data_lake(self, limit: Optional[int] = None) -> Dict:
@@ -191,11 +228,11 @@ class StagingLoader:
         staging_cursor.execute("SELECT boxrecId FROM boxers")
         existing_ids = {row[0] for row in staging_cursor.fetchall()}
         
-        # Get unprocessed records from data lake
+        # Get unprocessed records from data lake (both pro and amateur)
         query = """
-            SELECT boxrec_url, boxrec_id, html_file
+            SELECT boxrec_url, boxrec_id, html_file, competition_level
             FROM "data-lake".boxrec_boxer_raw_html
-            WHERE competition_level = 'professional'
+            ORDER BY boxrec_id, competition_level DESC  -- Pro first, then amateur
         """
         if limit:
             query += f" LIMIT {limit}"
@@ -203,25 +240,43 @@ class StagingLoader:
         pg_cursor.execute(query)
         all_records = pg_cursor.fetchall()
         
-        # Filter out already processed records
-        unprocessed = [(url, id, html) for url, id, html in all_records if id not in existing_ids]
+        # Group by boxer ID to get both pro and amateur HTML
+        boxer_records = {}
+        for url, boxer_id, html, comp_level in all_records:
+            if boxer_id not in existing_ids:
+                if boxer_id not in boxer_records:
+                    boxer_records[boxer_id] = {}
+                boxer_records[boxer_id][comp_level] = (url, html)
         
-        logger.info(f"Found {len(unprocessed)} unprocessed records")
+        logger.info(f"Found {len(boxer_records)} unprocessed boxers")
         
-        if not unprocessed:
+        if not boxer_records:
             return {'processed': 0, 'successful': 0, 'failed': 0}
         
         processed = 0
         successful = 0
         failed = 0
         
-        for boxrec_url, boxrec_id, html_content in unprocessed:
+        for boxer_id, html_data in boxer_records.items():
             try:
+                # Get professional HTML (required)
+                if 'professional' not in html_data:
+                    logger.warning(f"No professional HTML for boxer {boxer_id}, skipping")
+                    continue
                 
-                # Process and load
-                extracted_data = self.process_html_file(
-                    boxrec_url=boxrec_url,
-                    html_content=html_content
+                pro_url, pro_html = html_data['professional']
+                
+                # Get amateur HTML (optional)
+                amateur_html = None
+                if 'amateur' in html_data:
+                    _, amateur_html = html_data['amateur']
+                
+                # Process and load with both HTML versions
+                extracted_data = self.process_boxer_with_both_records(
+                    boxer_id=boxer_id,
+                    pro_url=pro_url,
+                    pro_html=pro_html,
+                    amateur_html=amateur_html
                 )
                 
                 processed += 1
@@ -233,10 +288,10 @@ class StagingLoader:
                 
                 # Log progress
                 if processed % 10 == 0:
-                    logger.info(f"Progress: {processed}/{len(unprocessed)} processed")
+                    logger.info(f"Progress: {processed}/{len(boxer_records)} processed")
                 
             except Exception as e:
-                logger.error(f"Error processing {boxrec_url}: {e}")
+                logger.error(f"Error processing boxer {boxer_id}: {e}")
                 failed += 1
         
         pg_conn.close()
@@ -245,7 +300,7 @@ class StagingLoader:
             'processed': processed,
             'successful': successful,
             'failed': failed,
-            'total_unprocessed': len(unprocessed)
+            'total_unprocessed': len(boxer_records)
         }
         
         logger.info(f"Loading complete: {summary}")

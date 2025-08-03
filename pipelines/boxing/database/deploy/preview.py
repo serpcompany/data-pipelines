@@ -12,8 +12,8 @@ from typing import Dict, List, Optional
 import tempfile
 import os
 
-from ..database.staging import get_connection as get_staging_connection
-from ..database.validators.queries import run_validation
+from ..staging import get_connection as get_staging_connection
+from ..validators.queries import run_validation
 
 logger = logging.getLogger(__name__)
 

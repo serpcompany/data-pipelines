@@ -8,7 +8,7 @@ import logging
 from typing import Dict, List, Tuple
 from datetime import datetime
 
-from ..database.staging import get_connection as get_staging_connection
+from ..staging import get_connection as get_staging_connection
 
 logger = logging.getLogger(__name__)
 

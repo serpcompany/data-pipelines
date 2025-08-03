@@ -13,10 +13,11 @@ from pathlib import Path
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from boxing.database import create_schema, verify_schema, run_change_detection
-from boxing.load import run_staging_load
-from boxing.validation import run_validation
-from boxing.deploy import deploy_to_preview, deploy_to_production
+from boxing.database.staging import create_schema, verify_schema
+from boxing.database import run_change_detection
+from boxing.load.to_staging_db import run_staging_load
+from boxing.database.validators import run_validation
+from boxing.database.deploy import deploy_to_preview
 
 logging.basicConfig(
     level=logging.INFO,
@@ -87,7 +88,7 @@ def main():
     
     parser.add_argument('command', choices=[
         'setup', 'load', 'validate', 'deploy-preview', 
-        'deploy-production', 'check-changes', 'full'
+        'check-changes', 'full'
     ], help='Pipeline command to run')
     
     parser.add_argument('--limit', type=int, help='Limit number of records to process')
@@ -117,9 +118,6 @@ def main():
             result = deploy_preview()
             success = result['success']
             
-        elif args.command == 'deploy-production':
-            result = deploy_to_production(force=args.force)
-            success = result.get('success', False)
             
         elif args.command == 'check-changes':
             summary = check_changes()
