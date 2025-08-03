@@ -109,7 +109,7 @@ class DataValidator:
         
         checks.append(self.run_query(
             "Bouts without opponent",
-            "SELECT id, boxerId FROM boxerBouts WHERE opponent IS NULL OR opponent = ''",
+            "SELECT id, boxerId FROM boxerBouts WHERE opponentName IS NULL OR opponentName = ''",
             expected_count=0
         ))
         
@@ -193,13 +193,13 @@ class DataValidator:
         checks.append(self.run_query(
             "Bouts with invalid dates",
             """
-            SELECT id, date, opponent
+            SELECT id, boutDate, opponentName
             FROM boxerBouts
-            WHERE date IS NOT NULL 
+            WHERE boutDate IS NOT NULL 
             AND (
-                LENGTH(date) < 8 
-                OR date NOT LIKE '____-__-__'
-                OR date > date('now')
+                LENGTH(boutDate) < 8 
+                OR boutDate NOT LIKE '____-__-__'
+                OR boutDate > date('now')
             )
             """,
             expected_count=0
@@ -209,7 +209,7 @@ class DataValidator:
         checks.append(self.run_query(
             "Bouts with invalid results",
             """
-            SELECT id, result, opponent
+            SELECT id, result, opponentName
             FROM boxerBouts
             WHERE result NOT IN ('W', 'L', 'D', 'NC', 'DQ', 'TD', 'RTD', 'ND')
             AND result IS NOT NULL

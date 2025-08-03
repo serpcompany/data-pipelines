@@ -9,6 +9,10 @@ PROJECT_ROOT = Path(__file__).parent.parent.parent.parent  # data-pipelines/
 PIPELINES_ROOT = Path(__file__).parent.parent.parent  # pipelines/
 PIPELINE_ROOT = Path(__file__).parent.parent  # pipelines/boxing/
 
+# Virtual environment
+VENV_PATH = PROJECT_ROOT / '.venv'
+VENV_ACTIVATE = VENV_PATH / 'bin' / 'activate'
+
 # Load environment variables
 load_dotenv(PROJECT_ROOT / '.env')
 

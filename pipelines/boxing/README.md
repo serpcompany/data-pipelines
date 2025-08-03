@@ -31,3 +31,11 @@ flowchart TD
     N -->|Yes| P["9: Manual Push to Preview"]
     P --> Q["10: Production Deploy<br/>Handled by Main Project"]
 ```
+
+## TODOs
+
+- **URL Normalization**: Handle mixed BoxRec URL patterns (`proboxer/` vs `box-pro/`). Should normalize to canonical format and store final redirected URL, not original input URL.
+- **Field Normalization**: Data extracted from HTML needs normalization before loading to staging:
+  - Date format: Convert `Apr 02` to `YYYY-MM-DD` format
+  - Result values: Convert `win/loss` to `W/L` format expected by validation
+  - Add transformation step between extraction and loading
