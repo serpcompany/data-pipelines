@@ -1,10 +1,16 @@
 
-## Boxrec URL Patterns
+# Boxrec URL Patterns
 
-### Boxer URL pattern
+## boxer single
+
+**Old boxrec urls were on /proboxer/, but they changed to /box-pro/:**
 - `https://boxrec.com/en/box-pro/3192`
 - `https://boxrec.com/en/proboxer/3192`
 - `boxrec_id` = `3192` 
+
+**Pro vs. Am:**
+- Professional URL pattern: https://boxrec.com/en/box-am/497268
+- Amateur URL pattern: https://boxrec.com/en/box-am/497268
 
 ### Event URL pattern
 - `https://boxrec.com/en/event/10101`

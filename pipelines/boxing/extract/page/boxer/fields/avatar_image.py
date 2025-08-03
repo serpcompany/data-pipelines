@@ -4,7 +4,7 @@
 import re
 from ....base import load_html, test_extraction
 
-def extract_avatar_image(soup):
+def extract(soup):
     """Extract profile image URL from HTML."""
     
     # Method 1: Look for profile picture class
@@ -44,4 +44,4 @@ def extract_avatar_image(soup):
     return None
 
 if __name__ == "__main__":
-    test_extraction(extract_avatar_image)
+    test_extraction(extract)

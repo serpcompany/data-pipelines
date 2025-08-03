@@ -4,7 +4,7 @@
 import re
 from ....base import load_html, test_extraction
 
-def extract_pro_wins(soup):
+def extract(soup):
     """Extract professional wins from HTML."""
     
     # Method 1: Look for profileWLD table
@@ -33,4 +33,4 @@ def extract_pro_wins(soup):
     return 0
 
 if __name__ == "__main__":
-    test_extraction(extract_pro_wins)
+    test_extraction(extract)

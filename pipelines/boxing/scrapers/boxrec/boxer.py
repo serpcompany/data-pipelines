@@ -118,12 +118,8 @@ def fetch_url(url: str, rate_limit: float, max_age_days: Optional[int] = None) -
                 'age_days': file_age_days
             }
     
-    # Add allSports=y parameter to get amateur data for box-pro URLs
+    # Use URL as-is (no allSports parameter needed anymore)
     fetch_url = url
-    if '/box-pro/' in url and '?' not in url:
-        fetch_url = url + '?allSports=y'
-    elif '/box-pro/' in url and '?' in url:
-        fetch_url = url + '&allSports=y'
     
     # Rate limiting
     rate_limited_request(rate_limit)

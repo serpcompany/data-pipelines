@@ -4,7 +4,7 @@
 import re
 from ....base import load_html, test_extraction
 
-def extract_amateur_wins_by_knockout(soup):
+def extract(soup):
     """Extract amateur wins by knockout from HTML."""
     
     # Look for amateur section with KO information
@@ -53,4 +53,4 @@ def extract_amateur_wins_by_knockout(soup):
     return None
 
 if __name__ == "__main__":
-    test_extraction(extract_amateur_wins_by_knockout)
+    test_extraction(extract)

@@ -4,7 +4,7 @@
 import re
 from ....base import load_html, test_extraction
 
-def extract_pro_division(soup):
+def extract(soup):
     """Extract professional division from HTML."""
     
     # Look in profileTable
@@ -27,4 +27,4 @@ def extract_pro_division(soup):
     return ''
 
 if __name__ == "__main__":
-    test_extraction(extract_pro_division)
+    test_extraction(extract)

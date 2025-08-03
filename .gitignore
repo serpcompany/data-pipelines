@@ -11,3 +11,4 @@ logs/
 *.log
 __pycache__
 pipelines/boxing/data/output/*
+tmp/

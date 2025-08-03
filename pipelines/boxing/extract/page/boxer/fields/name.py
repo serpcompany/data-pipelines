@@ -6,17 +6,16 @@ Extract boxer name from HTML.
 from bs4 import BeautifulSoup
 
 
-def extract(html_content: str) -> str | None:
+def extract(soup) -> str | None:
     """
     Extract boxer name from HTML.
     
     Args:
-        html_content: HTML string content
+        soup: BeautifulSoup object
         
     Returns:
         Boxer name or None if not found
     """
-    soup = BeautifulSoup(html_content, 'html.parser')
     
     # Method 1: From title tag
     title_tag = soup.find('title')

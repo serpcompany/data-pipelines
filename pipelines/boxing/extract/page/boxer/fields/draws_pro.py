@@ -4,7 +4,7 @@
 import re
 from ....base import load_html, test_extraction
 
-def extract_pro_draws(soup):
+def extract(soup):
     """Extract professional draws from HTML."""
     
     # Method 1: Look for profileWLD table
@@ -33,4 +33,4 @@ def extract_pro_draws(soup):
     return 0
 
 if __name__ == "__main__":
-    test_extraction(extract_pro_draws)
+    test_extraction(extract)

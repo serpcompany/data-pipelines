@@ -4,7 +4,7 @@
 import re
 from ....base import load_html, test_extraction
 
-def extract_nationality(soup):
+def extract(soup):
     """Extract nationality from HTML."""
     
     # Method 1: Look for nationality in table rows
@@ -33,4 +33,4 @@ def extract_nationality(soup):
     return None
 
 if __name__ == "__main__":
-    test_extraction(extract_nationality)
+    test_extraction(extract)

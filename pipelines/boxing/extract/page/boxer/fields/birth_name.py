@@ -3,7 +3,7 @@
 
 from ....base import load_html, test_extraction
 
-def extract_birth_name(soup):
+def extract(soup):
     """Extract birth name from HTML."""
     
     # Method 1: Look for birth name in table rows
@@ -19,4 +19,4 @@ def extract_birth_name(soup):
     return None
 
 if __name__ == "__main__":
-    test_extraction(extract_birth_name)
+    test_extraction(extract)

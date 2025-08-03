@@ -4,7 +4,7 @@
 import re
 from ....base import load_html, test_extraction
 
-def extract_amateur_losses_by_knockout(soup):
+def extract(soup):
     """Extract amateur losses by knockout from HTML."""
     
     # This information is rarely available for amateur records
@@ -28,4 +28,4 @@ def extract_amateur_losses_by_knockout(soup):
     return None
 
 if __name__ == "__main__":
-    test_extraction(extract_amateur_losses_by_knockout)
+    test_extraction(extract)

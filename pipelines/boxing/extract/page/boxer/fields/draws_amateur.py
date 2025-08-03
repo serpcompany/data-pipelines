@@ -4,7 +4,7 @@
 import re
 from ....base import load_html, test_extraction
 
-def extract_amateur_draws(soup):
+def extract(soup):
     """Extract amateur draws from HTML."""
     
     # Method 1: Look for amateur section with record
@@ -49,4 +49,4 @@ def extract_amateur_draws(soup):
     return None
 
 if __name__ == "__main__":
-    test_extraction(extract_amateur_draws)
+    test_extraction(extract)

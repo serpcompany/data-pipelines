@@ -3,7 +3,7 @@
 
 from ....base import load_html, test_extraction
 
-def extract_birth_place(soup):
+def extract(soup):
     """Extract birth place from HTML."""
     
     # Method 1: Look for birth place in table rows
@@ -21,4 +21,4 @@ def extract_birth_place(soup):
     return None
 
 if __name__ == "__main__":
-    test_extraction(extract_birth_place)
+    test_extraction(extract)
