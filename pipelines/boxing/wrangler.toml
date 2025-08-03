@@ -6,5 +6,5 @@ account_id = "cec5f04e1d18bcc65f2be0aefb04f059"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "boxingundefeated-com"
-database_id = "6b463a07-05a9-4da1-9637-f8331d40b36c"
+database_name = "boxingundefeated-com-preview"
+database_id = "9dde6ccf-fc52-41a3-9268-1a92dabaafb7"

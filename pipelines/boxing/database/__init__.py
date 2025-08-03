@@ -1,13 +1,12 @@
 """Database management modules."""
 
-from .staging_mirror import create_schema, reset_database, verify_schema
+from .staging_mirror import get_staging_db, StagingMirrorDB
 from .metadata import MetadataTracker, sync_metadata_from_postgres
 from .change_detection import ChangeDetector, run_change_detection
 
 __all__ = [
-    'create_schema',
-    'reset_database', 
-    'verify_schema',
+    'get_staging_db',
+    'StagingMirrorDB',
     'MetadataTracker',
     'sync_metadata_from_postgres',
     'ChangeDetector',

@@ -57,9 +57,9 @@ class StagingLoader:
                     proTotalBouts, proTotalRounds,
                     amateurDebutDate, amateurDivision, amateurWins, amateurWinsByKnockout,
                     amateurLosses, amateurLossesByKnockout, amateurDraws, amateurStatus,
-                    amateurTotalBouts, amateurTotalRounds, hasAmateurRecord,
+                    amateurTotalBouts, amateurTotalRounds,
                     createdAt, updatedAt
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 boxer_id,
                 boxer_data.get('boxrec_id'),
@@ -103,7 +103,6 @@ class StagingLoader:
                 boxer_data.get('status_amateur'),
                 boxer_data.get('total_amateur_bouts'),
                 boxer_data.get('rounds_amateur'),
-                boxer_data.get('has_amateur_record', False),
                 datetime.now().isoformat(),
                 datetime.now().isoformat()
             ))
@@ -128,35 +127,57 @@ class StagingLoader:
                     else:
                         bout_id = f"{boxer_id}_bout_{i}"
                 
-                # Map field names from extractor to database schema
+                # Map field names from extractor to production database schema
+                # Production schema columns:
+                # id, boxerId, boxrecId, boutDate, opponentName, opponentWeight, opponentRecord,
+                # eventName, refereeName, judge1Name, judge1Score, judge2Name, judge2Score,
+                # judge3Name, judge3Score, numRoundsScheduled, result, resultMethod, resultRound,
+                # eventPageLink, boutPageLink, scorecardsPageLink, titleFight, createdAt
+                
+                # Extract judges information if available
+                judges = bout.get('judges', [])
+                judge1_name = judges[0]['name'] if len(judges) > 0 and isinstance(judges[0], dict) else None
+                judge1_score = judges[0]['score'] if len(judges) > 0 and isinstance(judges[0], dict) else None
+                judge2_name = judges[1]['name'] if len(judges) > 1 and isinstance(judges[1], dict) else None
+                judge2_score = judges[1]['score'] if len(judges) > 1 and isinstance(judges[1], dict) else None
+                judge3_name = judges[2]['name'] if len(judges) > 2 and isinstance(judges[2], dict) else None
+                judge3_score = judges[2]['score'] if len(judges) > 2 and isinstance(judges[2], dict) else None
+                
+                # Determine if this is a title fight
+                is_title_fight = bool(bout.get('titles')) if bout.get('titles') else False
+                
                 cursor.execute("""
                     INSERT INTO boxerBouts (
-                        id, boxerId, date, opponent, opponentUrl, location,
-                        result, resultType, rounds, time, division, titles,
-                        firstBoxerWeight, secondBoxerWeight, referee, judges,
-                        boutType, boutOrder, createdAt, updatedAt
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                        id, boxerId, boxrecId, boutDate, opponentName, opponentWeight, opponentRecord,
+                        eventName, refereeName, judge1Name, judge1Score, judge2Name, judge2Score,
+                        judge3Name, judge3Score, numRoundsScheduled, result, resultMethod, resultRound,
+                        eventPageLink, boutPageLink, scorecardsPageLink, titleFight, createdAt
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, (
                     bout_id,
                     boxer_id,
-                    bout.get('date'),
-                    bout.get('opponent_name'),  # Extractor returns 'opponent_name'
-                    bout.get('opponent_url'),
-                    bout.get('venue'),  # Extractor returns 'venue'
-                    bout.get('result'),
-                    bout.get('result_type'),
-                    bout.get('rounds'),
-                    bout.get('time'),
-                    bout.get('division'),
-                    json.dumps(bout.get('titles', [])) if bout.get('titles') else None,
-                    bout.get('first_boxer_weight'),
-                    bout.get('second_boxer_weight'),
-                    bout.get('referee'),
-                    json.dumps(bout.get('judges', [])) if bout.get('judges') else None,
-                    'pro',  # We're only handling pro bouts for now
-                    i,
-                    datetime.now().isoformat(),
-                    datetime.now().isoformat()
+                    bout.get('bout_id'),  # boxrecId for the bout
+                    bout.get('date'),  # boutDate
+                    bout.get('opponent_name'),  # opponentName
+                    bout.get('second_boxer_weight'),  # opponentWeight
+                    None,  # opponentRecord - not available in current extraction
+                    bout.get('venue'),  # eventName (venue)
+                    bout.get('referee'),  # refereeName
+                    judge1_name,
+                    judge1_score,
+                    judge2_name,
+                    judge2_score,
+                    judge3_name,
+                    judge3_score,
+                    bout.get('rounds'),  # numRoundsScheduled
+                    bout.get('result'),  # result
+                    bout.get('result_type'),  # resultMethod
+                    None,  # resultRound - would need to extract from result_type
+                    None,  # eventPageLink - not in current extraction
+                    bout.get('bout_link'),  # boutPageLink
+                    None,  # scorecardsPageLink - not in current extraction
+                    is_title_fight,  # titleFight
+                    datetime.now().isoformat()  # createdAt
                 ))
             
             # Commit transaction

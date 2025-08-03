@@ -12,7 +12,7 @@ from typing import Dict, List, Optional
 import tempfile
 import os
 
-from ..staging import get_connection as get_staging_connection
+from ..staging_mirror import get_connection as get_staging_connection
 from ..validators.queries import run_validation
 
 logger = logging.getLogger(__name__)
