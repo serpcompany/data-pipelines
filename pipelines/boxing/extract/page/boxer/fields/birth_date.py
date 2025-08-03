@@ -4,7 +4,7 @@
 import re
 from ....base import load_html, test_extraction
 
-def extract_birth_date(soup):
+def extract(soup):
     """Extract date of birth from various possible locations."""
     
     # Method 1: Look for "born" in table rows
@@ -54,4 +54,4 @@ def extract_birth_date(soup):
     return None
 
 if __name__ == "__main__":
-    test_extraction(extract_birth_date)
+    test_extraction(extract)

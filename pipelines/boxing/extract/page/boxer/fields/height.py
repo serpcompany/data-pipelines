@@ -4,7 +4,7 @@
 import re
 from ....base import load_html, test_extraction
 
-def extract_height(soup):
+def extract(soup):
     """Extract height in cm from HTML."""
     
     # Method 1: Look for height in table rows
@@ -30,4 +30,4 @@ def extract_height(soup):
     return None
 
 if __name__ == "__main__":
-    test_extraction(extract_height)
+    test_extraction(extract)

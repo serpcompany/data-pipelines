@@ -4,7 +4,7 @@
 import re
 from ....base import load_html, test_extraction
 
-def extract_managers(soup):
+def extract(soup):
     """Extract managers from HTML."""
     
     # Look in profileTable
@@ -28,4 +28,4 @@ def extract_managers(soup):
     return ''
 
 if __name__ == "__main__":
-    test_extraction(extract_managers)
+    test_extraction(extract)

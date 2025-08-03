@@ -4,7 +4,7 @@
 import re
 from ....base import load_html, test_extraction
 
-def extract_trainers(soup):
+def extract(soup):
     """Extract trainers from HTML."""
     
     # Look in profileTable
@@ -28,4 +28,4 @@ def extract_trainers(soup):
     return ''
 
 if __name__ == "__main__":
-    test_extraction(extract_trainers)
+    test_extraction(extract)

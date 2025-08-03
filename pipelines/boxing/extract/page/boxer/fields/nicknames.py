@@ -4,7 +4,7 @@
 import re
 from ....base import load_html, test_extraction
 
-def extract_nicknames(soup):
+def extract(soup):
     """Extract nicknames/aliases from HTML."""
     
     # Method 1: Look for alias/nickname in table rows
@@ -31,4 +31,4 @@ def extract_nicknames(soup):
     return None
 
 if __name__ == "__main__":
-    test_extraction(extract_nicknames)
+    test_extraction(extract)

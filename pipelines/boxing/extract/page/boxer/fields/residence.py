@@ -3,7 +3,7 @@
 
 from ....base import load_html, test_extraction
 
-def extract_residence(soup):
+def extract(soup):
     """Extract current residence from HTML."""
     
     # Method 1: Look for residence in table rows
@@ -21,4 +21,4 @@ def extract_residence(soup):
     return None
 
 if __name__ == "__main__":
-    test_extraction(extract_residence)
+    test_extraction(extract)

@@ -4,7 +4,7 @@
 import re
 from ....base import load_html, test_extraction
 
-def extract_bouts(soup):
+def extract(soup):
     """Extract all bouts from the fight history table."""
     
     bouts = []
@@ -138,7 +138,7 @@ def extract_bouts(soup):
     return bouts
 
 if __name__ == "__main__":
-    result = test_extraction(extract_bouts)
+    result = test_extraction(extract)
     if result and isinstance(result, list):
         print(f"\nTotal bouts found: {len(result)}")
         if result:

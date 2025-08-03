@@ -4,7 +4,7 @@
 import re
 from ....base import load_html, test_extraction
 
-def extract_reach(soup):
+def extract(soup):
     """Extract reach in cm from HTML."""
     
     # Method 1: Look for reach in table rows
@@ -29,4 +29,4 @@ def extract_reach(soup):
     return None
 
 if __name__ == "__main__":
-    test_extraction(extract_reach)
+    test_extraction(extract)

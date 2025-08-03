@@ -5,7 +5,7 @@ import re
 from ....base import load_html, test_extraction
 from extract_debut_date import format_date_iso
 
-def extract_amateur_debut_date(soup):
+def extract(soup):
     """Extract amateur debut date from HTML."""
     
     # Look in profileTable
@@ -27,4 +27,4 @@ def extract_amateur_debut_date(soup):
     return ''
 
 if __name__ == "__main__":
-    test_extraction(extract_amateur_debut_date)
+    test_extraction(extract)

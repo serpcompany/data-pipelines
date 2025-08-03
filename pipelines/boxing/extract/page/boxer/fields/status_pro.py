@@ -4,7 +4,7 @@
 import re
 from ....base import load_html, test_extraction
 
-def extract_pro_status(soup):
+def extract(soup):
     """Extract professional status (active/inactive) from HTML."""
     
     # Look in profileTable
@@ -30,4 +30,4 @@ def extract_pro_status(soup):
     return ''
 
 if __name__ == "__main__":
-    test_extraction(extract_pro_status)
+    test_extraction(extract)

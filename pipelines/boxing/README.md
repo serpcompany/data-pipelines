@@ -6,21 +6,24 @@
 
 ```
 ┌─────────────────────┐     ┌─────────────────────┐     ┌─────────────────────┐
-│   Data Lake         │     │   Staging DB        │     │   Production        │
-│   (Postgres)        │ →   │   (Local SQLite)    │ →   │   (CloudFlare D1)   │
+│   Data Lake         │     │   Staging Mirror    │     │ Production-Preview  │
+│   (Postgres)        │ →   │   (Local SQLite)    │ →   │ (CloudFlare D1)     │
 ├─────────────────────┤     ├─────────────────────┤     ├─────────────────────┤
-│ • raw_html_files    │     │ • boxers            │     │ • boxers            │
-│ • scrape_metadata   │     │ • fights            │     │ • fights            │
-│ • change_tracking   │     │ • [mirrors prod]    │     │ • [production data] │
+│ • boxrec_boxer_     │     │ • boxers            │     │ • boxers            │
+│   raw_html          │     │ • boxerBouts        │     │ • boxerBouts        │
+│ • competition_level │     │ • divisions         │     │ • divisions         │
+│ • has_amateur_      │     │ • [mirrors D1       │     │ • [preview data]    │
+│   record            │     │    schema exactly]  │     │                     │
 └─────────────────────┘     └─────────────────────┘     └─────────────────────┘
          ↓                           ↓                            ↓
-    Raw Storage              Schema Validation            Preview → Prod
-                                    ↓
-                            ┌─────────────────────┐
-                            │ Production-Preview  │
-                            │ (CloudFlare D1)     │
-                            │ staging.domain.com  │
-                            └─────────────────────┘
+    Raw HTML Storage         Structured Data              This Pipeline Ends
+                             Local Testing                       Here
+                                                                 ↓
+                                                    ┌─────────────────────┐
+                                                    │ Production Deploy   │
+                                                    │ Handled by Main     │
+                                                    │ Project (not here)  │
+                                                    └─────────────────────┘
 ```
 
 ## Pipeline Flow
@@ -84,7 +87,7 @@ Discovery Sources:
                   └───────────┬─────────────┘
                               ↓
                   ┌─────────────────────────┐
-                  │ 6. Load to Staging DB    │
+                  │ 6. Load to Staging Mirror│
                   │    (Local SQLite)       │
                   │    • Structured fields  │
                   │    • Mirrors prod schema│
@@ -115,9 +118,9 @@ Discovery Sources:
                         └─────────────┘  └───────────┬─────────────┘
                                                      ↓
                                          ┌─────────────────────────┐
-                                         │ 10. Manual Approval     │
-                                         │     & Push to Prod      │
-                                         │     (CloudFlare D1)     │
+                                         │ 10. Production Deploy   │
+                                         │ (Handled in main project│
+                                         │  not in this pipeline)  │
                                          └─────────────────────────┘
 ```
 
@@ -130,6 +133,7 @@ Discovery Sources:
   - `file_size.py` - Check minimum file size
   - `error_page.py` - Detect 404/403 errors
   - `rate_limit.py` - Detect rate limiting
+  - `blank_page.py` - Detect blank/minimal content pages
   - `pages/boxer.py` - Validate boxer page content
 - **Step 4: Extract Fields** - 38 extractors in `extract/page/boxer/fields/`
   - Professional stats: `wins_pro.py`, `losses_pro.py`, etc.
@@ -138,12 +142,16 @@ Discovery Sources:
   - Fight history: `bouts.py`
 - **Step 5: Transform** - `transform/slug.py` for derived values
 
+### ✅ Completed  
+- **Step 3: Store in Data Lake** - Postgres schema with `competition_level` tracking
+- **Step 6: Load to Staging Mirror** - SQLite database matching D1 schema
+- **Step 7: Bulk Validation** - SQL queries in `database/validators/`
+- **Step 9: Push to Preview** - Deploy script in `database/deploy/`
+
 ### 🚧 In Progress
-- **Step 3: Store in Data Lake** - Postgres schema for raw HTML storage
-- **Step 6: Load to Staging DB** - SQLite database setup
+- **Scraper Updates** - Need to scrape professional and amateur pages separately
 
 ### ❌ Not Started
 - **Step 7: Bulk Validation** - Cross-record validation logic
 - **Step 8: Schema Compatibility** - Drizzle schema comparison
 - **Step 9: Push to Preview** - CloudFlare D1 integration
-- **Step 10: Production Push** - Manual approval workflow

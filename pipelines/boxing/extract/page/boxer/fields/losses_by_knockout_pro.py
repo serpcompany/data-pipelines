@@ -4,7 +4,7 @@
 import re
 from ....base import load_html, test_extraction
 
-def extract_pro_losses_by_knockout(soup):
+def extract(soup):
     """Extract professional losses by knockout from HTML."""
     
     # Look for profileWLD table
@@ -26,4 +26,4 @@ def extract_pro_losses_by_knockout(soup):
     return 0
 
 if __name__ == "__main__":
-    test_extraction(extract_pro_losses_by_knockout)
+    test_extraction(extract)

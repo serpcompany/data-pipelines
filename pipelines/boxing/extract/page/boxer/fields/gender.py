@@ -3,7 +3,7 @@
 
 from ....base import load_html, test_extraction
 
-def extract_gender(soup):
+def extract(soup):
     """Extract gender from HTML."""
     
     # Method 1: Look for sex/gender in table rows
@@ -23,4 +23,4 @@ def extract_gender(soup):
     return 'M'
 
 if __name__ == "__main__":
-    test_extraction(extract_gender)
+    test_extraction(extract)

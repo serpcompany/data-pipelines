@@ -3,7 +3,7 @@
 
 from ....base import load_html, test_extraction
 
-def extract_gym(soup):
+def extract(soup):
     """Extract training gym from HTML."""
     
     # Method 1: Look for gym in table rows
@@ -19,4 +19,4 @@ def extract_gym(soup):
     return None
 
 if __name__ == "__main__":
-    test_extraction(extract_gym)
+    test_extraction(extract)

@@ -4,7 +4,7 @@
 import re
 from ....base import load_html, test_extraction
 
-def extract_amateur_wins(soup):
+def extract(soup):
     """Extract amateur wins from HTML."""
     
     # Method 1: Look for amateur section with record
@@ -52,4 +52,4 @@ def extract_amateur_wins(soup):
     return None
 
 if __name__ == "__main__":
-    test_extraction(extract_amateur_wins)
+    test_extraction(extract)

@@ -4,7 +4,7 @@
 import re
 from ....base import load_html, test_extraction
 
-def extract_amateur_division(soup):
+def extract(soup):
     """Extract amateur division from HTML."""
     
     # Look in profileTable
@@ -26,4 +26,4 @@ def extract_amateur_division(soup):
     return ''
 
 if __name__ == "__main__":
-    test_extraction(extract_amateur_division)
+    test_extraction(extract)
