@@ -4,11 +4,11 @@
     "textMateRules": []
   },
   "workbench.colorCustomizations": {
-    "titleBar.activeBackground": "#495E57",
-    "titleBar.border": "#495E57",
-    "titleBar.activeForeground": "#F4CE14",
-    "titleBar.inactiveBackground": "#647670",
-    "titleBar.inactiveForeground": "#f6d537"
+    "titleBar.activeBackground": "#f4d22a",
+    "titleBar.border": "#f4d22a",
+    "titleBar.activeForeground": "#16784f",
+    "titleBar.inactiveBackground": "#f6d94a",
+    "titleBar.inactiveForeground": "#398c69"
   },
   "diffEditor.renderSideBySide": false,
   "diffEditor.experimental.showMoves": true,

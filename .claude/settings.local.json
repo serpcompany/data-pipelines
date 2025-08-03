@@ -14,7 +14,8 @@
       "Bash(gh repo view:*)",
       "Bash(pnpm tsx:*)",
       "Bash(diff:*)",
-      "Bash(true)"
+      "Bash(true)",
+      "Bash(mkdir:*)"
     ],
     "deny": []
   }
