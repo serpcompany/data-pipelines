@@ -19,7 +19,7 @@ export const d1Config = {
   out: './migrations',
   driver: 'd1',
   dbCredentials: {
-    wranglerConfigPath: 'wrangler.toml',
-    dbName: 'boxing-undefeated-preview',
+    wranglerConfigPath: '../wrangler.toml',
+    dbName: 'boxingundefeated-com',
   },
 } satisfies Config;
