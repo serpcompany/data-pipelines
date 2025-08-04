@@ -14,7 +14,7 @@ __pycache__
 pipelines/boxing/data/output/*
 tmp/
 
-.vscode/
+.vscode
 
 .claude
 output
