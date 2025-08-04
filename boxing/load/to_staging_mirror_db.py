@@ -16,6 +16,7 @@ import psycopg2
 from ..utils.config import get_postgres_connection, OUTPUT_DIR
 from ..database.staging_mirror import get_connection as get_staging_connection
 from ..extract.orchestrator import ExtractionOrchestrator
+from ..transform import generate_unique_bout_id
 
 logger = logging.getLogger(__name__)
 
@@ -113,19 +114,8 @@ class StagingLoader:
             # Insert bouts
             bouts = boxer_data.get('bouts', [])
             for i, bout in enumerate(bouts):
-                # Use the extracted bout_id if available, otherwise fall back to synthetic ID
-                bout_id = bout.get('bout_id')
-                if not bout_id:
-                    # Try extracting from bout_link as fallback
-                    bout_link = bout.get('bout_link', '')
-                    if bout_link:
-                        match = re.search(r'/event/\d+/(\d+)', bout_link)
-                        if match:
-                            bout_id = match.group(1)
-                        else:
-                            bout_id = f"{boxer_id}_bout_{i}"
-                    else:
-                        bout_id = f"{boxer_id}_bout_{i}"
+                # Generate unique bout ID
+                bout_id = generate_unique_bout_id(boxer_id, i)
                 
                 # Map field names from extractor to production database schema
                 # Production schema columns:
