@@ -33,7 +33,16 @@ def extract_boxer_id_from_filename(filename: str) -> Optional[str]:
     """Extract boxer ID from filename like 'en_box-pro_123456.html' or 'en_box-am_123456.html'."""
     parts = filename.replace('.html', '').split('_')
     if len(parts) >= 3 and ('box-pro' in parts[1] or 'box-am' in parts[1]):
-        return parts[-1]
+        # Extract only the numeric part of the ID
+        boxer_id_part = parts[-1]
+        # Find the first non-digit character and take everything before it
+        numeric_id = ''
+        for char in boxer_id_part:
+            if char.isdigit():
+                numeric_id += char
+            else:
+                break
+        return numeric_id if numeric_id else None
     return None
 
 
