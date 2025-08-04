@@ -51,7 +51,12 @@ source .venv/bin/activate
 python -m boxing.scrapers.boxrec.boxer 1000boxers.csv
 ```
 
-### Steps 2-9: Process, Validate, and Deploy
+### Step 2: Validate HTML
+```bash
+python -m boxing.run_validators
+```
+
+### Steps 3-9: Process, Validate, and Deploy
 
 Before loading data, set up the database (only needed once):
 ```bash
