@@ -8,6 +8,7 @@ from datetime import datetime
 from typing import Optional
 import logging
 from ..utils.config import VALIDATED_HTML_DIR, LOG_DIR
+from ..transform import normalize_boxer_id
 
 # Set up logging
 logging.basicConfig(
@@ -42,7 +43,10 @@ def extract_boxer_id_from_filename(filename: str) -> Optional[str]:
                 numeric_id += char
             else:
                 break
-        return numeric_id if numeric_id else None
+        if numeric_id:
+            # Apply transformation to normalize the ID
+            return normalize_boxer_id(numeric_id)
+        return None
     return None
 
 

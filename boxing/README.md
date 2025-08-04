@@ -56,9 +56,14 @@ python -m boxing.scrapers.boxrec.boxer 1000boxers.csv
 python -m boxing.run_validators
 ```
 
-### Steps 3-9: Process, Validate, and Deploy
+### Step 3: Load to Data Lake (Postgres)
+```bash
+python -m boxing.load.to_data_lake
+```
 
-Before loading data, set up the database (only needed once):
+### Steps 4-9: Process, Validate, and Deploy
+
+Before loading data to staging, set up the staging database (only needed once):
 ```bash
 python -m boxing.run_pipeline setup
 ```
@@ -68,22 +73,35 @@ Then run these commands:
 cd /Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines
 source .venv/bin/activate
 
-# Load scraped HTML and extract data (Steps 2-6)
+# Load from data lake to staging and extract data (Steps 4-6)
 python -m boxing.run_pipeline load
 
-# Run validation checks (Step 7)
+# Run data validation checks (Step 7)
 python -m boxing.run_pipeline validate
 
 # Deploy to preview (Step 9)
 python -m boxing.run_pipeline deploy-preview
 ```
 
-Available commands:
+### Available commands:
 - `setup` - Set up staging mirror database (run once before first use)
-- `load` - Load scraped HTML and extract data to staging (steps 2-6)
+- `load` - Load from data lake to staging and extract data (steps 4-6) 
 - `validate` - Run data validation checks (step 7)
 - `deploy-preview` - Deploy to preview environment (step 9)
 - `full` - Run complete pipeline
+- `test` - Run all tests
+- `test-watch` - Run tests in watch mode
+
+
+### drizzle studio on the staging db:
+
+```bash
+cd /Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines/boxing/database/drizzle && npx drizzle-kit studio --config=drizzle.config.local.ts
+```
+
+**Automatic Testing**: Each pipeline command automatically runs relevant tests before executing. This ensures data quality at every step. To skip tests (not recommended), use `--skip-tests`.
+
+Note: The pipeline assumes Postgres data lake is already set up with the `data-lake.boxrec_boxer_raw_html` table.
 
 ## TODOs
 

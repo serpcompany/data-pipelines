@@ -32,6 +32,11 @@ def setup_database():
     db = get_staging_db()
     db.push_schema()
     
+    # Seed divisions table
+    logger.info("Seeding divisions table...")
+    from boxing.database.seed_divisions import seed_divisions
+    seed_divisions()
+    
     logger.info("Database setup complete")
     return True
 
@@ -126,10 +131,10 @@ def main():
     ], help='Pipeline command to run')
     
     parser.add_argument('--limit', type=int, help='Limit number of records to process')
-    parser.add_argument('--skip-validation', action='store_true', 
-                       help='Skip validation checks during deployment')
     parser.add_argument('--force', action='store_true',
                        help='Force production deployment without approval')
+    parser.add_argument('--skip-tests', action='store_true',
+                       help='Skip running tests before pipeline steps')
     
     args = parser.parse_args()
     
@@ -138,9 +143,23 @@ def main():
     
     try:
         if args.command == 'setup':
+            # Run database tests first unless skipped
+            if not args.skip_tests:
+                logger.info("Running database tests before setup...")
+                if not run_tests("tests/database/"):
+                    logger.error("Database tests failed, skipping setup")
+                    success = False
+                    return success
             success = setup_database()
             
         elif args.command == 'load':
+            # Run load and extract tests first unless skipped
+            if not args.skip_tests:
+                logger.info("Running load/extract tests before loading data...")
+                if not (run_tests("tests/load/") and run_tests("tests/extract/")):
+                    logger.error("Tests failed, skipping data load")
+                    success = False
+                    return success
             result = load_data(limit=args.limit)
             success = result['load_summary']['successful'] > 0
             
@@ -151,6 +170,13 @@ def main():
             success = run_tests(watch=True)
             
         elif args.command == 'validate':
+            # Run validation tests first unless skipped
+            if not args.skip_tests:
+                logger.info("Running validation tests...")
+                if not run_tests("tests/database/"):
+                    logger.error("Validation tests failed, skipping data validation")
+                    success = False
+                    return success
             report = validate_data()
             success = report['summary']['failed'] == 0
             
@@ -190,7 +216,7 @@ def main():
             
             # Validate
             validation = validate_data()
-            if validation['summary']['failed'] > 0 and not args.skip_validation:
+            if validation['summary']['failed'] > 0:
                 logger.error("Validation failed, aborting")
                 return 1
             
