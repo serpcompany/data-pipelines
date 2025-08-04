@@ -44,6 +44,19 @@ flowchart TD
 
 ## Running the Pipeline
 
+### 0. Clear dbs (optional)
+
+Clear the staging db
+
+```bash
+cd boxing/database && npx tsx clear-staging-data.ts
+```
+
+Clear the datalake
+```bash
+source .env && PGPASSWORD=$POSTGRES_PASSWORD psql -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER -d $POSTGRES_DEFAULT_DB -c "DELETE FROM data_lake.boxrec_boxer_raw_html;"
+```
+
 ### Step 1: Scrape HTML via Zyte
 ```bash
 cd /Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines
