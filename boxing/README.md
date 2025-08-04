@@ -59,9 +59,10 @@ source .env && PGPASSWORD=$POSTGRES_PASSWORD psql -h $POSTGRES_HOST -p $POSTGRES
 
 ### Step 1: Scrape HTML via Zyte
 ```bash
+# Scrape boxer single pages
 cd /Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines
 source .venv/bin/activate
-python -m boxing.scrapers.boxrec.boxer 1000boxers.csv
+python -m boxing.scrapers.boxrec.boxer [FILENAME.csv]
 ```
 
 ### Step 2: Validate HTML
