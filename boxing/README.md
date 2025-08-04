@@ -30,7 +30,40 @@ flowchart TD
     N -->|No| O["Alert: Schema Mismatch!"]
     N -->|Yes| P["9: Manual Push to Preview"]
     P --> Q["10: Production Deploy<br/>Handled by Main Project"]
+    
+    click B "#step-1-scrape-html-via-zyte"
+    click C "#steps-2-9-validation-through-preview-deployment"
+    click F "#steps-2-9-validation-through-preview-deployment"
+    click G "#steps-2-9-validation-through-preview-deployment"
+    click H "#steps-2-9-validation-through-preview-deployment"
+    click I "#steps-2-9-validation-through-preview-deployment"
+    click J "#steps-2-9-validation-through-preview-deployment"
+    click M "#steps-2-9-validation-through-preview-deployment"
+    click P "#steps-2-9-validation-through-preview-deployment"
 ```
+
+## Running the Pipeline
+
+### Step 1: Scrape HTML via Zyte
+```bash
+cd /Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines
+source .venv/bin/activate
+python -m boxing.scrapers.boxrec.boxer 1000boxers.csv
+```
+
+### Steps 2-9: Validation through Preview Deployment
+```bash
+cd /Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines
+source .venv/bin/activate
+python -m boxing.run_pipeline [command]
+```
+
+Available commands:
+- `setup` - Set up staging mirror database
+- `load` - Load data from data lake to staging mirror
+- `validate` - Run validation checks
+- `deploy-preview` - Deploy to preview environment
+- `full` - Run complete pipeline
 
 ## TODOs
 

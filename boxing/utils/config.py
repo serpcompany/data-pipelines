@@ -5,7 +5,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 # Project root
-PROJECT_ROOT = Path(__file__).parent.parent.parent.parent  # data-pipelines/
+PROJECT_ROOT = Path(__file__).parent.parent.parent  # data-pipelines/
 PIPELINES_ROOT = Path(__file__).parent.parent.parent  # pipelines/
 PIPELINE_ROOT = Path(__file__).parent.parent  # pipelines/boxing/
 
