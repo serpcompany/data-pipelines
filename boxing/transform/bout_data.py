@@ -3,23 +3,47 @@
 
 from typing import Optional
 import re
+import dateparser
 
 
-def normalize_bout_date(date_str: str) -> Optional[str]:
-    """Normalize bout date to YYYY-MM-DD format.
+def normalize_bout_date(date_str: str, base_year: Optional[int] = None) -> Optional[str]:
+    """Normalize bout date to YYYY-MM-DD format using dateparser.
     
-    For now, just return dates that are already in the correct format.
-    TODO: Use dateparser library for complex date parsing.
+    Handles various formats including:
+    - "Apr 02" (with base_year context)
+    - "2024-04-02" 
+    - "April 2, 2024"
+    - "2/4/24"
+    - etc.
     """
     if not date_str:
         return None
     
-    # Check if already in YYYY-MM-DD format
-    if re.match(r'^\d{4}-\d{2}-\d{2}$', date_str.strip()):
-        return date_str.strip()
+    date_str = date_str.strip()
     
-    # For now, return None for dates that need parsing
-    # This will be fixed when we add dateparser
+    # Check if already in YYYY-MM-DD format
+    if re.match(r'^\d{4}-\d{2}-\d{2}$', date_str):
+        return date_str
+    
+    # Parse with dateparser
+    settings = {
+        'PREFER_DATES_FROM': 'past',
+        'RETURN_AS_TIMEZONE_AWARE': False
+    }
+    
+    # If we have a base year and the date has no year, add it
+    if base_year and not re.search(r'\d{4}', date_str):
+        # Try adding the year to help dateparser
+        date_str_with_year = f"{date_str} {base_year}"
+        parsed = dateparser.parse(date_str_with_year, settings=settings)
+        if parsed:
+            return parsed.strftime('%Y-%m-%d')
+    
+    # Try parsing as-is
+    parsed = dateparser.parse(date_str, settings=settings)
+    if parsed:
+        return parsed.strftime('%Y-%m-%d')
+    
     return None
 
 
