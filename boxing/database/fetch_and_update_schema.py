@@ -19,9 +19,18 @@ class SchemaSync:
         self.branch = 'staging'  # staging branch = production-preview
         self.github_token = os.getenv('GITHUB_PAT')
         self.schema_dir = Path(__file__).parent / "drizzle" / "schema"
+        # Path to local submodule
+        self.local_project_path = Path(__file__).parent.parent.parent.parent.parent / "boxingundefeated.com"
         
     def fetch_file(self, file_path: str) -> Optional[str]:
-        """Fetch a file from GitHub."""
+        """Fetch a file - first try local submodule, then GitHub."""
+        # First try local file
+        local_file = self.local_project_path / file_path
+        if local_file.exists():
+            logger.info(f"Using local file: {local_file}")
+            return local_file.read_text()
+        
+        # Fall back to GitHub
         url = f"https://raw.githubusercontent.com/{self.repo}/{self.branch}/{file_path}"
         
         headers = {}

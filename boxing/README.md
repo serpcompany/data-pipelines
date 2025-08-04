@@ -51,18 +51,33 @@ source .venv/bin/activate
 python -m boxing.scrapers.boxrec.boxer 1000boxers.csv
 ```
 
-### Steps 2-9: Validation through Preview Deployment
+### Steps 2-9: Process, Validate, and Deploy
+
+Before loading data, set up the database (only needed once):
+```bash
+python -m boxing.run_pipeline setup
+```
+
+Then run these commands:
 ```bash
 cd /Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines
 source .venv/bin/activate
-python -m boxing.run_pipeline [command]
+
+# Load scraped HTML and extract data (Steps 2-6)
+python -m boxing.run_pipeline load
+
+# Run validation checks (Step 7)
+python -m boxing.run_pipeline validate
+
+# Deploy to preview (Step 9)
+python -m boxing.run_pipeline deploy-preview
 ```
 
 Available commands:
-- `setup` - Set up staging mirror database
-- `load` - Load data from data lake to staging mirror
-- `validate` - Run validation checks
-- `deploy-preview` - Deploy to preview environment
+- `setup` - Set up staging mirror database (run once before first use)
+- `load` - Load scraped HTML and extract data to staging (steps 2-6)
+- `validate` - Run data validation checks (step 7)
+- `deploy-preview` - Deploy to preview environment (step 9)
 - `full` - Run complete pipeline
 
 ## TODOs

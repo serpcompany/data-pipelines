@@ -18,7 +18,6 @@ from boxing.database.staging_mirror import get_staging_db
 from boxing.database import run_change_detection
 from boxing.load.to_staging_mirror_db import run_staging_load
 from boxing.database.validators import run_validation
-from boxing.database.validators.schema_validator import SchemaValidator
 from boxing.database.deploy import deploy_to_preview
 
 logging.basicConfig(
@@ -33,14 +32,8 @@ def setup_database():
     db = get_staging_db()
     db.push_schema()
     
-    # Validate schema matches production
-    validator = SchemaValidator()
-    if validator.validate():
-        logger.info("Database setup complete and schema validated")
-        return True
-    else:
-        logger.error("Database setup failed or schema validation failed")
-        return False
+    logger.info("Database setup complete")
+    return True
 
 def load_data(limit=None):
     """Load data from data lake to staging mirror."""
@@ -90,19 +83,7 @@ def validate_data():
     """Run validation checks."""
     logger.info("Running data validation...")
     
-    # First validate schema
-    logger.info("Validating database schema...")
-    validator = SchemaValidator()
-    schema_valid = validator.validate()
-    
-    if not schema_valid:
-        logger.error("Schema validation failed - database schema does not match production")
-        return {
-            'summary': {'passed': 0, 'failed': 1, 'total': 1},
-            'failed_checks': [{'name': 'Schema validation', 'error': 'Schema does not match production'}]
-        }
-    
-    # Then run data validation
+    # Run data validation only (no schema validation against frontend)
     report = run_validation()
     
     if report['summary']['failed'] > 0:

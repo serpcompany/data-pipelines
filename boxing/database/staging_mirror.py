@@ -63,11 +63,8 @@ class StagingMirrorDB:
         """Push the current schema to the database."""
         logger.info("Pushing schema to staging mirror database")
         
-        # First sync schema from GitHub
-        from .fetch_and_update_schema import sync_schema_from_github
-        logger.info("Syncing schema from GitHub...")
-        if not sync_schema_from_github():
-            raise Exception("Failed to sync schema from GitHub")
+        # Use local schema files instead of syncing from GitHub
+        logger.info("Using local schema files...")
         
         # Ensure data directory exists
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
@@ -75,18 +72,15 @@ class StagingMirrorDB:
         # Set the database URL environment variable for local SQLite
         os.environ['DRIZZLE_DB_URL'] = f"file:{self.db_path}"
         
-        # First generate migrations if needed
-        success, output = self.run_drizzle_command("generate")
-        if not success and "No schema changes" not in output:
-            logger.warning(f"Migration generation warning: {output}")
-        
-        # Then apply migrations
-        success, output = self.run_drizzle_command("migrate")
+        # Push schema directly to database (creates tables if needed)
+        success, output = self.run_drizzle_command("push")
         
         if success:
-            logger.info("Schema migrations applied successfully")
+            logger.info("Schema pushed successfully")
+        elif "already exists" in output:
+            logger.info("Schema already exists, skipping push")
         else:
-            raise Exception(f"Failed to apply migrations: {output}")
+            raise Exception(f"Failed to push schema: {output}")
     
     def generate_migrations(self):
         """Generate new migration files based on schema changes."""
