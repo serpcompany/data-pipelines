@@ -19,8 +19,8 @@ flowchart TD
     C --> D{Valid?}
     D -->|No| E[Queue for Rescrape]
     D -->|Yes| F["3: Store in Data Lake"]
-    F --> G["4: Extract Fields from HTML"]
-    G --> H["5: Clean & Transform Data"]
+    F --> G["4: Setup Staging DB<br/>(staging mirror)"]
+    G --> H["5: Extract Fields from HTML<br/>& Transform Data"]
     H --> I["6: Load to Staging Mirror"]
     I --> J["7: Bulk Validation"]
     J --> K{All Valid?}
@@ -87,36 +87,62 @@ python -m boxing.run_validators
 python -m boxing.load.to_data_lake
 ```
 
-### Steps 4-9: Process, Validate, and Deploy
-
-Before loading data to staging, set up the staging database (only needed once):
+### Step 4: Setup staging-db (staging mirror)
 ```bash
-python -m boxing.run_pipeline setup
+cd /Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines/boxing
+python run_pipeline.py setup
 ```
 
-Then run these commands:
+### Steps 5-6: ETL (Extract, Transform, Load)
+
+This command loads data from the data lake to the staging mirror database:
+- Connects to the data lake (Postgres)
+- Reads HTML records from `data_lake.boxrec_boxer_raw_html` table
+- Extracts boxer and bout data from the HTML
+- Transforms the extracted data
+- Loads it into the staging mirror database
+
 ```bash
 cd /Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines
 source .venv/bin/activate
-
-# Load from data lake to staging and extract data (Steps 4-6)
 python -m boxing.run_pipeline load
-
-# Run data validation checks (Step 7)
-python -m boxing.run_pipeline validate
-
-# Deploy to preview (Step 9)
-python -m boxing.run_pipeline deploy-preview
 ```
+
+The output will show:
+- Number of records loaded successfully
+- Total boxers and bouts in staging after loading
+- Any errors encountered during extraction/loading
+
+### Step 7: 
+
+Bulk validation (Step 7) runs data quality checks on the staging database to
+ensure data integrity before deployment. It checks for:
+
+1. Required fields - Ensures no NULL values in critical fields like boxer ID,
+name, BoxRec URL
+2. Data consistency - Validates that boxer records have proper format and
+relationships
+3. Referential integrity - Checks that bout records reference valid boxer IDs
+4. Data ranges - Verifies numeric values (wins, losses, draws) are within
+valid ranges
+5. Duplicate detection - Identifies duplicate boxer IDs or bout records
+6. Format validation - Ensures dates, URLs, and other fields follow expected
+formats
+
+If validation fails, it returns a report showing which checks failed and the
+problematic records, preventing bad data from reaching production.
+
+```bash
+python -m boxing.run_pipeline validate
+```
+
 
 ### Available commands:
 - `setup` - Set up staging mirror database (run once before first use)
-- `load` - Load from data lake to staging and extract data (steps 4-6) 
+- `load` - Load from data lake to staging and extract data (steps 5-6) 
 - `validate` - Run data validation checks (step 7)
 - `deploy-preview` - Deploy to preview environment (step 9)
 - `full` - Run complete pipeline
-- `test` - Run all tests
-- `test-watch` - Run tests in watch mode
 
 
 ### drizzle studio on the staging db:
@@ -124,8 +150,6 @@ python -m boxing.run_pipeline deploy-preview
 ```bash
 cd /Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines/boxing/database/drizzle && npx drizzle-kit studio --config=drizzle.config.local.ts
 ```
-
-**Automatic Testing**: Each pipeline command automatically runs relevant tests before executing. This ensures data quality at every step. To skip tests (not recommended), use `--skip-tests`.
 
 Note: The pipeline assumes Postgres data lake is already set up with the `data_lake.boxrec_boxer_raw_html` table.
 

@@ -9,7 +9,7 @@ import sqlite3
 from pathlib import Path
 from typing import Dict, Set
 
-from pipelines.boxing.database.staging_mirror import get_connection
+from boxing.database.staging_mirror import get_connection
 
 
 class TestSchemaComparison:

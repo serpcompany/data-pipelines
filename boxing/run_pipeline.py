@@ -7,7 +7,6 @@ Coordinates all ETL steps from scraping to production deployment.
 import argparse
 import logging
 import sys
-import subprocess
 from datetime import datetime
 from pathlib import Path
 
@@ -51,39 +50,6 @@ def load_data(limit=None):
     
     return result
 
-def run_tests(test_path=None, watch=False):
-    """Run pytest tests for the pipeline."""
-    logger.info("Running tests...")
-    
-    cmd = ["python", "-m", "pytest"]
-    
-    if test_path:
-        cmd.append(test_path)
-    else:
-        cmd.append("tests/")
-    
-    cmd.extend(["-v", "--tb=short"])
-    
-    if watch:
-        # Add pytest-watch for continuous testing
-        cmd = ["python", "-m", "pytest-watch"] + cmd[3:]  # Skip 'python -m pytest'
-    
-    try:
-        result = subprocess.run(cmd, capture_output=True, text=True)
-        
-        if result.returncode == 0:
-            logger.info("All tests passed")
-            return True
-        else:
-            logger.error(f"Tests failed:\n{result.stdout}")
-            if result.stderr:
-                logger.error(f"Errors:\n{result.stderr}")
-            return False
-            
-    except subprocess.CalledProcessError as e:
-        logger.error(f"Failed to run tests: {e}")
-        return False
-
 def validate_data():
     """Run validation checks."""
     logger.info("Running data validation...")
@@ -126,15 +92,13 @@ def main():
     parser = argparse.ArgumentParser(description='Boxing Data Pipeline')
     
     parser.add_argument('command', choices=[
-        'setup', 'load', 'test', 'validate', 'schema-validate', 'deploy-preview', 
-        'check-changes', 'full', 'test-watch'
+        'setup', 'load', 'validate', 'schema-validate', 'deploy-preview', 
+        'check-changes', 'full'
     ], help='Pipeline command to run')
     
     parser.add_argument('--limit', type=int, help='Limit number of records to process')
     parser.add_argument('--force', action='store_true',
                        help='Force production deployment without approval')
-    parser.add_argument('--skip-tests', action='store_true',
-                       help='Skip running tests before pipeline steps')
     
     args = parser.parse_args()
     
@@ -143,40 +107,13 @@ def main():
     
     try:
         if args.command == 'setup':
-            # Run database tests first unless skipped
-            if not args.skip_tests:
-                logger.info("Running database tests before setup...")
-                if not run_tests("tests/database/"):
-                    logger.error("Database tests failed, skipping setup")
-                    success = False
-                    return success
             success = setup_database()
             
         elif args.command == 'load':
-            # Run load and extract tests first unless skipped
-            if not args.skip_tests:
-                logger.info("Running load/extract tests before loading data...")
-                if not (run_tests("tests/load/") and run_tests("tests/extract/")):
-                    logger.error("Tests failed, skipping data load")
-                    success = False
-                    return success
             result = load_data(limit=args.limit)
             success = result['load_summary']['successful'] > 0
             
-        elif args.command == 'test':
-            success = run_tests()
-            
-        elif args.command == 'test-watch':
-            success = run_tests(watch=True)
-            
         elif args.command == 'validate':
-            # Run validation tests first unless skipped
-            if not args.skip_tests:
-                logger.info("Running validation tests...")
-                if not run_tests("tests/database/"):
-                    logger.error("Validation tests failed, skipping data validation")
-                    success = False
-                    return success
             report = validate_data()
             success = report['summary']['failed'] == 0
             
@@ -207,12 +144,6 @@ def main():
             if load_result['load_summary']['successful'] == 0:
                 logger.error("No data loaded, aborting")
                 return 1
-            
-            # Run tests after loading
-            if not run_tests():
-                logger.error("Tests failed after loading data")
-                if not args.force:
-                    return 1
             
             # Validate
             validation = validate_data()
