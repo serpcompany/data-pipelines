@@ -58,6 +58,18 @@ source .env && PGPASSWORD=$POSTGRES_PASSWORD psql -h $POSTGRES_HOST -p $POSTGRES
 ```
 
 ### Step 1: Scrape HTML via Zyte
+
+0. Optionally you can clear the pending/ folder to start fresh by just deleting all the files in:
+```
+/Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines/boxing/data/output/html/pending
+``` 
+
+and 
+
+```
+/Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines/boxing/data/output/html/validated
+```
+   
 ```bash
 # Scrape boxer single pages
 cd /Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines
@@ -115,7 +127,7 @@ cd /Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines/boxing/d
 
 **Automatic Testing**: Each pipeline command automatically runs relevant tests before executing. This ensures data quality at every step. To skip tests (not recommended), use `--skip-tests`.
 
-Note: The pipeline assumes Postgres data lake is already set up with the `data-lake.boxrec_boxer_raw_html` table.
+Note: The pipeline assumes Postgres data lake is already set up with the `data_lake.boxrec_boxer_raw_html` table.
 
 ## TODOs
 

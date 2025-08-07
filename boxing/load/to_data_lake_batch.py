@@ -79,7 +79,7 @@ def load_batch_to_data_lake():
     # Load existing IDs to check for duplicates
     cur.execute("""
         SELECT boxrec_id, competition_level 
-        FROM "data-lake".boxrec_boxer_raw_html
+        FROM "data_lake".boxrec_boxer_raw_html
     """)
     existing = set((row[0], row[1]) for row in cur.fetchall())
     logging.info(f"Found {len(existing)} existing records")
@@ -109,7 +109,7 @@ def load_batch_to_data_lake():
                 execute_values(
                     cur,
                     """
-                    INSERT INTO "data-lake".boxrec_boxer_raw_html 
+                    INSERT INTO "data_lake".boxrec_boxer_raw_html 
                     (boxrec_url, boxrec_id, html_file, competition_level, 
                      scraped_at, created_at, updated_at)
                     VALUES %s
@@ -129,7 +129,7 @@ def load_batch_to_data_lake():
         execute_values(
             cur,
             """
-            INSERT INTO "data-lake".boxrec_boxer_raw_html 
+            INSERT INTO "data_lake".boxrec_boxer_raw_html 
             (boxrec_url, boxrec_id, html_file, competition_level, 
              scraped_at, created_at, updated_at)
             VALUES %s

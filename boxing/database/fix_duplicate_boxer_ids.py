@@ -34,7 +34,7 @@ def fix_duplicate_boxer_ids_in_data_lake():
         # Find all IDs with leading zeros
         cursor.execute("""
             SELECT DISTINCT boxrec_id, competition_level
-            FROM "data-lake".boxrec_boxer_raw_html 
+            FROM "data_lake".boxrec_boxer_raw_html 
             WHERE boxrec_id ~ '^0+[0-9]+$'
         """)
         
@@ -50,7 +50,7 @@ def fix_duplicate_boxer_ids_in_data_lake():
             # Check if normalized version exists
             cursor.execute("""
                 SELECT COUNT(*) 
-                FROM "data-lake".boxrec_boxer_raw_html 
+                FROM "data_lake".boxrec_boxer_raw_html 
                 WHERE boxrec_id = %s AND competition_level = %s
             """, (normalized, competition_level))
             
@@ -58,7 +58,7 @@ def fix_duplicate_boxer_ids_in_data_lake():
                 # Normalized version exists, delete the one with zeros
                 logger.info(f"Deleting duplicate: {boxer_id} (keeping {normalized})")
                 cursor.execute("""
-                    DELETE FROM "data-lake".boxrec_boxer_raw_html 
+                    DELETE FROM "data_lake".boxrec_boxer_raw_html 
                     WHERE boxrec_id = %s AND competition_level = %s
                 """, (boxer_id, competition_level))
                 deleted_count += 1
@@ -66,7 +66,7 @@ def fix_duplicate_boxer_ids_in_data_lake():
                 # No normalized version, keep this one but fix the ID
                 logger.info(f"Keeping and normalizing: {boxer_id} -> {normalized}")
                 cursor.execute("""
-                    UPDATE "data-lake".boxrec_boxer_raw_html 
+                    UPDATE "data_lake".boxrec_boxer_raw_html 
                     SET boxrec_id = %s 
                     WHERE boxrec_id = %s AND competition_level = %s
                 """, (normalized, boxer_id, competition_level))

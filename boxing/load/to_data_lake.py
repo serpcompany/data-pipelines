@@ -93,7 +93,7 @@ def load_html_to_data_lake(html_file: Path) -> bool:
         # Check if record exists for this competition level
         cur.execute("""
             SELECT id, html_file 
-            FROM "data-lake".boxrec_boxer_raw_html 
+            FROM "data_lake".boxrec_boxer_raw_html 
             WHERE boxrec_id = %s AND competition_level = %s
         """, (boxer_id, competition_level))
         
@@ -106,7 +106,7 @@ def load_html_to_data_lake(html_file: Path) -> bool:
             # Only update if content changed
             if old_html != html_content:
                 cur.execute("""
-                    UPDATE "data-lake".boxrec_boxer_raw_html 
+                    UPDATE "data_lake".boxrec_boxer_raw_html 
                     SET html_file = %s, 
                         scraped_at = %s,
                         updated_at = %s
@@ -119,7 +119,7 @@ def load_html_to_data_lake(html_file: Path) -> bool:
         else:
             # Insert new record
             cur.execute("""
-                INSERT INTO "data-lake".boxrec_boxer_raw_html 
+                INSERT INTO "data_lake".boxrec_boxer_raw_html 
                 (boxrec_url, boxrec_id, html_file, competition_level, scraped_at, created_at, updated_at)
                 VALUES (%s, %s, %s, %s, %s, %s, %s)
             """, (boxrec_url, boxer_id, html_content, competition_level, datetime.now(), datetime.now(), datetime.now()))

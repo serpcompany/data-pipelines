@@ -256,7 +256,7 @@ class StagingLoader:
         # Get unprocessed records from data lake (both pro and amateur)
         query = """
             SELECT boxrec_url, boxrec_id, html_file, competition_level
-            FROM "data-lake".boxrec_boxer_raw_html
+            FROM "data_lake".boxrec_boxer_raw_html
             ORDER BY boxrec_id, competition_level DESC  -- Pro first, then amateur
         """
         if limit:

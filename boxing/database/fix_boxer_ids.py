@@ -96,7 +96,7 @@ def fix_boxer_ids_in_data_lake():
         # Get all boxer IDs with leading zeros
         cursor.execute("""
             SELECT DISTINCT boxrec_id 
-            FROM "data-lake".boxrec_boxer_raw_html 
+            FROM "data_lake".boxrec_boxer_raw_html 
             WHERE boxrec_id ~ '^0+[0-9]+$'
         """)
         
@@ -108,7 +108,7 @@ def fix_boxer_ids_in_data_lake():
             logger.info(f"Normalizing data lake ID: {boxer_id} -> {normalized}")
             
             cursor.execute("""
-                UPDATE "data-lake".boxrec_boxer_raw_html 
+                UPDATE "data_lake".boxrec_boxer_raw_html 
                 SET boxrec_id = %s 
                 WHERE boxrec_id = %s
             """, (normalized, boxer_id))

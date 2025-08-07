@@ -36,7 +36,7 @@ for directory in [DATA_DIR, INPUT_DIR, OUTPUT_DIR, HTML_DIR, PENDING_HTML_DIR, V
 # Database
 STAGING_MIRROR_DB_PATH = OUTPUT_DIR / 'staging_mirror.db'
 
-# Scraper settings
+# zyte Scraper settings
 DEFAULT_WORKERS = 5
 DEFAULT_RATE_LIMIT = 5  # requests per second
 REQUEST_TIMEOUT = 30
