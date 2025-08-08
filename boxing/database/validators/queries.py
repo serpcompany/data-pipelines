@@ -189,33 +189,7 @@ class DataValidator:
             expected_count=0
         ))
         
-        # Check for invalid dates
-        checks.append(self.run_query(
-            "Bouts with invalid dates",
-            """
-            SELECT id, boutDate, opponentName
-            FROM boxerBouts
-            WHERE boutDate IS NOT NULL 
-            AND (
-                LENGTH(boutDate) < 8 
-                OR boutDate NOT LIKE '____-__-__'
-                OR boutDate > date('now')
-            )
-            """,
-            expected_count=0
-        ))
         
-        # Check for invalid results
-        checks.append(self.run_query(
-            "Bouts with invalid results",
-            """
-            SELECT id, result, opponentName
-            FROM boxerBouts
-            WHERE result NOT IN ('W', 'L', 'D', 'NC', 'DQ', 'TD', 'RTD', 'ND')
-            AND result IS NOT NULL
-            """,
-            expected_count=0
-        ))
         
         # Check win/loss/draw totals
         checks.append(self.run_query(

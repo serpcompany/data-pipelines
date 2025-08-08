@@ -69,8 +69,8 @@ def get_competition_level(filename: str) -> str:
     return 'professional'
 
 
-def load_html_to_data_lake(html_file: Path) -> bool:
-    """Load a single HTML file to the data lake."""
+def prepare_file_data(html_file: Path) -> Optional[dict]:
+    """Prepare data from a single HTML file for database insertion."""
     try:
         # Read HTML content
         with open(html_file, 'r', encoding='utf-8') as f:
@@ -84,61 +84,22 @@ def load_html_to_data_lake(html_file: Path) -> bool:
         
         if not boxer_id or not boxrec_url:
             logging.warning(f"Could not extract metadata from {filename}")
-            return False
+            return None
         
-        # Connect to database
-        conn = psycopg2.connect(**DB_CONFIG)
-        cur = conn.cursor()
-        
-        # Check if record exists for this competition level
-        cur.execute("""
-            SELECT id, html_file 
-            FROM "data_lake".boxrec_boxer_raw_html 
-            WHERE boxrec_id = %s AND competition_level = %s
-        """, (boxer_id, competition_level))
-        
-        existing = cur.fetchone()
-        
-        if existing:
-            # Update existing record
-            record_id, old_html = existing
-            
-            # Only update if content changed
-            if old_html != html_content:
-                cur.execute("""
-                    UPDATE "data_lake".boxrec_boxer_raw_html 
-                    SET html_file = %s, 
-                        scraped_at = %s,
-                        updated_at = %s
-                    WHERE id = %s
-                """, (html_content, datetime.now(), datetime.now(), record_id))
-                
-                logging.info(f"Updated {competition_level} boxer {boxer_id} - content changed")
-            else:
-                logging.info(f"Skipped {competition_level} boxer {boxer_id} - no changes")
-        else:
-            # Insert new record
-            cur.execute("""
-                INSERT INTO "data_lake".boxrec_boxer_raw_html 
-                (boxrec_url, boxrec_id, html_file, competition_level, scraped_at, created_at, updated_at)
-                VALUES (%s, %s, %s, %s, %s, %s, %s)
-            """, (boxrec_url, boxer_id, html_content, competition_level, datetime.now(), datetime.now(), datetime.now()))
-            
-            logging.info(f"Inserted new {competition_level} boxer {boxer_id}")
-        
-        conn.commit()
-        cur.close()
-        conn.close()
-        
-        return True
-        
+        return {
+            'boxer_id': boxer_id,
+            'boxrec_url': boxrec_url,
+            'html_content': html_content,
+            'competition_level': competition_level,
+            'filename': filename
+        }
     except Exception as e:
-        logging.error(f"Error loading {html_file.name}: {e}")
-        return False
+        logging.error(f"Error preparing {html_file.name}: {e}")
+        return None
 
 
-def load_all_validated_files():
-    """Load all validated HTML files to the data lake."""
+def load_all_validated_files(batch_size: int = 100):
+    """Load all validated HTML files to the data lake using batch processing."""
     html_files = list(VALIDATED_HTML_DIR.glob('*.html'))
     
     if not html_files:
@@ -146,13 +107,79 @@ def load_all_validated_files():
         return
     
     logging.info(f"Found {len(html_files)} validated HTML files")
+    logging.info(f"Processing in batches of {batch_size}")
     
-    success_count = 0
+    # Prepare all file data first
+    file_data = []
     for html_file in html_files:
-        if load_html_to_data_lake(html_file):
-            success_count += 1
+        data = prepare_file_data(html_file)
+        if data:
+            file_data.append(data)
     
-    logging.info(f"Successfully loaded {success_count}/{len(html_files)} files to data lake")
+    if not file_data:
+        logging.error("No valid files to process")
+        return
+    
+    # Connect to database once
+    conn = None
+    cur = None
+    success_count = 0
+    
+    try:
+        conn = psycopg2.connect(**DB_CONFIG)
+        cur = conn.cursor()
+        
+        # Process in batches
+        for i in range(0, len(file_data), batch_size):
+            batch = file_data[i:i + batch_size]
+            
+            # Prepare batch data for UPSERT
+            batch_values = []
+            for data in batch:
+                batch_values.append((
+                    data['boxrec_url'],
+                    data['boxer_id'],
+                    data['html_content'],
+                    data['competition_level'],
+                    datetime.now(),
+                    datetime.now(),
+                    datetime.now()
+                ))
+            
+            # Use INSERT ... ON CONFLICT DO UPDATE for efficient UPSERT
+            # This assumes there's a unique constraint on (boxrec_id, competition_level)
+            upsert_query = """
+                INSERT INTO "data_lake".boxrec_boxer_raw_html 
+                (boxrec_url, boxrec_id, html_file, competition_level, scraped_at, created_at, updated_at)
+                VALUES (%s, %s, %s, %s, %s, %s, %s)
+                ON CONFLICT (boxrec_id, competition_level) 
+                DO UPDATE SET 
+                    html_file = EXCLUDED.html_file,
+                    boxrec_url = EXCLUDED.boxrec_url,
+                    scraped_at = EXCLUDED.scraped_at,
+                    updated_at = EXCLUDED.updated_at
+            """
+            
+            # Execute batch upsert
+            cur.executemany(upsert_query, batch_values)
+            rows_affected = cur.rowcount
+            success_count += len(batch)
+            
+            # Commit after each batch
+            conn.commit()
+            logging.info(f"Processed batch {i//batch_size + 1}/{(len(file_data) + batch_size - 1)//batch_size} - {rows_affected} rows affected")
+        
+        logging.info(f"Successfully processed {success_count}/{len(file_data)} files to data lake")
+        
+    except Exception as e:
+        logging.error(f"Database error: {e}")
+        if conn:
+            conn.rollback()
+    finally:
+        if cur:
+            cur.close()
+        if conn:
+            conn.close()
 
 
 if __name__ == "__main__":

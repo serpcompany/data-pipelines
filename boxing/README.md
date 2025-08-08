@@ -61,18 +61,18 @@ source .env && PGPASSWORD=$POSTGRES_PASSWORD psql -h $POSTGRES_HOST -p $POSTGRES
 
 0. Optionally you can clear the pending/ folder to start fresh by just deleting all the files in:
 ```
-/Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines/boxing/data/output/html/pending
+boxing/data/output/html/pending
 ``` 
 
 and 
 
 ```
-/Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines/boxing/data/output/html/validated
+boxing/data/output/html/validated
 ```
    
 ```bash
 # Scrape boxer single pages
-cd /Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines
+cd /data-pipelines
 source .venv/bin/activate
 python -m boxing.scrapers.boxrec.boxer [FILENAME.csv]
 ```
@@ -89,7 +89,7 @@ python -m boxing.load.to_data_lake
 
 ### Step 4: Setup staging-db (staging mirror)
 ```bash
-cd /Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines/boxing
+cd boxing
 python run_pipeline.py setup
 ```
 
@@ -103,7 +103,7 @@ This command loads data from the data lake to the staging mirror database:
 - Loads it into the staging mirror database
 
 ```bash
-cd /Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines
+cd /data-pipelines
 source .venv/bin/activate
 python -m boxing.run_pipeline load
 ```
@@ -148,7 +148,7 @@ python -m boxing.run_pipeline validate
 ### drizzle studio on the staging db:
 
 ```bash
-cd /Users/devin/repos/projects/boxingundefeated-monorepo/data-pipelines/boxing/database/drizzle && npx drizzle-kit studio --config=drizzle.config.local.ts
+cd boxing/database/drizzle && npx drizzle-kit studio --config=drizzle.config.local.ts
 ```
 
 Note: The pipeline assumes Postgres data lake is already set up with the `data_lake.boxrec_boxer_raw_html` table.

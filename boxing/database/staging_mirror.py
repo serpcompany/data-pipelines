@@ -18,7 +18,7 @@ except ImportError:
     # Fall back to absolute import (when run as script)
     import sys
     sys.path.insert(0, str(Path(__file__).parent.parent.parent))
-    from pipelines.boxing.utils.config import STAGING_MIRROR_DB_PATH
+    from boxing.utils.config import STAGING_MIRROR_DB_PATH
 
 logger = logging.getLogger(__name__)
 

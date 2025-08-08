@@ -6,4 +6,4 @@ lxml
 pandas
 numpy
 psycopg2-binary
-dateparser==1.2.0
+dateparser

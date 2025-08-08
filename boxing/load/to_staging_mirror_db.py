@@ -8,6 +8,7 @@ import json
 import logging
 import re
 import sqlite3
+import traceback
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional, Any
@@ -133,18 +134,17 @@ class StagingLoader:
                 judge3_name = judges[2]['name'] if len(judges) > 2 and isinstance(judges[2], dict) else None
                 judge3_score = judges[2]['score'] if len(judges) > 2 and isinstance(judges[2], dict) else None
                 
-                # Determine if this is a title fight
-                is_title_fight = bool(bout.get('titles')) if bout.get('titles') else False
+                # Determine if this is a title fight (SQLite uses 0/1 for boolean)
+                is_title_fight = 1 if bout.get('titles') else 0
                 
                 cursor.execute("""
                     INSERT INTO boxerBouts (
-                        id, boxerId, boxrecId, boutDate, opponentName, opponentWeight, opponentRecord,
+                        boxerId, boxrecId, boutDate, opponentName, opponentWeight, opponentRecord,
                         eventName, refereeName, judge1Name, judge1Score, judge2Name, judge2Score,
                         judge3Name, judge3Score, numRoundsScheduled, result, resultMethod, resultRound,
-                        eventPageLink, boutPageLink, scorecardsPageLink, titleFight, createdAt
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                        eventPageLink, boutPageLink, scorecardsPageLink, titleFight
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, (
-                    bout_id,
                     boxer_id,
                     bout.get('bout_id'),  # boxrecId for the bout
                     bout.get('date'),  # boutDate
@@ -166,8 +166,7 @@ class StagingLoader:
                     None,  # eventPageLink - not in current extraction
                     bout.get('bout_link'),  # boutPageLink
                     None,  # scorecardsPageLink - not in current extraction
-                    is_title_fight,  # titleFight
-                    datetime.now().isoformat()  # createdAt
+                    is_title_fight  # titleFight
                 ))
             
             # Commit transaction
@@ -178,7 +177,7 @@ class StagingLoader:
             
         except Exception as e:
             cursor.execute("ROLLBACK")
-            logger.error(f"Error loading boxer {boxer_data.get('boxrec_id')}: {e}")
+            logger.error(f"Error loading boxer {boxer_data.get('boxrec_id')}: {e}\n{traceback.format_exc()}")
             return False
     
     def process_boxer_with_both_records(self, boxer_id: str, pro_url: str, 
