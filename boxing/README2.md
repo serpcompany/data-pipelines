@@ -149,7 +149,9 @@ graph LR
 | `database/validators/schema_validator.py` | `SchemaValidator.validate()` | Schema compatibility check |
 | | `SchemaValidator.compare_schemas()` | Compares staging vs production |
 
-**Command:** `python -m boxing.run_pipeline deploy-preview`
+- **Command:** `python -m boxing.database.sync_to_miniflare`
+
+- **Command:** `python -m boxing.run_pipeline deploy-preview`
 
 ---
 

@@ -9,6 +9,7 @@ import logging
 import re
 import sqlite3
 import traceback
+import csv
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional, Any
@@ -27,6 +28,7 @@ class StagingLoader:
     def __init__(self):
         self.staging_conn = None
         self.extractor = ExtractionOrchestrator()
+        self.bio_data = self._load_bio_data()
     
     def __enter__(self):
         self.staging_conn = get_staging_connection()
@@ -35,6 +37,28 @@ class StagingLoader:
     def __exit__(self, exc_type, exc_val, exc_tb):
         if self.staging_conn:
             self.staging_conn.close()
+    
+    def _load_bio_data(self) -> Dict[str, str]:
+        """Load bio data from CSV file."""
+        bio_data = {}
+        csv_path = Path('/Users/devin/repos/projects/data-pipelines/boxing/data/input/boxer-articles.csv')
+        
+        if csv_path.exists():
+            try:
+                with open(csv_path, 'r', encoding='utf-8') as f:
+                    reader = csv.DictReader(f)
+                    for row in reader:
+                        boxrec_id = row.get('boxrec_id', '').strip()
+                        bio = row.get('bio', '').strip()
+                        if boxrec_id and bio:
+                            bio_data[boxrec_id] = bio
+                logger.info(f"Loaded {len(bio_data)} boxer bios from CSV")
+            except Exception as e:
+                logger.error(f"Error loading bio data from CSV: {e}")
+        else:
+            logger.info("No boxer-articles.csv file found, skipping bio data")
+        
+        return bio_data
     
     def load_boxer(self, boxer_data: Dict[str, Any]) -> bool:
         """Load a single boxer's data into staging mirror database."""
@@ -46,6 +70,9 @@ class StagingLoader:
             
             # Prepare boxer data
             boxer_id = boxer_data.get('boxrec_id', '').replace('/', '-')
+            
+            # Get bio from CSV if available, otherwise use extracted bio
+            bio = self.bio_data.get(boxer_id, boxer_data.get('bio'))
             
             # Prepare bouts data for JSON storage BEFORE the INSERT
             bouts = boxer_data.get('bouts', [])
@@ -126,7 +153,7 @@ class StagingLoader:
                 boxer_data.get('height'),
                 boxer_data.get('reach'),
                 boxer_data.get('stance'),
-                boxer_data.get('bio'),
+                bio,  # Use bio from CSV or extracted
                 json.dumps(boxer_data.get('promoters', [])) if boxer_data.get('promoters') else None,
                 json.dumps(boxer_data.get('trainers', [])) if boxer_data.get('trainers') else None,
                 json.dumps(boxer_data.get('managers', [])) if boxer_data.get('managers') else None,
