@@ -46,27 +46,26 @@ def fix_boxer_ids_in_staging():
                 # Update boxers table
                 cursor.execute("UPDATE boxers SET id = ? WHERE id = ?", (normalized_id, boxer_id))
                 
-                # Update boxerBouts table
-                cursor.execute("UPDATE boxerBouts SET boxerId = ? WHERE boxerId = ?", (normalized_id, boxer_id))
+                # Update bouts JSON in boxers table
+                cursor.execute("SELECT bouts FROM boxers WHERE id = ?", (normalized_id,))
+                bouts_json = cursor.fetchone()[0]
+                
+                if bouts_json:
+                    import json
+                    bouts = json.loads(bouts_json) if isinstance(bouts_json, str) else bouts_json
+                    # Update boxer IDs in bouts JSON
+                    for bout in bouts:
+                        if bout.get('boxerId') == boxer_id:
+                            bout['boxerId'] = normalized_id
+                    cursor.execute("UPDATE boxers SET bouts = ? WHERE id = ?", 
+                                 (json.dumps(bouts), normalized_id))
                 
                 cursor.execute("COMMIT")
                 updated_count += 1
         
         logger.info(f"Normalized {updated_count} boxer IDs")
         
-        # Now fix boxrec_id in data lake references
-        cursor.execute("SELECT id, boxrecId FROM boxerBouts WHERE boxrecId IS NOT NULL")
-        bouts = cursor.fetchall()
-        
-        bout_updates = 0
-        for bout_id, boxrec_id in bouts:
-            normalized = normalize_boxer_id(boxrec_id)
-            if normalized != boxrec_id:
-                cursor.execute("UPDATE boxerBouts SET boxrecId = ? WHERE id = ?", (normalized, bout_id))
-                bout_updates += 1
-        
         conn.commit()
-        logger.info(f"Normalized {bout_updates} boxrec IDs in bouts")
         
     except Exception as e:
         conn.rollback()

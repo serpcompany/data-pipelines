@@ -13,8 +13,7 @@ import path from 'path';
 
 // Define the expected tables and their key fields
 const EXPECTED_TABLES = {
-  boxers: ['id', 'boxrecId', 'boxrecUrl', 'slug', 'name'],
-  boxerBouts: ['id', 'boxerId', 'boutDate', 'opponentName', 'result'],
+  boxers: ['id', 'boxrecId', 'boxrecUrl', 'slug', 'name', 'bouts'],
   divisions: ['id', 'slug', 'name', 'weightLimitPounds']
 };
 
@@ -90,9 +89,6 @@ class SchemaValidator {
         { table: 'boxers', name: 'boxersNationalityIdx' },
         { table: 'boxers', name: 'boxersDivisionIdx' },
         { table: 'boxers', name: 'boxersStatusIdx' },
-        { table: 'boxerBouts', name: 'boxerBoutsBoxerIdIdx' },
-        { table: 'boxerBouts', name: 'boxerBoutsDateIdx' },
-        { table: 'boxerBouts', name: 'uniqueBoxerBout' },
         { table: 'divisions', name: 'divisionsSlugIdx' },
         { table: 'divisions', name: 'divisionsShortNameIdx' }
       ];

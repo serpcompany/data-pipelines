@@ -1,5 +1,4 @@
-PRAGMA foreign_keys=OFF;--> statement-breakpoint
-CREATE TABLE `__new_boxers` (
+CREATE TABLE `boxers` (
 	`id` text PRIMARY KEY NOT NULL,
 	`boxrecId` text NOT NULL,
 	`boxrecUrl` text NOT NULL,
@@ -42,14 +41,24 @@ CREATE TABLE `__new_boxers` (
 	`amateurStatus` text,
 	`amateurTotalBouts` integer,
 	`amateurTotalRounds` integer,
+	`bouts` text,
 	`createdAt` text DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	`updatedAt` text DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 --> statement-breakpoint
-INSERT INTO `__new_boxers`("id", "boxrecId", "boxrecUrl", "boxrecWikiUrl", "slug", "name", "birthName", "nicknames", "avatarImage", "residence", "birthPlace", "dateOfBirth", "gender", "nationality", "height", "reach", "stance", "bio", "promoters", "trainers", "managers", "gym", "proDebutDate", "proDivision", "proWins", "proWinsByKnockout", "proLosses", "proLossesByKnockout", "proDraws", "proStatus", "proTotalBouts", "proTotalRounds", "amateurDebutDate", "amateurDivision", "amateurWins", "amateurWinsByKnockout", "amateurLosses", "amateurLossesByKnockout", "amateurDraws", "amateurStatus", "amateurTotalBouts", "amateurTotalRounds", "createdAt", "updatedAt") SELECT "id", "boxrecId", "boxrecUrl", "boxrecWikiUrl", "slug", "name", "birthName", "nicknames", "avatarImage", "residence", "birthPlace", "dateOfBirth", "gender", "nationality", "height", "reach", "stance", "bio", "promoters", "trainers", "managers", "gym", "proDebutDate", "proDivision", "proWins", "proWinsByKnockout", "proLosses", "proLossesByKnockout", "proDraws", "proStatus", "proTotalBouts", "proTotalRounds", "amateurDebutDate", "amateurDivision", "amateurWins", "amateurWinsByKnockout", "amateurLosses", "amateurLossesByKnockout", "amateurDraws", "amateurStatus", "amateurTotalBouts", "amateurTotalRounds", "createdAt", "updatedAt" FROM `boxers`;--> statement-breakpoint
-DROP TABLE `boxers`;--> statement-breakpoint
-ALTER TABLE `__new_boxers` RENAME TO `boxers`;--> statement-breakpoint
-PRAGMA foreign_keys=ON;--> statement-breakpoint
+CREATE TABLE `divisions` (
+	`id` text PRIMARY KEY NOT NULL,
+	`slug` text NOT NULL,
+	`name` text NOT NULL,
+	`short_name` text,
+	`alternative_names` text,
+	`weight_limit_pounds` real NOT NULL,
+	`weight_limit_kilograms` real NOT NULL,
+	`weight_limit_stone` text,
+	`created_at` text DEFAULT CURRENT_TIMESTAMP NOT NULL,
+	`updated_at` text DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
+--> statement-breakpoint
 CREATE UNIQUE INDEX `boxers_boxrecId_unique` ON `boxers` (`boxrecId`);--> statement-breakpoint
 CREATE UNIQUE INDEX `boxers_boxrecUrl_unique` ON `boxers` (`boxrecUrl`);--> statement-breakpoint
 CREATE UNIQUE INDEX `boxers_slug_unique` ON `boxers` (`slug`);--> statement-breakpoint
@@ -57,4 +66,7 @@ CREATE INDEX `boxersSlugIdx` ON `boxers` (`slug`);--> statement-breakpoint
 CREATE INDEX `boxersBoxrecIdIdx` ON `boxers` (`boxrecId`);--> statement-breakpoint
 CREATE INDEX `boxersNationalityIdx` ON `boxers` (`nationality`);--> statement-breakpoint
 CREATE INDEX `boxersDivisionIdx` ON `boxers` (`proDivision`);--> statement-breakpoint
-CREATE INDEX `boxersStatusIdx` ON `boxers` (`proStatus`);
+CREATE INDEX `boxersStatusIdx` ON `boxers` (`proStatus`);--> statement-breakpoint
+CREATE UNIQUE INDEX `divisions_slug_unique` ON `divisions` (`slug`);--> statement-breakpoint
+CREATE INDEX `divisions_slug_idx` ON `divisions` (`slug`);--> statement-breakpoint
+CREATE INDEX `divisions_short_name_idx` ON `divisions` (`short_name`);

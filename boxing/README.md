@@ -153,10 +153,3 @@ cd boxing/database/drizzle && npx drizzle-kit studio --config=drizzle.config.loc
 
 Note: The pipeline assumes Postgres data lake is already set up with the `data_lake.boxrec_boxer_raw_html` table.
 
-## TODOs
-
-- **URL Normalization**: Handle mixed BoxRec URL patterns (`proboxer/` vs `box-pro/`). Should normalize to canonical format and store final redirected URL, not original input URL.
-- **Field Normalization**: Data extracted from HTML needs normalization before loading to staging:
-  - Date format: Convert `Apr 02` to `YYYY-MM-DD` format
-  - Result values: Convert `win/loss` to `W/L` format expected by validation
-  - Add transformation step between extraction and loading

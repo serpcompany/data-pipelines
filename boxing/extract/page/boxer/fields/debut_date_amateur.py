@@ -2,8 +2,35 @@
 """Extract amateur debut date from HTML."""
 
 import re
+from datetime import datetime
 from ....base import load_html, test_extraction
-from extract_debut_date import format_date_iso
+
+def format_date_iso(date_str):
+    """Convert date string to ISO format."""
+    if not date_str:
+        return ''
+    
+    # Try common date formats
+    formats = [
+        '%Y-%m-%d',
+        '%d/%m/%Y',
+        '%m/%d/%Y',
+        '%d-%m-%Y',
+        '%m-%d-%Y',
+        '%B %d, %Y',
+        '%d %B %Y',
+        '%b %d, %Y',
+        '%d %b %Y'
+    ]
+    
+    for fmt in formats:
+        try:
+            dt = datetime.strptime(date_str.strip(), fmt)
+            return dt.strftime('%Y-%m-%d')
+        except ValueError:
+            continue
+    
+    return date_str  # Return original if can't parse
 
 def extract(soup):
     """Extract amateur debut date from HTML."""

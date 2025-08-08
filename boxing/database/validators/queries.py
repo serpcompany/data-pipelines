@@ -80,17 +80,7 @@ class DataValidator:
         """Validate data integrity and relationships."""
         checks = []
         
-        # Check for orphaned bouts
-        checks.append(self.run_query(
-            "Orphaned bouts (no matching boxer)",
-            """
-            SELECT bb.id, bb.boxerId 
-            FROM boxerBouts bb
-            LEFT JOIN boxers b ON bb.boxerId = b.id
-            WHERE b.id IS NULL
-            """,
-            expected_count=0
-        ))
+
         
         # Check for duplicate BoxRec IDs
         checks.append(self.run_query(
@@ -116,16 +106,15 @@ class DataValidator:
             expected_count=0
         ))
         
-        # Check bout counts match
+        # Check bout counts match JSON array
         checks.append(self.run_query(
             "Boxers with mismatched bout counts",
             """
-            SELECT b.id, b.name, b.proTotalBouts, COUNT(bb.id) as actual_bouts
-            FROM boxers b
-            LEFT JOIN boxerBouts bb ON b.id = bb.boxerId
-            WHERE b.proTotalBouts IS NOT NULL
-            GROUP BY b.id, b.name, b.proTotalBouts
-            HAVING b.proTotalBouts != COUNT(bb.id)
+            SELECT id, name, proTotalBouts, json_array_length(bouts) as actual_bouts
+            FROM boxers
+            WHERE proTotalBouts IS NOT NULL
+            AND bouts IS NOT NULL
+            AND proTotalBouts != json_array_length(bouts)
             """,
             expected_count=0
         ))
@@ -140,28 +129,31 @@ class DataValidator:
         checks.append(self.run_query(
             "Active boxers with no bouts",
             """
-            SELECT b.id, b.name, b.proStatus
-            FROM boxers b
-            LEFT JOIN boxerBouts bb ON b.id = bb.boxerId
-            WHERE b.proStatus = 'active'
-            AND bb.id IS NULL
-            GROUP BY b.id, b.name, b.proStatus
+            SELECT id, name, proStatus
+            FROM boxers
+            WHERE proStatus = 'active'
+            AND (bouts IS NULL OR json_array_length(bouts) = 0)
             """,
             expected_count=0
         ))
         
         
         
-        # Check win/loss/draw totals
+        # Check win/loss/draw totals against bouts JSON
         checks.append(self.run_query(
             "Boxers with incorrect win totals",
             """
-            SELECT b.id, b.name, b.proWins, COUNT(bb.id) as actual_wins
-            FROM boxers b
-            JOIN boxerBouts bb ON b.id = bb.boxerId
-            WHERE bb.result = 'W'
-            GROUP BY b.id, b.name, b.proWins
-            HAVING b.proWins != COUNT(bb.id)
+            WITH bout_wins AS (
+                SELECT id, name, proWins,
+                       (SELECT COUNT(*) 
+                        FROM json_each(bouts) 
+                        WHERE json_extract(value, '$.result') = 'W') as actual_wins
+                FROM boxers
+                WHERE bouts IS NOT NULL AND proWins IS NOT NULL
+            )
+            SELECT id, name, proWins, actual_wins
+            FROM bout_wins
+            WHERE proWins != actual_wins
             """,
             expected_count=0
         ))
@@ -226,8 +218,9 @@ class DataValidator:
         cursor.execute("SELECT COUNT(*) FROM boxers")
         stats['total_boxers'] = cursor.fetchone()[0]
         
-        cursor.execute("SELECT COUNT(*) FROM boxerBouts")
-        stats['total_bouts'] = cursor.fetchone()[0]
+        cursor.execute("SELECT SUM(json_array_length(bouts)) FROM boxers WHERE bouts IS NOT NULL")
+        result = cursor.fetchone()[0]
+        stats['total_bouts'] = result if result else 0
         
         # Completeness metrics
         cursor.execute("""

@@ -18,7 +18,7 @@ def extract(soup):
                 # Split by comma and format as quoted strings
                 if value:
                     nicknames = [n.strip() for n in value.split(',') if n.strip()]
-                    return ','.join(f'"{n}"' for n in nicknames)
+                    return ','.join(f'{n}' for n in nicknames)
     
     # Method 2: Look in specific divs or spans with class names
     nickname_elements = soup.find_all(['div', 'span'], class_=re.compile(r'nickname|alias', re.I))
@@ -26,7 +26,7 @@ def extract(soup):
         text = elem.get_text().strip()
         if text:
             nicknames = [n.strip() for n in text.split(',') if n.strip()]
-            return ','.join(f'"{n}"' for n in nicknames)
+            return ','.join(f'{n}' for n in nicknames)
     
     return None
 

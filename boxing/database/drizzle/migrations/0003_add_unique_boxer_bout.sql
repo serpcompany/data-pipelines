@@ -1,1 +1,0 @@
-CREATE UNIQUE INDEX `uniqueBoxerBout` ON `boxerBouts` (`boxerId`,`boutPageLink`);

@@ -50,7 +50,7 @@ class StagingLoader:
             # Insert or update boxer
             cursor.execute("""
                 INSERT OR REPLACE INTO boxers (
-                    id, boxrecId, boxrecUrl, boxrecWikiUrl, slug, name,
+                    boxrecId, boxrecUrl, boxrecWikiUrl, slug, name,
                     birthName, nicknames, avatarImage, residence, birthPlace,
                     dateOfBirth, gender, nationality, height, reach, stance,
                     bio, promoters, trainers, managers, gym,
@@ -59,15 +59,14 @@ class StagingLoader:
                     proTotalBouts, proTotalRounds,
                     amateurDebutDate, amateurDivision, amateurWins, amateurWinsByKnockout,
                     amateurLosses, amateurLossesByKnockout, amateurDraws, amateurStatus,
-                    amateurTotalBouts, amateurTotalRounds,
+                    amateurTotalBouts, amateurTotalRounds, bouts,
                     createdAt, updatedAt
                 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
-                boxer_id,
                 boxer_data.get('boxrec_id'),
                 boxer_data.get('url'),
                 boxer_data.get('wiki_url'),
-                boxer_data.get('slug', boxer_id),
+                re.sub(r'[^a-z0-9]+', '-', boxer_data['name'].lower()).strip('-'),
                 boxer_data.get('name'),
                 boxer_data.get('birth_name'),
                 json.dumps(boxer_data.get('nicknames', [])) if boxer_data.get('nicknames') else None,
@@ -93,7 +92,8 @@ class StagingLoader:
                 boxer_data.get('ko_losses', 0),
                 boxer_data.get('draws', 0),
                 boxer_data.get('status'),
-                boxer_data.get('total_bouts'),
+                # Calculate total bouts from wins + losses + draws
+                (boxer_data.get('wins', 0) + boxer_data.get('losses', 0) + boxer_data.get('draws', 0)) if boxer_data.get('wins') is not None else None,
                 boxer_data.get('rounds'),
                 boxer_data.get('amateur_debut_date'),
                 boxer_data.get('division_amateur'),
@@ -103,27 +103,21 @@ class StagingLoader:
                 boxer_data.get('ko_losses_amateur'),
                 boxer_data.get('draws_amateur'),
                 boxer_data.get('status_amateur'),
-                boxer_data.get('total_amateur_bouts'),
+                # Calculate amateur total bouts from wins + losses + draws
+                (boxer_data.get('wins_amateur', 0) + boxer_data.get('losses_amateur', 0) + boxer_data.get('draws_amateur', 0)) if boxer_data.get('wins_amateur') is not None else None,
                 boxer_data.get('rounds_amateur'),
+                None,  # bouts will be updated below
                 datetime.now().isoformat(),
                 datetime.now().isoformat()
             ))
             
-            # Delete existing bouts for this boxer
-            cursor.execute("DELETE FROM boxerBouts WHERE boxerId = ?", (boxer_id,))
-            
-            # Insert bouts
+            # Prepare bouts data for JSON storage
             bouts = boxer_data.get('bouts', [])
+            bouts_json = []
+            
             for i, bout in enumerate(bouts):
                 # Generate unique bout ID
                 bout_id = generate_unique_bout_id(boxer_id, i)
-                
-                # Map field names from extractor to production database schema
-                # Production schema columns:
-                # id, boxerId, boxrecId, boutDate, opponentName, opponentWeight, opponentRecord,
-                # eventName, refereeName, judge1Name, judge1Score, judge2Name, judge2Score,
-                # judge3Name, judge3Score, numRoundsScheduled, result, resultMethod, resultRound,
-                # eventPageLink, boutPageLink, scorecardsPageLink, titleFight, createdAt
                 
                 # Extract judges information if available
                 judges = bout.get('judges', [])
@@ -134,40 +128,39 @@ class StagingLoader:
                 judge3_name = judges[2]['name'] if len(judges) > 2 and isinstance(judges[2], dict) else None
                 judge3_score = judges[2]['score'] if len(judges) > 2 and isinstance(judges[2], dict) else None
                 
-                # Determine if this is a title fight (SQLite uses 0/1 for boolean)
-                is_title_fight = 1 if bout.get('titles') else 0
+                # Determine if this is a title fight
+                is_title_fight = bool(bout.get('titles'))
                 
-                cursor.execute("""
-                    INSERT INTO boxerBouts (
-                        boxerId, boxrecId, boutDate, opponentName, opponentWeight, opponentRecord,
-                        eventName, refereeName, judge1Name, judge1Score, judge2Name, judge2Score,
-                        judge3Name, judge3Score, numRoundsScheduled, result, resultMethod, resultRound,
-                        eventPageLink, boutPageLink, scorecardsPageLink, titleFight
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                """, (
-                    boxer_id,
-                    bout.get('bout_id'),  # boxrecId for the bout
-                    bout.get('date'),  # boutDate
-                    bout.get('opponent_name'),  # opponentName
-                    bout.get('second_boxer_weight'),  # opponentWeight
-                    None,  # opponentRecord - not available in current extraction
-                    bout.get('venue'),  # eventName (venue)
-                    bout.get('referee'),  # refereeName
-                    judge1_name,
-                    judge1_score,
-                    judge2_name,
-                    judge2_score,
-                    judge3_name,
-                    judge3_score,
-                    bout.get('rounds'),  # numRoundsScheduled
-                    bout.get('result'),  # result
-                    bout.get('result_type'),  # resultMethod
-                    None,  # resultRound - would need to extract from result_type
-                    None,  # eventPageLink - not in current extraction
-                    bout.get('bout_link'),  # boutPageLink
-                    None,  # scorecardsPageLink - not in current extraction
-                    is_title_fight  # titleFight
-                ))
+                # Create bout object for JSON
+                bout_obj = {
+                    'boxerId': boxer_id,
+                    'boxrecId': bout.get('bout_id'),
+                    'boutDate': bout.get('date'),
+                    'opponentName': bout.get('opponent_name'),
+                    'opponentWeight': bout.get('second_boxer_weight'),
+                    'opponentRecord': None,
+                    'eventName': bout.get('venue'),
+                    'refereeName': bout.get('referee'),
+                    'judge1Name': judge1_name,
+                    'judge1Score': judge1_score,
+                    'judge2Name': judge2_name,
+                    'judge2Score': judge2_score,
+                    'judge3Name': judge3_name,
+                    'judge3Score': judge3_score,
+                    'numRoundsScheduled': bout.get('rounds'),
+                    'result': bout.get('result'),
+                    'resultMethod': bout.get('result_type'),
+                    'resultRound': None,
+                    'eventPageLink': None,
+                    'boutPageLink': bout.get('bout_link'),
+                    'scorecardsPageLink': None,
+                    'titleFight': is_title_fight
+                }
+                bouts_json.append(bout_obj)
+            
+            # Update boxer with bouts JSON
+            cursor.execute("UPDATE boxers SET bouts = ? WHERE id = ?", 
+                         (json.dumps(bouts_json), boxer_id))
             
             # Commit transaction
             cursor.execute("COMMIT")
@@ -342,8 +335,9 @@ class StagingLoader:
         stats['total_boxers'] = cursor.fetchone()[0]
         
         # Count bouts
-        cursor.execute("SELECT COUNT(*) FROM boxerBouts")
-        stats['total_bouts'] = cursor.fetchone()[0]
+        cursor.execute("SELECT SUM(json_array_length(bouts)) FROM boxers WHERE bouts IS NOT NULL")
+        result = cursor.fetchone()[0]
+        stats['total_bouts'] = result if result else 0
         
         # Count by status
         cursor.execute("""

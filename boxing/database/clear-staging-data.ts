@@ -3,7 +3,7 @@
 import { drizzle } from 'drizzle-orm/better-sqlite3';
 import Database from 'better-sqlite3';
 import path from 'path';
-import { boxers, boxerBouts, divisions } from './drizzle/schema/index.js';
+import { boxers, divisions } from './drizzle/schema/index.js';
 
 async function clearStagingData() {
   const dbPath = path.join(__dirname, '../data/output/staging_mirror.db');
@@ -14,9 +14,6 @@ async function clearStagingData() {
   const db = drizzle(sqlite);
 
   // Clear all tables in dependency order
-  await db.delete(boxerBouts);
-  console.log('✓ Cleared boxerBouts table');
-
   await db.delete(boxers);  
   console.log('✓ Cleared boxers table');
 

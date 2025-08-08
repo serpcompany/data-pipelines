@@ -25,54 +25,65 @@ def apply_date_normalization():
     
     logger.info("Starting date normalization...")
     
-    # Get all bouts with dates
+    # Get all boxers with bouts
     query = """
-    SELECT id, boutDate, boxerId 
-    FROM boxerBouts 
-    WHERE boutDate IS NOT NULL AND boutDate != ''
+    SELECT id, bouts 
+    FROM boxers 
+    WHERE bouts IS NOT NULL
     """
     
     cursor.execute(query)
-    bouts = cursor.fetchall()
-    logger.info(f"Found {len(bouts)} bouts with dates")
+    boxers = cursor.fetchall()
+    logger.info(f"Found {len(boxers)} boxers with bouts")
     
     updated_count = 0
     failed_count = 0
+    total_bouts = 0
     
-    for bout in bouts:
-        bout_id, original_date, boxer_id = bout
+    import json
+    
+    for boxer in boxers:
+        boxer_id, bouts_json = boxer
+        if not bouts_json:
+            continue
+            
+        bouts = json.loads(bouts_json)
+        modified = False
         
-        # Try to get boxer's career year for context (approximate)
-        # For now, we'll use 2023 as default for recent data
-        # In production, we'd extract this from the boxer's career timeline
-        base_year = 2023
+        for bout in bouts:
+            total_bouts += 1
+            original_date = bout.get('boutDate')
+            
+            if original_date:
+                # Try to get boxer's career year for context (approximate)
+                # For now, we'll use 2023 as default for recent data
+                base_year = 2023
+                
+                normalized_date = normalize_bout_date(original_date, base_year)
+                
+                if normalized_date and normalized_date != original_date:
+                    bout['boutDate'] = normalized_date
+                    modified = True
+                    updated_count += 1
+                    if updated_count % 100 == 0:
+                        logger.info(f"Progress: {updated_count} dates normalized")
+                elif not normalized_date:
+                    failed_count += 1
+                    if failed_count <= 10:  # Log first 10 failures
+                        logger.warning(f"Could not normalize date '{original_date}' for boxer {boxer_id}")
         
-        normalized_date = normalize_bout_date(original_date, base_year)
-        
-        if normalized_date and normalized_date != original_date:
-            # Update the bout with normalized date
-            update_query = """
-            UPDATE boxerBouts 
-            SET boutDate = ? 
-            WHERE id = ?
-            """
+        if modified:
+            # Update boxer with modified bouts
+            update_query = "UPDATE boxers SET bouts = ? WHERE id = ?"
             try:
-                cursor.execute(update_query, (normalized_date, bout_id))
-                updated_count += 1
-                if updated_count % 100 == 0:
-                    logger.info(f"Progress: {updated_count} dates normalized")
+                cursor.execute(update_query, (json.dumps(bouts), boxer_id))
             except Exception as e:
-                logger.error(f"Failed to update bout {bout_id}: {e}")
-                failed_count += 1
-        elif not normalized_date:
-            failed_count += 1
-            if failed_count <= 10:  # Log first 10 failures
-                logger.warning(f"Could not normalize date '{original_date}' for bout {bout_id}")
+                logger.error(f"Failed to update boxer {boxer_id}: {e}")
     
     conn.commit()
     conn.close()
     
-    logger.info(f"Date normalization complete: {updated_count} updated, {failed_count} failed")
+    logger.info(f"Date normalization complete: {updated_count}/{total_bouts} dates updated, {failed_count} failed")
     return updated_count, failed_count
 
 
@@ -83,49 +94,61 @@ def apply_result_normalization():
     
     logger.info("Starting result normalization...")
     
-    # Get all bouts with results
+    # Get all boxers with bouts
     query = """
-    SELECT id, result 
-    FROM boxerBouts 
-    WHERE result IS NOT NULL AND result != ''
+    SELECT id, bouts 
+    FROM boxers 
+    WHERE bouts IS NOT NULL
     """
     
     cursor.execute(query)
-    bouts = cursor.fetchall()
-    logger.info(f"Found {len(bouts)} bouts with results")
+    boxers = cursor.fetchall()
+    logger.info(f"Found {len(boxers)} boxers with bouts")
     
     updated_count = 0
     failed_count = 0
+    total_bouts = 0
     
-    for bout in bouts:
-        bout_id, original_result = bout
+    import json
+    
+    for boxer in boxers:
+        boxer_id, bouts_json = boxer
+        if not bouts_json:
+            continue
+            
+        bouts = json.loads(bouts_json)
+        modified = False
         
-        normalized_result = normalize_bout_result(original_result)
+        for bout in bouts:
+            total_bouts += 1
+            original_result = bout.get('result')
+            
+            if original_result:
+                normalized_result = normalize_bout_result(original_result)
+                
+                if normalized_result and normalized_result != original_result:
+                    bout['result'] = normalized_result
+                    modified = True
+                    updated_count += 1
+                    if updated_count % 100 == 0:
+                        logger.info(f"Progress: {updated_count} results normalized")
+                elif not normalized_result:
+                    failed_count += 1
+                    if failed_count <= 10:  # Log first 10 failures
+                        logger.warning(f"Could not normalize result '{original_result}' for boxer {boxer_id}")
         
-        if normalized_result and normalized_result != original_result:
-            # Update the bout with normalized result
-            update_query = """
-            UPDATE boxerBouts 
-            SET result = ? 
-            WHERE id = ?
-            """
+        if modified:
+            # Update boxer with modified bouts
+            update_query = "UPDATE boxers SET bouts = ? WHERE id = ?"
             try:
-                cursor.execute(update_query, (normalized_result, bout_id))
-                updated_count += 1
-                if updated_count % 100 == 0:
-                    logger.info(f"Progress: {updated_count} results normalized")
+                cursor.execute(update_query, (json.dumps(bouts), boxer_id))
             except Exception as e:
-                logger.error(f"Failed to update bout {bout_id}: {e}")
-                failed_count += 1
-        elif not normalized_result:
-            failed_count += 1
-            if failed_count <= 10:  # Log first 10 failures
-                logger.warning(f"Could not normalize result '{original_result}' for bout {bout_id}")
+                logger.error(f"Failed to update boxer {boxer_id}: {e}")
     
     conn.commit()
     conn.close()
     
-    logger.info(f"Result normalization complete: {updated_count} updated, {failed_count} failed")
+    logger.info(f"Result normalization complete: {updated_count}/{total_bouts} results updated, {failed_count} failed")
     return updated_count, failed_count
 
 

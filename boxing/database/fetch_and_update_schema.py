@@ -52,7 +52,6 @@ class SchemaSync:
         # Schema files to fetch
         schema_files = [
             'boxers.ts',
-            'boxerBouts.ts', 
             'divisions.ts',
             'index.ts'
         ]

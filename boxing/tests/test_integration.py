@@ -37,23 +37,7 @@ class TestBoutDataIntegration:
         )
         """)
         
-        cursor.execute("""
-        CREATE TABLE boxerBouts (
-            id TEXT PRIMARY KEY,
-            boxerId TEXT,
-            date TEXT,
-            opponent TEXT,
-            opponentUrl TEXT,
-            location TEXT,
-            result TEXT,
-            resultType TEXT,
-            rounds TEXT,
-            boutType TEXT DEFAULT 'pro',
-            boutOrder INTEGER,
-            createdAt TEXT,
-            updatedAt TEXT
-        )
-        """)
+        # Bouts are now stored as JSON in boxers table
         
         conn.commit()
         conn.close()
@@ -88,43 +72,44 @@ class TestBoutDataIntegration:
         conn = sqlite3.connect(temp_db)
         cursor = conn.cursor()
         
-        # Insert boxer
-        cursor.execute("""
-            INSERT INTO boxers (id, boxrecId, name, proWins, proLosses)
-            VALUES (?, ?, ?, ?, ?)
-        """, ('352', '352', boxer_data['name'], boxer_data['wins'], boxer_data['losses']))
+        # Prepare bouts as JSON
+        import json
+        bouts_json = []
+        for i, bout in enumerate(boxer_data['bouts']):
+            bout_obj = {
+                'id': f'352-{i}',
+                'boxerId': '352',
+                'boutDate': bout.get('date'),
+                'opponentName': bout.get('opponent_name'),
+                'opponentUrl': bout.get('opponent_url'),
+                'eventName': bout.get('venue'),
+                'result': bout.get('result'),
+                'resultMethod': bout.get('result_type'),
+                'numRoundsScheduled': bout.get('rounds')
+            }
+            bouts_json.append(bout_obj)
         
-        # Insert bout using the same logic as staging loader
-        bout = boxer_data['bouts'][0]
+        # Insert boxer with bouts as JSON
         cursor.execute("""
-            INSERT INTO boxerBouts (
-                id, boxerId, date, opponent, opponentUrl, location,
-                result, resultType, rounds, boutType, boutOrder, createdAt, updatedAt
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'), datetime('now'))
-        """, (
-            '352_bout_0',
-            '352',
-            bout.get('date'),
-            bout.get('opponent_name'),  # This is the fix
-            bout.get('opponent_url'),
-            bout.get('venue'),  # This is the fix
-            bout.get('result'),
-            bout.get('result_type'),
-            bout.get('rounds'),
-            'pro',
-            0
-        ))
+            INSERT INTO boxers (id, boxrecId, name, proWins, proLosses, bouts)
+            VALUES (?, ?, ?, ?, ?, ?)
+        """, ('352', '352', boxer_data['name'], boxer_data['wins'], boxer_data['losses'], 
+               json.dumps(bouts_json)))
         
         conn.commit()
         
         # Verify data was loaded correctly
-        cursor.execute("SELECT opponent, location, result FROM boxerBouts WHERE boxerId = '352'")
+        cursor.execute("SELECT bouts FROM boxers WHERE id = '352'")
         row = cursor.fetchone()
         
-        assert row is not None, "Bout should be loaded"
-        assert row[0] == 'Conor McGregor', f"Opponent should be 'Conor McGregor', got '{row[0]}'"
-        assert row[1] == 'T-Mobile Arena, Las Vegas', f"Location should be 'T-Mobile Arena, Las Vegas', got '{row[1]}'"
-        assert row[2] == 'win', f"Result should be 'win', got '{row[2]}'"
+        assert row is not None, "Boxer should be loaded"
+        bouts = json.loads(row[0])
+        assert len(bouts) == 1, f"Should have 1 bout, got {len(bouts)}"
+        
+        bout = bouts[0]
+        assert bout['opponentName'] == 'Conor McGregor', f"Opponent should be 'Conor McGregor', got '{bout['opponentName']}'"
+        assert bout['eventName'] == 'T-Mobile Arena, Las Vegas', f"Location should be 'T-Mobile Arena, Las Vegas', got '{bout['eventName']}'"
+        assert bout['result'] == 'win', f"Result should be 'win', got '{bout['result']}'"
         
         conn.close()
 

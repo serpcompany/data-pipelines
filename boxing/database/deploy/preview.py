@@ -38,12 +38,15 @@ class PreviewDeployer:
     
     def run_wrangler_command(self, command: str, preview: bool = True) -> Dict:
         """Run a wrangler D1 command."""
-        full_command = f"wrangler d1 execute boxingundefeated-com {command}"
+        full_command = f"npx wrangler d1 execute boxingundefeated-com {command}"
         
         if preview:
             full_command += " --preview"
         
         full_command += f" --config={self.wrangler_config}"
+        
+        # Get the directory where wrangler.toml is located
+        wrangler_dir = os.path.dirname(os.path.abspath(self.wrangler_config))
         
         try:
             result = subprocess.run(
@@ -51,7 +54,8 @@ class PreviewDeployer:
                 shell=True,
                 capture_output=True,
                 text=True,
-                check=True
+                check=True,
+                cwd=wrangler_dir  # Run from the directory containing wrangler.toml
             )
             
             return {
@@ -169,7 +173,7 @@ class PreviewDeployer:
         """Verify data was deployed correctly."""
         logger.info("Verifying deployment...")
         
-        tables = ['divisions', 'boxers', 'boxerBouts']
+        tables = ['divisions', 'boxers']
         verification = {}
         
         for table in tables:
@@ -220,7 +224,7 @@ class PreviewDeployer:
                 }
         
         # Deploy tables in order (divisions first for FK constraints)
-        tables = ['divisions', 'boxers', 'boxerBouts']
+        tables = ['divisions', 'boxers']
         deployment_results = []
         
         for table in tables:
@@ -258,7 +262,11 @@ class PreviewDeployer:
 
 def deploy_to_preview(skip_validation: bool = False) -> Dict:
     """Deploy staging data to preview environment."""
-    deployer = PreviewDeployer()
+    # Get the path to wrangler.toml relative to this file
+    import os
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    wrangler_path = os.path.join(current_dir, '..', '..', 'wrangler.toml')
+    deployer = PreviewDeployer(wrangler_config_path=wrangler_path)
     
     try:
         result = deployer.deploy_all(skip_validation=skip_validation)

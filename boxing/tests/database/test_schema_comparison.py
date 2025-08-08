@@ -21,32 +21,6 @@ class TestSchemaComparison:
         This is our source of truth for the production schema.
         """
         return {
-            'boxerBouts': {
-                'id': 'INTEGER PRIMARY KEY AUTOINCREMENT',
-                'boxerId': 'TEXT NOT NULL',
-                'boxrecId': 'TEXT',  # This is where BoxRec bout ID should go!
-                'boutDate': 'TEXT NOT NULL',
-                'opponentName': 'TEXT NOT NULL',
-                'opponentWeight': 'TEXT',
-                'opponentRecord': 'TEXT',
-                'eventName': 'TEXT',
-                'refereeName': 'TEXT',
-                'judge1Name': 'TEXT',
-                'judge1Score': 'TEXT',
-                'judge2Name': 'TEXT',
-                'judge2Score': 'TEXT',
-                'judge3Name': 'TEXT',
-                'judge3Score': 'TEXT',
-                'numRoundsScheduled': 'INTEGER',
-                'result': 'TEXT NOT NULL',
-                'resultMethod': 'TEXT',
-                'resultRound': 'INTEGER',
-                'eventPageLink': 'TEXT',
-                'boutPageLink': 'TEXT',
-                'scorecardsPageLink': 'TEXT',
-                'titleFight': 'INTEGER DEFAULT 0',
-                'createdAt': 'TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL'
-            },
             'boxers': {
                 'id': 'TEXT PRIMARY KEY',
                 'boxrecId': 'TEXT NOT NULL UNIQUE',
@@ -72,7 +46,8 @@ class TestSchemaComparison:
                 'lastFight': 'TEXT',
                 'nextFight': 'TEXT',
                 'createdAt': 'TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL',
-                'updatedAt': 'TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL'
+                'updatedAt': 'TEXT DEFAULT CURRENT_TIMESTAMP NOT NULL',
+                'bouts': 'TEXT'  # JSON array of bouts
             }
         }
     
@@ -113,34 +88,6 @@ class TestSchemaComparison:
         conn.close()
         return schema
     
-    def test_boxerBouts_schema_matches_drizzle(self):
-        """Test that boxerBouts table schema matches Drizzle definition."""
-        drizzle = self.get_drizzle_schema()
-        staging = self.get_staging_mirror_schema()
-        
-        # Check if table exists
-        assert 'boxerBouts' in staging, "boxerBouts table missing from staging mirror"
-        
-        drizzle_bouts = drizzle['boxerBouts']
-        staging_bouts = staging['boxerBouts']
-        
-        # Check for missing columns
-        missing_cols = set(drizzle_bouts.keys()) - set(staging_bouts.keys())
-        assert not missing_cols, f"Missing columns in staging mirror: {missing_cols}"
-        
-        # Check for extra columns
-        extra_cols = set(staging_bouts.keys()) - set(drizzle_bouts.keys())
-        print(f"Extra columns in staging (may be okay): {extra_cols}")
-        
-        # Check critical fields
-        assert 'boxrecId' in staging_bouts, "boxrecId field missing - this stores the BoxRec bout ID!"
-        assert 'eventPageLink' in staging_bouts, "eventPageLink field missing"
-        assert 'boutPageLink' in staging_bouts, "boutPageLink field missing"
-        
-        # Check id field type
-        if 'id' in staging_bouts:
-            assert 'INTEGER' in staging_bouts['id'].upper(), \
-                f"id should be INTEGER with AUTOINCREMENT, not {staging_bouts['id']}"
     
     def test_boxers_schema_matches_drizzle(self):
         """Test that boxers table schema matches Drizzle definition."""
@@ -159,7 +106,7 @@ class TestSchemaComparison:
         
         # Check critical fields
         assert 'boxrecId' in staging_boxers, "boxrecId field missing"
-        assert 'isActive' in staging_boxers, "isActive field missing"
+        assert 'bouts' in staging_boxers, "bouts field missing - this stores bout data as JSON!"
         
     def test_schema_differences_report(self):
         """Generate a detailed report of schema differences."""
