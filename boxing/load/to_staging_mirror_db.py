@@ -47,71 +47,7 @@ class StagingLoader:
             # Prepare boxer data
             boxer_id = boxer_data.get('boxrec_id', '').replace('/', '-')
             
-            # Insert or update boxer
-            cursor.execute("""
-                INSERT OR REPLACE INTO boxers (
-                    boxrecId, boxrecUrl, boxrecWikiUrl, slug, name,
-                    birthName, nicknames, avatarImage, residence, birthPlace,
-                    dateOfBirth, gender, nationality, height, reach, stance,
-                    bio, promoters, trainers, managers, gym,
-                    proDebutDate, proDivision, proWins, proWinsByKnockout,
-                    proLosses, proLossesByKnockout, proDraws, proStatus,
-                    proTotalBouts, proTotalRounds,
-                    amateurDebutDate, amateurDivision, amateurWins, amateurWinsByKnockout,
-                    amateurLosses, amateurLossesByKnockout, amateurDraws, amateurStatus,
-                    amateurTotalBouts, amateurTotalRounds, bouts,
-                    createdAt, updatedAt
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """, (
-                boxer_data.get('boxrec_id'),
-                boxer_data.get('url'),
-                boxer_data.get('wiki_url'),
-                re.sub(r'[^a-z0-9]+', '-', boxer_data['name'].lower()).strip('-'),
-                boxer_data.get('name'),
-                boxer_data.get('birth_name'),
-                json.dumps(boxer_data.get('nicknames', [])) if boxer_data.get('nicknames') else None,
-                boxer_data.get('avatar_image'),
-                boxer_data.get('residence'),
-                boxer_data.get('birth_place'),
-                boxer_data.get('date_of_birth'),
-                boxer_data.get('gender'),
-                boxer_data.get('nationality'),
-                boxer_data.get('height'),
-                boxer_data.get('reach'),
-                boxer_data.get('stance'),
-                boxer_data.get('bio'),
-                json.dumps(boxer_data.get('promoters', [])) if boxer_data.get('promoters') else None,
-                json.dumps(boxer_data.get('trainers', [])) if boxer_data.get('trainers') else None,
-                json.dumps(boxer_data.get('managers', [])) if boxer_data.get('managers') else None,
-                boxer_data.get('gym'),
-                boxer_data.get('pro_debut_date'),
-                boxer_data.get('division'),
-                boxer_data.get('wins', 0),
-                boxer_data.get('ko_wins', 0),
-                boxer_data.get('losses', 0),
-                boxer_data.get('ko_losses', 0),
-                boxer_data.get('draws', 0),
-                boxer_data.get('status'),
-                # Calculate total bouts from wins + losses + draws
-                (boxer_data.get('wins', 0) + boxer_data.get('losses', 0) + boxer_data.get('draws', 0)) if boxer_data.get('wins') is not None else None,
-                boxer_data.get('rounds'),
-                boxer_data.get('amateur_debut_date'),
-                boxer_data.get('division_amateur'),
-                boxer_data.get('wins_amateur'),
-                boxer_data.get('ko_wins_amateur'),
-                boxer_data.get('losses_amateur'),
-                boxer_data.get('ko_losses_amateur'),
-                boxer_data.get('draws_amateur'),
-                boxer_data.get('status_amateur'),
-                # Calculate amateur total bouts from wins + losses + draws
-                (boxer_data.get('wins_amateur', 0) + boxer_data.get('losses_amateur', 0) + boxer_data.get('draws_amateur', 0)) if boxer_data.get('wins_amateur') is not None else None,
-                boxer_data.get('rounds_amateur'),
-                None,  # bouts will be updated below
-                datetime.now().isoformat(),
-                datetime.now().isoformat()
-            ))
-            
-            # Prepare bouts data for JSON storage
+            # Prepare bouts data for JSON storage BEFORE the INSERT
             bouts = boxer_data.get('bouts', [])
             bouts_json = []
             
@@ -158,9 +94,69 @@ class StagingLoader:
                 }
                 bouts_json.append(bout_obj)
             
-            # Update boxer with bouts JSON
-            cursor.execute("UPDATE boxers SET bouts = ? WHERE id = ?", 
-                         (json.dumps(bouts_json), boxer_id))
+            # Insert or update boxer with bouts included
+            cursor.execute("""
+                INSERT OR REPLACE INTO boxers (
+                    boxrecId, boxrecUrl, boxrecWikiUrl, slug, name,
+                    birthName, nicknames, avatarImage, residence, birthPlace,
+                    dateOfBirth, gender, nationality, height, reach, stance,
+                    bio, promoters, trainers, managers, gym,
+                    proDebutDate, proDivision, proWins, proWinsByKnockout,
+                    proLosses, proLossesByKnockout, proDraws, proStatus,
+                    proTotalBouts, proTotalRounds,
+                    amateurDebutDate, amateurDivision, amateurWins, amateurWinsByKnockout,
+                    amateurLosses, amateurLossesByKnockout, amateurDraws, amateurStatus,
+                    amateurTotalBouts, amateurTotalRounds, bouts,
+                    createdAt, updatedAt
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (
+                boxer_data.get('boxrec_id'),
+                boxer_data.get('url'),
+                boxer_data.get('wiki_url'),
+                re.sub(r'[^a-z0-9]+', '-', boxer_data['name'].lower()).strip('-'),
+                boxer_data.get('name'),
+                boxer_data.get('birth_name'),
+                json.dumps(boxer_data.get('nicknames', [])) if boxer_data.get('nicknames') else None,
+                boxer_data.get('avatar_image'),
+                boxer_data.get('residence'),
+                boxer_data.get('birth_place'),
+                boxer_data.get('date_of_birth'),
+                boxer_data.get('gender'),
+                boxer_data.get('nationality'),
+                boxer_data.get('height'),
+                boxer_data.get('reach'),
+                boxer_data.get('stance'),
+                boxer_data.get('bio'),
+                json.dumps(boxer_data.get('promoters', [])) if boxer_data.get('promoters') else None,
+                json.dumps(boxer_data.get('trainers', [])) if boxer_data.get('trainers') else None,
+                json.dumps(boxer_data.get('managers', [])) if boxer_data.get('managers') else None,
+                boxer_data.get('gym'),
+                boxer_data.get('debut_date_pro'),  # From pro page extractor
+                boxer_data.get('division_pro'),
+                boxer_data.get('wins_pro', 0),
+                boxer_data.get('ko_wins_pro', 0),
+                boxer_data.get('losses_pro', 0),
+                boxer_data.get('ko_losses_pro', 0),
+                boxer_data.get('draws_pro', 0),
+                boxer_data.get('status_pro'),
+                # Calculate total bouts from wins + losses + draws
+                (boxer_data.get('wins_pro', 0) + boxer_data.get('losses_pro', 0) + boxer_data.get('draws_pro', 0)) if boxer_data.get('wins_pro') is not None else None,
+                boxer_data.get('rounds_pro'),
+                boxer_data.get('debut_date_amateur'),
+                boxer_data.get('division_amateur'),
+                boxer_data.get('wins_amateur'),
+                boxer_data.get('ko_wins_amateur'),
+                boxer_data.get('losses_amateur'),
+                boxer_data.get('ko_losses_amateur'),
+                boxer_data.get('draws_amateur'),
+                boxer_data.get('status_amateur'),
+                # Calculate amateur total bouts from wins + losses + draws
+                (boxer_data.get('wins_amateur', 0) + boxer_data.get('losses_amateur', 0) + boxer_data.get('draws_amateur', 0)) if boxer_data.get('wins_amateur') is not None else None,
+                boxer_data.get('rounds_amateur'),
+                json.dumps(bouts_json) if bouts_json else None,  # Include bouts JSON in INSERT
+                datetime.now().isoformat(),
+                datetime.now().isoformat()
+            ))
             
             # Commit transaction
             cursor.execute("COMMIT")
@@ -196,18 +192,9 @@ class StagingLoader:
                     amateur_data = self.extractor.extract_all(amateur_html)
                     
                     if amateur_data:
-                        # Copy amateur-specific fields to main data structure
-                        # Amateur page shows amateur stats with same field names as pro
-                        pro_data['wins_amateur'] = amateur_data.get('wins', 0)
-                        pro_data['ko_wins_amateur'] = amateur_data.get('ko_wins', 0)
-                        pro_data['losses_amateur'] = amateur_data.get('losses', 0)
-                        pro_data['ko_losses_amateur'] = amateur_data.get('ko_losses', 0)
-                        pro_data['draws_amateur'] = amateur_data.get('draws', 0)
-                        pro_data['total_amateur_bouts'] = amateur_data.get('total_bouts')
-                        pro_data['rounds_amateur'] = amateur_data.get('rounds')
-                        pro_data['status_amateur'] = amateur_data.get('status')
-                        pro_data['division_amateur'] = amateur_data.get('division')
-                        pro_data['amateur_debut_date'] = amateur_data.get('debut_date')
+                        # Merge amateur-specific fields into main data structure
+                        # Amateur extractors already have _amateur suffix
+                        pro_data.update(amateur_data)
                         
                         # Set flag indicating this boxer has amateur record
                         pro_data['has_amateur_record'] = True
@@ -260,12 +247,13 @@ class StagingLoader:
         # Group by boxer ID to get both pro and amateur HTML
         boxer_records = {}
         for url, boxer_id, html, comp_level in all_records:
-            if boxer_id not in existing_ids:
-                if boxer_id not in boxer_records:
-                    boxer_records[boxer_id] = {}
-                boxer_records[boxer_id][comp_level] = (url, html)
+            if boxer_id not in boxer_records:
+                boxer_records[boxer_id] = {}
+            boxer_records[boxer_id][comp_level] = (url, html)
         
-        logger.info(f"Found {len(boxer_records)} NEW boxers to process (skipping {len(existing_ids)} already in staging)")
+        new_boxers = len([bid for bid in boxer_records if bid not in existing_ids])
+        updates = len([bid for bid in boxer_records if bid in existing_ids])
+        logger.info(f"Found {new_boxers} NEW boxers and {updates} to UPDATE (total: {len(boxer_records)})")
         
         if not boxer_records:
             return {'processed': 0, 'successful': 0, 'failed': 0}
