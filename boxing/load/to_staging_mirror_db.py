@@ -272,7 +272,7 @@ class StagingLoader:
                     boxer_records[boxer_id] = {}
                 boxer_records[boxer_id][comp_level] = (url, html)
         
-        logger.info(f"Found {len(boxer_records)} unprocessed boxers")
+        logger.info(f"Found {len(boxer_records)} NEW boxers to process (skipping {len(existing_ids)} already in staging)")
         
         if not boxer_records:
             return {'processed': 0, 'successful': 0, 'failed': 0}

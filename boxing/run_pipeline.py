@@ -44,9 +44,9 @@ def load_data(limit=None):
     logger.info("Loading data to staging mirror database...")
     result = run_staging_load(limit=limit)
     
-    logger.info(f"Loaded {result['load_summary']['successful']} records successfully")
-    logger.info(f"Staging stats: {result['staging_stats']['total_boxers']} boxers, "
-                f"{result['staging_stats']['total_bouts']} bouts")
+    logger.info(f"Loaded {result['load_summary']['successful']} NEW records successfully")
+    logger.info(f"Staging database now contains: {result['staging_stats']['total_boxers']} total boxers, "
+                f"{result['staging_stats']['total_bouts']} total bouts")
     
     return result
 

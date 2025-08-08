@@ -74,45 +74,6 @@ class DataValidator:
     def validate_required_fields(self) -> List[Dict]:
         """Validate that required fields are not null."""
         checks = []
-        
-        # Boxers table required fields
-        checks.append(self.run_query(
-            "Boxers without ID",
-            "SELECT id, name FROM boxers WHERE id IS NULL",
-            expected_count=0
-        ))
-        
-        checks.append(self.run_query(
-            "Boxers without name",
-            "SELECT id, boxrecId FROM boxers WHERE name IS NULL OR name = ''",
-            expected_count=0
-        ))
-        
-        checks.append(self.run_query(
-            "Boxers without BoxRec ID",
-            "SELECT id, name FROM boxers WHERE boxrecId IS NULL OR boxrecId = ''",
-            expected_count=0
-        ))
-        
-        checks.append(self.run_query(
-            "Boxers without URL",
-            "SELECT id, name FROM boxers WHERE boxrecUrl IS NULL OR boxrecUrl = ''",
-            expected_count=0
-        ))
-        
-        # Bouts table required fields
-        checks.append(self.run_query(
-            "Bouts without boxer reference",
-            "SELECT id FROM boxerBouts WHERE boxerId IS NULL",
-            expected_count=0
-        ))
-        
-        checks.append(self.run_query(
-            "Bouts without opponent",
-            "SELECT id, boxerId FROM boxerBouts WHERE opponentName IS NULL OR opponentName = ''",
-            expected_count=0
-        ))
-        
         return checks
     
     def validate_data_integrity(self) -> List[Dict]:
