@@ -12,10 +12,12 @@ from typing import Iterable, List, Tuple, Any
 from cloudflare import Cloudflare
 
 # Configuration
-STAGING_DB = Path("/Users/devin/repos/projects/data-pipelines/boxing/data/output/staging_mirror.db")
+STAGING_DB = Path(
+    "/Users/devin/repos/projects/data-pipelines/boxing/data/output/staging_mirror.db"
+)
 ACCOUNT_ID = os.getenv("CLOUDFLARE_ACCOUNT_ID")
-D1_DATABASE_ID = os.getenv("CLOUDFLARE_D1_DATABASE_ID")
-D1_PREVIEW_DATABASE_ID = os.getenv("CLOUDFLARE_D1_PREVIEW_DATABASE_ID")
+D1_DATABASE_ID = os.getenv("D1_DATABASE_ID")
+D1_PREVIEW_DATABASE_ID = os.getenv("D1_PREVIEW_DATABASE_ID")
 USE_PREVIEW_DB = os.getenv("USE_PREVIEW_DB", "false").lower() == "true"
 API_TOKEN = os.getenv("CLOUDFLARE_D1_TOKEN") or os.getenv("CLOUDFLARE_API_TOKEN")
 
@@ -25,6 +27,7 @@ TABLES_TO_SYNC = ["boxers", "divisions"]
 def fail(msg: str) -> None:
     print(f"Error: {msg}", file=sys.stderr)
     sys.exit(1)
+
 
 def chunked(iterable: Iterable, n: int) -> Iterable[List[Any]]:
     """Yield successive n-sized chunks from iterable."""
@@ -36,6 +39,7 @@ def chunked(iterable: Iterable, n: int) -> Iterable[List[Any]]:
             buf = []
     if buf:
         yield buf
+
 
 def sanitize_value(v: Any) -> Any:
     """
@@ -57,7 +61,10 @@ def sanitize_value(v: Any) -> Any:
     # Fallback to string representation
     return str(v)
 
-def build_multi_insert_sql(table: str, columns: List[str], rows_count: int) -> Tuple[str, int]:
+
+def build_multi_insert_sql(
+    table: str, columns: List[str], rows_count: int
+) -> Tuple[str, int]:
     """
     Build a multi-row INSERT statement with positional '?' placeholders.
     Returns (sql, params_per_row).
@@ -68,7 +75,14 @@ def build_multi_insert_sql(table: str, columns: List[str], rows_count: int) -> T
     sql = f"INSERT INTO `{table}` ({quoted_cols}) VALUES {values_clause};"
     return sql, len(columns)
 
-def d1_query(client: Cloudflare, account_id: str, database_id: str, sql: str, params: List[Any] = None):
+
+def d1_query(
+    client: Cloudflare,
+    account_id: str,
+    database_id: str,
+    sql: str,
+    params: List[Any] = None,
+):
     """Wrapper around Cloudflare D1 query endpoint."""
     page = client.d1.database.query(
         account_id=account_id,
@@ -76,11 +90,16 @@ def d1_query(client: Cloudflare, account_id: str, database_id: str, sql: str, pa
         sql=sql,
         params=params or [],
     )
-    # The SDK returns a page with .result: list of statements results
-    return page.result
+    return page
 
 
-def sync_table(source_cur: sqlite3.Cursor, client: Cloudflare, account_id: str, database_id: str, table: str) -> None:
+def sync_table(
+    source_cur: sqlite3.Cursor,
+    client: Cloudflare,
+    account_id: str,
+    database_id: str,
+    table: str,
+) -> None:
     print(f"\nSyncing {table}...")
 
     # Fetch source rows
@@ -124,6 +143,7 @@ def sync_table(source_cur: sqlite3.Cursor, client: Cloudflare, account_id: str, 
 
     print(f"\n  ✓ Finished {table}: {inserted} rows")
 
+
 def sync_databases():
     if not STAGING_DB.exists():
         fail(f"Source database not found at {STAGING_DB}")
@@ -131,9 +151,13 @@ def sync_databases():
     if not ACCOUNT_ID:
         fail("CLOUDFLARE_ACCOUNT_ID not set")
 
-    database_id = (D1_PREVIEW_DATABASE_ID if USE_PREVIEW_DB else D1_DATABASE_ID)
+    database_id = D1_PREVIEW_DATABASE_ID if USE_PREVIEW_DB else D1_DATABASE_ID
     if not database_id:
-        which = "CLOUDFLARE_D1_PREVIEW_DATABASE_ID" if USE_PREVIEW_DB else "CLOUDFLARE_D1_DATABASE_ID"
+        which = (
+            "CLOUDFLARE_D1_PREVIEW_DATABASE_ID"
+            if USE_PREVIEW_DB
+            else "CLOUDFLARE_D1_DATABASE_ID"
+        )
         fail(f"{which} not set")
 
     if not API_TOKEN:
@@ -153,20 +177,12 @@ def sync_databases():
         for table in TABLES_TO_SYNC:
             sync_table(src_cur, client, ACCOUNT_ID, database_id, table)
 
-        # Verify counts on target
-        print("\nVerifying row counts on target…")
-        for table in TABLES_TO_SYNC:
-            result = d1_query(client, ACCOUNT_ID, database_id, f"SELECT COUNT(*) AS c FROM `{table}`;")
-            # /query returns an array of statement results; our single statement is index 0
-            rows = result[0].get("results", [])
-            count = rows[0]["c"] if rows else 0
-            print(f"  - {table}: {count}")
-
         print("\n✓ Sync complete!")
     except Exception as e:
         fail(f"Error during sync: {e}")
     finally:
         src_conn.close()
+
 
 if __name__ == "__main__":
     sync_databases()

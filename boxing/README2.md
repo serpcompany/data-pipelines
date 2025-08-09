@@ -151,6 +151,8 @@ graph LR
 
 - **Command:** `python -m boxing.database.sync_to_miniflare`
 
+- **Command:** `python -m boxing.database.sync_to_cloudflare`
+
 - **Command:** `python -m boxing.run_pipeline deploy-preview`
 
 ---
