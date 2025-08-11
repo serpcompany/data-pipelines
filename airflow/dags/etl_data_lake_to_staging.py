@@ -303,7 +303,9 @@ def etl_pipeline():
 
     status = check_data_lake_status()
     batches = get_unprocessed_batches(status)
-    batch_results = process_batch.expand(batch_ids=batches)  # map over batches
+    batch_results = process_batch.expand(
+        batch_ids=batches
+    )  # map over batches and process in parallel
     results = flatten(batch_results)
     validation = validate_staging_data(results)
     report = generate_etl_report(status, batches, results, validation)
