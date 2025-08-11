@@ -19,13 +19,15 @@ x-airflow-common:
     POSTGRES_USER: postgres
     POSTGRES_PASSWORD: ${DATA_LAKE_PASSWORD}
     ZYTE_API_KEY: ${ZYTE_API_KEY}
-    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:- pandas psycopg2-binary requests}
+    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:- pandas psycopg2-binary requests dateparser}
   volumes:
     - ../dags:/opt/airflow/dags
-    - ../logs:/opt/airflow/logs
+    # - ../logs:/opt/airflow/logs
     - ../plugins:/opt/airflow/plugins
-    - ../../boxing:/opt/airflow/boxing  # Mount boxing code
+    - ../..:/opt/airflow/boxing  # Mount boxing code
     - ../../boxing/data:/opt/airflow/data  # Mount data directory
+    # use docker volume for logs
+    - logs-volume:/opt/airflow/logs
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
@@ -134,3 +136,4 @@ services:
 
 volumes:
   postgres-db-volume:
+  logs-volume:
