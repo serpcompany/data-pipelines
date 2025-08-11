@@ -19,3 +19,11 @@ tmp/
 .claude
 output
 .data
+
+# Coders in Flow
+.venv
+.codex
+out
+dist
+*.vsix
+CLAUDE.md
