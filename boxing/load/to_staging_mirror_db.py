@@ -466,6 +466,291 @@ class StagingLoader:
 
         return stats
 
+    def load_event(self, event_data: Dict[str, Any]) -> bool:
+        """Load a single event's data into staging mirror database."""
+        cursor = self.staging_conn.cursor()
+
+        try:
+            # Start transaction
+            cursor.execute("BEGIN")
+
+            # Prepare event data
+            boxrec_id = event_data.get("boxrec_id", "")
+
+            # Prepare JSON fields for storage
+            bouts = event_data.get("bouts", [])
+            bouts_json = json.dumps(bouts) if bouts else None
+            promoter_json = (
+                json.dumps(event_data.get("promoter"))
+                if event_data.get("promoter")
+                else None
+            )
+            matchmaker_json = (
+                json.dumps(event_data.get("matchmaker"))
+                if event_data.get("matchmaker")
+                else None
+            )
+            inspector_json = (
+                json.dumps(event_data.get("inspector"))
+                if event_data.get("inspector")
+                else None
+            )
+            doctor_json = (
+                json.dumps(event_data.get("doctor"))
+                if event_data.get("doctor")
+                else None
+            )
+
+            # Insert/update event
+            upsert_query = """
+                INSERT INTO events (
+                    boxrecId, eventName, location, commission, promoter, 
+                    matchmaker, inspector, doctor, watchLink, bouts,
+                    createdAt, updatedAt
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ON CONFLICT(boxrecId) DO UPDATE SET 
+                    eventName = EXCLUDED.eventName,
+                    location = EXCLUDED.location,
+                    commission = EXCLUDED.commission,
+                    promoter = EXCLUDED.promoter,
+                    matchmaker = EXCLUDED.matchmaker,
+                    inspector = EXCLUDED.inspector,
+                    doctor = EXCLUDED.doctor,
+                    watchLink = EXCLUDED.watchLink,
+                    bouts = EXCLUDED.bouts,
+                    updatedAt = EXCLUDED.updatedAt
+            """
+
+            cursor.execute(
+                upsert_query,
+                (
+                    boxrec_id,
+                    event_data.get("event_name"),
+                    event_data.get("location"),
+                    event_data.get("commission"),
+                    promoter_json,
+                    matchmaker_json,
+                    inspector_json,
+                    doctor_json,
+                    event_data.get("watch_link"),
+                    bouts_json,
+                    datetime.now().isoformat(),
+                    datetime.now().isoformat(),
+                ),
+            )
+
+            # Commit transaction
+            cursor.execute("COMMIT")
+            logger.info(f"Successfully loaded event {boxrec_id}")
+            return True
+
+        except Exception as e:
+            cursor.execute("ROLLBACK")
+            logger.error(f"Error loading event {boxrec_id}: {e}")
+            logger.error(traceback.format_exc())
+            return False
+
+    def load_bout(self, bout_data: Dict[str, Any]) -> bool:
+        """Load a single bout's data into staging mirror database."""
+        cursor = self.staging_conn.cursor()
+
+        try:
+            # Start transaction
+            cursor.execute("BEGIN")
+
+            # Prepare bout data
+            event_id = bout_data.get("boxrec_event_id", "")
+            bout_id = bout_data.get("boxrec_bout_id", "")
+
+            # Prepare JSON fields
+            titles_json = (
+                json.dumps(bout_data.get("titles", []))
+                if bout_data.get("titles")
+                else None
+            )
+            scorecards_json = (
+                json.dumps(bout_data.get("scorecards", []))
+                if bout_data.get("scorecards")
+                else None
+            )
+            judges_json = (
+                json.dumps(bout_data.get("judges", []))
+                if bout_data.get("judges")
+                else None
+            )
+            boxer_a_side_json = (
+                json.dumps(bout_data.get("boxer_a_side"))
+                if bout_data.get("boxer_a_side")
+                else None
+            )
+            boxer_b_side_json = (
+                json.dumps(bout_data.get("boxer_b_side"))
+                if bout_data.get("boxer_b_side")
+                else None
+            )
+            referee_json = (
+                json.dumps(bout_data.get("referee"))
+                if bout_data.get("referee")
+                else None
+            )
+            promoter_json = (
+                json.dumps(bout_data.get("promoter"))
+                if bout_data.get("promoter")
+                else None
+            )
+            matchmaker_json = (
+                json.dumps(bout_data.get("matchmaker"))
+                if bout_data.get("matchmaker")
+                else None
+            )
+            inspector_json = (
+                json.dumps(bout_data.get("inspector"))
+                if bout_data.get("inspector")
+                else None
+            )
+            doctor_json = (
+                json.dumps(bout_data.get("doctor"))
+                if bout_data.get("doctor")
+                else None
+            )
+
+            # Insert/update bout
+            upsert_query = """
+                INSERT INTO bouts (
+                    boxrecEventId, boxrecBoutId, boxerASide, boxerBSide,
+                    boutDivision, boutRoundsScheduled, titles, boutResult,
+                    boutResultMethod, boutRoundsActual, scorecards, stoppageReason,
+                    referee, judges, promoter, matchmaker, inspector, doctor,
+                    boxerASideRating, boxerASideRecord, boxerASideAge, boxerASideStance,
+                    boxerASideHeight, boxerASideReach,
+                    boxerBSideRating, boxerBSideRecord, boxerBSideAge, boxerBSideStance,
+                    boxerBSideHeight, boxerBSideReach,
+                    competitionLevel, createdAt, updatedAt
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ON CONFLICT(boxrecEventId, boxrecBoutId) DO UPDATE SET 
+                    boxerASide = EXCLUDED.boxerASide,
+                    boxerBSide = EXCLUDED.boxerBSide,
+                    boutDivision = EXCLUDED.boutDivision,
+                    boutRoundsScheduled = EXCLUDED.boutRoundsScheduled,
+                    titles = EXCLUDED.titles,
+                    boutResult = EXCLUDED.boutResult,
+                    boutResultMethod = EXCLUDED.boutResultMethod,
+                    boutRoundsActual = EXCLUDED.boutRoundsActual,
+                    scorecards = EXCLUDED.scorecards,
+                    stoppageReason = EXCLUDED.stoppageReason,
+                    referee = EXCLUDED.referee,
+                    judges = EXCLUDED.judges,
+                    promoter = EXCLUDED.promoter,
+                    matchmaker = EXCLUDED.matchmaker,
+                    inspector = EXCLUDED.inspector,
+                    doctor = EXCLUDED.doctor,
+                    boxerASideRating = EXCLUDED.boxerASideRating,
+                    boxerASideRecord = EXCLUDED.boxerASideRecord,
+                    boxerASideAge = EXCLUDED.boxerASideAge,
+                    boxerASideStance = EXCLUDED.boxerASideStance,
+                    boxerASideHeight = EXCLUDED.boxerASideHeight,
+                    boxerASideReach = EXCLUDED.boxerASideReach,
+                    boxerBSideRating = EXCLUDED.boxerBSideRating,
+                    boxerBSideRecord = EXCLUDED.boxerBSideRecord,
+                    boxerBSideAge = EXCLUDED.boxerBSideAge,
+                    boxerBSideStance = EXCLUDED.boxerBSideStance,
+                    boxerBSideHeight = EXCLUDED.boxerBSideHeight,
+                    boxerBSideReach = EXCLUDED.boxerBSideReach,
+                    competitionLevel = EXCLUDED.competitionLevel,
+                    updatedAt = EXCLUDED.updatedAt
+            """
+
+            cursor.execute(
+                upsert_query,
+                (
+                    event_id,
+                    bout_id,
+                    boxer_a_side_json,
+                    boxer_b_side_json,
+                    bout_data.get("bout_division"),
+                    bout_data.get("bout_rounds_scheduled"),
+                    titles_json,
+                    bout_data.get("bout_result"),
+                    bout_data.get("bout_result_method"),
+                    bout_data.get("bout_rounds_actual"),
+                    scorecards_json,
+                    bout_data.get("stoppage_reason"),
+                    referee_json,
+                    judges_json,
+                    promoter_json,
+                    matchmaker_json,
+                    inspector_json,
+                    doctor_json,
+                    bout_data.get("boxer_a_side_rating"),
+                    bout_data.get("boxer_a_side_record"),
+                    bout_data.get("boxer_a_side_age"),
+                    bout_data.get("boxer_a_side_stance"),
+                    bout_data.get("boxer_a_side_height"),
+                    bout_data.get("boxer_a_side_reach"),
+                    bout_data.get("boxer_b_side_rating"),
+                    bout_data.get("boxer_b_side_record"),
+                    bout_data.get("boxer_b_side_age"),
+                    bout_data.get("boxer_b_side_stance"),
+                    bout_data.get("boxer_b_side_height"),
+                    bout_data.get("boxer_b_side_reach"),
+                    bout_data.get("competition_level", "professional"),
+                    datetime.now().isoformat(),
+                    datetime.now().isoformat(),
+                ),
+            )
+
+            # Commit transaction
+            cursor.execute("COMMIT")
+            logger.info(f"Successfully loaded bout {event_id}_{bout_id}")
+            return True
+
+        except Exception as e:
+            cursor.execute("ROLLBACK")
+            logger.error(f"Error loading bout {event_id}_{bout_id}: {e}")
+            logger.error(traceback.format_exc())
+            return False
+
+    def process_event_with_html(
+        self, event_id: str, event_url: str, html_content: str
+    ) -> Optional[Dict[str, Any]]:
+        """Process event HTML and extract data."""
+        from ..extract.event_orchestrator import EventExtractionOrchestrator
+
+        try:
+            # Extract event data
+            extractor = EventExtractionOrchestrator()
+            event_data = extractor.extract_event_data(html_content)
+            event_data["boxrec_id"] = event_id
+            event_data["boxrec_url"] = event_url
+
+            # Load to staging
+            success = self.load_event(event_data)
+            return event_data if success else None
+
+        except Exception as e:
+            logger.error(f"Error processing event {event_id}: {e}")
+            return None
+
+    def process_bout_with_html(
+        self, event_id: str, bout_id: str, bout_url: str, html_content: str
+    ) -> Optional[Dict[str, Any]]:
+        """Process bout HTML and extract data."""
+        from ..extract.event_orchestrator import EventExtractionOrchestrator
+
+        try:
+            # Extract bout data
+            extractor = EventExtractionOrchestrator()
+            bout_data = extractor.extract_bout_data(html_content, event_id, bout_id)
+            bout_data["boxrec_url"] = bout_url
+
+            # Load to staging
+            success = self.load_bout(bout_data)
+            return bout_data if success else None
+
+        except Exception as e:
+            logger.error(f"Error processing bout {event_id}_{bout_id}: {e}")
+            return None
+
 
 def run_staging_load(limit: Optional[int] = None):
     """Run the staging load process."""

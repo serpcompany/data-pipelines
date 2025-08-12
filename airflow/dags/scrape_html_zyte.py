@@ -437,7 +437,7 @@ def scrape_html_zyte():
             # For bouts/events, if we've scraped it once, always skip (they don't change)
             if entity in ["bout", "event"]:
                 print(
-                    f"✓ Skipping {url} - {entity} already scraped (events don't change)"
+                    f"✓ Skipping {url} - {entity} already scraped (entity is unchanging)"
                 )
                 return True, scraped_at
 
