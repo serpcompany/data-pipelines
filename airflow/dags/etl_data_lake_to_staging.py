@@ -49,7 +49,7 @@ def etl_pipeline():
                 COUNT(*) as total_records,
                 COUNT(DISTINCT boxrec_id) as unique_boxers,
                 MAX(scraped_at) as latest_scrape
-            FROM "data_lake".boxrec_boxer_raw_html
+            FROM "data_lake".boxrec
             """
         )
 
@@ -106,7 +106,7 @@ def etl_pipeline():
                 cur.execute(
                     f"""
                     SELECT DISTINCT boxrec_id
-                    FROM "data_lake".boxrec_boxer_raw_html
+                    FROM "data_lake".boxrec
                     WHERE boxrec_id NOT IN ({placeholders})
                     ORDER BY boxrec_id
                     """,
@@ -116,14 +116,14 @@ def etl_pipeline():
                 cur.execute(
                     """
                     SELECT DISTINCT boxrec_id
-                    FROM "data_lake".boxrec_boxer_raw_html
+                    FROM "data_lake".boxrec
                     ORDER BY boxrec_id
                     """
                 )
         else:
             query = """
                 SELECT DISTINCT boxrec_id
-                FROM "data_lake".boxrec_boxer_raw_html
+                FROM "data_lake".boxrec
                 ORDER BY boxrec_id
             """
             if limit:
@@ -159,7 +159,7 @@ def etl_pipeline():
             cursor.execute(
                 """
                 SELECT boxrec_url, html_file 
-                FROM "data_lake".boxrec_boxer_raw_html
+                FROM "data_lake".boxrec
                 WHERE boxrec_id = %s AND competition_level = 'professional'
                 """,
                 (boxer_id,),
@@ -170,7 +170,7 @@ def etl_pipeline():
             cursor.execute(
                 """
                 SELECT html_file
-                FROM "data_lake".boxrec_boxer_raw_html
+                FROM "data_lake".boxrec
                 WHERE boxrec_id = %s AND competition_level = 'amateur'
                 """,
                 (boxer_id,),

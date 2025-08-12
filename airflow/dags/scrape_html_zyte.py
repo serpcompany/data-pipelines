@@ -49,6 +49,7 @@ ZYTE_API_URL = "https://api.zyte.com/v1/extract"
         # Required at run time: {"csv_filename": "your_file.csv"}
         "csv_filename": "",
         "batch_size": 50,  # Number of URLs per batch to avoid xcom issues
+        "entity": "boxer",  # Entity type: boxer or bout
     },
     max_active_runs=1,  # Only one DAG run at a time
     max_active_tasks=5,  # Limit total concurrent tasks across the DAG
@@ -285,7 +286,7 @@ def scrape_html_zyte():
             rate_limit,
             file_size,
         )
-        from boxing.validators.page import boxer
+        from boxing.validators.page import boxer, event
 
         # Check file size first
         if not file_size.validate(html_content):
@@ -308,9 +309,19 @@ def scrape_html_zyte():
         if not is_valid:
             return False, f"Blank page: {message}"
 
-        # Check if it's a valid boxer page
-        if not boxer.validate(html_content):
-            return False, "Not a valid boxer page"
+        # Check if it's a valid page based on entity type
+        from airflow.operators.python import get_current_context
+
+        ctx = get_current_context()
+        params = ctx.get("params", {}) or {}
+        entity = params.get("entity", "boxer")
+
+        if entity == "boxer":
+            if not boxer.validate(html_content):
+                return False, "Not a valid boxer page"
+        elif entity == "bout":
+            if not event.validate(html_content):
+                return False, "Not a valid bout/event page"
 
         return True, "Valid"
 
@@ -328,43 +339,76 @@ def scrape_html_zyte():
         )
 
         try:
-            # Extract metadata from URL
+            # Extract metadata from URL based on entity type
+            from airflow.operators.python import get_current_context
+
+            ctx = get_current_context()
+            params = ctx.get("params", {}) or {}
+            entity = params.get("entity", "boxer")
+
             parts = url.split("/")
             if len(parts) < 2:
                 return False, None
 
-            # Create a fake filename to reuse existing extraction logic
-            fake_filename = f"en_box-pro_{parts[-1]}.html"
-            if "box-am" in url:
-                fake_filename = f"en_box-am_{parts[-1]}.html"
+            if entity == "boxer":
+                # Create a fake filename to reuse existing extraction logic
+                fake_filename = f"en_box-pro_{parts[-1]}.html"
+                if "box-am" in url:
+                    fake_filename = f"en_box-am_{parts[-1]}.html"
 
-            boxer_id = extract_boxer_id_from_filename(fake_filename)
-            competition_level = get_competition_level(fake_filename)
+                boxer_id = extract_boxer_id_from_filename(fake_filename)
+                competition_level = get_competition_level(fake_filename)
 
-            if not boxer_id:
-                return False, None
-
-            # Check staging DB for proStatus first
-            staging_db_path = "/opt/airflow/boxing/data/output/staging_mirror.db"
-            try:
-                staging_conn = sqlite3.connect(staging_db_path)
-                staging_cur = staging_conn.cursor()
-
-                staging_cur.execute(
-                    "SELECT proStatus FROM boxers WHERE boxrecId = ?", (boxer_id,)
+                if not boxer_id:
+                    return False, None
+            elif entity == "bout":
+                if len(parts) >= 2:
+                    boxer_id = parts[-2] + "_" + parts[-1]  # event_id_bout_id
+                    competition_level = "professional"  # Default for bouts
+                else:
+                    return False, None
+            else:
+                # For unknown entity types, try to extract some identifier
+                boxer_id = parts[-1] if parts else None
+                competition_level = (
+                    "professional"  # Default to professional for unknown entities
                 )
-                staging_result = staging_cur.fetchone()
+                if not boxer_id:
+                    return False, None
 
-                staging_cur.close()
-                staging_conn.close()
+            # Only check staging DB for boxers
+            from airflow.operators.python import get_current_context
 
-                if staging_result and staging_result[0] == "inactive":
-                    print(f"✓ Skipping {url} - boxer is inactive (proStatus: inactive)")
-                    return True, None  # Skip inactive boxers
+            ctx = get_current_context()
+            params = ctx.get("params", {}) or {}
+            entity = params.get("entity", "boxer")
 
-            except Exception as staging_e:
-                print(f"Warning: Could not check staging DB for proStatus: {staging_e}")
-                # Continue with regular check if staging DB fails
+            if entity == "boxer":
+                # Check staging DB for proStatus first
+                staging_db_path = "/opt/airflow/boxing/data/output/staging_mirror.db"
+                try:
+                    staging_conn = sqlite3.connect(staging_db_path)
+                    staging_cur = staging_conn.cursor()
+
+                    staging_cur.execute(
+                        "SELECT proStatus FROM boxers WHERE boxrecId = ?", (boxer_id,)
+                    )
+                    staging_result = staging_cur.fetchone()
+
+                    staging_cur.close()
+                    staging_conn.close()
+
+                    if staging_result and staging_result[0] == "inactive":
+                        print(
+                            f"✓ Skipping {url} - boxer is inactive (proStatus: inactive)"
+                        )
+                        return True, None  # Skip inactive boxers
+
+                except Exception as staging_e:
+                    print(
+                        f"Warning: Could not check staging DB for proStatus: {staging_e}"
+                    )
+                    # Continue with regular check if staging DB fails
 
             conn = psycopg2.connect(**DB_CONFIG)
             cur = conn.cursor()
@@ -372,11 +416,11 @@ def scrape_html_zyte():
             # Check if record exists and when it was last scraped
             check_query = """
                 SELECT scraped_at, updated_at 
-                FROM "data_lake".boxrec_boxer_raw_html 
-                WHERE boxrec_id = %s AND competition_level = %s
+                FROM "data_lake".boxrec 
+                WHERE boxrec_id = %s AND competition_level = %s AND entity = %s
             """
 
-            cur.execute(check_query, (boxer_id, competition_level))
+            cur.execute(check_query, (boxer_id, competition_level, entity))
             result = cur.fetchone()
 
             cur.close()
@@ -390,7 +434,14 @@ def scrape_html_zyte():
             if not scraped_at:
                 return False, None  # No scraped timestamp, need to scrape
 
-            # Check if scraped within threshold
+            # For bouts/events, if we've scraped it once, always skip (they don't change)
+            if entity in ["bout", "event"]:
+                print(
+                    f"✓ Skipping {url} - {entity} already scraped (events don't change)"
+                )
+                return True, scraped_at
+
+            # For boxers, check if scraped within threshold
             if isinstance(scraped_at, str):
                 scraped_at = datetime.fromisoformat(scraped_at.replace("Z", "+00:00"))
 
@@ -410,34 +461,55 @@ def scrape_html_zyte():
             construct_boxrec_url,
             get_competition_level,
         )
+        from airflow.operators.python import get_current_context
 
         try:
-            # Extract metadata from URL
+            # Get entity type from context
+            ctx = get_current_context()
+            params = ctx.get("params", {}) or {}
+            entity = params.get("entity", "boxer")
+
+            # Extract metadata from URL based on entity type
             parts = url.split("/")
             if len(parts) < 2:
                 print(f"Could not parse URL structure: {url}")
                 return False
 
-            # Create a fake filename to reuse existing extraction logic
-            fake_filename = f"en_box-pro_{parts[-1]}.html"
-            if "box-am" in url:
-                fake_filename = f"en_box-am_{parts[-1]}.html"
+            if entity == "boxer":
+                # Create a fake filename to reuse existing extraction logic
+                fake_filename = f"en_box-pro_{parts[-1]}.html"
+                if "box-am" in url:
+                    fake_filename = f"en_box-am_{parts[-1]}.html"
 
-            boxer_id = extract_boxer_id_from_filename(fake_filename)
-            competition_level = get_competition_level(fake_filename)
+                boxer_id = extract_boxer_id_from_filename(fake_filename)
+                competition_level = get_competition_level(fake_filename)
 
-            if not boxer_id:
-                print(f"Could not extract boxer ID from URL: {url}")
-                return False
+                if not boxer_id:
+                    print(f"Could not extract boxer ID from URL: {url}")
+                    return False
+            elif entity == "bout":
+                if len(parts) >= 2:
+                    boxer_id = parts[-2] + "_" + parts[-1]  # event_id_bout_id
+                    competition_level = "professional"
+                else:
+                    print(f"Could not extract bout ID from URL: {url}")
+                    return False
+            else:
+                # For unknown entity types, try to extract some identifier
+                boxer_id = parts[-1] if parts else None
+                competition_level = "professional"
+                if not boxer_id:
+                    print(f"Could not extract ID from URL: {url}")
+                    return False
 
             conn = psycopg2.connect(**DB_CONFIG)
             cur = conn.cursor()
 
             upsert_query = """
-                INSERT INTO "data_lake".boxrec_boxer_raw_html 
-                (boxrec_url, boxrec_id, html_file, competition_level, scraped_at, created_at, updated_at)
-                VALUES (%s, %s, %s, %s, %s, %s, %s)
-                ON CONFLICT (boxrec_id, competition_level) 
+                INSERT INTO "data_lake".boxrec 
+                (boxrec_url, boxrec_id, html_file, competition_level, entity, scraped_at, created_at, updated_at)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                ON CONFLICT (boxrec_id, competition_level, entity) 
                 DO UPDATE SET 
                     html_file = EXCLUDED.html_file,
                     boxrec_url = EXCLUDED.boxrec_url,
@@ -448,7 +520,7 @@ def scrape_html_zyte():
             now = datetime.now()
             cur.execute(
                 upsert_query,
-                (url, boxer_id, html_content, competition_level, now, now, now),
+                (url, boxer_id, html_content, competition_level, entity, now, now, now),
             )
 
             conn.commit()
