@@ -13,6 +13,7 @@ import time
 import os
 import base64
 import psycopg2
+import sqlite3
 import sys
 from typing import List, Dict, Any, Tuple, Optional
 
@@ -47,6 +48,7 @@ ZYTE_API_URL = "https://api.zyte.com/v1/extract"
     params={
         # Required at run time: {"csv_filename": "your_file.csv"}
         "csv_filename": "",
+        "batch_size": 50,  # Number of URLs per batch to avoid xcom issues
     },
     max_active_runs=1,  # Only one DAG run at a time
     max_active_tasks=5,  # Limit total concurrent tasks across the DAG
@@ -99,8 +101,14 @@ def scrape_html_zyte():
         return valid_files
 
     @task
-    def extract_urls(valid_files: List[str]) -> List[str]:
-        """Extract unique URLs from all valid CSVs."""
+    def extract_urls(valid_files: List[str]) -> List[List[str]]:
+        """Extract unique URLs from all valid CSVs and batch them to avoid xcom issues."""
+        from airflow.operators.python import get_current_context
+
+        ctx = get_current_context()
+        params = ctx.get("params", {}) or {}
+        batch_size = int(params.get("batch_size", 50))  # Default batch size for URLs
+
         all_urls: List[str] = []
 
         for filepath in valid_files:
@@ -113,11 +121,28 @@ def scrape_html_zyte():
 
         unique_urls = list(set(all_urls))
         print(f"Total unique URLs: {len(unique_urls)}")
-        return unique_urls
+
+        # Create batches to avoid xcom size issues
+        batches: List[List[str]] = [
+            unique_urls[i : i + batch_size]
+            for i in range(0, len(unique_urls), batch_size)
+        ]
+        print(f"Created {len(batches)} batches with batch size {batch_size}")
+        return batches
 
     @task
-    def process_single_url(url: str) -> Dict[str, Any]:
-        """Streaming approach: Check DB -> Scrape -> Validate -> Upload to Data Lake for a single URL."""
+    def process_batch_urls(url_batch: List[str]) -> List[Dict[str, Any]]:
+        """Process a batch of URLs sequentially to avoid xcom issues."""
+        results: List[Dict[str, Any]] = []
+
+        for url in url_batch:
+            result = process_single_url_internal(url)
+            results.append(result)
+
+        return results
+
+    def process_single_url_internal(url: str) -> Dict[str, Any]:
+        """Internal function to process a single URL (moved from @task decorator)."""
         print(f"Processing: {url}")
 
         # Check if recently scraped
@@ -294,6 +319,7 @@ def scrape_html_zyte():
     ) -> Tuple[bool, Optional[datetime]]:
         """
         Check if URL was scraped within the threshold time.
+        Also checks local staging DB for boxer proStatus - if 'inactive', returns True to skip.
         Returns (is_recent, last_scraped_time)
         """
         from boxing.load.to_data_lake import (
@@ -317,6 +343,28 @@ def scrape_html_zyte():
 
             if not boxer_id:
                 return False, None
+
+            # Check staging DB for proStatus first
+            staging_db_path = "/opt/airflow/boxing/data/output/staging_mirror.db"
+            try:
+                staging_conn = sqlite3.connect(staging_db_path)
+                staging_cur = staging_conn.cursor()
+
+                staging_cur.execute(
+                    "SELECT proStatus FROM boxers WHERE boxrecId = ?", (boxer_id,)
+                )
+                staging_result = staging_cur.fetchone()
+
+                staging_cur.close()
+                staging_conn.close()
+
+                if staging_result and staging_result[0] == "inactive":
+                    print(f"✓ Skipping {url} - boxer is inactive (proStatus: inactive)")
+                    return True, None  # Skip inactive boxers
+
+            except Exception as staging_e:
+                print(f"Warning: Could not check staging DB for proStatus: {staging_e}")
+                # Continue with regular check if staging DB fails
 
             conn = psycopg2.connect(**DB_CONFIG)
             cur = conn.cursor()
@@ -414,6 +462,14 @@ def scrape_html_zyte():
             return False
 
     @task
+    def flatten(all_batch_results: List[List[Dict[str, Any]]]) -> List[Dict[str, Any]]:
+        """Flatten the list of lists from mapped batches into one list of results."""
+        flat: List[Dict[str, Any]] = []
+        for batch in all_batch_results:
+            flat.extend(batch or [])
+        return flat
+
+    @task
     def report_results(results: List[Dict[str, Any]]) -> str:
         """Print a report of processing results."""
         successful = [r for r in results if r["status"] == "success"]
@@ -464,9 +520,10 @@ def scrape_html_zyte():
 
     csv_files = read_csv_files()
     valid_files = validate_csv_structure(csv_files)
-    urls = extract_urls(valid_files)
-    # Process URLs in parallel
-    results = process_single_url.expand(url=urls)
+    url_batches = extract_urls(valid_files)
+    # Process URL batches in parallel to avoid xcom issues
+    batch_results = process_batch_urls.expand(url_batch=url_batches)
+    results = flatten(batch_results)
     report = report_results(results)
 
 
