@@ -157,80 +157,99 @@ def scrape_html_zyte():
             "browserHtml": True,
         }
 
-        try:
-            response = requests.post(
-                ZYTE_API_URL, json=payload, headers=headers, timeout=60
-            )
+        MAX_RETRIES = int(os.environ.get("SCRAPE_MAX_RETRIES", "3"))
+        BASE_DELAY = int(os.environ.get("SCRAPE_BASE_DELAY", "5"))
 
-            if response.status_code != 200:
+        returnValue = None
+
+        for attempt in range(MAX_RETRIES + 1):
+            try:
+                if attempt > 0:
+                    delay = BASE_DELAY + (2 ** (attempt - 1))
+                    print(f"Retrying {url} in {delay} seconds...")
+                    time.sleep(delay)
+
+                response = requests.post(
+                    ZYTE_API_URL, json=payload, headers=headers, timeout=60
+                )
+
+                if response.status_code != 200:
+                    returnValue = {
+                        "url": url,
+                        "status": "failed",
+                        "step": "scrape",
+                        "error": f"HTTP {response.status_code}: {response.text}",
+                        "timestamp": datetime.now().isoformat(),
+                    }
+                    continue
+
+                data = response.json()
+                html_content = data.get("browserHtml", data.get("httpResponseBody"))
+
+                if isinstance(html_content, bytes):
+                    html_content = html_content.decode("utf-8", errors="ignore")
+
+                if not html_content:
+                    returnValue = {
+                        "url": url,
+                        "status": "failed",
+                        "step": "scrape",
+                        "error": "No HTML content returned",
+                        "timestamp": datetime.now().isoformat(),
+                    }
+                    continue
+
+                print(f"✓ Scraped: {url}")
+
+                # Validate HTML
+                is_valid, reason = validate_html_file_content(html_content, url)
+
+                if not is_valid:
+                    returnValue = {
+                        "url": url,
+                        "status": "failed",
+                        "step": "validate",
+                        "error": f"Validation failed: {reason}",
+                        "timestamp": datetime.now().isoformat(),
+                    }
+                    continue
+
+                print(f"✓ Validated: {url}")
+
+                # Upload to Data Lake
+                success = upload_to_data_lake(url, html_content)
+
+                if not success:
+                    returnValue = {
+                        "url": url,
+                        "status": "failed",
+                        "step": "upload",
+                        "error": "Failed to upload to data lake",
+                        "timestamp": datetime.now().isoformat(),
+                    }
+                    continue
+
+                print(f"✓ Uploaded to data lake: {url}")
+
                 return {
+                    "url": url,
+                    "status": "success",
+                    "step": "completed",
+                    "timestamp": datetime.now().isoformat(),
+                }
+
+            except Exception as e:
+                returnValue = {
                     "url": url,
                     "status": "failed",
                     "step": "scrape",
-                    "error": f"HTTP {response.status_code}: {response.text}",
+                    "error": str(e),
                     "timestamp": datetime.now().isoformat(),
                 }
+                continue
 
-            data = response.json()
-            html_content = data.get("browserHtml", data.get("httpResponseBody"))
-
-            if isinstance(html_content, bytes):
-                html_content = html_content.decode("utf-8", errors="ignore")
-
-            if not html_content:
-                return {
-                    "url": url,
-                    "status": "failed",
-                    "step": "scrape",
-                    "error": "No HTML content returned",
-                    "timestamp": datetime.now().isoformat(),
-                }
-
-            print(f"✓ Scraped: {url}")
-
-            # Validate HTML
-            is_valid, reason = validate_html_file_content(html_content, url)
-
-            if not is_valid:
-                return {
-                    "url": url,
-                    "status": "failed",
-                    "step": "validate",
-                    "error": f"Validation failed: {reason}",
-                    "timestamp": datetime.now().isoformat(),
-                }
-
-            print(f"✓ Validated: {url}")
-
-            # Upload to Data Lake
-            success = upload_to_data_lake(url, html_content)
-
-            if not success:
-                return {
-                    "url": url,
-                    "status": "failed",
-                    "step": "upload",
-                    "error": "Failed to upload to data lake",
-                    "timestamp": datetime.now().isoformat(),
-                }
-
-            print(f"✓ Uploaded to data lake: {url}")
-
-            return {
-                "url": url,
-                "status": "success",
-                "step": "completed",
-                "timestamp": datetime.now().isoformat(),
-            }
-
-        except Exception as e:
-            return {
-                "url": url,
-                "status": "failed",
-                "step": "scrape",
-                "error": str(e),
-                "timestamp": datetime.now().isoformat(),
-            }
+        # If we reach here, all retries failed
+        return returnValue
 
     def validate_html_file_content(html_content: str, url: str) -> Tuple[bool, str]:
         """Validate HTML content using the existing validation logic."""
