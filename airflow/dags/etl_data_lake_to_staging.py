@@ -676,6 +676,42 @@ def etl_pipeline():
             if entity == "boxer":
                 unique_ids.add(res.get("boxer_id"))
 
+        # Filter out boxers that already have content from the CSV
+        if unique_ids and entity == "boxer":
+            try:
+                # Read existing content CSV to get boxrec_ids that already have content
+                content_csv_path = "/opt/airflow/boxing/data/input/boxer-articles.csv"
+                existing_content_ids = set()
+
+                try:
+                    import csv as csv_module
+
+                    with open(content_csv_path, "r", encoding="utf-8") as f:
+                        reader = csv_module.DictReader(f)
+                        for row in reader:
+                            if row.get("boxrec_id"):
+                                existing_content_ids.add(row["boxrec_id"].strip())
+
+                    original_count = len(unique_ids)
+                    unique_ids = unique_ids - existing_content_ids
+                    filtered_count = original_count - len(unique_ids)
+
+                    print(
+                        f"Filtered out {filtered_count} boxers with existing content ({original_count} -> {len(unique_ids)})"
+                    )
+
+                except FileNotFoundError:
+                    print("Content CSV not found - proceeding with all boxers")
+                except Exception as e:
+                    print(
+                        f"Error reading content CSV: {e} - proceeding with all boxers"
+                    )
+
+            except Exception as e:
+                print(
+                    f"Error filtering existing content: {e} - proceeding with all boxers"
+                )
+
         if unique_ids:
             print(f"\nUnique {entity}_ids getting gens: {len(unique_ids)}")
             print("First 5 unique IDs:")
