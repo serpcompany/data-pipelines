@@ -6,6 +6,7 @@ This is the main ETL script that processes HTML files and populates the staging 
 
 import json
 import logging
+import os
 import re
 import sqlite3
 import traceback
@@ -17,6 +18,7 @@ import psycopg2
 
 from ..utils.config import get_postgres_connection, OUTPUT_DIR
 from ..database.staging_mirror import get_connection as get_staging_connection
+from ..database.utils import get_mysql_connection, get_mysql_gen_data
 from ..extract.orchestrator import ExtractionOrchestrator
 from ..transform import generate_unique_bout_id
 
@@ -33,14 +35,22 @@ class StagingLoader:
         self.staging_conn = None
         self.extractor = ExtractionOrchestrator()
         self.bio_data = self._load_bio_data()
+        self.mysql_conn = None
 
     def __enter__(self):
         self.staging_conn = get_staging_connection()
+        try:
+            self.mysql_conn = get_mysql_connection()
+        except Exception as e:
+            logger.warning(f"Could not connect to MySQL database: {e}")
+            self.mysql_conn = None
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         if self.staging_conn:
             self.staging_conn.close()
+        if self.mysql_conn:
+            self.mysql_conn.close()
 
     def _load_bio_data(self) -> Dict[str, str]:
         """Load bio data from CSV file."""
@@ -64,6 +74,35 @@ class StagingLoader:
 
         return bio_data
 
+    def _get_content_from_mysql(self, boxrec_id: str) -> Optional[str]:
+        """Get boxer content from MySQL database by boxrec_id."""
+        if not self.mysql_conn:
+            return None
+            
+        try:
+            # Get module ID from environment variable, default to 409
+            module_id = int(os.getenv("MYSQL_MODULE_ID", "409"))
+            
+            # Get content for this specific boxer from MySQL
+            mysql_data = get_mysql_gen_data(
+                mysql_conn=self.mysql_conn,
+                module_id=module_id,
+                identifiers=[boxrec_id],
+                type_="boxer",
+                use_citations=False
+            )
+            
+            if mysql_data and len(mysql_data) > 0:
+                content = mysql_data[0].get("content")
+                if content:
+                    logger.info(f"Found content for boxer {boxrec_id} in MySQL database")
+                    return content
+                    
+        except Exception as e:
+            logger.error(f"Error fetching content from MySQL for {boxrec_id}: {e}")
+            
+        return None
+
     def load_boxer(self, boxer_data: Dict[str, Any]) -> bool:
         """Load a single boxer's data into staging mirror database."""
         cursor = self.staging_conn.cursor()
@@ -75,8 +114,12 @@ class StagingLoader:
             # Prepare boxer data
             boxer_id = boxer_data.get("boxrec_id", "").replace("/", "-")
 
-            # Get bio from CSV if available, otherwise use extracted bio
-            bio = self.bio_data.get(boxer_id, boxer_data.get("bio"))
+            # Get bio from CSV if available, otherwise check MySQL, then use extracted bio
+            bio = self.bio_data.get(boxer_id)
+            if not bio:
+                bio = self._get_content_from_mysql(boxer_id)
+            if not bio:
+                bio = boxer_data.get("bio")
 
             # Prepare bouts data for JSON storage BEFORE the INSERT
             bouts = boxer_data.get("bouts", [])

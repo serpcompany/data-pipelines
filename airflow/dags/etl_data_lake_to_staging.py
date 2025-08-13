@@ -21,6 +21,7 @@ from boxing.load.to_staging_mirror_db import StagingLoader
 from boxing.database.validators import run_validation
 from boxing.utils.config import get_postgres_connection
 from boxing.database.staging_mirror import get_connection as get_staging_connection
+from boxing.database.utils import get_mysql_connection
 
 
 import json
@@ -676,13 +677,13 @@ def etl_pipeline():
             if entity == "boxer":
                 unique_ids.add(res.get("boxer_id"))
 
-        # Filter out boxers that already have content from the CSV
+        # Filter out boxers that already have content from CSV or MySQL
         if unique_ids and entity == "boxer":
             try:
-                # Read existing content CSV to get boxrec_ids that already have content
-                content_csv_path = "/opt/airflow/boxing/data/input/boxer-articles.csv"
                 existing_content_ids = set()
 
+                # Check CSV for existing content
+                content_csv_path = "/opt/airflow/data/input/boxer-articles.csv"
                 try:
                     import csv as csv_module
 
@@ -692,20 +693,60 @@ def etl_pipeline():
                             if row.get("boxrec_id"):
                                 existing_content_ids.add(row["boxrec_id"].strip())
 
-                    original_count = len(unique_ids)
-                    unique_ids = unique_ids - existing_content_ids
-                    filtered_count = original_count - len(unique_ids)
-
                     print(
-                        f"Filtered out {filtered_count} boxers with existing content ({original_count} -> {len(unique_ids)})"
+                        f"Found {len(existing_content_ids)} boxers with content in CSV"
                     )
 
                 except FileNotFoundError:
-                    print("Content CSV not found - proceeding with all boxers")
+                    print("Content CSV not found")
                 except Exception as e:
-                    print(
-                        f"Error reading content CSV: {e} - proceeding with all boxers"
-                    )
+                    print(f"Error reading content CSV: {e}")
+
+                # Check MySQL for existing content
+                try:
+                    mysql_conn = get_mysql_connection()
+                    mysql_cursor = mysql_conn.cursor(dictionary=True, buffered=True)
+
+                    module_id = int(os.getenv("MYSQL_MODULE_ID", "409"))
+
+                    remaining_ids = unique_ids - existing_content_ids
+                    if remaining_ids:
+                        placeholders = ", ".join(["%s"] * len(remaining_ids))
+                        query = f"""
+                            SELECT DISTINCT pmsm.identifier
+                            FROM projects_modules_search_map AS pmsm
+                            WHERE pmsm.module_id = %s
+                              AND pmsm.`type` = 'boxer'
+                              AND pmsm.introduction IS NOT NULL
+                              AND pmsm.one_liner IS NOT NULL
+                              AND pmsm.excerpt IS NOT NULL
+                              AND pmsm.identifier IN ({placeholders})
+                        """
+                        params = [module_id] + list(remaining_ids)
+                        mysql_cursor.execute(query, params)
+
+                        mysql_content_ids = {
+                            row["identifier"] for row in mysql_cursor.fetchall()
+                        }
+                        existing_content_ids.update(mysql_content_ids)
+
+                        print(
+                            f"Found {len(mysql_content_ids)} additional boxers with content in MySQL"
+                        )
+
+                    mysql_conn.close()
+
+                except Exception as e:
+                    print(f"Error checking MySQL content: {e}")
+
+                # Filter out boxers with existing content
+                original_count = len(unique_ids)
+                unique_ids = unique_ids - existing_content_ids
+                filtered_count = original_count - len(unique_ids)
+
+                print(
+                    f"Filtered out {filtered_count} boxers with existing content ({original_count} -> {len(unique_ids)})"
+                )
 
             except Exception as e:
                 print(
