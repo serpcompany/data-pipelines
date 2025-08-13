@@ -21,7 +21,7 @@ D1_PREVIEW_DATABASE_ID = os.getenv("D1_PREVIEW_DATABASE_ID")
 USE_PREVIEW_DB = os.getenv("USE_PREVIEW_DB", "false").lower() == "true"
 API_TOKEN = os.getenv("CLOUDFLARE_D1_TOKEN") or os.getenv("CLOUDFLARE_API_TOKEN")
 
-TABLES_TO_SYNC = ["boxers", "divisions"]
+TABLES_TO_SYNC = ["boxers", "divisions", "bouts"]
 
 
 def fail(msg: str) -> None:

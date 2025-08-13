@@ -27,3 +27,5 @@ out
 dist
 *.vsix
 CLAUDE.md
+
+cached_schemas/

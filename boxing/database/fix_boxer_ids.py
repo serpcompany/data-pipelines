@@ -19,54 +19,69 @@ def fix_boxer_ids_in_staging():
     """Fix boxer IDs in staging database by removing leading zeros."""
     conn = get_staging_connection()
     cursor = conn.cursor()
-    
+
     try:
         # Get all boxers
         cursor.execute("SELECT id FROM boxers")
         boxers = cursor.fetchall()
         logger.info(f"Found {len(boxers)} boxers to check")
-        
+
         updated_count = 0
-        
+
         for (boxer_id,) in boxers:
             normalized_id = normalize_boxer_id(boxer_id)
-            
+
             if normalized_id != boxer_id:
                 logger.info(f"Normalizing boxer ID: {boxer_id} -> {normalized_id}")
-                
+
                 # Check if normalized ID already exists
-                cursor.execute("SELECT COUNT(*) FROM boxers WHERE id = ?", (normalized_id,))
+                cursor.execute(
+                    "SELECT COUNT(*) FROM boxers WHERE id = ?", (normalized_id,)
+                )
                 if cursor.fetchone()[0] > 0:
-                    logger.warning(f"Normalized ID {normalized_id} already exists, skipping {boxer_id}")
+                    logger.warning(
+                        f"Normalized ID {normalized_id} already exists, skipping {boxer_id}"
+                    )
                     continue
-                
+
                 # Update boxer ID and all related records
                 cursor.execute("BEGIN")
-                
+
                 # Update boxers table
-                cursor.execute("UPDATE boxers SET id = ? WHERE id = ?", (normalized_id, boxer_id))
-                
+                cursor.execute(
+                    "UPDATE boxers SET id = ? WHERE id = ?", (normalized_id, boxer_id)
+                )
+
                 # Update bouts JSON in boxers table
-                cursor.execute("SELECT bouts FROM boxers WHERE id = ?", (normalized_id,))
+                cursor.execute(
+                    "SELECT bouts FROM boxers WHERE id = ?", (normalized_id,)
+                )
                 bouts_json = cursor.fetchone()[0]
-                
+
                 if bouts_json:
                     import json
-                    bouts = json.loads(bouts_json) if isinstance(bouts_json, str) else bouts_json
+
+                    bouts = (
+                        json.loads(bouts_json)
+                        if isinstance(bouts_json, str)
+                        else bouts_json
+                    )
                     # Update boxer IDs in bouts JSON
                     for bout in bouts:
-                        if bout.get('boxerId') == boxer_id:
-                            bout['boxerId'] = normalized_id
-                    cursor.execute("UPDATE boxers SET bouts = ? WHERE id = ?", 
-                                 (json.dumps(bouts), normalized_id))
-                
+                        if bout.get("boxerId") == boxer_id:
+                            bout["boxerId"] = normalized_id
+                    cursor.execute(
+                        "UPDATE boxers SET bouts = ? WHERE id = ?",
+                        (json.dumps(bouts), normalized_id),
+                    )
+
                 cursor.execute("COMMIT")
                 updated_count += 1
-        
+
         logger.info(f"Normalized {updated_count} boxer IDs")
-        
+
         conn.commit()
-        
+
     except Exception as e:
         conn.rollback()
         logger.error(f"Error fixing boxer IDs: {e}")
@@ -79,45 +94,52 @@ def fix_boxer_ids_in_data_lake():
     """Fix boxer IDs in data lake by removing leading zeros."""
     import psycopg2
     import os
-    
+
     DB_CONFIG = {
-        'host': os.getenv('POSTGRES_HOST'),
-        'port': os.getenv('POSTGRES_PORT'),
-        'user': os.getenv('POSTGRES_USER'),
-        'password': os.getenv('POSTGRES_PASSWORD'),
-        'database': os.getenv('POSTGRES_DEFAULT_DB')
+        "host": os.getenv("POSTGRES_HOST"),
+        "port": os.getenv("POSTGRES_PORT"),
+        "user": os.getenv("POSTGRES_USER"),
+        "password": os.getenv("POSTGRES_PASSWORD"),
+        "database": os.getenv("POSTGRES_DEFAULT_DB"),
     }
-    
+
     try:
         conn = psycopg2.connect(**DB_CONFIG)
         cursor = conn.cursor()
-        
+
         # Get all boxer IDs with leading zeros
-        cursor.execute("""
+        cursor.execute(
+            """
             SELECT DISTINCT boxrec_id 
-            FROM "data_lake".boxrec_boxer_raw_html 
+            FROM "data_lake".boxrec 
             WHERE boxrec_id ~ '^0+[0-9]+$'
-        """)
-        
+        """
+        )
+
         ids_to_fix = cursor.fetchall()
-        logger.info(f"Found {len(ids_to_fix)} boxer IDs with leading zeros in data lake")
-        
+        logger.info(
+            f"Found {len(ids_to_fix)} boxer IDs with leading zeros in data lake"
+        )
+
         for (boxer_id,) in ids_to_fix:
             normalized = normalize_boxer_id(boxer_id)
             logger.info(f"Normalizing data lake ID: {boxer_id} -> {normalized}")
-            
-            cursor.execute("""
-                UPDATE "data_lake".boxrec_boxer_raw_html 
+
+            cursor.execute(
+                """
+                UPDATE "data_lake".boxrec 
                 SET boxrec_id = %s 
                 WHERE boxrec_id = %s
-            """, (normalized, boxer_id))
-        
+            """,
+                (normalized, boxer_id),
+            )
+
         conn.commit()
         logger.info(f"Normalized {len(ids_to_fix)} boxer IDs in data lake")
-        
+
         cursor.close()
         conn.close()
-        
+
     except Exception as e:
         logger.error(f"Error fixing data lake IDs: {e}")
         raise
@@ -126,15 +148,16 @@ def fix_boxer_ids_in_data_lake():
 if __name__ == "__main__":
     # Load environment variables
     from dotenv import load_dotenv
-    env_path = Path(__file__).parent.parent.parent / '.env'
+
+    env_path = Path(__file__).parent.parent.parent / ".env"
     load_dotenv(env_path)
-    
+
     logger.info("Fixing boxer IDs...")
-    
+
     # Fix staging first
     fix_boxer_ids_in_staging()
-    
+
     # Then fix data lake
     fix_boxer_ids_in_data_lake()
-    
+
     logger.info("Boxer ID normalization complete")
