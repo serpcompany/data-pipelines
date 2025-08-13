@@ -19,6 +19,8 @@ x-airflow-common:
     POSTGRES_USER: postgres
     POSTGRES_PASSWORD: ${DATA_LAKE_PASSWORD}
     ZYTE_API_KEY: ${ZYTE_API_KEY}
+    PIPELINE_BASE_URL: ${PIPELINE_BASE_URL}
+    PIPELINE_API_KEY: ${PIPELINE_API_KEY}
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:- pandas psycopg2-binary requests dateparser}
   volumes:
     - ../dags:/opt/airflow/dags
