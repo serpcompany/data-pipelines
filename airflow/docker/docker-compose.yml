@@ -97,7 +97,7 @@ services:
     restart: unless-stopped
     depends_on:
       <<: *airflow-common-depends-on
-      airflow-init:
+      boxing-airflow-init:
         condition: service_completed_successfully
 
   boxing-airflow-init:
