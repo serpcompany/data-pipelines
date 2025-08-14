@@ -1,14 +1,14 @@
-import type { Config } from 'drizzle-kit';
+import { config } from 'dotenv';
+import { defineConfig } from 'drizzle-kit';
 
-// For local staging mirror database
-export default {
-  dialect: 'sqlite',
-  schema: './drizzle/schema/index.ts',
+config({ path: '.env' });
+
+export default defineConfig({
+  schema: './drizzle/schema/*',
   out: './drizzle/migrations',
+  dialect: 'turso',
   dbCredentials: {
-    url: '../data/output/staging_mirror.db'
+    url: process.env.LIBSQL_CONNECTION_URL!,
+    authToken: process.env.LIBSQL_AUTH_TOKEN!,
   },
-   introspect: {
-    casing: 'camel',
-  },
-} satisfies Config;
+});

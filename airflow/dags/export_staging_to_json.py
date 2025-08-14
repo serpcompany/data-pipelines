@@ -103,9 +103,6 @@ def export_staging_to_json():
 
         # Connect to staging database
         staging_conn = get_staging_connection()
-        staging_conn.row_factory = lambda cursor, row: dict(
-            zip([col[0] for col in cursor.description], row)
-        )
         cursor = staging_conn.cursor()
 
         # Build query with optional limit
@@ -114,7 +111,10 @@ def export_staging_to_json():
             query += f" LIMIT {int(limit)}"
 
         cursor.execute(query)
-        rows = cursor.fetchall()
+        raw_rows = cursor.fetchall()
+
+        columns = [desc[0] for desc in cursor.description]
+        rows = [dict(zip(columns, row)) for row in raw_rows]
         staging_conn.close()
 
         # Process rows to handle JSON fields

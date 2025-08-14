@@ -29,3 +29,5 @@ dist
 CLAUDE.md
 
 cached_schemas/
+
+private_key.pem

@@ -26,7 +26,9 @@ x-airflow-common:
     MYSQL_USERNAME: ${MYSQL_USERNAME}
     MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     MYSQL_DATABASE: ${MYSQL_DATABASE}
-    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:- pandas psycopg2-binary requests dateparser markdown mysql-connector-python}
+    LIBSQL_CONNECTION_URL: ${LIBSQL_CONNECTION_URL}
+    LIBSQL_AUTH_TOKEN: ${LIBSQL_AUTH_TOKEN}
+    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:- pandas psycopg2-binary requests dateparser markdown mysql-connector-python libsql}
   volumes:
     - ../dags:/opt/airflow/dags
     # - ../logs:/opt/airflow/logs
