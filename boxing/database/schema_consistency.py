@@ -10,6 +10,7 @@ import logging
 import sqlite3
 import os
 import re
+import sys
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Optional, Any
@@ -18,6 +19,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from cloudflare import Cloudflare
+
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+
+from boxing.database.staging_mirror import get_connection
 
 logger = logging.getLogger(__name__)
 
@@ -254,13 +259,9 @@ class SchemaConsistencyManager:
         return self._get_d1_schema(self.d1_preview_database_id, "productionPreview")
 
     def fetch_datapipeline_schema(self) -> Optional[Dict]:
-        """Get schema from local SQLite staging database."""
-        if not self.staging_db.exists():
-            logger.error(f"Staging database not found: {self.staging_db}")
-            return None
-
+        """Get schema from staging database (SQLite/libsql)."""
         try:
-            conn = sqlite3.connect(str(self.staging_db))
+            conn = get_connection()
             cursor = conn.cursor()
 
             # Get tables
