@@ -64,6 +64,8 @@ services:
       interval: 10s
       retries: 5
       start_period: 5s
+    networks:
+      - web_network
     restart: unless-stopped
 
   boxing-airflow-webserver:
