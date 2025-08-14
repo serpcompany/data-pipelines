@@ -40,13 +40,13 @@ x-airflow-common:
     - ../..:/opt/airflow/boxing  # Mount boxing code
     - ../../boxing/data:/opt/airflow/data  # Mount data directory
     # use docker volume for logs
-    - logs-volume:/opt/airflow/logs
+    - boxing-airflow-logs-volume:/opt/airflow/logs
   networks:
     - web_network
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
-    postgres:
+    boxing-airflow-postgres:
       condition: service_healthy
 
 services:
@@ -58,7 +58,7 @@ services:
       POSTGRES_PASSWORD: airflow
       POSTGRES_DB: airflow
     volumes:
-      - postgres-db-volume:/var/lib/postgresql/data
+      - boxing-airflow-postgres-db-volume:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "airflow"]
       interval: 10s
@@ -81,7 +81,7 @@ services:
     restart: unless-stopped
     depends_on:
       <<: *airflow-common-depends-on
-      airflow-init:
+      boxing-airflow-init:
         condition: service_completed_successfully
 
   boxing-airflow-scheduler:
@@ -150,5 +150,5 @@ services:
     restart: "no"
 
 volumes:
-  postgres-db-volume:
-  logs-volume:
+  boxing-airflow-postgres-db-volume:
+  boxing-airflow-logs-volume:
