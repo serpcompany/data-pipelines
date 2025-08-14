@@ -2,10 +2,42 @@ import os
 import re
 import markdown
 import mysql.connector
+import time
+import jwt
+import libsql
+import sqlite3
 from typing import List, Dict
 from dotenv import load_dotenv
+from pathlib import Path
 
 load_dotenv()
+
+
+def encode_jwt(key):
+    claims = {"a": "rw", "iat": int(time.time()), "exp": int(time.time()) + 3600}
+    return jwt.encode(claims, key, algorithm="EdDSA")
+
+
+def get_sqlite_connection(db_path):
+    """
+    Get a SQLite/libsql connection that automatically handles libsql if configured.
+    Falls back to regular SQLite if LIBSQL_URL is not set.
+    """
+    libsql_url = os.getenv("LIBSQL_CONNECTION_URL")
+
+    if libsql_url:
+        # Read the private key for auth
+        key_path = Path(__file__).parent / "certs" / "private_key.pem"
+        with open(key_path, "r") as f:
+            private_key = f.read()
+
+        auth_token = encode_jwt(private_key)
+        conn = libsql.connect(libsql_url, auth_token=auth_token)
+    else:
+        # Fallback to regular SQLite
+        conn = sqlite3.connect(db_path)
+
+    return conn
 
 
 def get_mysql_connection():
