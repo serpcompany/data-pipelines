@@ -117,13 +117,13 @@ def scrape_html_zyte():
             url_col = next((c for c in df.columns if "url" in str(c).lower()), None)
             if url_col:
                 urls = df[url_col].dropna().astype(str).tolist()
-                urls = [
-                    url.split("?")[0].rstrip(
-                        "/"
-                    )  # Remove query params and trailing slashes
-                    for url in urls
-                ]
-                all_urls.extend(urls)
+                for url in urls:
+                    url = url.split("%2")[0].split("?")[0].rstrip("/")
+
+                    if "." in url and url[url.rfind(".") - 1].isdigit():
+                        url = url[: url.rfind(".")].rstrip("/")
+
+                    all_urls.append(url)
                 print(f"Extracted {len(urls)} URLs from {os.path.basename(filepath)}")
 
         unique_urls = list(set(all_urls))
