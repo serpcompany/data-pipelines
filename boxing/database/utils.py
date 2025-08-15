@@ -14,7 +14,8 @@ load_dotenv()
 
 
 def encode_jwt(key):
-    claims = {"a": "rw", "iat": int(time.time()), "exp": int(time.time()) + 3600}
+    time_ = 86400  # 24 hours
+    claims = {"a": "rw", "iat": int(time.time()), "exp": int(time.time()) + time_}
     return jwt.encode(claims, key, algorithm="EdDSA")
 
 
