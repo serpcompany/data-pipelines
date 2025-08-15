@@ -6,58 +6,75 @@ Sync staging_mirror.db to local miniflare D1 database
 import sqlite3
 import os
 import sys
+import argparse
 from pathlib import Path
 
+# Add parent directory to path to import boxing modules
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from database.staging_mirror import get_connection as get_staging_connection
+
 # Configuration
-STAGING_DB = Path(
-    "/Users/devin/repos/projects/data-pipelines/boxing/data/output/staging_mirror.db"
-)
-MINIFLARE_DB = Path(
+DEFAULT_MINIFLARE_DB = Path(
     "/Users/devin/repos/projects/boxingundefeated.com/.data/hub/d1/miniflare-D1DatabaseObject/7b8799eb95f0bb5448e259812996a461ce40142dacbdea254ea597e307767f45.sqlite"
 )
 
 
-def sync_databases():
+def sync_databases(miniflare_db_path: Path = None):
     """Sync data from staging_mirror.db to miniflare D1 database"""
 
-    # Check if databases exist
-    if not STAGING_DB.exists():
-        print(f"Error: Source database not found at {STAGING_DB}")
+    if miniflare_db_path is None:
+        miniflare_db_path = DEFAULT_MINIFLARE_DB
+
+    # Check if target database exists
+    if not miniflare_db_path.exists():
+        print(f"Error: Target miniflare database not found at {miniflare_db_path}")
         sys.exit(1)
 
-    if not MINIFLARE_DB.exists():
-        print(f"Error: Target miniflare database not found at {MINIFLARE_DB}")
-        sys.exit(1)
+    print(f"Starting sync from staging to miniflare D1 at {miniflare_db_path}...")
 
-    print("Starting sync from staging_mirror.db to miniflare D1...")
-
-    # Connect to both databases
-    source_conn = sqlite3.connect(STAGING_DB)
-    target_conn = sqlite3.connect(MINIFLARE_DB)
+    # Connect to target database
+    target_conn = sqlite3.connect(miniflare_db_path)
 
     try:
-        source_cursor = source_conn.cursor()
         target_cursor = target_conn.cursor()
 
         # Tables to sync
         tables = ["boxers", "divisions", "bouts"]
 
         for table in tables:
+            # Create fresh connection for each table to avoid timeout
+            source_conn = get_staging_connection()
+            source_cursor = source_conn.cursor()
             print(f"\nSyncing {table} table...")
 
             # Clear existing data in target
             target_cursor.execute(f"DELETE FROM {table}")
             print(f"  Cleared existing {table} data")
 
+            # Get column names
+            source_cursor.execute(f"PRAGMA table_info(`{table}`)")
+            columns = [col[1] for col in source_cursor.fetchall()]
+
             # Get data from source
             source_cursor.execute(f"SELECT * FROM {table}")
             rows = source_cursor.fetchall()
 
             if rows:
-                # Get column names
-                source_cursor.execute(f"PRAGMA table_info({table})")
-                columns = [col[1] for col in source_cursor.fetchall()]
+                # Convert rows to plain tuples for SQLite insertion
+                converted_rows = []
+                for row in rows:
+                    if hasattr(row, "keys"):
+                        # Row object with keys (sqlite3.Row or libsql.Row)
+                        converted_rows.append(tuple(row[col] for col in columns))
+                    else:
+                        # Plain tuple/list
+                        converted_rows.append(tuple(row))
 
+            # Close source connection for this table
+            source_conn.close()
+
+            if converted_rows:
                 # Prepare insert statement
                 placeholders = ",".join(["?" for _ in columns])
                 columns_str = ",".join([f"`{col}`" for col in columns])
@@ -66,8 +83,8 @@ def sync_databases():
                 )
 
                 # Insert data into target
-                target_cursor.executemany(insert_sql, rows)
-                print(f"  Inserted {len(rows)} rows into {table}")
+                target_cursor.executemany(insert_sql, converted_rows)
+                print(f"  Inserted {len(converted_rows)} rows into {table}")
             else:
                 print(f"  No data to sync for {table}")
 
@@ -82,14 +99,27 @@ def sync_databases():
             print(f"  - {table.capitalize()} count: {count}")
 
     except Exception as e:
+        import traceback
+
+        traceback.print_exc()
         print(f"Error during sync: {e}")
         target_conn.rollback()
         sys.exit(1)
 
     finally:
-        source_conn.close()
         target_conn.close()
 
 
 if __name__ == "__main__":
-    sync_databases()
+    parser = argparse.ArgumentParser(
+        description="Sync staging database to miniflare D1"
+    )
+    parser.add_argument(
+        "--miniflare-db",
+        type=Path,
+        default=DEFAULT_MINIFLARE_DB,
+        help=f"Path to miniflare database file (default: {DEFAULT_MINIFLARE_DB})",
+    )
+
+    args = parser.parse_args()
+    sync_databases(args.miniflare_db)

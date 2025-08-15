@@ -11,8 +11,16 @@ from pathlib import Path
 from typing import Optional, Dict, List
 import logging
 
-from ..utils.config import get_postgres_connection
-from .staging_mirror import get_connection as get_staging_connection
+try:
+    from ..utils.config import get_postgres_connection
+    from .staging_mirror import get_connection as get_staging_connection
+except ImportError:
+    # Fall back to absolute import (when run as script)
+    import sys
+
+    sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+    from boxing.utils.config import get_postgres_connection
+    from boxing.database.staging_mirror import get_connection as get_staging_connection
 
 logger = logging.getLogger(__name__)
 

@@ -9,8 +9,17 @@ from datetime import datetime, timedelta
 from typing import List, Dict, Optional
 import psycopg2
 
-from ..utils.config import get_postgres_connection
-from .metadata import MetadataTracker
+try:
+    from ..utils.config import get_postgres_connection
+    from .metadata import MetadataTracker
+except ImportError:
+    # Fall back to absolute import (when run as script)
+    import sys
+    from pathlib import Path
+
+    sys.path.insert(0, str(Path(__file__).parent.parent))
+    from boxing.utils.config import get_postgres_connection
+    from boxing.database.metadata import MetadataTracker
 
 logger = logging.getLogger(__name__)
 
