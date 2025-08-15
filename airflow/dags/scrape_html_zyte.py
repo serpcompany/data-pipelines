@@ -22,6 +22,7 @@ sys.path.append("/opt/airflow/boxing")
 from boxing.run_validators import validate_html_file
 from boxing.load.to_data_lake import prepare_file_data, DB_CONFIG
 from boxing.transform import normalize_boxer_id
+from boxing.database.staging_mirror import get_connection as get_staging_connection
 
 
 DEFAULT_ARGS = {
@@ -391,9 +392,8 @@ def scrape_html_zyte():
 
             if entity == "boxer":
                 # Check staging DB for proStatus first
-                staging_db_path = "/opt/airflow/boxing/data/output/staging_mirror.db"
                 try:
-                    staging_conn = sqlite3.connect(staging_db_path)
+                    staging_conn = get_staging_connection()
                     staging_cur = staging_conn.cursor()
 
                     staging_cur.execute(
