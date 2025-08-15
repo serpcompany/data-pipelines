@@ -117,6 +117,12 @@ def scrape_html_zyte():
             url_col = next((c for c in df.columns if "url" in str(c).lower()), None)
             if url_col:
                 urls = df[url_col].dropna().astype(str).tolist()
+                urls = [
+                    url.split("?")[0].rstrip(
+                        "/"
+                    )  # Remove query params and trailing slashes
+                    for url in urls
+                ]
                 all_urls.extend(urls)
                 print(f"Extracted {len(urls)} URLs from {os.path.basename(filepath)}")
 
