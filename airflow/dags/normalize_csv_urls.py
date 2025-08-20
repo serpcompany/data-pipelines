@@ -76,7 +76,7 @@ def normalize_csv_urls():
 
     @task
     def normalize_and_dedupe_urls(csv_info: Dict[str, Any]) -> Dict[str, Any]:
-        """Normalize URLs and remove duplicates using the same logic as scrape_html_zyte."""
+        """Normalize URLs and remove duplicates."""
         df = pd.read_csv(csv_info["filepath"])
         original_count = len(df)
 
